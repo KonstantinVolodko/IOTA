@@ -300,7 +300,7 @@ main {
 
 .swiper-container {
     width: 100%;
-    margin: 2rem auto;
+    // margin: 2rem auto;
     overflow: hidden;
 
     .swiper-slide-container {
@@ -312,7 +312,7 @@ main {
         flex-direction: column;
         justify-content: flex-start;
         text-align: start;
-        
+
 
     }
 }
@@ -395,6 +395,7 @@ main {
 
     .main-result__content {
         display: flex;
+        justify-content: space-between;
 
         .main-result__stepsSwiper {
             width: 44rem;
@@ -412,7 +413,7 @@ main {
 
         .main-result__stepsSwiper {
             margin-top: 30rem;
-            margin-right: 45.5rem;
+            margin-right: 30%;
 
             .main-result__subtitle {
                 font-family: 'Manrope';
@@ -437,10 +438,14 @@ main {
 
     .main-firstStep__content {
 
+
+
         .main-firstStep__title {
             position: relative;
             width: 56%;
             margin-inline-start: auto;
+            margin-bottom: 4rem;
+            margin-right: 4%;
 
             h2 {
                 font-family: 'Manrope';
@@ -452,14 +457,232 @@ main {
                 width: 56%;
             }
 
-            .blackLine {
+            .main-firstStep__blackLine {
                 position: absolute;
                 border-bottom: 0.3rem solid #000000;
-                width: 52rem;
+                width: 55rem;
                 top: 50%;
-                right: -6%;
+                right: -9%;
             }
         }
 
+        .main-firstStep__contentBlock {
+            display: flex;
+
+            .main-firstStep__textBlock {
+
+                .main-firstStep__text {
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.8rem;
+                    line-height: 137.1%;
+                    color: #000000;
+                    width: 73%;
+
+                    span {
+                        font-weight: 700;
+                    }
+                }
+
+                .main-firstStep__accordeonContainer {
+                    .main-firstStep__accrordeonBtn {
+                        padding: 0;
+                        background: none;
+                        cursor: pointer;
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        text-align: start;
+                        transition: 0.4s;
+                        display: flex;
+                        font-family: 'Manrope';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 2.4rem;
+                        line-height: 133.1%;
+                        color: #000000;
+                        gap: 5rem;
+                        padding-right: 5rem;
+
+                        span {
+                            width: 90%;
+                        }
+
+                        svg {
+                            width: 2rem;
+                            height: 3.4rem;
+                        }
+                    }
+
+                    .main-firstStep__accordeonContent {
+                        font-family: 'Manrope';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        line-height: 137.1%;
+                        color: #000000;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.2s ease-out;
+                        width: 80%;
+                    }
+                }
+
+                .main-firstStep__subtitle {
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 6.4rem;
+                    line-height: 100.1%;
+                    color: #000000;
+                    width: 65%;
+                    margin-top: 13.7rem;
+                    margin-bottom: 3rem;
+                }
+
+                .main-firstStep__accordeonContainer {
+                    border-top: 0.2rem solid #000000;
+                    border-bottom: 0.2rem solid #000000;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                }
+            }
+
+            .main-firstStep__imgContainer {
+                width: 752%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
+}
+
+
+.main-gallery_position {
+    margin-top: 25rem;
+}
+
+.main-gallery {
+
+    // .main-gallery__content {
+
+    //     .main-gallery__tabBlockContainer {
+    //         display: flex;
+    //         justify-content: space-between;
+
+    //         .main-gallery__arrowsContainer {
+    //             display: flex;
+    //             gap: 2.5rem;
+
+    //             svg {
+    //                 width: 3.4rem;
+    //                 height: 1.8rem;
+    //                 cursor: pointer;
+    //             }
+    //         }
+    //     }
+
+    //     .gallery-thumbsSecond {
+    //         width: 60.08%;
+    //         border-bottom: 0.3rem solid #000000;
+
+
+    //         .swiper-slide {
+    //             font-family: 'Manrope';
+    //             font-style: normal;
+    //             font-weight: 300;
+    //             font-size: 2.4rem;
+    //             line-height: 100.1%;
+    //             color: #000000;
+    //         }
+
+    //         .swiper-slide-active {
+    //             font-weight: 700;
+    //         }
+
+    //     }
+
+
+    // }
+
+    .main-gallery__tabBlockContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .main-gallery__arrowsContainer {
+            display: flex;
+            gap: 2.5rem;
+
+            svg {
+                width: 3.4rem;
+                height: 1.8rem;
+                cursor: pointer;
+            }
+        }
+
+        .main-gallery__tabsContainer {
+            display: flex;
+            border-bottom: 0.3rem solid #000000;
+            width: 60%;
+            gap: 25.8rem;
+            padding-bottom: 2rem;
+
+
+            .main-gallery__tab {
+
+                .main-gallery__tabHeader {
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 2.4rem;
+                    line-height: 100.1%;
+                    color: #000000;
+                    cursor: pointer;
+                }
+
+                .main-gallery__tabContent {
+                    display: none;
+                }
+            }
+
+
+
+        }
+
+    }
+
+    .main-gallery__helper {
+        margin-top: 6rem;
+
+        .main-gallery__slideTitle {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 100.1%;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        .main-gallery__slideImgContainer {
+            width: 90%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .activeTab {
+        font-weight: 700;
+    }
+
+}
+
+
+.main-contact_position {
+    margin-top: 30.3rem;
 }
