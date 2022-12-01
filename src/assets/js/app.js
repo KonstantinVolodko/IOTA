@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loopedSlides: 4
   });
   let galleryThumbs = new Swiper('.gallery-thumbs', {
-    spaceBetween: 10,
-    centeredSlides: true,
-    slidesPerView: "auto",
+    // spaceBetween: 'auto',
+    // centeredSlides: true,
+    slidesPerView: 4,
     touchRatio: 0.2,
     slideToClickedSlide: true,
     loop: true,
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let accrordeonBtn = document.querySelectorAll(".main-firstStep__accrordeonBtn");
 
   for (let i = 0; i < accrordeonBtn.length; i++) {
-    accrordeonBtn[i].addEventListener("click", function() {
+    accrordeonBtn[i].addEventListener("click", function () {
       // this.classList.toggle("activeTab");
       let panel2 = this.nextElementSibling;
       console.log(panel2)
@@ -59,30 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-  // let galleryTopSecond = new Swiper('.gallery-topSecond', {
-  //   navigation: {
-  //     nextEl: '.main-gallery__buttonNext',
-  //     prevEl: '.main-gallery__buttonPrev',
-  //   },
-  //    loop: true,
-  //   loopedSlides: 4
-  // });
-  // let galleryThumbsSecond = new Swiper('.gallery-thumbsSecond', {
-  //   centeredSlides: false,
-  //   spaceBetween: 258,
-  //   slidesPerView: 3,
-  //   touchRatio: 0.2,
-  //   slideToClickedSlide: true,
-  //   loop: true,
-  //   loopedSlides: 3
-  // });
-  // galleryTopSecond.controller.control = galleryThumbsSecond;
-  // galleryThumbsSecond.controller.control = galleryTopSecond;
-
-  const swiperFunction = function() {
+  const swiperFunction = function () {
     let swiper = new Swiper(".mySwiper", {
       slidesPerView: 1.4,
       spaceBetween: 30,
@@ -106,14 +83,69 @@ document.addEventListener("DOMContentLoaded", () => {
         elem.classList.remove('activeTab')
       })
       e.classList.add('activeTab')
-      
+
     })
   })
 
   tabHeader[0].click()
 
 
+  let burger = document.querySelectorAll('.header-content__burger')
+  let burgerHelper = document.querySelector('.header-menu__helpCrossContainer')
+  let burgerTransition = document.querySelector('.header-content__burgerTransition')
 
+  burger.forEach(e => {
+    console.log(e)
+    e.addEventListener('click', () => {
+      e.classList.toggle('cross')
+      e.classList.toggle('header-content__burger_hover')
+  
+      if(e.classList.contains('cross')) {
+        burgerHelper.innerHTML = burgerTransition.innerHTML
+
+        
+      }
+    })
+  })
+
+
+
+
+
+
+  let menuTabsHelper = document.querySelector('.header-menu__tabsHelper')
+  let tabsFirstLvlTitle = document.querySelectorAll('.header-menu__tabsFirstLvlTitle')
+
+  tabsFirstLvlTitle.forEach(e => {
+    e.addEventListener('click', el => {
+      menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
+
+      let headerAccBtn = document.getElementsByClassName("header-menu__accordionBtn");
+
+      for (let i = 0; i < headerAccBtn.length; i++) {
+        headerAccBtn[i].addEventListener("click", function () {
+          // this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    })
+  })
+
+  tabsFirstLvlTitle[0].click()
+
+
+  let crossHelper = document.querySelector('.header-menu__helpCrossContainer')
+
+  let fakeBurger = burgerHelper.nextElementSibling
+  
+  fakeBurger.addEventListener('click', e => {
+    fakeBurger.classList.toggle('.cross')
+  })
 })
 
 
