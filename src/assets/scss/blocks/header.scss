@@ -80,6 +80,7 @@
 }
 
 .header-menu__content {
+    transform: translateX(-100%);
     position: fixed;
     top: 0;
     height: 100%;
@@ -187,4 +188,9 @@
         }
     }
 
+}
+
+.showMenu {
+    transform: translateX(0);
+    transition: all linear 0.2s;
 }

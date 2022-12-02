@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  acc[0].click()
+  if(acc.length > 0) {
+    acc[0].click()
+  }
+
 
 
   let galleryTop = new Swiper('.gallery-top', {
@@ -93,23 +96,29 @@ document.addEventListener("DOMContentLoaded", () => {
   let burger = document.querySelectorAll('.header-content__burger')
   let burgerHelper = document.querySelector('.header-menu__helpCrossContainer')
   let burgerTransition = document.querySelector('.header-content__burgerTransition')
+  let menuContent = document.querySelector('.header-menu__content')
+  let page = document.getElementsByTagName('body')
+  console.log(page)
 
   burger.forEach(e => {
     console.log(e)
     e.addEventListener('click', () => {
       e.classList.toggle('cross')
       e.classList.toggle('header-content__burger_hover')
+      menuContent.classList.add('showMenu')
+      page[0].classList.add('blockScroll')
   
       if(e.classList.contains('cross')) {
         burgerHelper.innerHTML = burgerTransition.innerHTML
-
-        
       }
     })
   })
 
 
-
+  burgerHelper.addEventListener('click', () => {
+    menuContent.classList.remove('showMenu')
+    page[0].classList.remove('blockScroll')
+  })
 
 
 
@@ -139,13 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tabsFirstLvlTitle[0].click()
 
 
-  let crossHelper = document.querySelector('.header-menu__helpCrossContainer')
-
-  let fakeBurger = burgerHelper.nextElementSibling
   
-  fakeBurger.addEventListener('click', e => {
-    fakeBurger.classList.toggle('.cross')
-  })
 })
 
 

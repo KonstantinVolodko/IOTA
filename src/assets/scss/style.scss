@@ -62,6 +62,7 @@ svg {
 @import './blocks/main.scss';
 @import './blocks/header.scss';
 @import './blocks/footer.scss';
+@import './blocks/portfolio.scss';
 
 
 
@@ -74,6 +75,6 @@ svg {
   display: block;
 }
 
-.activeTab {
-  font-weight: 700 !important;
+.blockScroll {
+  overflow: hidden;
 }
