@@ -21,12 +21,12 @@
 
 .secondPage-title_position {
     margin-top: 4.6rem;
+    padding-top: 13rem;
+    padding-left: 7.2rem;
 }
 
 .secondPage-title {
     position: relative;
-    padding-top: 13rem;
-    padding-left: 7.2rem;
     overflow: hidden;
     padding-bottom: 45.4rem;
     
@@ -87,26 +87,7 @@
 
             width: 48%;
 
-            .secondPage-idea__title {
-                display: flex;
-                gap: 4rem;
-                align-items: flex-end;
 
-                .secondPage-idea__number {
-                    font-weight: 800;
-                    font-size: 12.8rem;
-                    line-height: 100.1%;
-                    color: white;
-                    -webkit-text-stroke: 0.2rem black;
-                }
-
-                .secondPage-idea__ideaText {
-                    font-weight: 600;
-                    font-size: 6.4rem;
-                    line-height: 100.1%;
-                    color: #000000;
-                }
-            }
 
             .secondPage-idea__subtitle {
                 font-weight: 500;
@@ -124,6 +105,8 @@
             }
         }
     }
+
+   
 
 
     .secondPage-idea__imgBlockContainer {
@@ -154,3 +137,51 @@
     }
 }
 
+.secondPage-idea__title {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-end;
+
+    .secondPage-idea__number {
+        font-weight: 800;
+        font-size: 12.8rem;
+        line-height: 100.1%;
+        color: white;
+        -webkit-text-stroke: 0.2rem black;
+    }
+
+    .secondPage-idea__ideaText {
+        font-weight: 600;
+        font-size: 6.4rem;
+        line-height: 100.1%;
+        color: #000000;
+    }
+}
+
+.secondPage-realization_position {
+    margin-top: 15rem;
+    padding-left: 7.2rem;
+}
+
+.secondPage-realization {
+
+    .secondPage-realize__numberBlock {
+
+        .secondPage-realization__imgContainer {
+            width: 100%;
+            margin-top: 10rem;
+            img {
+                width: 100%;
+            }
+        }
+
+        .secondPage-realization__textContainer {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 137.1%;
+            color: #000000;
+            margin-top: 6rem;
+            width: 58%;
+        }
+    }
+}

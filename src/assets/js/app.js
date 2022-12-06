@@ -90,7 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  tabHeader[0].click()
+  if(tabHeader.length != 0) {
+    tabHeader[0].click()
+  }
+
 
 
   let burger = document.querySelectorAll('.header-content__burger')
@@ -145,9 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  tabsFirstLvlTitle[0].click()
+  if(tabsFirstLvlTitle.length != 0) {
+    tabsFirstLvlTitle[0].click()
+  }
 
 
+
+  let realizationSwiper = new Swiper(".secondPage-realization__swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    loop: true,
+  });
   
 })
 
