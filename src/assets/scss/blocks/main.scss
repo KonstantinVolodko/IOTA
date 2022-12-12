@@ -1,6 +1,10 @@
 main {
     padding-left: 20%;
     padding-bottom: 20rem;
+
+    @include breakpoint($cos-bp) {
+        padding-left: 15%;
+    }
 }
 
 
@@ -28,6 +32,10 @@ main {
         gap: 6rem;
         padding-right: 8rem;
         width: 100%;
+
+        @include breakpoint($nb-bp) {
+            padding-right: 4rem;
+        }
 
         .main-createEmotions__imgContainer {
             width: 27%;
@@ -127,6 +135,10 @@ main {
         display: flex;
         justify-content: space-between;
         padding-right: 13rem;
+
+        @include breakpoint($nb-bp) {
+            padding-right: 7rem;
+        }
 
         .main-solutions__textContainer {
             width: 20%;
@@ -399,7 +411,7 @@ main {
         justify-content: space-between;
 
         .main-result__stepsSwiper {
-            width: 44rem;
+            width: 29%;
         }
 
         h2 {
@@ -415,6 +427,10 @@ main {
         .main-result__stepsSwiper {
             margin-top: 30rem;
             margin-right: 30%;
+
+            @include breakpoint($nb-bp) {
+                margin-right: 15%;
+            }
 
             .main-result__subtitle {
 
@@ -464,6 +480,10 @@ main {
                 width: 55rem;
                 top: 50%;
                 right: -9%;
+
+                @include breakpoint($nb-bp) {
+                    right: -31%;
+                }
             }
         }
 
@@ -471,7 +491,7 @@ main {
             display: flex;
 
             .main-firstStep__textBlock {
-
+                width: 43.1%;
                 .main-firstStep__text {
 
                     font-style: normal;
@@ -538,7 +558,7 @@ main {
                     line-height: 100.1%;
                     color: #000000;
                     width: 65%;
-                    margin-top: 12.7rem;
+                    margin-top: 10.7rem;
                     margin-bottom: 3rem;
                 }
 
@@ -551,10 +571,11 @@ main {
             }
 
             .main-firstStep__imgContainer {
-                width: 807%;
+                width: 65%;
 
                 img {
                     width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -632,6 +653,14 @@ main {
             gap: 25.8rem;
             padding-bottom: 2rem;
 
+            @include breakpoint($nb-bp) {
+                gap: 21.8rem;
+            }
+
+            @include breakpoint($cos-bp) {
+                gap: 13.8rem;
+            }
+
 
             .main-gallery__tab {
 
@@ -678,12 +707,12 @@ main {
         }
     }
 
-    .activeTab {
-        font-weight: 700;
-    }
+    
 
 }
-
+.activeTab {
+    font-weight: 700 !important;
+}
 
 .main-contact_position {
     margin-top: 30.3rem;

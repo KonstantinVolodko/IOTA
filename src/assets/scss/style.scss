@@ -6,6 +6,11 @@
 html {
   box-sizing: border-box;
   font-size: calc(100vw / 1920 * 10);
+
+  @include breakpoint($nb-bp) {
+    font-size: calc(100vw / 1600 * 10);
+  }
+
   @include breakpoint($cos-bp) {
     font-size: calc(100vw / 1330 * 10);
   }
@@ -73,6 +78,7 @@ svg {
 @import './blocks/blog.scss';
 @import './blocks/article.scss';
 @import './blocks/aboutCompany.scss';
+@import './blocks/contacts.scss';
 
 .hide {
   display: none;

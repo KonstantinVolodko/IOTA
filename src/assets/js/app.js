@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-      this.classList.toggle("activeTab");
+      acc.forEach(e => {
+        e.classList.remove("activeTab")
+      })
+      this.classList.add("activeTab");
+
       let panel = this.nextElementSibling;
       desctopHelper.innerHTML = panel.innerHTML
       if (panel.style.maxHeight) {
@@ -344,12 +348,6 @@ var realizationSwiper = new Swiper(".realizationSwiper", {
   loop: true,
   spaceBetween: 60,
 });
-
-
-
-
-
-
 
 
 
