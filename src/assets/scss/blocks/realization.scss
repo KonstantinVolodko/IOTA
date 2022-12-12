@@ -1,0 +1,47 @@
+.realization-organization_position {
+    width: 20.7% !important;
+}
+
+.realization-imgContainer_position {
+    width: 67.5% !important;
+}
+
+.realization-swiper {
+    margin-top: 10rem;
+
+    .swiper-slide {
+        display: flex;
+        padding-right: 6rem;
+        border-right: 0.3rem solid #000000;
+        gap: 3rem;
+    }
+
+    .realization-swiper__textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .realization-swiper__title {
+            font-weight: 800;
+            font-size: 4rem;
+            line-height: 100.1%;
+            color: #000000;
+        }
+
+        .realization-swiper__subtitle {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 130.6%;
+            color: #000000;
+        }
+    }
+}
+
+.realization-swiper__bottomText {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 130.6%;
+    color: #000000;
+    margin-top: 20rem;
+    width: 83%;
+}

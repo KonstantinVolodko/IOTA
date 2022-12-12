@@ -1,0 +1,207 @@
+.organizationOfSpace-organization_position {
+    margin-top: 10.3rem;
+}
+
+.organizationOfSpace-organization {
+
+    h2 {
+        font-weight: 500;
+        font-size: 6.4rem;
+        line-height: 120.6%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .organizationOfSpace-organization__contentBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3rem;
+
+        .organizationOfSpace-organization__text {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 130.6%;
+            color: #000000;
+            width: 35.7%;
+        }
+
+        .organizationOfSpace-organization__imgContainer {
+            width: 59.66%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.organizationOfSpace-whyContainer_position {
+    margin-top: 20rem;
+
+}
+
+.organizationOfSpace-whyContainer {
+
+    .organizationOfSpace-whyContainer__textContainer {
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+            font-weight: 500;
+            font-size: 6.4rem;
+            line-height: 120.6%;
+            text-transform: uppercase;
+            color: #000000;
+            width: 78%;
+        }
+
+        .organizationOfSpace-whyContainer__subtitle {
+            font-weight: 500;
+            font-size: 2.8rem;
+            line-height: 130.6%;
+            color: #000000;
+        }
+
+    }
+
+    .organizationOfSpace-whyContainer__listContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8rem;
+        gap: 6rem;
+        align-items: center;
+
+
+        .organizationOfSpace-whyContainer__block {
+            width: 46.7%;
+        }
+
+        .organizationOfSpace-whyContainer__number {
+            font-weight: 800;
+            font-size: 4rem;
+            line-height: 100.1%;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        .organizationOfSpace-whyContainer__subtitle {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 130.6%;
+            color: #000000;
+        }
+    }
+}
+
+.organizationOfSpace-include__position {
+    margin-top: 20rem;
+}
+
+.organizationOfSpace-include {
+    display: flex;
+
+    .organizationOfSpace-include__imgContainer {
+        width: 74.4%;
+        margin-left: 9.7rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .organizationOfSpace-include__text {
+        font-weight: 500;
+        font-size: 6.4rem;
+        line-height: 120.6%;
+        text-transform: uppercase;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 52%;
+
+        a {
+            font-weight: 800;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.03em;
+            color: #000000;
+            border-bottom: 0.2rem solid #000000;
+            width: 43%;
+        }
+    }
+
+    .organizationOfSpace-include__swiperContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        margin-left: 5.9rem;
+        width: 100%;
+
+        a {
+            font-weight: 800;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.03em;
+            color: #000000;
+            border-bottom: 0.2rem solid #000000;
+            width: 43%;
+        }
+    }
+
+    .organizationOfSpace-include__swiperBlock {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10rem;
+
+        .organizationOfSpace-include__swiper {
+            margin-top: 3rem;
+
+            .swiper-slide {
+                font-weight: 600;
+                font-size: 2rem;
+                line-height: 130.6%;
+                color: #000000;
+            }
+        }
+    }
+
+    .organizationOfSpace-include__arrowsContainer {
+        display: flex;
+        gap: 2.5rem;
+        padding-bottom: 3rem;
+        border-bottom: 0.3rem solid #000000;
+
+        svg {
+            width: 3.4rem;
+            height: 1.6rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.organizationOfSpace-include_position {
+    margin-top: 20rem;
+    display: flex;
+    justify-content: center;
+    margin-right: 8rem;
+}
+
+.organizationOfSpace-text_position {
+    margin-top: 16.4rem;
+}
+
+.organizationOfSpace-text {
+    display: flex;
+    justify-content: center;
+
+    .organizationOfSpace-text__content {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 137.1%;
+        color: #000000;
+        width: 55.73%;
+    }
+}

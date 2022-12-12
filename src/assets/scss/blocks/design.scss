@@ -1,0 +1,67 @@
+.design-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 19.4rem;
+
+    .design-header__textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 28.5rem;
+        width: 49%;
+        margin-top: 10.3rem;
+
+        h2 {
+            font-weight: 500;
+            font-size: 6.4rem;
+            line-height: 120.6%;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        div {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 130.6%;
+            color: #000000;
+        }
+    }
+
+    .design-header__imgContainer {
+        width: 40%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.organizationOfSpace-whyContainer__subtitle_position {
+    width: 68%;
+}
+
+.design-include__position {
+    width: 72% !important;
+}
+
+.design-include__imgContainer {
+    width: 100%;
+    margin-top: 6.8rem;
+    img {
+        width: 100%;
+    }
+}
+
+.design-include__textPosition {
+    width: 32% !important;
+}
+
+.design-include__swiper {
+    margin-top: 3rem;
+
+    .swiper-slide {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 130.6%;
+        color: #000000;
+    }
+}

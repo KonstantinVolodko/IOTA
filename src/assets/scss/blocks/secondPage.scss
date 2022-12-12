@@ -10,6 +10,14 @@
         font-size: 1.4rem;
         line-height: 134%;
         color: #000000;
+        
+        a {
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 134%;
+            color: #000000;
+        }
     }
 
     li:nth-child(even) {
@@ -163,8 +171,6 @@
     padding-left: 7.2rem;
 }
 
-.secondPage-realization {
-
     .secondPage-realize__numberBlock {
 
         .secondPage-realization__imgContainer {
@@ -184,4 +190,88 @@
             width: 58%;
         }
     }
+
+
+.secondPage-realization__swiperContainer {
+    margin-top: 5.3rem;
+
+    .secondPage-realization__swiper {
+        
+        .swiper-slide {
+            overflow: hidden;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        
+    }
+}
+
+.secondPage-life_position {
+    margin-top: 15rem;
+    padding-left: 7.2rem;
+
+}
+
+.secondPage-idea__title_position {
+    justify-content: flex-end;
+    margin-right: 26.2rem;
+    margin-bottom: 10rem;
+}
+
+.secondPage-life__contentBlock {
+    margin-top: 6.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 15.2rem;
+    align-items: center;
+
+    .secondPage-life__imgContainer {
+        width: 65.6%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .secondPage-life__text {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 137.1%;
+        color: #000000;
+        width: 32.2%;
+    }
+}
+
+.secondPage-life__secondContentBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 21rem;
+    align-items: flex-end;
+    margin-top: 4.2rem;
+
+    .secondPage-life__imgContainer {
+        width: 48.12%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .secondPage-life__text {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 137.1%;
+        color: #000000;
+        width: 37%;
+    }
+
+
+}
+
+.secondPage-contact_position {
+    margin-right: 27.6rem;
+    margin-top: 25rem;
 }

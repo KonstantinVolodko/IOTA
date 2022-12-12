@@ -1,0 +1,106 @@
+.blog-content_position {
+    margin-top: 10.3rem;
+}
+
+.blog-content {
+    h2 {
+        font-weight: 500;
+        font-size: 6.4rem;
+        line-height: 120.6%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .blog-content__container {
+        margin-top: 3.5rem;
+        padding-right: 8.2rem;
+
+        .blog-content__bigBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            .blog-content__imgContainer {
+                width: 58.81%;
+                img {
+                    width: 100%;
+                }
+            }
+
+            .blog-content__textContainer {
+                width: 34.9%;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .blog-content__date {
+                    font-weight: 600;
+                    font-size: 1.4rem;
+                    line-height: 134%;
+                    color: #000000;
+                }
+
+                .blog-content__title {
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    line-height: 134.27%;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+
+                .blog-content__subtitle {
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 134%;
+                    color: #000000;
+                }
+            }
+        }
+
+        .blog-content__smallContainer {
+            margin-top: 11rem;
+            display: flex;
+            column-gap: 11.2rem;
+            row-gap: 6.3rem;
+            flex-wrap: wrap;
+
+            .blog-content__smallBlock {
+                width: 28.1%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1rem;
+
+                .blog-content__imgContainer {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .blog-content__date {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    line-height: 134%;
+                    color: #000000;
+                    margin-top: 1rem;
+                }
+
+                .blog-content__title {
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+
+                .blog-content__subtitle {
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    line-height: 134%;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
