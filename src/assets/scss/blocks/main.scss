@@ -51,6 +51,10 @@ main {
             gap: 17rem;
             align-items: center;
 
+            @include breakpoint($cos_bp) {
+                gap: 5rem;
+            }
+
             h1 {
 
                 font-style: normal;
@@ -129,6 +133,10 @@ main {
     display: flex;
 }
 
+    
+
+
+
 .main-solutions {
 
     .main-solutions__content {
@@ -145,6 +153,11 @@ main {
             display: flex;
             flex-direction: column;
             gap: 30rem;
+            
+            @include breakpoint($cos-bp) {
+                width: 40%;
+            }
+            
 
             h2 {
 
@@ -156,7 +169,6 @@ main {
             }
 
             .main-solutions__subtitle {
-
                 font-style: normal;
                 font-weight: 500;
                 font-size: 1.8rem;
@@ -228,6 +240,8 @@ main {
         .main-services__tabContainer {
             border-bottom: 0.2rem solid #000000;
 
+            
+
             .main-services__btn {
                 cursor: pointer;
                 padding: 1.8rem;
@@ -246,6 +260,11 @@ main {
                 background: none;
                 width: 73%;
                 padding-bottom: 3rem;
+
+                @include breakpoint($cos-bp) {
+                    width: 100%;
+                }
+
             }
 
 
@@ -412,7 +431,14 @@ main {
 
         .main-result__stepsSwiper {
             width: 29%;
+
+            @include breakpoint($cos-bp) {
+                width: 43%;
+            }
         }
+
+        
+
 
         h2 {
 
@@ -422,6 +448,10 @@ main {
             line-height: 100.1%;
             color: #000000;
             width: 32%;
+
+            @include breakpoint($cos-bp) {
+                width: 45%;
+            }
         }
 
         .main-result__stepsSwiper {
@@ -430,6 +460,10 @@ main {
 
             @include breakpoint($nb-bp) {
                 margin-right: 15%;
+            }
+
+            @include breakpoint($cos-bp) {
+                margin-right: 7%;
             }
 
             .main-result__subtitle {
@@ -484,6 +518,10 @@ main {
                 @include breakpoint($nb-bp) {
                     right: -31%;
                 }
+
+                @include breakpoint($cos-bp) {
+                    right: -49%;
+                }
             }
         }
 
@@ -500,6 +538,10 @@ main {
                     line-height: 137.1%;
                     color: #000000;
                     width: 73%;
+
+                    @include breakpoint($cos-bp) {
+                        width: 90%;
+                    }
 
                     span {
                         font-weight: 700;
@@ -560,6 +602,10 @@ main {
                     width: 65%;
                     margin-top: 10.7rem;
                     margin-bottom: 3rem;
+
+                    @include breakpoint($cos-bp) {
+                        width: 90%;
+                    }
                 }
 
                 .main-firstStep__accordeonContainer {
