@@ -19,6 +19,10 @@ html {
     font-size: calc(100vw / 1024 * 10);
   }
 
+  @include breakpoint($lg-bp) {
+    font-size: calc(100vw / 920 * 10);
+  }
+
   @include breakpoint($jb-bp) {
     font-size: calc(100vw / 850 * 10);
   }

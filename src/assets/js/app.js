@@ -70,13 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiperFunction = function () {
     let swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1.4,
-      spaceBetween: 30,
+      slidesPerView: 1,
       loop: true,
       navigation: {
         nextEl: '.main-gallery__buttonPrev',
         prevEl: '.main-gallery__buttonNext',
       },
+      breakpoints: {
+        850: {
+          slidesPerView: 1.4,
+          spaceBetween: 30,
+        },
+      }
     });
   }
 

@@ -4,6 +4,13 @@
     padding: 6.3rem 8rem 4.2rem 8rem;
     justify-content: space-between;
 
+    @include breakpoint($jb-bp) {
+        justify-content: center;
+        flex-direction: column;
+        padding: 4rem 0rem 2.6rem 0rem;
+        gap: 4rem;
+    }
+
     .footer-content__adress {
         font-style: normal;
         font-weight: 500;
@@ -11,6 +18,10 @@
         line-height: 100.1%;
         text-transform: uppercase;
         color: #000000;
+
+        @include breakpoint($jb-bp) {
+        text-align: center;
+        }
     }
 
     .footer-content__mail {
@@ -75,5 +86,21 @@
         line-height: 136.6%;
         text-decoration-line: underline;
         color: #000000;
+    }
+}
+
+.footer-content__mail_mobile {
+    display: none;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+
+    @include breakpoint($jb-bp) {
+        display: block;
+    }
+}
+
+.footer-content__mail_desctop {
+    @include breakpoint($jb-bp) {
+        display: none;
     }
 }

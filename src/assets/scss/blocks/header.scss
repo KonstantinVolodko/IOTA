@@ -9,8 +9,10 @@
     justify-content: space-between;
     padding-top: 3.55rem;
     padding-right: 8.625rem;
-
     
+    @include breakpoint($lg-bp) {
+        padding-top: 1.5rem;
+    }
 }
 
 .header-content__burger {
@@ -90,6 +92,18 @@
     padding-left: 8rem;
     padding-right: 8rem;
     padding-top: 3.7rem;
+
+
+
+
+    display: none;
+
+
+
+
+
+
+
 
     .header-menu__helpCrossContainer {
         display: flex;
