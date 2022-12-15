@@ -20,7 +20,12 @@
         color: #000000;
 
         @include breakpoint($jb-bp) {
-        text-align: center;
+            text-align: center;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.8rem;
+            line-height: 100.1%;
         }
     }
 
@@ -52,6 +57,10 @@
                 text-decoration-line: underline;
                 text-transform: uppercase;
                 color: #000000;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.8rem;
+                }
             }
         }
 

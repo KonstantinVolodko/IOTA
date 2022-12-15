@@ -8,12 +8,28 @@
         font-size: 6.4rem;
         line-height: 100.1%;
         color: #000000;
+        text-transform: uppercase;
+        
+        @include breakpoint($sm-bp) {
+            padding-left: 1.5rem;
+            font-size: 3.5rem;
+            line-height: 100.1%;
+        }
     }
 
     
 
     .portfolio-content__contentBlock {
         display: flex;
+
+        @include breakpoint($lb-bp) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-right: 1.5rem;
+        }
 
         .portfolio-content__imgContainer {
             width: 100%;
@@ -30,6 +46,20 @@
             align-items: center;
             width: 78%;
 
+            @include breakpoint($xl-bp) {
+                width: 80%;
+            }
+
+            @include breakpoint($lb-bp) {
+                width: 100%;
+                gap: 1rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
             .portfolio-content__title {
                 font-family: 'Manrope';
                 font-style: normal;
@@ -38,6 +68,19 @@
                 line-height: 100.1%;
                 color: #000000;
                 width: 66%;
+
+                @include breakpoint($xl-bp) {
+                    width: 85%;
+                }
+
+                @include breakpoint($lb-bp) {
+                    width: 100%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    font-size: 2.3rem;
+                    line-height: 100.1%;
+                }
             }
 
             .portfolio-content__subtitle {
@@ -46,6 +89,19 @@
                 line-height: 137.1%;
                 color: #000000;
                 width: 65%;
+
+                @include breakpoint($xl-bp) {
+                    width: 85%;
+                }
+
+                @include breakpoint($lb-bp) {
+                    width: 100%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.7rem;
+                    line-height: 137.1%;
+                }
             }
         }
     }
@@ -53,15 +109,51 @@
     .portfolio-content__contentBlock:nth-child(even) {
         display: flex;
         flex-direction: row-reverse;
+
+        .portfolio-content__textContainer {
+
+            @include breakpoint($sm-bp) {
+                padding-right: 1.5rem;
+                padding-left: unset !important;
+            }
+        }
+
+        @include breakpoint($lb-bp) {
+            flex-direction: column;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-right: 0;
+            padding-left: 1.5rem;
+        }
     }
 }
 
 .portfolio-content_position {
     margin-top: 10rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
 }
 
 .portfolio-content_gap {
     display: flex;
     flex-direction: column;
     gap: 8rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 0rem !important;
+        padding-right: unset !important;
+    }
+}
+
+.portfolio-gallery_position {
+    margin-top: 4rem;
+
+    .main-gallery__tabBlockContainer {
+        @include breakpoint($sm-bp) {
+            margin-left: 1.5rem;
+        }
+    }
 }
