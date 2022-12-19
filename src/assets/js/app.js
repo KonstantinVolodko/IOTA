@@ -357,6 +357,30 @@ var realizationSwiper = new Swiper(".realizationSwiper", {
 
 
 
+let secondPageSwiper = new Swiper(".secondPageSwiper", {
+  pagination: {
+    el: ".secondPageSwiper-pagination",
+    clickable: true,
+  },
+});
+
+let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
+
+let slides = document.querySelectorAll('.secondPageSwiper .swiper-slide')
+
+
+
+
+
+slides.forEach(el => {
+  el.addEventListener('click', e => {
+    let red = document.querySelector('.swiper-pagination-bullet-active');
+    while (red = red.previousElementSibling) {
+      red.classList.add('activeRed');
+    }
+  })
+})
+
 
 
 
