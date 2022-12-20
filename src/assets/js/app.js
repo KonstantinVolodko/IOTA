@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     accrordeonBtn[i].addEventListener("click", function () {
       // this.classList.toggle("activeTab");
       let panel2 = this.nextElementSibling;
-      console.log(panel2)
       if (panel2.style.maxHeight) {
         panel2.style.maxHeight = null;
       } else {
@@ -112,10 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let burgerTransition = document.querySelector('.header-content__burgerTransition')
   let menuContent = document.querySelector('.header-menu__content')
   let page = document.getElementsByTagName('body')
-  console.log(page)
 
   burger.forEach(e => {
-    console.log(e)
     e.addEventListener('click', () => {
       e.classList.toggle('cross')
       e.classList.toggle('header-content__burger_hover')
@@ -165,11 +162,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let realizationSwiper = new Swiper(".secondPage-realization__swiper", {
+  let realizationSwiper2 = new Swiper(".secondPage-realization__swiper", {
     slidesPerView: 1.8,
     spaceBetween: 72,
-    loop: true,
+    navigation: {
+      nextEl: ".secondPage-realization__arrowRight",
+      prevEl: ".secondPage-realization__arrowLeft",
+    },
+    pagination: {
+      el: ".secondPage-realizationSwiper-pagination",
+    },
   });
+
+  let realizationSlides = document.querySelectorAll('.secondPage-realization__swiper .swiper-slide')
+  let realizationPagination = document.querySelectorAll('.secondPage-realizationSwiper-pagination .swiper-pagination-bullet')
+  let realizationArrows = document.querySelectorAll('.secondPage-realization__arrowsContainer svg')
+  console.log(realizationArrows)
+
+
+  realizationSlides.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      realizationPagination.forEach(elem => {
+        elem.classList.remove('activeBlack')
+      })
+      let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
+      while (black = black.previousElementSibling) {
+        black.classList.add('activeBlack');
+      }
+    })
+  })
+  
+  realizationArrows.forEach( e => {
+    e.addEventListener('click', elem => {
+      realizationPagination.forEach(elem => {
+        elem.classList.remove('activeBlack')
+      })
+      let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
+      while (black = black.previousElementSibling) {
+        black.classList.add('activeBlack');
+      }
+    })
+  })
 
 })
 
@@ -348,7 +381,7 @@ let designSwiper = new Swiper(".design-include__swiper", {
   },
 });
 
-var realizationSwiper = new Swiper(".realizationSwiper", {
+let realizationSwiper = new Swiper(".realizationSwiper", {
   slidesPerView: 1.6,
   loop: true,
   spaceBetween: 60,
@@ -358,9 +391,13 @@ var realizationSwiper = new Swiper(".realizationSwiper", {
 
 
 let secondPageSwiper = new Swiper(".secondPageSwiper", {
+  navigation: {
+    nextEl: ".secondPage__arrowRight",
+    prevEl: ".secondPage__arrowLeft",
+  },
+
   pagination: {
     el: ".secondPageSwiper-pagination",
-    clickable: true,
   },
 });
 
@@ -368,19 +405,32 @@ let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagi
 
 let slides = document.querySelectorAll('.secondPageSwiper .swiper-slide')
 
+let secondPageArrowContainer = document.querySelectorAll('.secondPage__arrowContainer svg')
+
 
 
 
 
 slides.forEach(el => {
-  el.addEventListener('click', e => {
-    let red = document.querySelector('.swiper-pagination-bullet-active');
+  el.addEventListener('mousemove', e => {
+    pagination.forEach(elem => {
+      elem.classList.remove('activeBlack')
+    })
+    let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
     while (red = red.previousElementSibling) {
-      red.classList.add('activeRed');
+      red.classList.add('activeBlack');
     }
   })
 })
 
-
-
-
+secondPageArrowContainer.forEach( e => {
+  e.addEventListener('click', elem => {
+    pagination.forEach(elem => {
+      elem.classList.remove('activeBlack')
+    })
+    let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
+    while (red = red.previousElementSibling) {
+      red.classList.add('activeBlack');
+    }
+  })
+})

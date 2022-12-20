@@ -1,6 +1,10 @@
 
 .services-header_position {
     margin-top: 4.6rem;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
 }
 
 .services-header {
@@ -11,8 +15,26 @@
         margin-right: 12.5rem;
         margin-top: 6rem;
 
+        @include breakpoint($cos-bp) {
+            margin-right: 2.5rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem;
+        }
+
         .services-header__imgContainer {
             width: 60.7%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
+
             img {
                 width: 100%;
             }
@@ -25,11 +47,28 @@
             justify-content: space-between;
             align-items: baseline;
 
+            @include breakpoint($nb-bp) {
+                width: 35.4%;
+            }
+
+            @include breakpoint($cos-bp) {
+                width: 37.4%;
+            }
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+                gap: 2rem;
+            }
+
             .services-header__text {
                 font-weight: 400;
                 font-size: 2rem;
                 line-height: 130.6%;
                 color: #000000;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.7rem;
+                }
             }
 
             .services-header__seenPortfolio {
@@ -46,6 +85,15 @@
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+
+                @include breakpoint($xl-bp) {
+                    justify-content: unset;
+                    gap: 2rem;
+                }
+
+                
+
+                
 
                 .select__toggle {
                     background: none;
@@ -71,6 +119,11 @@
         text-transform: uppercase;
         color: #000000;
         width: 75%;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            font-size: 3.5rem;
+        }
     }
 }
 
@@ -119,10 +172,20 @@
     font-size: 2.4rem;
     line-height: 100.1%;
     color: #000000;
+
+    
+        @include breakpoint($sm-bp) {
+            font-size: 1.9rem;
+        }
+    
 }
 
 .services-particular_position {
     margin-top: 16rem;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
 }
 
 .services-particular {
@@ -174,6 +237,11 @@
             margin-right: 18.4rem;
             width: 41.2%;
 
+            @include breakpoint($cos-bp) {
+                margin-right: 2.5rem;
+                width: 50%;
+            }
+
             .services-particular__title {
                 margin-bottom: 3rem;
             }
@@ -201,6 +269,10 @@
 
 .services-steps_position {
     margin-top: 16rem;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
 }
 
 .services-steps {
@@ -286,6 +358,10 @@
     .services-steps__result {
         margin-top: 18rem;
         margin-right: 26.2rem;
+
+        @include breakpoint($xl-bp) {
+            margin-right: 2.5rem;
+        }
 
         .services-steps__text {
             font-weight: 600;

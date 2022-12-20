@@ -167,19 +167,20 @@ main {
         padding-left: 8rem;
         padding-bottom: 4rem;
 
-        @include breakpoint($jb-bp) {
-            border-top: unset;
-            padding-left: 1rem;
-            padding-top: 1.5rem;
-            padding-bottom: unset;
-        }
-
         @include breakpoint($cos-bp) {
             padding-left: 4rem;
+        }
+
+        @include breakpoint($jb-bp) {
+            border-top: unset;
+            padding-left: 2.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: unset;
         }
         
         @include breakpoint($sm-bp) {
             padding-top: 1rem;
+            padding-left: 1.5rem;
         }
 
         img {
