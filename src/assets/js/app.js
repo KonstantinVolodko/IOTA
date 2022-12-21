@@ -434,3 +434,15 @@ secondPageArrowContainer.forEach( e => {
     }
   })
 })
+
+
+if (window.matchMedia("(max-width: 500px)").matches) {
+  let servicesStepSwiper = new Swiper(".services-steps__swiper", {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".services-steps__arrowRight",
+      prevEl: ".services-steps__arrowLeft",
+    },
+  
+  });
+}
