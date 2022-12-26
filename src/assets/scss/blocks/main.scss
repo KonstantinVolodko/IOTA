@@ -1242,6 +1242,11 @@ main {
 
 .main-contact {
 
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
     .main-contact__content {
         display: flex;
         justify-content: flex-end;
@@ -1264,7 +1269,7 @@ main {
                 margin-bottom: 4rem;
 
                 @include breakpoint($sm-bp) {
-                    font-size: 3.5rem;
+                    font-size: 3rem;
                     line-height: 4.4rem;
                 }
             }

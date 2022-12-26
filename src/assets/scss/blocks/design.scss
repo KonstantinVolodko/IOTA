@@ -1,33 +1,54 @@
 .design-header {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 19.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
 
-    .design-header__textContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 28.5rem;
-        width: 49%;
-        margin-top: 10.3rem;
+    @include breakpoint($sm-bp) {
+        display: block;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 
-        h2 {
-            font-weight: 500;
-            font-size: 6.4rem;
-            line-height: 120.6%;
-            text-transform: uppercase;
-            color: #000000;
+
+    h2 {
+        font-weight: 500;
+        font-size: 6.4rem;
+        line-height: 120.6%;
+        text-transform: uppercase;
+        color: #000000;
+        margin-top: 10rem;
+
+        @include breakpoint($sm-bp) {
+            font-size: 3.2rem;
+            margin-top: 3rem;
         }
+    }
 
-        div {
-            font-weight: 400;
-            font-size: 1.8rem;
-            line-height: 130.6%;
-            color: #000000;
+    div {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 130.6%;
+        color: #000000;
+        width: 83%;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
         }
     }
 
     .design-header__imgContainer {
-        width: 40%;
+        width: 76%;
+        grid-area: 1 / 2 / 3 / 3;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
 
         img {
             width: 100%;
@@ -37,15 +58,34 @@
 
 .organizationOfSpace-whyContainer__subtitle_position {
     width: 68%;
+    font-size: 2.7rem !important;
+}
+
+.organizationOfSpace-whyContainer__listContainer_position {
+    margin-top: 3rem !important;
 }
 
 .design-include__position {
-    width: 72% !important;
+    grid-template-columns: 1fr 3.5fr;
+    margin-top: 17.5rem;
+
+    @include breakpoint($xl-bp) {
+        grid-template-columns: 1fr;
+    }
+
+    @include breakpoint($jb-bp) {
+        margin-top: 10rem;
+    }
 }
 
 .design-include__imgContainer {
     width: 100%;
     margin-top: 6.8rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 3rem;
+    }
+
     img {
         width: 100%;
     }
@@ -53,6 +93,11 @@
 
 .design-include__textPosition {
     width: 32% !important;
+
+    @include breakpoint($sm-bp) {
+        font-size: calc(100vw / 500 * 10);
+        width: 64% !important;
+    }
 }
 
 .design-include__swiper {
@@ -63,5 +108,43 @@
         font-size: 2rem;
         line-height: 130.6%;
         color: #000000;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.7rem;
+        }
     }
+}
+
+.design-linkContainer_position {
+
+    @include breakpoint($jb-bp) {
+        margin-left: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-left: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a {
+        margin-left: unset !important;
+
+        @include breakpoint($jb-bp) {
+            width: 32%;
+        }
+
+        @include breakpoint($sm-bp) {
+            width: 70%;
+            font-size: 1.7rem;
+        }
+    }
+}
+
+.design-whyContainer_position {
+    margin-top: 3rem;
+}
+
+.design-whyContainer__subtitle_position {
+    width: 100% !important;
 }

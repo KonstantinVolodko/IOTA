@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let realizationSwiper2 = new Swiper(".secondPage-realization__swiper", {
     slidesPerView: 1.8,
-    spaceBetween: 72,
+    spaceBetween: 11,
     navigation: {
       nextEl: ".secondPage-realization__arrowRight",
       prevEl: ".secondPage-realization__arrowLeft",
@@ -172,6 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination: {
       el: ".secondPage-realizationSwiper-pagination",
     },
+
+    breakpoints: {
+      500: {
+        spaceBetween: 72,
+      }
+    }
   });
 
   let realizationSlides = document.querySelectorAll('.secondPage-realization__swiper .swiper-slide')
@@ -372,13 +378,19 @@ let organizationOfSpaceSwiper = new Swiper(".organizationOfSpace-include__swiper
 });
 
 let designSwiper = new Swiper(".design-include__swiper", {
-  slidesPerView: 2,
+  slidesPerView: 1.4,
   loop: true,
   spaceBetween: 30,
   navigation: {
     nextEl: ".organizationOfSpace-include__next",
     prevEl: ".organizationOfSpace-include__prev",
   },
+
+  breakpoints: {
+    500: {
+      slidesPerView: 2,
+    }
+  }
 });
 
 let realizationSwiper = new Swiper(".realizationSwiper", {

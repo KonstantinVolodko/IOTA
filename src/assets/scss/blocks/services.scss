@@ -8,6 +8,7 @@
 
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -30,6 +31,7 @@
 
         @include breakpoint($sm-bp) {
             margin-top: 2rem;
+            margin-right: 0rem;
         }
 
         .services-header__imgContainer {
@@ -196,6 +198,7 @@
     @include breakpoint($sm-bp) {
         margin-top: 3rem;
         padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -324,6 +327,8 @@
 
     @include breakpoint($sm-bp) {
         margin-top: 6rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -484,6 +489,11 @@
             margin-right: 2.5rem;
         }
 
+        @include breakpoint($sm-bp) {
+            margin-top: 10rem;
+            margin-right: 0rem;
+          }
+
         .services-steps__text {
             font-weight: 600;
             font-size: 2.8rem;
@@ -496,6 +506,11 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+
+            @include breakpoint($sm-bp) {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
 
             a {
                 font-weight: 800;
@@ -511,6 +526,10 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
 
                 .services-steps__title {
                     font-weight: 700;
@@ -534,4 +553,8 @@
     display: flex;
     justify-content: center;
     margin-top: 20rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 4rem;
+    }
 }
