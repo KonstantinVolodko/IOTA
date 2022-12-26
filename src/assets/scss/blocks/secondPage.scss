@@ -379,15 +379,16 @@
         }
 
         @include breakpoint($sm-bp) {
-            width: 72%;
+            width: 53%;
             top: 50%;
-            left: 6%;
+            left: 11%;
         }
     }
 }
 
 .secondPage-idea__title {
     display: flex;
+    align-items: flex-end;
     column-gap: 4rem;
     grid-area: 1 / 1 / 2 / 2;
 
@@ -422,7 +423,7 @@
         font-size: 6.4rem;
         line-height: 100.1%;
         color: #000000;
-        padding-top: 8%;
+
 
         @include breakpoint($jb-bp) {
             padding-top: unset;
@@ -431,6 +432,23 @@
         @include breakpoint($sm-bp) {
             font-size: 4.6rem;
         }
+    }
+
+    .secondPage-idea__helper {
+        padding-top: 8%;
+
+
+        @include breakpoint($sm-bp) {
+            padding-top: unset;
+        }
+    }
+}
+
+.secondPage-idea__helperBlock {
+    align-items: unset;
+
+    @include breakpoint($sm-bp) {
+        align-items: flex-end;
     }
 }
 

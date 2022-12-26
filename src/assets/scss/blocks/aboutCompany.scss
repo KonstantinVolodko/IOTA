@@ -1,5 +1,11 @@
 .aboutCompany-content_position {
     margin-top: 10.3rem;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        margin-top: 3rem;
+    }
 }
 
 .aboutCompany-content {
@@ -9,29 +15,58 @@
         line-height: 120.6%;
         text-transform: uppercase;
         color: #000000;
+
+        @include breakpoint($sm-bp) {
+            font-size: 3.5rem;
+        }
     }
 
     .aboutCompany-content__mainBlock {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         margin-top: 8rem;
-        padding-right: 11.3rem;
-        justify-content: space-between;
-        align-items: center;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 137.1%;
+        color: #000000;
+
+        @include breakpoint($xl-bp) {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        @include breakpoint($jb-bp) {
+            margin-top: 3rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.7rem;
+        }
+
+        span {
+            font-weight: 700;
+        }
 
         .aboutCompany-content__textContainer {
-            font-weight: 400;
-            font-size: 1.8rem;
-            line-height: 137.1%;
-            color: #000000;
-            width: 31%;
+            width: 59%;
 
-            span {
-                font-weight: 700;
+            @include breakpoint($nb-bp) {
+                width: 85%;
+            }
+
+            @include breakpoint($jb-bp) {
+                width: 100%;
             }
         }
 
         .aboutCompany-content__imgContainer {
-            width: 56.44%;
+            width: 90%;
+            grid-area: 1 / 2 / 3 / 3;
+
+            @include breakpoint($jb-bp) {
+                width: 100%;
+            }
 
             img {
                 width: 100%;

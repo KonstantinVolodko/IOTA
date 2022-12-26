@@ -1,5 +1,16 @@
 .blog-content_position {
     margin-top: 10.3rem;
+
+    @include breakpoint($jb-bp) {
+        margin-top: 4rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 
 .blog-content {
@@ -9,11 +20,19 @@
         line-height: 120.6%;
         text-transform: uppercase;
         color: #000000;
+
+        @include breakpoint($sm-bp) {
+            font-size: 3.5rem;
+        }
     }
 
     .blog-content__container {
         margin-top: 3.5rem;
         padding-right: 8.2rem;
+
+        @include breakpoint($jb-bp) {
+            padding-right: 0rem;
+        }
 
         .blog-content__bigBlock {
             display: flex;
@@ -21,8 +40,22 @@
             align-items: center;
             cursor: pointer;
 
+            @include breakpoint($jb-bp) {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .blog-content__imgContainer {
                 width: 58.81%;
+
+                @include breakpoint($jb-bp) {
+                    width: 70%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
+
                 img {
                     width: 100%;
                 }
@@ -34,11 +67,19 @@
                 flex-direction: column;
                 gap: 2rem;
 
+                @include breakpoint($jb-bp) {
+                    width: 100%;
+                }
+
                 .blog-content__date {
                     font-weight: 600;
                     font-size: 1.4rem;
                     line-height: 134%;
                     color: #000000;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.7rem;
+                    }
                 }
 
                 .blog-content__title {
@@ -54,6 +95,10 @@
                     font-size: 2rem;
                     line-height: 134%;
                     color: #000000;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.7rem;
+                    }
                 }
             }
         }
@@ -65,6 +110,15 @@
             row-gap: 6.3rem;
             flex-wrap: wrap;
 
+            @include breakpoint($xl-bp) {
+                column-gap: 5.2rem;
+            }
+
+            @include breakpoint($jb-bp) {
+                flex-direction: column;
+                margin-top: 4rem;
+            }
+
             .blog-content__smallBlock {
                 width: 28.1%;
                 display: flex;
@@ -72,7 +126,34 @@
                 justify-content: space-between;
                 gap: 1rem;
 
+                @include breakpoint($nb-bp) {
+                    width: 27.1%;
+                }
+
+                @include breakpoint($cos-bp) {
+                    width: 26.1%;
+                }
+
+                @include breakpoint($xl-bp) {
+                    width: 28.1%;
+                }
+
+                @include breakpoint($jb-bp) {
+                    width: 100%;
+                }
+
                 .blog-content__imgContainer {
+                    width: 100%;
+
+                    @include breakpoint($jb-bp) {
+                        width: 70%;
+                        margin: 0 auto;
+                    }
+
+                    @include breakpoint($sm-bp) {
+                        width: 100%;
+                    }
+
                     img {
                         width: 100%;
                     }
@@ -84,6 +165,10 @@
                     line-height: 134%;
                     color: #000000;
                     margin-top: 1rem;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.7rem;
+                    }
                 }
 
                 .blog-content__title {
@@ -99,6 +184,10 @@
                     font-size: 1.4rem;
                     line-height: 134%;
                     color: #000000;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.7rem;
+                    }
                 }
             }
         }

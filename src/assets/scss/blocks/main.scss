@@ -1,5 +1,5 @@
 main {
-    padding-left: 20%;
+    padding-left: 17.4%;
     padding-bottom: 20rem;
 
     @include breakpoint($cos-bp) {
@@ -36,6 +36,7 @@ main {
         gap: 6rem;
         padding-right: 8rem;
         width: 100%;
+        position: relative;
 
         @include breakpoint($nb-bp) {
             padding-right: 4rem;
@@ -52,8 +53,26 @@ main {
         }
 
         .main-createEmotions__imgContainer {
-            width: 27%;
-            margin-left: 33%;
+            width: 29.2%;
+            margin-left: 29.9%;
+
+            .services-createEmotions__helloText {
+                font-weight: 600;
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                color: #4E4E4E;
+                position: absolute;
+                left: -19.8%;
+                top: 3.5%;
+
+                @include breakpoint($cos-bp) {
+                    left: -16%;
+                }
+
+                @include breakpoint($jb-bp) {
+                    display: none;
+                }
+            }
 
             @include breakpoint($jb-bp) {
                 margin-left: unset;
@@ -71,8 +90,7 @@ main {
 
         .main-createEmotions__textContainer {
             display: flex;
-            gap: 17rem;
-            align-items: center;
+            justify-content: space-between;
 
             @include breakpoint($cos_bp) {
                 gap: 5rem;
@@ -95,6 +113,7 @@ main {
                 line-height: 100.1%;
                 text-align: right;
                 color: #000000;
+                width: 69.1%;
 
                 @include breakpoint($lg-bp) {
                     font-size: 9rem;
@@ -104,7 +123,7 @@ main {
                     font-size: 4.3rem;
                     line-height: 100.1%;
                     text-align: right;
-                    width: 100%;
+                    width: 99%;
                 }
             }
 
@@ -273,7 +292,7 @@ main {
         }
 
         @include breakpoint($sm-bp) {
-            row-gap: 20rem;
+            row-gap: 3rem;
         }
 
         h2 {
@@ -292,6 +311,7 @@ main {
             @include breakpoint($sm-bp) {
                 font-size: 3.5rem;
                 line-height: 100.1%;
+                width: 88%;
             }
         }
 
@@ -435,6 +455,7 @@ main {
         .main-services__tabContainer {
             border-bottom: 0.2rem solid #000000;
 
+
             .main-services__btn {
                 cursor: pointer;
                 padding: 1.8rem;
@@ -485,6 +506,10 @@ main {
                     margin-bottom: 2rem;
                 }
 
+                @include breakpoint($sm-bp) {
+                    padding-left: 9rem;
+                }
+
                 .main-services__tabContent:hover {}
 
                 a {
@@ -515,6 +540,13 @@ main {
                     }
                 }
 
+            }
+        }
+
+        .main-services__tabContainer:last-child {
+
+            @include breakpoint($sm-bp) {
+                border-bottom: unset;
             }
         }
     }
@@ -672,7 +704,7 @@ main {
 
     @include breakpoint($sm-bp) {
         padding-left: 8.9rem;
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
 }
 
@@ -737,7 +769,7 @@ main {
             @include breakpoint($sm-bp) {
                 font-size: 3.5rem;
                 line-height: 100.1%;
-                width: 65%;
+                width: 53%;
             }
         }
 
@@ -840,6 +872,7 @@ main {
                 @include breakpoint($sm-bp) {
                     font-size: 4.3rem;
                     line-height: 100.1%;
+                    width: 88%;
                 }
             }
 
@@ -871,7 +904,7 @@ main {
                 }
 
                 @include breakpoint($sm-bp) {
-                    right: -118%;
+                    right: -68%;
                 }
             }
         }
@@ -1069,6 +1102,7 @@ main {
 
     @include breakpoint($sm-bp) {
         padding-left: 1.8rem;
+        margin-top: 6rem;
     }
 }
 
@@ -1360,6 +1394,10 @@ main {
 
     @include breakpoint($jb-bp) {
         display: block;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 14rem;
     }
 
     div {

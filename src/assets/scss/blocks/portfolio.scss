@@ -149,7 +149,11 @@
 }
 
 .portfolio-gallery_position {
-    margin-top: 4rem;
+    margin-top: 16.5rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 4rem;
+    }
 
     .main-gallery__tabBlockContainer {
         @include breakpoint($sm-bp) {

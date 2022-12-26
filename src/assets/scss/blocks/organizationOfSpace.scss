@@ -1,6 +1,10 @@
 .organizationOfSpace-organization_position {
     margin-top: 10.3rem;
 
+    @include breakpoint($jb-bp) {
+        margin-top: 4rem;
+    }
+
     @include breakpoint($sm-bp) {
         margin-top: 3rem;
     }
@@ -37,7 +41,7 @@
         margin-top: 3rem;
 
         @include breakpoint($sm-bp) {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 1rem;
         }
 
@@ -70,9 +74,10 @@
 .organizationOfSpace-whyContainer_position {
     margin-top: 20rem;
 
-    @include breakpoint($sm-bp) {
+    @include breakpoint($jb-bp) {
         margin-top: 10rem;
     }
+
 }
 
 .organizationOfSpace-whyContainer {
@@ -134,7 +139,7 @@
         align-items: center;
 
         @include breakpoint($sm-bp) {
-            margin-top: 2rem;
+            margin-top: 4rem;
             gap: 3rem;
         }
 
@@ -178,7 +183,7 @@
 
 .organizationOfSpace-include {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.5fr 1fr 1fr;
     overflow: hidden;
 
     @include breakpoint($xl-bp) {
@@ -228,8 +233,9 @@
         width: 52%;
 
         @include breakpoint($sm-bp) {
-            width: 100%;
+            width: 50%;
             font-size: 3.5rem;
+
         }
 
         a {
@@ -276,6 +282,10 @@
                 font-size: 2rem;
                 line-height: 130.6%;
                 color: #000000;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.7rem;
+                }
             }
         }
     }
@@ -298,14 +308,14 @@
 
 .organizationOfSpace-linkContainer {
     display: flex;
-    padding-right: 12%;
+    padding-right: 19%;
 
     @include breakpoint($nb-bp) {
-        padding-right: 7%;
+        padding-right: 15%;
     }
 
     @include breakpoint($cos-bp) {
-        padding-right: 4%;
+        padding-right: 9%;
     }
 
     @include breakpoint($jb-bp) {
@@ -324,34 +334,34 @@
     letter-spacing: 0.03em;
     color: #000000;
     border-bottom: 0.2rem solid #000000;
-    width: 19%;
+    width: 21%;
     margin-left: auto;
 
     @include breakpoint($nb-bp) {
-        width: 23%;
+        width: 24%;
     }
 
     @include breakpoint($cos-bp) {
-        width: 25%;
+        width: 26%;
         margin-top: 2rem;
     }
 
     @include breakpoint($xl-bp) {
         margin-top: 2rem;
         margin-left: auto;
-        width: 32%;
+        width: 33%;
     }
 
     @include breakpoint($lg-bp) {
-        width: 35%;
+        width: 36%;
     }
 
     @include breakpoint($jb-bp) {
-        width: 31%;
+        width: 32%;
     }
 
     @include breakpoint($sm-bp) {
-        width: 74%;
+        width: 53%;
     }
 }
 

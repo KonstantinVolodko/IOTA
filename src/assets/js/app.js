@@ -394,9 +394,15 @@ let designSwiper = new Swiper(".design-include__swiper", {
 });
 
 let realizationSwiper = new Swiper(".realizationSwiper", {
-  slidesPerView: 1.6,
+  slidesPerView: 1,
   loop: true,
   spaceBetween: 60,
+
+  breakpoints: {
+    850: {
+      slidesPerView: 1.6,
+    }
+  }
 });
 
 

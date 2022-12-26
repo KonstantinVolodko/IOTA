@@ -1,5 +1,13 @@
 .prices-main__position {
     margin-top: 10.3rem;
+
+    @include breakpoint($cos-bp) {
+        flex-direction: column;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 4rem;
+    }
 }
 
 .prices-main {
@@ -11,10 +19,23 @@
         line-height: 120.6%;
         text-transform: uppercase;
         color: #000000;
+
+        @include breakpoint($jb-bp) {
+            padding-left: 2.5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 1.5rem;
+            font-size: 3.5rem;
+        }
     }
 
     .prices-main__content {
         margin-top: 3rem;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 0rem;
+        }
 
         .prices-main__container {
             padding-top: 8rem;
@@ -25,8 +46,35 @@
             justify-content: space-between;
             align-items: center;
 
+            
+
+            @include breakpoint($cos-bp) {
+                padding-right: 2.5rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                align-items: unset;
+            }
+
+            @include breakpoint($jb-bp) {
+                padding-left: 2.5rem;
+            }
+            
+            @include breakpoint($sm-bp) {
+                flex-direction: column;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 3rem;
+                padding-bottom: 6rem;
+            }
+
+
             .prices-main__imgContainer {
                 width: 39.8%;
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
 
                 img {
                     width: 100%;
@@ -36,6 +84,17 @@
             .prices-main__textContainer {
                 width: 51.9%;
 
+                @include breakpoint($jb-bp) {
+                    width: 57%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+
+                    margin-top: 4rem;
+                }
+                
+
                 .prices-main__textTitle {
                     font-weight: 700;
                     font-size: 2.4rem;
@@ -43,6 +102,11 @@
                     letter-spacing: 0.04em;
                     color: #000000;
                     margin-bottom: 4rem;
+
+                    @include breakpoint($sm-bp) {
+                        margin-bottom: 2rem;
+                        font-size: 2.3rem;
+                    }
                 }
 
                 .prices-main__textSubtitle {
@@ -52,6 +116,11 @@
                     letter-spacing: 0.03em;
                     color: #000000;
                     margin-bottom: 7.3rem;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.5rem;
+                        margin-bottom: 3rem;
+                    }
                 }
 
                 a {
@@ -67,18 +136,40 @@
 
         .prices-main__container:nth-child(2n) {
             flex-flow: row-reverse;
+
+            @include breakpoint($sm-bp) {
+                flex-direction: column;
+            }
         }
 
         .prices-main__container:nth-last-child(-n+2) {
             border-bottom: unset;
         }
+
+        
     }
 }
 
+
 .prices-contact_position {
     margin-top: 24rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 10rem;
+    }
 }
 
 .prices-contact__content {
     justify-content: unset !important;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: unset;
+        padding-right: unset;
+    }
+    
 }

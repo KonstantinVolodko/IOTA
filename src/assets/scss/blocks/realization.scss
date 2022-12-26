@@ -1,9 +1,23 @@
 .realization-organization_position {
     width: 20.7% !important;
+
+    @include breakpoint($xl-bp) {
+        width: 100% !important;
+    }
 }
 
 .realization-imgContainer_position {
     width: 67.5% !important;
+
+    @include breakpoint($xl-bp) {
+        width: 100% !important;
+        margin-top: 2rem;
+    }
+}
+
+.realization__padding {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 .realization-swiper {
@@ -14,6 +28,17 @@
         padding-right: 6rem;
         border-right: 0.3rem solid #000000;
         gap: 3rem;
+
+
+        @include breakpoint($nb-bp) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include breakpoint($jb-bp) {
+            border-right: unset;
+            padding-right: unset;
+        }
     }
 
     .realization-swiper__textContainer {
@@ -44,4 +69,21 @@
     color: #000000;
     margin-top: 20rem;
     width: 83%;
+
+    @include breakpoint($jb-bp) {
+        width: 100%;
+        margin-top: 10rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        font-size: 2.7rem;
+    }
+}
+
+.realization__params {
+
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column !important;
+    }
 }
