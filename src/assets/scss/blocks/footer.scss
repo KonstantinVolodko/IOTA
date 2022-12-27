@@ -1,14 +1,18 @@
 .footer-content {
     display: flex;
     border-top: 0.3rem solid #000000;
-    padding: 6.3rem 8rem 4.2rem 8rem;
-    justify-content: space-between;
+    padding: 6.3rem 6.5rem 4.2rem 8rem;
+    align-items: center;
 
-    @include breakpoint($jb-bp) {
+    @include breakpoint($lg-bp) {
         justify-content: center;
         flex-direction: column;
         padding: 4rem 0rem 2.6rem 0rem;
         gap: 4rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding: 6.3rem 2.5rem 4.2rem 2.5rem;
     }
 
     .footer-content__adress {
@@ -18,6 +22,11 @@
         line-height: 100.1%;
         text-transform: uppercase;
         color: #000000;
+        margin-bottom: 14rem;
+
+        @include breakpoint($lg-bp) {
+            margin-bottom: 0rem;
+        }
 
         @include breakpoint($jb-bp) {
             text-align: center;
@@ -44,6 +53,23 @@
         flex-direction: column;
         align-items: center;
         gap: 4rem;
+        margin-left: 34.4rem;
+
+        @include breakpoint($nb-bp) {
+            margin-left: 24.4rem;
+        }
+
+        @include breakpoint($cos-bp) {
+            margin-left: 11.4rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            margin-left: 0.8rem;
+        }
+
+        @include breakpoint($lg-bp) {
+            margin-left: 0rem;
+        }
 
         .footer-content__phones {
             display: flex;
@@ -66,7 +92,7 @@
 
         .footer-content__socialMediaContainer {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
 
             svg {
                 width: 4.5rem;
@@ -109,7 +135,15 @@
 }
 
 .footer-content__mail_desctop {
+    margin-left: auto;
+    font-size: 2rem !important;
+    margin-bottom: 14.4rem;
     @include breakpoint($jb-bp) {
         display: none;
+    }
+
+    @include breakpoint($lg-bp) {
+        margin-bottom: 0rem;
+        margin-left: unset;
     }
 }
