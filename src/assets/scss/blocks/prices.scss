@@ -1,12 +1,22 @@
 .prices-main__position {
     margin-top: 10.3rem;
+    padding-left: 3.6rem;
 
     @include breakpoint($cos-bp) {
         flex-direction: column;
+        padding-left: 0rem;
     }
 
     @include breakpoint($sm-bp) {
         margin-top: 4rem;
+    }
+}
+
+.prices {
+    padding-bottom: 26.3rem;
+
+    @include breakpoint($sm-bp) {
+        padding-bottom: 10rem;
     }
 }
 
@@ -26,7 +36,7 @@
 
         @include breakpoint($sm-bp) {
             padding-left: 1.5rem;
-            font-size: 3.5rem;
+            font-size: 4.2rem;
         }
     }
 
@@ -38,7 +48,7 @@
         }
 
         .prices-main__container {
-            padding-top: 8rem;
+
             display: flex;
             padding-bottom: 8rem;
             border-bottom: 0.3rem solid #000000;
@@ -82,7 +92,7 @@
             }
 
             .prices-main__textContainer {
-                width: 51.9%;
+                width: 51.4%;
 
                 @include breakpoint($jb-bp) {
                     width: 57%;
@@ -105,7 +115,7 @@
 
                     @include breakpoint($sm-bp) {
                         margin-bottom: 2rem;
-                        font-size: 2.3rem;
+                        font-size: 2.7rem;
                     }
                 }
 
@@ -118,7 +128,7 @@
                     margin-bottom: 7.3rem;
 
                     @include breakpoint($sm-bp) {
-                        font-size: 1.5rem;
+                        font-size: 1.9rem;
                         margin-bottom: 3rem;
                     }
                 }
@@ -134,11 +144,28 @@
             }
         }
 
+        .prices-main__container:first-child {
+            padding-top: 12rem;
+
+            @include breakpoint($sm-bp) {
+                padding-top: 3rem;
+            }
+        }
+
+        .prices-main__container:not(:first-child) {
+            padding-top: 7.8rem;
+            @include breakpoint($sm-bp) {
+                padding-top: 6rem !important;
+                
+            }
+        }
+
         .prices-main__container:nth-child(2n) {
             flex-flow: row-reverse;
 
             @include breakpoint($sm-bp) {
                 flex-direction: column;
+                padding-top: 3rem;
             }
         }
 
@@ -146,16 +173,30 @@
             border-bottom: unset;
         }
 
+        .prices-main__container:last-child {
+            @include breakpoint($sm-bp) {
+                border-bottom: unset !important;
+              }
+            
+        }
+
+        .prices-main__textContainer__position {
+            width: 100% !important;
+        }
         
     }
 }
 
 
 .prices-contact_position {
-    margin-top: 24rem;
+    margin-top: 15.2rem;
 
     @include breakpoint($xl-bp) {
         margin-top: 10rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 4rem;
     }
 }
 

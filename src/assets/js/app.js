@@ -398,6 +398,11 @@ let realizationSwiper = new Swiper(".realizationSwiper", {
   loop: true,
   spaceBetween: 60,
 
+  navigation: {
+    nextEl: ".realization-swiper__next",
+    prevEl: ".realization-swiper__prev",
+  },
+
   breakpoints: {
     850: {
       slidesPerView: 1.6,

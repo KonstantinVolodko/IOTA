@@ -10,6 +10,10 @@
     }
 }
 
+.organizationOfSpace {
+    padding-bottom: 17.6rem;
+}
+
 .organizationOfSpace-organization {
 
     @include breakpoint($lg-bp) {
@@ -28,9 +32,14 @@
         line-height: 120.6%;
         text-transform: uppercase;
         color: #000000;
+        padding-left: 3.6rem;
+
+        @include breakpoint($lg-bp) {
+            padding-left: unset;
+        }
 
         @include breakpoint($sm-bp) {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
         }
     }
 
@@ -39,6 +48,11 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 3rem;
+        padding-left: 3.6rem;
+
+        @include breakpoint($lg-bp) {
+            padding-left: unset;
+        }
 
         @include breakpoint($sm-bp) {
             flex-direction: column-reverse;
@@ -58,7 +72,7 @@
         }
 
         .organizationOfSpace-organization__imgContainer {
-            width: 59.66%;
+            width: 58.66%;
 
             @include breakpoint($sm-bp) {
                 width: 100%;
@@ -72,7 +86,8 @@
 }
 
 .organizationOfSpace-whyContainer_position {
-    margin-top: 20rem;
+    margin-top: 21rem;
+    padding-left: 3.6rem;
 
     @include breakpoint($jb-bp) {
         margin-top: 10rem;
@@ -95,6 +110,7 @@
     .organizationOfSpace-whyContainer__textContainer {
         display: flex;
         justify-content: space-between;
+        gap: 3.6%;
 
         @include breakpoint($nb-bp) {
             flex-direction: column;
@@ -110,11 +126,11 @@
             line-height: 120.6%;
             text-transform: uppercase;
             color: #000000;
-            width: 78%;
+            width: 42%;
 
             @include breakpoint($sm-bp) {
                 width: 100%;
-                font-size: 3.5rem;
+                font-size: 4.5rem;
             }
         }
 
@@ -134,7 +150,7 @@
     .organizationOfSpace-whyContainer__listContainer {
         display: flex;
         flex-direction: column;
-        margin-top: 8rem;
+        margin-top: 7.6rem;
         gap: 6rem;
         align-items: center;
 
@@ -145,7 +161,7 @@
 
 
         .organizationOfSpace-whyContainer__block {
-            width: 46.7%;
+            width: 46.3%;
 
             @include breakpoint($lg-bp) {
                 width: 58%;
@@ -175,6 +191,7 @@
 
 .organizationOfSpace-include__position {
     margin-top: 20rem;
+    padding-left: 3.6rem;
 
     @include breakpoint($sm-bp) {
         margin-top: 10rem;
@@ -183,7 +200,7 @@
 
 .organizationOfSpace-include {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-columns: 0.52fr 1fr 1fr;
     overflow: hidden;
 
     @include breakpoint($xl-bp) {
@@ -204,8 +221,8 @@
     }
 
     .organizationOfSpace-include__imgContainer {
-        width: 74.4%;
-        margin-left: 9.7rem;
+        width: 72.9%;
+        margin-left: 8.5rem;
 
         @include breakpoint($xl-bp) {
             width: 60%;
@@ -230,7 +247,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 52%;
+        width: 100%;
 
         @include breakpoint($sm-bp) {
             width: 50%;
@@ -254,7 +271,6 @@
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden;
-        margin-left: 5.9rem;
         width: 100%;
 
         @include breakpoint($xl-bp) {
@@ -268,7 +284,7 @@
     .organizationOfSpace-include__swiperBlock {
         display: flex;
         flex-direction: column;
-        margin-top: 10rem;
+        margin-top: 10.9rem;
 
         @include breakpoint($jb-bp) {
             margin-top: 6rem;
@@ -295,7 +311,7 @@
     .organizationOfSpace-include__arrowsContainer {
         display: flex;
         gap: 2.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1.8rem;
         border-bottom: 0.3rem solid #000000;
 
         svg {
@@ -308,14 +324,14 @@
 
 .organizationOfSpace-linkContainer {
     display: flex;
-    padding-right: 19%;
+    position: relative;
 
     @include breakpoint($nb-bp) {
         padding-right: 15%;
     }
 
     @include breakpoint($cos-bp) {
-        padding-right: 9%;
+        padding-right: 4%;
     }
 
     @include breakpoint($jb-bp) {
@@ -334,30 +350,36 @@
     letter-spacing: 0.03em;
     color: #000000;
     border-bottom: 0.2rem solid #000000;
-    width: 21%;
-    margin-left: auto;
+
+    width: 16.4%;
+    position: absolute;
+    top: -3rem;
+    right: 23.1%;
 
     @include breakpoint($nb-bp) {
-        width: 24%;
+        right: 19.2%;
+        width: 19.4%;
     }
 
     @include breakpoint($cos-bp) {
-        width: 26%;
-        margin-top: 2rem;
+        right: 13.7%;
+        width: 22.7%;
     }
 
     @include breakpoint($xl-bp) {
-        margin-top: 2rem;
         margin-left: auto;
-        width: 33%;
+        position: unset;
+        width: 31%;
+        margin-top: 1rem;
     }
 
     @include breakpoint($lg-bp) {
-        width: 36%;
+        width: 34.1%;
     }
 
     @include breakpoint($jb-bp) {
-        width: 32%;
+        width: 31.2%;
+        margin-top: 3rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -366,10 +388,10 @@
 }
 
 .organizationOfSpace-include_position {
-    margin-top: 20rem;
+    margin-top: 19.5rem;
     display: flex;
     justify-content: center;
-    margin-right: 8rem;
+    margin-right: 2.9rem;
 
     @include breakpoint($sm-bp) {
         margin-right: unset;
@@ -378,12 +400,20 @@
 }
 
 .organizationOfSpace-text_position {
-    margin-top: 16.4rem;
+    margin-top: 17rem;
+    margin-left: 6.8%;
+
+    @include breakpoint($jb-bp) {
+        margin-left: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-left: unset;
+    }
 }
 
 .organizationOfSpace-text {
     display: flex;
-    justify-content: center;
 
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
@@ -395,7 +425,11 @@
         font-size: 1.6rem;
         line-height: 137.1%;
         color: #000000;
-        width: 55.73%;
+        width: 62.73%;
+
+        @include breakpoint($lg-bp) {
+            width: 95.73%;
+        }
 
         @include breakpoint($sm-bp) {
             width: 100%;

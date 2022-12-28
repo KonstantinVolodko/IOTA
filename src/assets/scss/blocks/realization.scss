@@ -6,8 +6,16 @@
     }
 }
 
+.realization {
+    padding-bottom: 17.6rem;
+
+    @include breakpoint($sm-bp) {
+        padding-bottom: 10rem;
+    }
+}
+
 .realization-imgContainer_position {
-    width: 67.5% !important;
+    width: 72.9% !important;
 
     @include breakpoint($xl-bp) {
         width: 100% !important;
@@ -15,13 +23,64 @@
     }
 }
 
+.realization-whyContainer__textContainer {
+
+}
+
+.realization-whyContainer__title {
+    width: 80% !important;
+
+    @include breakpoint($sm-bp) {
+        width: 100% !important;
+    }
+}
+
 .realization__padding {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    @include breakpoint($lg-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.realization-include__position {
+    margin-top: 15.9rem;
+    padding-left: 3.6rem;
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        margin-top: 10rem;
+    }
+}
+
+.realization-text_position {
+    margin-top: 16.8rem;
+    margin-left: 15.5%;
+
+    @include breakpoint($jb-bp) {
+        margin-left: 2.5%;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-left: unset;
+    }
 }
 
 .realization-swiper {
-    margin-top: 10rem;
+    margin-top: 10.4rem;
+    position: relative;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 6rem;
+    }
 
     .swiper-slide {
         display: flex;
@@ -51,6 +110,10 @@
             font-size: 4rem;
             line-height: 100.1%;
             color: #000000;
+
+            @include breakpoint($sm-bp) {
+                font-size: 5rem;
+            }
         }
 
         .realization-swiper__subtitle {
@@ -59,6 +122,31 @@
             line-height: 130.6%;
             color: #000000;
         }
+    }
+}
+
+.realization-swiper__arrowsContainer {
+    display: none;
+    width: 12%;
+
+    width: 12%;
+    position: absolute;
+    right: 0%;
+    top: 2%;
+    z-index: 11;
+
+    @include breakpoint($jb-bp) {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        right: 9%;
+    }
+
+    svg {
+        width: 3.4rem;
+        height: 2rem;
     }
 }
 
@@ -81,9 +169,13 @@
 }
 
 .realization__params {
-
+    margin-top: 7rem !important;
 
     @include breakpoint($xl-bp) {
         flex-direction: column !important;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 3rem !important;
     }
 }

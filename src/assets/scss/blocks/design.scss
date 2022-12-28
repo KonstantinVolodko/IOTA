@@ -1,7 +1,19 @@
+.design {
+    padding-bottom: 17.6rem;
+
+    @include breakpoint($sm-bp) {
+        padding-bottom: 10rem;
+    }
+}
+
 .design-header {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1.1fr;
+    padding-left: 3.6rem;
+
+    @include breakpoint($xl-bp) {
+        padding-left: 0rem;
+    }
     
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
@@ -13,6 +25,7 @@
         padding-right: 1.5rem;
     }
 
+    
 
     h2 {
         font-weight: 500;
@@ -40,6 +53,16 @@
         }
     }
 
+    .design-header__textBlock {
+        margin-top: -1.6rem;
+        width: 86%;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 1rem;
+            width: 100%;
+        }
+    }
+
     .design-header__imgContainer {
         width: 76%;
         grid-area: 1 / 2 / 3 / 3;
@@ -62,25 +85,35 @@
 }
 
 .organizationOfSpace-whyContainer__listContainer_position {
-    margin-top: 3rem !important;
+    margin-top: 7.9rem !important;
+    gap: 6.4rem !important;
 }
 
 .design-include__position {
-    grid-template-columns: 1fr 3.5fr;
-    margin-top: 17.5rem;
+    grid-template-columns: 1fr 2.69fr;
+    margin-top: 18rem;
+    padding-left: 3.6rem;
+
+
 
     @include breakpoint($xl-bp) {
         grid-template-columns: 1fr;
+        padding-left: 0rem;
     }
 
     @include breakpoint($jb-bp) {
         margin-top: 10rem;
+        padding-left: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
     }
 }
 
 .design-include__imgContainer {
     width: 100%;
-    margin-top: 6.8rem;
+    margin-top: 9.8rem;
 
     @include breakpoint($sm-bp) {
         margin-top: 3rem;
@@ -92,11 +125,19 @@
 }
 
 .design-include__textPosition {
-    width: 32% !important;
+    width: 94% !important;
 
     @include breakpoint($sm-bp) {
-        font-size: calc(100vw / 500 * 10);
         width: 64% !important;
+        font-size: 4.2rem !important;
+    }
+}
+
+.organizationOfSpace-include__swiperBlock_design {
+    margin-top: 10.5rem !important;
+    
+    @include breakpoint($sm-bp) {
+        margin-top: 6rem !important;
     }
 }
 
@@ -117,6 +158,7 @@
 
 .design-linkContainer_position {
 
+
     @include breakpoint($jb-bp) {
         margin-left: 2.5rem;
     }
@@ -128,7 +170,7 @@
     }
 
     a {
-        margin-left: unset !important;
+        
 
         @include breakpoint($jb-bp) {
             width: 32%;
@@ -142,19 +184,71 @@
 }
 
 .design-whyContainer_position {
-    margin-top: 20rem;
+    margin-top: 21rem;
+    padding-left: 3.6rem;
+
+    @include breakpoint($xl-bp) {
+        padding-left: 0rem;
+    }
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
 
     @include breakpoint($sm-bp) {
         margin-top: 3rem;
+        padding-left: 1.5rem;
     }
 }
 
 .design__helper {
+    top: -2.2rem;
+    left: 2.3%;
+    right: unset;
+
     @include breakpoint($sm-bp) {
         width: 52% !important;
     }
 }
 
 .design-whyContainer__subtitle_position {
-    width: 100% !important;
+    width: 83% !important;
+    font-size: 3.6rem !important;
+
+    @include breakpoint($sm-bp) {
+        width: 102% !important;
+    }
+}
+
+.design-include_position {
+    margin-top: 18rem;
+    display: flex;
+    margin-left: 28.7%;
+
+    @include breakpoint($xl-bp) {
+        margin-left: 12.7%;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-left: unset;
+        margin-top: 4rem;
+    }
+}
+
+.design-text_position {
+    margin-top: 17rem;
+    margin-left: 15.5%;
+
+    @include breakpoint($xl-bp) {
+        margin-left: 0rem;
+    }
+
+    @include breakpoint($jb-bp) {
+        padding-left: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        margin-top: 14rem;
+    }
 }
