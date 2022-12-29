@@ -1,5 +1,6 @@
 .article-content_position {
     margin-top: 4.6rem;
+    padding-left: 3.6rem;
 
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
@@ -12,6 +13,14 @@
     }
 }
 
+.article {
+    padding-bottom: 16rem;
+
+    @include breakpoint($sm-bp) {
+        padding-bottom: 10rem;
+    }
+}
+
 .article-content {
     h2 {
         font-weight: 600;
@@ -19,7 +28,7 @@
         line-height: 134.27%;
         text-transform: uppercase;
         color: #000000;
-        width: 57%;
+        width: 75%;
         margin-bottom: 3rem;
 
         @include breakpoint($jb-bp) {
@@ -29,12 +38,13 @@
         @include breakpoint($sm-bp) {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
-            font-size: 3.5rem;
+            font-size: 4.2rem;
             margin-bottom: 0rem;
         }
     }
 
     .article-content__block {
+        margin-top: 7rem;
 
         .article-content__imgContainer {
             width: 100%;
@@ -48,7 +58,7 @@
             font-size: 1.8rem;
             line-height: 137.1%;
             color: #000000;
-            margin-top: 11rem;
+            margin-top: 11.2rem;
             width: 55.73%;
 
             @include breakpoint($jb-bp) {
@@ -63,11 +73,12 @@
         }
     }
 
-    .article-content__block:not(:first-child) {
-        margin-top: 6rem;
+    .article-content__block_firstElem {
+        margin-top: 3rem;
+    }
 
-        @include breakpoint($sm-bp) {
-            margin-top: 3rem;
-        }
+    .article-content__textContainer_secondElem {
+        margin-top: 6.1rem !important;
     }
 }
+

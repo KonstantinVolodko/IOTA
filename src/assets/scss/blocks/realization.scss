@@ -24,7 +24,9 @@
 }
 
 .realization-whyContainer__textContainer {
-
+    @include breakpoint($sm-bp) {
+        gap: 4rem !important;
+    }
 }
 
 .realization-whyContainer__title {
@@ -85,7 +87,7 @@
     .swiper-slide {
         display: flex;
         padding-right: 6rem;
-        border-right: 0.3rem solid #000000;
+        border-right: 3px solid #000000;
         gap: 3rem;
 
 
@@ -112,7 +114,7 @@
             color: #000000;
 
             @include breakpoint($sm-bp) {
-                font-size: 5rem;
+                font-size: 5.3rem;
             }
         }
 
@@ -164,7 +166,7 @@
     }
 
     @include breakpoint($sm-bp) {
-        font-size: 2.7rem;
+        font-size: 3.2rem;
     }
 }
 
@@ -177,5 +179,11 @@
 
     @include breakpoint($sm-bp) {
         margin-top: 3rem !important;
+    }
+}
+
+.realization__subtitleHelp {
+    @include breakpoint($sm-bp) {
+        font-size: 3.2rem !important;
     }
 }

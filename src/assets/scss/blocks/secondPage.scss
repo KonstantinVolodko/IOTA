@@ -80,7 +80,7 @@
         width: 37%;
 
         @include breakpoint($sm-bp) {
-            font-size: 2.7rem;
+            font-size: 3.2rem;
             width: 35%;
         }
     }
@@ -141,7 +141,7 @@
 
             @include breakpoint($sm-bp) {
                 width: 100%;
-                font-size: 1.9rem;
+                font-size: 2.1rem;
             }
         }
 
@@ -208,7 +208,7 @@
                 align-items: end;
 
                 @include breakpoint($sm-bp) {
-                    font-size: 1.7rem;
+                    font-size: 1.9rem;
                 }
             }
         }
@@ -341,7 +341,7 @@
         }
 
         @include breakpoint($sm-bp) {
-            font-size: 1.9rem;
+            font-size: 2.1rem;
         }
     }
 
@@ -365,7 +365,7 @@
         }
 
         @include breakpoint($sm-bp) {
-            font-size: 1.7rem;
+            font-size: 1.9rem;
         }
     }
 
@@ -422,7 +422,7 @@
         -webkit-text-stroke: 0.2rem black;
 
         @include breakpoint($sm-bp) {
-            font-size: 6.7rem;
+            font-size: 7.9rem;
         }
 
     }
@@ -439,7 +439,7 @@
         }
 
         @include breakpoint($sm-bp) {
-            font-size: 4.6rem;
+            font-size: 5.3rem;
         }
     }
 
@@ -749,7 +749,7 @@
         margin: unset !important;
         border-radius: 0%;
         background: unset;
-        border-bottom: 0.2rem solid #000000;
+        border-bottom: 2px solid #000000;
         opacity: unset
     }
 
@@ -820,7 +820,7 @@
         margin: unset !important;
         border-radius: 0%;
         background: unset;
-        border-bottom: 0.2rem solid #000000;
+        border-bottom: 2px solid #000000;
         opacity: unset
     }
 

@@ -469,3 +469,11 @@ if (window.matchMedia("(max-width: 500px)").matches) {
   
   });
 }
+
+let textArea = document.querySelectorAll('.textArea')
+
+textArea.forEach(e => {
+  e.addEventListener("focusin", () => e.classList.add('areaHeight'));
+  e.addEventListener("focusout", () => e.classList.remove('areaHeight'));
+})
+

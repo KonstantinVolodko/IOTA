@@ -85,7 +85,7 @@
                 color: #000000;
 
                 @include breakpoint($sm-bp) {
-                    font-size: 1.7rem;
+                    font-size: 1.9rem;
                 }
             }
 
@@ -95,7 +95,7 @@
                 line-height: 2.5rem;
                 letter-spacing: 0.03em;
                 color: #000000;
-                border-bottom: 0.2rem solid #000000;
+                border-bottom: 2px solid #000000;
                 cursor: pointer;
                 margin-bottom: 6.6rem;
 
@@ -130,7 +130,7 @@
                     padding: 0;
 
                     @include breakpoint($sm-bp) {
-                        font-size: 1.6rem;
+                        font-size: 2.1rem;
                     }
                 }
 
@@ -151,7 +151,7 @@
 
         @include breakpoint($sm-bp) {
             width: 100%;
-            font-size: 3.5rem;
+            font-size: 4.3rem;
         }
     }
 }
@@ -232,7 +232,7 @@
         margin-bottom: 8rem;
 
         @include breakpoint($sm-bp) {
-            font-size: 2.7rem;
+            font-size: 3.2rem;
             width: 79%;
             margin-bottom: 3rem;
         }
@@ -245,7 +245,7 @@
         color: #000000;
 
         @include breakpoint($sm-bp) {
-            font-size: 2.1rem;
+            font-size: 2.4rem;
         }
     }
 
@@ -254,6 +254,10 @@
         font-size: 1.6rem;
         line-height: 137.1%;
         color: #000000;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.9rem;
+        }
     }
 
     .services-particular__textPosition {
@@ -330,6 +334,7 @@
         @include breakpoint($sm-bp) {
             width: 100%;
             margin-top: 6rem;
+            font-size: 2.1rem;
         }
     }
 
@@ -371,7 +376,7 @@
 
         @include breakpoint($sm-bp) {
             width: 100%;
-            font-size: 2.7rem;
+            font-size: 3.2rem;
             margin-bottom: 3rem;
         }
     }
@@ -450,7 +455,7 @@
                 color: #000000;
                 margin-bottom: 2rem;
 
-
+                
             }
 
             .services-steps__title {
@@ -462,11 +467,12 @@
 
                 @include breakpoint($sm-bp) {
                     width: 100%;
+                    font-size: 2.6rem;
                 }
             }
 
             .services-steps__line {
-                border-bottom: 0.3rem solid #000000;
+                border-bottom: 3px solid #000000;
                 margin-top: 3rem;
                 margin-bottom: 3rem;
 
@@ -534,6 +540,7 @@
 
             @include breakpoint($sm-bp) {
                 margin-bottom: 6rem;
+                font-size: 3.3rem;
             }
         }
 
@@ -553,7 +560,7 @@
                 line-height: 2.5rem;
                 letter-spacing: 0.03em;
                 color: #000000;
-                border-bottom: 0.2rem solid #000000;
+                border-bottom: 2px solid #000000;
             }
 
             .services-steps__textContainer {

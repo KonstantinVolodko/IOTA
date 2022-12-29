@@ -36,7 +36,7 @@
         margin-top: 10rem;
 
         @include breakpoint($sm-bp) {
-            font-size: 3.2rem;
+            font-size: 4.3rem;
             margin-top: 3rem;
         }
     }
@@ -128,8 +128,11 @@
     width: 94% !important;
 
     @include breakpoint($sm-bp) {
-        width: 64% !important;
-        font-size: 4.2rem !important;
+        h2 {
+            width: 64% !important;
+            font-size: 4.2rem !important;
+            font-weight: 500 !important;
+        }
     }
 }
 
@@ -151,7 +154,7 @@
         color: #000000;
 
         @include breakpoint($sm-bp) {
-            font-size: 1.7rem;
+            font-size: 1.9rem;
         }
     }
 }
@@ -207,7 +210,8 @@
     right: unset;
 
     @include breakpoint($sm-bp) {
-        width: 52% !important;
+        width: 58% !important;
+        font-size: 1.9rem !important;
     }
 }
 

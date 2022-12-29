@@ -1,6 +1,6 @@
 .footer-content {
     display: flex;
-    border-top: 0.3rem solid #000000;
+    border-top: 3px solid #000000;
     padding: 6.3rem 6.5rem 4.2rem 8rem;
     align-items: center;
 
@@ -33,7 +33,7 @@
         }
 
         @include breakpoint($sm-bp) {
-            font-size: 1.8rem;
+            font-size: 2.1rem;
             line-height: 100.1%;
         }
     }
@@ -85,7 +85,7 @@
                 color: #000000;
 
                 @include breakpoint($sm-bp) {
-                    font-size: 1.8rem;
+                    font-size: 2.1rem;
                 }
             }
         }
@@ -111,6 +111,10 @@
             line-height: 136.6%;
             text-decoration-line: underline;
             color: #000000;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.7rem;
+            }
         }
     }
 
