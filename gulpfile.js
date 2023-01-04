@@ -119,6 +119,11 @@ function cssWatch(cb) {
       })
     )
     .pipe(
+      autoprefixer({
+        cascade: true,
+      })
+    )
+    .pipe(
       rename({
         suffix: ".min",
         extname: ".css",
