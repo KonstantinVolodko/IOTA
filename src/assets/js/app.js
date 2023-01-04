@@ -114,14 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   burger.forEach(e => {
     e.addEventListener('click', () => {
-      e.classList.toggle('cross')
-      e.classList.toggle('header-content__burger_hover')
       menuContent.classList.add('showMenu')
       page[0].classList.add('blockScroll')
 
-      if (e.classList.contains('cross')) {
-        burgerHelper.innerHTML = burgerTransition.innerHTML
-      }
+
     })
   })
 
@@ -136,29 +132,98 @@ document.addEventListener("DOMContentLoaded", () => {
   let menuTabsHelper = document.querySelector('.header-menu__tabsHelper')
   let tabsFirstLvlTitle = document.querySelectorAll('.header-menu__tabsFirstLvlTitle')
 
-  tabsFirstLvlTitle.forEach(e => {
-    e.addEventListener('click', el => {
-      menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
 
-      let headerAccBtn = document.getElementsByClassName("header-menu__accordionBtn");
 
-      for (let i = 0; i < headerAccBtn.length; i++) {
-        headerAccBtn[i].addEventListener("click", function () {
-          // this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-        });
-      }
+  if (window.matchMedia("(min-width: 850px)").matches) {
+
+    tabsFirstLvlTitle.forEach(e => {
+      e.addEventListener('click', el => {
+        menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
+        tabsFirstLvlTitle.forEach(elem => {
+          elem.classList.remove('header-menu__tabsFirstLvlTitle_hover')
+        })
+
+        e.classList.add('header-menu__tabsFirstLvlTitle_hover')
+
+        let headerAccBtn = document.querySelectorAll(".header-menu__accordionBtn");
+
+        for (let i = 0; i < headerAccBtn.length; i++) {
+          headerAccBtn[i].addEventListener("click", function () {
+            
+            headerAccBtn.forEach(element => {
+              element.classList.remove('header-menu__accordionBtn_hover')
+            })
+
+            this.classList.add('header-menu__accordionBtn_hover')
+
+            var panel = this.nextElementSibling;
+
+            headerAccBtn.forEach(e => {
+              e.nextElementSibling.style.maxHeight = null;
+            })
+
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        }
+      })
     })
-  })
 
-  if (tabsFirstLvlTitle.length != 0) {
-    tabsFirstLvlTitle[0].click()
+    if (tabsFirstLvlTitle.length != 0) {
+      tabsFirstLvlTitle[0].click()
+    }
   }
+
+  if (window.matchMedia("(max-width: 850px)").matches) {
+
+    let i
+
+    for (i = 0; i < tabsFirstLvlTitle.length; i++) {
+      tabsFirstLvlTitle[i].addEventListener("click", function () {
+        let panelSecond = this.nextElementSibling;
+
+        tabsFirstLvlTitle.forEach(e => {
+          e.nextElementSibling.style.maxHeight = null;
+          e.classList.remove('header-menu__tabsFirstLvlTitle_hover')
+        })
+
+        this.classList.add('header-menu__tabsFirstLvlTitle_hover')
+
+        if (panelSecond.style.maxHeight) {
+          panelSecond.style.maxHeight = null;
+        } else {
+          panelSecond.style.maxHeight = panelSecond.scrollHeight + "px";
+        }
+      });
+    }
+
+    let headerAccBtn = document.querySelectorAll(".header-menu__accordionBtn");
+
+    for (let j = 0; j < headerAccBtn.length; j++) {
+      headerAccBtn[j].addEventListener("click", function () {
+        let panel = this.nextElementSibling;
+
+
+        headerAccBtn.forEach(e => {
+          e.nextElementSibling.style.maxHeight = null;
+          e.classList.remove('header-menu__accordionBtn_hover')
+        })
+
+        this.classList.add('header-menu__accordionBtn_hover')
+
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  }
+
+
 
 
 
@@ -197,8 +262,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
-  
-  realizationArrows.forEach( e => {
+
+  realizationArrows.forEach(e => {
     e.addEventListener('click', elem => {
       realizationPagination.forEach(elem => {
         elem.classList.remove('activeBlack')
@@ -446,7 +511,7 @@ slides.forEach(el => {
   })
 })
 
-secondPageArrowContainer.forEach( e => {
+secondPageArrowContainer.forEach(e => {
   e.addEventListener('click', elem => {
     pagination.forEach(elem => {
       elem.classList.remove('activeBlack')
@@ -466,7 +531,7 @@ if (window.matchMedia("(max-width: 500px)").matches) {
       nextEl: ".services-steps__arrowRight",
       prevEl: ".services-steps__arrowLeft",
     },
-  
+
   });
 }
 

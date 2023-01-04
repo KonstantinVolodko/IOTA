@@ -221,6 +221,7 @@ main {
         @include breakpoint($sm-bp) {
             padding-top: 1rem;
             padding-left: 1.5rem;
+            width: 85%;
         }
 
         img {
