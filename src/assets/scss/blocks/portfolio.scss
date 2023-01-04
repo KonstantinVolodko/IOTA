@@ -136,9 +136,15 @@
     .portfolio-content__contentBlock:nth-child(even) {
         display: flex;
         flex-direction: row-reverse;
+        padding-right: 8rem;
+
+        @include breakpoint($xl-bp) {
+            padding-right: 0rem;
+        }
 
         .portfolio-content__textContainer {
             align-items: flex-start;
+            width: 72%;
 
             @include breakpoint($sm-bp) {
                 padding-right: 1.5rem;
@@ -193,6 +199,7 @@
     display: flex;
     flex-direction: column;
     gap: 9rem;
+    margin-top: 7.6rem !important;
 
     @include breakpoint($sm-bp) {
         margin-top: 0rem !important;

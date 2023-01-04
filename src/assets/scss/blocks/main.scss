@@ -185,7 +185,7 @@ main {
     top: 25%;
     display: flex;
     flex-direction: column;
-    width: 13%;
+    width: 12%;
 
     @include breakpoint($jb-bp) {
         position: unset;
@@ -293,7 +293,7 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        margin-right: 11.5rem;
+        margin-right: 13rem;
         row-gap: 16.2rem;
         padding-left: 3.6rem;
 
@@ -413,7 +413,7 @@ main {
                 gap: 3.2rem;
                 border-bottom: 3px solid #000000;
                 justify-content: flex-end;
-                padding-right: 0rem;
+                padding-right: 2rem;
 
                 @include breakpoint($lg-bp) {
                     flex-direction: column;
@@ -466,7 +466,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 3.7rem;
+    padding-left: 3.4rem;
 
     @include breakpoint($nb-bp) {
         padding-left: unset;
@@ -481,7 +481,7 @@ main {
 
 
     .main-services__content {
-        width: 58.7%;
+        width: 59.6%;
 
         @include breakpoint($lg-bp) {
             width: 100%;
@@ -505,9 +505,10 @@ main {
                 line-height: 120.6%;
                 color: #000000;
                 background: none;
-                width: 72%;
+                width: 70%;
                 padding-top: 3rem;
                 padding-bottom: 3rem;
+                padding-left: unset;
 
                 @include breakpoint($cos-bp) {
                     width: 100%;
@@ -1050,7 +1051,7 @@ main {
                         }
 
                         span {
-                            width: 90%;
+                            width: 89%;
 
                             @include breakpoint($sm-bp) {
                                 width: 85%;
@@ -1134,7 +1135,7 @@ main {
             }
 
             .main-firstStep__imgContainer {
-                width: 60.8%;
+                width: 62%;
 
                 @include breakpoint($lg-bp) {
                     width: 50%;
@@ -1219,7 +1220,7 @@ main {
 
 
             @include breakpoint($nb-bp) {
-                gap: 21.8rem;
+                gap: 19.8rem;
             }
 
             @include breakpoint($cos-bp) {
@@ -1278,7 +1279,7 @@ main {
     }
 
     .main-gallery__helper {
-        margin-top: 7.6rem;
+        margin-top: 4.6rem;
 
         @include breakpoint($jb-bp) {
             padding-left: 1.8rem;

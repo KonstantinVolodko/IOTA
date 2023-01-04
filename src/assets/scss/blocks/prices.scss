@@ -178,7 +178,6 @@
         
 
         .prices-main__textContainer__position {
-            width: 100% !important;
 
             @include breakpoint($nb-bp) {
                 width: 55% !important;
