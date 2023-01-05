@@ -179,6 +179,7 @@
 
     @include breakpoint($sm-bp) {
         margin-top: 3rem !important;
+        flex-direction: column-reverse !important;
     }
 }
 

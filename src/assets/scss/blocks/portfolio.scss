@@ -80,6 +80,7 @@
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
                 margin-top: unset;
+                width: 100%;
             }
 
 
@@ -149,6 +150,7 @@
             @include breakpoint($sm-bp) {
                 padding-right: 1.5rem;
                 padding-left: unset !important;
+                width: 100%;
             }
         }
 

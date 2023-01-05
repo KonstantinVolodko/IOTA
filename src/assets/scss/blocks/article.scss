@@ -46,6 +46,10 @@
     .article-content__block {
         margin-top: 7rem;
 
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem;
+        }
+
         .article-content__imgContainer {
             width: 100%;
             img {
@@ -79,6 +83,10 @@
 
     .article-content__textContainer_secondElem {
         margin-top: 6.1rem !important;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem !important;
+        }
     }
 }
 
