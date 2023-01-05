@@ -46,6 +46,7 @@
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        margin-top: 4.4rem;
     }
 }
 
@@ -186,5 +187,11 @@
 .realization__subtitleHelp {
     @include breakpoint($sm-bp) {
         font-size: 3.2rem !important;
+    }
+}
+
+.realization-include__swiperBlock {
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem !important;
     }
 }

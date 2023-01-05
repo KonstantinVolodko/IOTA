@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     acc[i].addEventListener("click", function () {
       acc.forEach(e => {
         e.classList.remove("activeTab")
+        e.nextElementSibling.style.maxHeight = null;
       })
       this.classList.add("activeTab");
 
@@ -297,7 +298,7 @@ const createBaseHTML = (value, className) => (`
 	<div class="${className}">
 		<button class="${className}__toggle" type="button">${value}</button>
 		<div class="${className}__options"></div>
-    <span><img src="/assets/images/services/arrowDown.svg"></span>
+    <span><img src="./assets/images/services/arrowDown.svg"></span>
 	</div>
 `);
 
