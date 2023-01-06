@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loopedSlides: 4
   });
   let galleryThumbs = new Swiper('.gallery-thumbs', {
-    // spaceBetween: 'auto',
+    // spaceBetween: 60,
     // centeredSlides: true,
     slidesPerView: 4,
     touchRatio: 0.2,
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swiperFunction = function () {
     let swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
+      spaceBetween: 80,
       loop: true,
       navigation: {
         nextEl: '.main-gallery__buttonPrev',
@@ -78,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       breakpoints: {
         850: {
-          slidesPerView: 1.4,
-          spaceBetween: 30,
+          slidesPerView: 1.45,
+          spaceBetween: -25,
         },
       }
     });
