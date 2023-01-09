@@ -416,12 +416,16 @@
     }
 
     .secondPage-idea__number {
-        font-family: Noto Sans;
         font-weight: 800;
         font-size: 12.8rem;
         line-height: 100.1%;
         color: #f7f7f7;
         -webkit-text-stroke: 0.2rem black;
+
+//         text-shadow: 0.1rem 0 0.2rem #000, 
+// 0 0.1rem 0.2rem #000, 
+// -0.1rem 0 0.2rem #000, 
+// 0 -0.1rem 0.2rem #000;
 
         @include breakpoint($sm-bp) {
             font-size: 7.9rem;
