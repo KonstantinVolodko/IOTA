@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     touchRatio: 0.2,
     slideToClickedSlide: true,
     loop: true,
-    loopedSlides: 4
+    loopedSlides: 4,
   });
   galleryTop.controller.control = galleryThumbs;
   galleryThumbs.controller.control = galleryTop;

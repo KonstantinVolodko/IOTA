@@ -110,7 +110,7 @@
     .organizationOfSpace-whyContainer__textContainer {
         display: flex;
         justify-content: space-between;
-        gap: 3.6%;
+        gap: 3.4%;
 
         @include breakpoint($nb-bp) {
             flex-direction: column;
@@ -226,7 +226,7 @@
 
     .organizationOfSpace-include__imgContainer {
         width: 72.9%;
-        margin-left: 8.5rem;
+        margin-left: 9.6rem;
 
         @include breakpoint($xl-bp) {
             width: 60%;
@@ -402,7 +402,7 @@
     margin-top: 19.5rem;
     display: flex;
     justify-content: center;
-    margin-right: 2.9rem;
+    margin-right: 3.5rem;
 
     @include breakpoint($sm-bp) {
         margin-right: unset;

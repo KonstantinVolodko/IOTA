@@ -54,6 +54,8 @@
     margin-top: 15.9rem;
     padding-left: 3.6rem;
 
+    grid-template-columns: 0.52fr 0.83fr 1fr;
+
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
     }
@@ -62,6 +64,13 @@
         padding-left: 1.5rem;
         margin-top: 10rem;
     }
+}
+
+.realization-include_positionForm {
+    margin-top: 20rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 1.1rem;
 }
 
 .realization-text_position {

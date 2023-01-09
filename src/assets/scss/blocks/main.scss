@@ -308,7 +308,7 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        margin-right: 13rem;
+        margin-right: 11.66rem;
         row-gap: 16.2rem;
         padding-left: 3.6rem;
 
@@ -394,7 +394,7 @@ main {
             flex-direction: column;
             justify-content: flex-end;
             padding-bottom: 4rem;
-            width: 77rem;
+            width: 78.6rem;
 
             @include breakpoint($nb-bp) {
                 width: 76.6rem;
@@ -601,6 +601,9 @@ main {
                     padding-left: 9.8rem;
                     gap: 2.8rem;
                     margin-bottom: 0rem;
+
+
+                    margin-bottom: 2rem;
                 }
 
                 .main-services__tabContent:hover {}
@@ -1188,6 +1191,10 @@ main {
                         margin-top: 21.9%;
                     }
 
+                    @include breakpoint($xbl-bp) {
+                        margin-top: 21.9%;
+                    }
+
                     @include breakpoint($cos-bp) {
                         width: 90%;
                     }
@@ -1303,7 +1310,7 @@ main {
             border-bottom: 3px solid #000000;
             width: 58.6%;
             // gap: 25.8rem;
-            gap: 11.3rem;
+            gap: 11.6rem;
             padding-bottom: 2rem;
 
 
@@ -1685,4 +1692,8 @@ textarea {
 // main::-webkit-scrollbar-thumb {
 //     -webkit-box-shadow: inset 0 0 6px rgba(198, 21, 21, 1); 
 //     background: rgba(198, 21, 21, 1);
+// }
+
+// body::-webkit-scrollbar {
+//     width: 0;
 // }

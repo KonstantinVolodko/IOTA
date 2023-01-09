@@ -150,7 +150,7 @@
 
     .autor-services__content {
         display: grid;
-        grid-template-columns: 1fr 0.8fr;
+        grid-template-columns: 1fr 0.795fr;
         margin-top: 18rem;
 
         @include breakpoint($cos-bp) {

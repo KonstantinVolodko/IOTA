@@ -48,7 +48,8 @@
 .secondPage-title_position {
     margin-top: 4.6rem;
     padding-top: 13rem;
-    padding-left: 3.5rem;
+    padding-left: 6.8rem;
+    margin-left: -3.3rem;
 
     @include breakpoint($xl-bp) {
         padding-left: 1.5rem;
@@ -146,7 +147,7 @@
         }
 
         .secondPage-idea__aboutBlock {
-            width: 51%;
+            width: 52.1%;
 
             @include breakpoint($xl-bp) {
                 width: 55%;
@@ -258,7 +259,7 @@
         }
 
         .secondPage-idea__imgContainer {
-            width: 52%;
+            width: 51.3%;
 
             @include breakpoint($jb-bp) {
                 width: 100%;
@@ -415,6 +416,7 @@
     }
 
     .secondPage-idea__number {
+        font-family: Noto Sans;
         font-weight: 800;
         font-size: 12.8rem;
         line-height: 100.1%;
@@ -519,7 +521,7 @@
             overflow: hidden;
 
             img {
-                width: 100%;
+                width: 97%;
             }
         }
 
@@ -528,7 +530,7 @@
 }
 
 .secondPage-life_position {
-    margin-top: 11rem;
+    margin-top: 15rem;
     padding-left: 3.6rem;
 
     @include breakpoint($xl-bp) {
@@ -546,7 +548,7 @@
 .secondPage-idea__title_position {
     justify-content: flex-end;
     margin-right: 24.9rem;
-    margin-bottom: 10rem;
+    margin-bottom: 8.5rem;
 
     @include breakpoint($xl-bp) {
         justify-content: unset;
