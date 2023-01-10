@@ -416,6 +416,7 @@
     }
 
     .secondPage-idea__number {
+        font-family: 'M PLUS 1p';
         font-weight: 800;
         font-size: 12.8rem;
         line-height: 100.1%;
@@ -429,6 +430,11 @@
 
         @include breakpoint($sm-bp) {
             font-size: 7.9rem;
+        }
+
+        svg {
+            width: 14.5rem;
+            height: 12.8rem;
         }
 
     }

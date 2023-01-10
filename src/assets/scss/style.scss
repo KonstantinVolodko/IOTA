@@ -55,6 +55,8 @@ html {
 body {
   font-family: 'Manrope';
   background: #F7F7F7;
+
+  max-width: calc(100vw - var(--scrollWidth));
 }
 
 img {

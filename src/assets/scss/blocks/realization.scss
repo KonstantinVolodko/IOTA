@@ -24,18 +24,20 @@
 }
 
 .realization-whyContainer__textContainer {
+    gap: 0rem !important;
     @include breakpoint($sm-bp) {
         gap: 4rem !important;
     }
 }
 
 .realization-whyContainer__title {
-    width: 80% !important;
+    width: 71% !important;
 
     @include breakpoint($sm-bp) {
         width: 100% !important;
     }
 }
+
 
 .realization__padding {
     @include breakpoint($lg-bp) {
@@ -54,7 +56,13 @@
     margin-top: 15.9rem;
     padding-left: 3.6rem;
 
-    grid-template-columns: 0.52fr 0.83fr 1fr;
+    grid-template-columns: 0.52fr 0.83fr 0.92fr;
+
+    @include breakpoint($xl-bp) {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: unset;
+        margin-left: unset;
+    }
 
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
@@ -70,12 +78,12 @@
     margin-top: 20rem;
     display: flex;
     justify-content: center;
-    margin-left: 1.1rem;
+    margin-left: -2.9rem;
 }
 
 .realization-text_position {
     margin-top: 16.8rem;
-    margin-left: 15.5%;
+    margin-left: 16.9%;
 
     @include breakpoint($jb-bp) {
         margin-left: 2.5%;
@@ -99,9 +107,10 @@
         padding-right: 6rem;
         border-right: 3px solid #000000;
         gap: 3rem;
+        cursor: grab;
 
 
-        @include breakpoint($nb-bp) {
+        @include breakpoint($cos-bp) {
             flex-direction: column;
             align-items: center;
         }
@@ -112,10 +121,19 @@
         }
     }
 
+    .swiper-slide:active {
+        cursor: grabbing;
+    }
+
     .realization-swiper__textContainer {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        width: 47%;
+
+        @include breakpoint($cos-bp) {
+            width: 100%;
+        }
 
         .realization-swiper__title {
             font-weight: 800;
@@ -134,6 +152,18 @@
             line-height: 130.6%;
             color: #000000;
         }
+    }
+}
+
+.realization-swiper__imgContainer {
+    width: 50.966%;
+
+    @include breakpoint($cos-bp) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
     }
 }
 
@@ -202,5 +232,30 @@
 .realization-include__swiperBlock {
     @include breakpoint($sm-bp) {
         margin-top: 2rem !important;
+    }
+}
+
+.realization-include__imgContainer {
+    width: 78.4% !important;
+    margin-left: 6.4rem !important;
+}
+
+
+.realization-linkContainer__link {
+    top: -2.7rem;
+    right: 23.2%;
+
+    @include breakpoint($nb-bp) {
+        right: 20%;
+    }
+
+
+
+    @include breakpoint($cos-bp) {
+        right: 16%;
+    }
+
+    @include breakpoint($xl-bp) {
+        margin-left: unset;
     }
 }

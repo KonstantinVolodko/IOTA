@@ -41,7 +41,7 @@
 
     .aboutCompany-content__mainBlock {
         display: grid;
-        grid-template-columns: 1fr 1.44fr;
+        grid-template-columns: 1fr 1.42fr;
         margin-top: 8rem;
         font-weight: 400;
         font-size: 1.8rem;
@@ -67,7 +67,7 @@
         }
 
         .aboutCompany-content__textContainer {
-            width: 69%;
+            width: 70%;
             margin-top: 7.1rem;
 
             @include breakpoint($cos-bp) {
@@ -88,7 +88,7 @@
         }
 
         .aboutCompany-content__imgContainer {
-            width: 90%;
+            width: 88.9%;
             grid-area: 1 / 2 / 3 / 3;
 
             @include breakpoint($jb-bp) {
@@ -103,7 +103,7 @@
 }
 
 .aboutCompany-contact_position {
-    margin-top: 17.4rem;
+    margin-top: 20rem;
     margin-left: 45rem;
     display: flex;
 
@@ -129,4 +129,8 @@
     }
 
 
+}
+
+.aboutCompany-content__textContainer_helper {
+    width: 71% !important;
 }

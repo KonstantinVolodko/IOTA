@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  let scrollWidth = (window.innerWidth - document.body.clientWidth + 'px')
+
+  
+
+
+
   let desctopHelper = document.querySelector('.main-services__desctopHelper')
   let acc = document.querySelectorAll(".main-services__btn");
 
@@ -113,6 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let burgerTransition = document.querySelector('.header-content__burgerTransition')
   let menuContent = document.querySelector('.header-menu__content')
   let page = document.getElementsByTagName('body')
+
+  document.body.style.setProperty("--scrollWidth", scrollWidth)
 
   burger.forEach(e => {
     e.addEventListener('click', () => {
