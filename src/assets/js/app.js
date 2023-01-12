@@ -37,10 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
       acc.forEach(e => {
+        
         e.classList.remove("activeTab")
         e.nextElementSibling.style.maxHeight = null;
       })
       this.classList.add("activeTab");
+
+      acc.forEach(element => {
+        element.classList.remove('deleteHover')
+        if (element.classList.contains('activeTab') !== true) {
+          element.classList.add('deleteHover')
+        }
+      })
 
       let panel = this.nextElementSibling;
       desctopHelper.innerHTML = panel.innerHTML
@@ -52,9 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (acc.length > 0) {
-    acc[0].click()
-  }
+  
+
+
+
+  // if (acc.length > 0) {
+  //   acc[0].click()
+  // }
 
 
 
@@ -144,15 +156,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let menuContent = document.querySelector('.header-menu__content')
   let page = document.getElementsByTagName('body')
 
-  document.body.style.setProperty("--scrollWidth", scrollWidth)
+  if (window.matchMedia("(min-width: 850px)").matches) {
+    document.body.style.setProperty("--scrollWidth", scrollWidth)
+  }
+
 
   burger.forEach(e => {
     e.addEventListener('click', () => {
       menuContent.classList.add('showMenu')
       page[0].classList.add('blockScroll')
-      headerPadding.style.marginRight = scrollWidth
 
-
+      if (window.matchMedia("(min-width: 850px)").matches) {
+        headerPadding.style.marginRight = scrollWidth
+      }
     })
   })
 
@@ -686,31 +702,35 @@ myObserver6.observe(myEl6);
 
 const tl2 = gsap.timeline();
 
-tl2.from('.main-createEmotions__imgContainer img', {opacity: 0, y: -600, duration: 1})
+tl2.from('.main-createEmotions__imgContainer img', {opacity: 0, y: -300, duration: 1.8, delay: 2.4})
 
 const tl3 = gsap.timeline();
 
-tl3.from('.main-createEmotions__subtitle', {opacity: 0, x: 600, duration: 1})
+tl3.from('.main-createEmotions__subtitle', {opacity: 0, duration: 1.3, delay: 1.3})
 
 const tl4 = gsap.timeline();
 
-tl4.from('.main-createEmotions__title', {opacity: 0, y: 300, duration: 1})
+tl4.from('.main-createEmotions__title', {opacity: 0, duration: 1.3, delay: 0.7})
+
+
+
+const tl8 = gsap.timeline();
+
+tl8.from('.leftBlockContainer__imgContainer', {opacity: 0, x: -200, duration: 1, delay: 3.4})
+
+const tl9 = gsap.timeline();
+
+// tl9.from('.leftBlockContainer__horizontalBorder', {width: 0, duration: 0.5, delay: 1})
+
+const tl10 = gsap.timeline();
+
+tl10.to('.leftBlockContainer__horizontalBorder', {transform: 'scale(1, 1)', duration: 1, delay: 2.4})
+tl10.to('.leftBlock__verticalBorder', {transform: 'scale(1, 1)', duration: 1,})
+
 
 const tl5 = gsap.timeline();
 
 tl5.from('.main-solutions__content', {opacity: 0})
-
-const tl8 = gsap.timeline();
-
-tl8.from('.leftBlockContainer__imgContainer', {opacity: 0, y: 200, duration: 1})
-
-const tl9 = gsap.timeline();
-
-tl9.from('.leftBlockContainer__horizontalBorder', {width: 0, duration: 0.5, delay: 1})
-
-const tl10 = gsap.timeline();
-
-tl10.from('.leftBlock__verticalBorder', {height: 0, duration: 0.5, delay: 1})
 
 
 
@@ -718,8 +738,25 @@ ScrollTrigger.create({
   animation: tl5,
   trigger: '.main-solutions__content',
   start: 'top 90%',
-  end: "top 70%",
-  scrub: true,
+  end: "top 80%",
+  // scrub: true,
+  events: "onEnter onLeave onEnterBack onLeaveBack",
+  toggleActions: "play play reverse reverse",
+  // markers: true
+})
+
+const tl15 = gsap.timeline()
+
+tl15.from('.main-solutions__content h2', {y: 80})
+
+ScrollTrigger.create({
+  animation: tl15,
+  trigger: '.main-solutions__content',
+  start: 'top 90%',
+  end: "top 80%",
+  events: "onEnter onLeave onEnterBack onLeaveBack",
+  toggleActions: "play play reverse reverse",
+  // scrub: true,
 })
 
 const tl6 = gsap.timeline();
@@ -794,6 +831,9 @@ ScrollTrigger.create({
   end: "top 70%",
   scrub: true,
 })
+
+
+
 
 // const tl1 = gsap.timeline();
 

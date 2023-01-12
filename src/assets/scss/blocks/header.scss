@@ -140,6 +140,7 @@
 
         .header-menu__helpCrossContainer_imgContainer {
             display: none;
+
         }
 
         @include breakpoint($nb-bp) {
@@ -156,11 +157,21 @@
                 img {
                     width: 100%;
                 }
+
+                svg {
+                    width: 14.8rem;
+                    height: 7.2rem;
+
+                    @include breakpoint($sm-bp) {
+                        width: 7.8rem;
+    height: 4.2rem;
+                    }
+                }
             }
             
         }
 
-        svg {
+        .crossIco {
             cursor: pointer;
             width: 2.4rem;
             height: 2.5rem;
@@ -192,6 +203,15 @@
         .header-menu__logoContainer {
             display: flex;
             width: 8.5%;
+            margin-top: 24rem;
+
+            @include breakpoint($cos-bp) {
+                width: 11.5%;
+            }
+
+            @include breakpoint($lg-bp) {
+                width: 14.5%;
+            }
 
             @include breakpoint($jb-bp) {
                 display: none;
@@ -201,8 +221,9 @@
                 padding-top: 23.6rem;
             }
 
-            img {
-                width: 100%;
+            svg {
+                width: 14.8rem;
+                height: 7.2rem;
             }
         }
 
