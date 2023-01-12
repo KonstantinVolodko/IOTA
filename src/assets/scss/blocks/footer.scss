@@ -3,6 +3,9 @@
     border-top: 3px solid #000000;
     padding: 6.3rem 6.5rem 4.2rem 8rem;
     align-items: center;
+    background: #f7f7f7;
+    position: relative;
+    z-index: 11;
 
     @include breakpoint($lg-bp) {
         justify-content: center;

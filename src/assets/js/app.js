@@ -1,11 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime: 800,
+    // Размер шага в пикселях 
+    stepSize: 75,
+
+    // Дополнительные настройки:
+
+    // Ускорение 
+    accelerationDelta: 30,
+    // Максимальное ускорение
+    accelerationMax: 2,
+
+    // Поддержка клавиатуры
+    keyboardSupport: true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll: 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm: true,
+    pulseScale: 4,
+    pulseNormalize: 1,
+
+    // Поддержка тачпада
+    touchpadSupport: true,
+  })
+
+
   let scrollWidth = (window.innerWidth - document.body.clientWidth + 'px')
-
-  
-
-
-
   let desctopHelper = document.querySelector('.main-services__desctopHelper')
   let acc = document.querySelectorAll(".main-services__btn");
 
@@ -113,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
+  let headerPadding = document.querySelector('.header-content')
   let burger = document.querySelectorAll('.header-content__burger')
   let burgerHelper = document.querySelector('.header-menu__helpCrossContainer')
   let burgerTransition = document.querySelector('.header-content__burgerTransition')
@@ -126,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.addEventListener('click', () => {
       menuContent.classList.add('showMenu')
       page[0].classList.add('blockScroll')
+      headerPadding.style.marginRight = scrollWidth
 
 
     })
@@ -135,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burgerHelper.addEventListener('click', () => {
     menuContent.classList.remove('showMenu')
     page[0].classList.remove('blockScroll')
+    headerPadding.style.marginRight = "0"
   })
 
 
@@ -159,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let i = 0; i < headerAccBtn.length; i++) {
           headerAccBtn[i].addEventListener("click", function () {
-            
+
             headerAccBtn.forEach(element => {
               element.classList.remove('header-menu__accordionBtn_hover')
             })
@@ -285,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-})
+
 
 
 const findElements = (object) => {
@@ -552,3 +578,249 @@ textArea.forEach(e => {
   e.addEventListener("focusout", () => e.classList.remove('areaHeight'));
 })
 
+let leftBlockContainer = document.querySelector('.leftBlockContainer__text');
+let mainCreate = document.querySelector('#create')
+
+let mainServices = document.querySelector('#services')
+
+let firstStep = document.querySelector('#firstStep')
+
+let mainGallery = document.querySelector('#gallery')
+
+let mainInContact = document.querySelector('#inContact')
+
+
+const myObserver = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = ""
+  }
+})
+
+const myEl = document.querySelector('.main-createEmotions');
+
+myObserver.observe(myEl);
+
+
+
+const myObserver1 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = mainCreate.innerHTML
+  }
+})
+
+const myEl1 = document.querySelector('.main-solutions__content');
+
+myObserver1.observe(myEl1);
+
+const myObserver2 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    
+    leftBlockContainer.innerHTML = mainServices.innerHTML
+  }
+})
+
+const myEl2 = document.querySelector('.main-services__content');
+
+myObserver2.observe(myEl2);
+
+
+const myObserver3 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = "";
+  }
+})
+
+const myEl3 = document.querySelector('.main-result__content');
+
+myObserver3.observe(myEl3);
+
+
+
+const myObserver4 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = firstStep.innerHTML;
+  }
+})
+
+const myEl4 = document.querySelector('.main-firstStep__content');
+
+myObserver4.observe(myEl4);
+
+
+
+const myObserver5 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = mainGallery.innerHTML;
+  }
+})
+
+const myEl5 = document.querySelector('.main-gallery__content');
+
+myObserver5.observe(myEl5);
+
+
+const myObserver6 = new IntersectionObserver(elements => {
+  if (elements[0].intersectionRatio !== 0) {
+    const tl = gsap.timeline();
+    tl.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+    leftBlockContainer.innerHTML = mainInContact.innerHTML;
+  }
+})
+
+const myEl6 = document.querySelector('.main-contact_position');
+
+myObserver6.observe(myEl6);
+
+
+const tl2 = gsap.timeline();
+
+tl2.from('.main-createEmotions__imgContainer img', {opacity: 0, y: -600, duration: 1})
+
+const tl3 = gsap.timeline();
+
+tl3.from('.main-createEmotions__subtitle', {opacity: 0, x: 600, duration: 1})
+
+const tl4 = gsap.timeline();
+
+tl4.from('.main-createEmotions__title', {opacity: 0, y: 300, duration: 1})
+
+const tl5 = gsap.timeline();
+
+tl5.from('.main-solutions__content', {opacity: 0})
+
+const tl8 = gsap.timeline();
+
+tl8.from('.leftBlockContainer__imgContainer', {opacity: 0, y: 200, duration: 1})
+
+const tl9 = gsap.timeline();
+
+tl9.from('.leftBlockContainer__horizontalBorder', {width: 0, duration: 0.5, delay: 1})
+
+const tl10 = gsap.timeline();
+
+tl10.from('.leftBlock__verticalBorder', {height: 0, duration: 0.5, delay: 1})
+
+
+
+ScrollTrigger.create({
+  animation: tl5,
+  trigger: '.main-solutions__content',
+  start: 'top 90%',
+  end: "top 70%",
+  scrub: true,
+})
+
+const tl6 = gsap.timeline();
+
+tl6.from('.main-solutions__linkUnderline', {width: 0, duration: 1.5,})
+
+ScrollTrigger.create({
+  animation: tl6,
+  trigger: '.main-solutions__watchPortfolioContainer',
+  start: 'top 80%',
+  end: "top 60%",
+})
+
+const tl7 = gsap.timeline();
+
+tl7.from('.main-services__borderLine', {width: 0, duration: 1.5,})
+
+ScrollTrigger.create({
+  animation: tl7,
+  trigger: '.main-services__tabContainer',
+  start: 'top 60%',
+  end: "top 30%",
+})
+
+
+const tl11 = gsap.timeline();
+
+tl11.from('.main-result__content h2', {opacity: 0, x: 100, duration: 0.6})
+tl11.from('.main-result__stepsSwiper', {opacity: 0, x: -100, duration: 0.6})
+
+ScrollTrigger.create({
+  animation: tl11,
+  trigger: '.main-result__content',
+  start: 'top 80%',
+  end: "top 60%",
+})
+
+
+const tl12 = gsap.timeline();
+
+tl12.from('.main-firstStep__content', {opacity: 0})
+
+ScrollTrigger.create({
+  animation: tl12,
+  trigger: '.main-firstStep__content',
+  start: 'top 80%',
+  end: "top 30%",
+  scrub: true,
+})
+
+
+const tl13 = gsap.timeline();
+
+tl13.from('.main-gallery__tabsContainer_borderLine', {width: 0, duration: 1.5})
+
+ScrollTrigger.create({
+  animation: tl13,
+  trigger: '.main-gallery__content',
+  start: 'top 80%',
+  end: "top 30%",
+})
+
+
+const tl14 = gsap.timeline();
+
+tl14.from('.main-contact__content', {opacity: 0})
+
+ScrollTrigger.create({
+  animation: tl14,
+  trigger: '.main-contact__content',
+  start: 'top 90%',
+  end: "top 70%",
+  scrub: true,
+})
+
+// const tl1 = gsap.timeline();
+
+// tl1.from('.leftBlockContainer__text', {opacity: 0, y: 100})
+
+// ScrollTrigger.create({
+//   animation: tl1,
+//   trigger: '.main-services',
+//   start: 'top 70%',
+//   end: "top 10%",
+//   scrub: true,
+//   markers: true,
+//   onEnter: function(){
+//     leftBlockContainer.innerHTML = mainServices.innerHTML
+//   },
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+})

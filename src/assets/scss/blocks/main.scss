@@ -41,6 +41,7 @@ main {
 
     .main-createEmotions__content {
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         gap: 6rem;
         // padding-right: 8rem;
@@ -216,7 +217,7 @@ main {
 
     .leftBlockContainer__imgContainer {
         padding-top: 4rem;
-        border-top: 3px solid #000000;
+        
         width: 100%;
         padding-left: 8rem;
         padding-bottom: 4rem;
@@ -243,9 +244,17 @@ main {
         }
     }
 
+    .leftBlockContainer__horizontalBorder {
+        width: 100%;
+        height: 3px;
+        background: #000000;
+        @include breakpoint($jb-bp) {
+            display: none;
+        }
+    }
+
     .leftBlockContainer__textContainer {
         height: 40.4rem;
-        border-right: 3px solid #000000;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -264,6 +273,21 @@ main {
             line-height: 100.1%;
             color: #000000;
         }
+    }
+
+    .leftBlock__verticalBorder {
+        width: 3px;
+        background: #000000;
+
+        @include breakpoint($jb-bp) {
+            display: none;
+        }
+    }
+
+    .leftBlockContainer__positionHelper {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 8rem;
     }
 
 
@@ -305,6 +329,7 @@ main {
 
 .main-solutions {
     .main-solutions__content {
+        overflow: hidden;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -395,6 +420,12 @@ main {
             justify-content: flex-end;
             padding-bottom: 4rem;
             width: 78.6rem;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            &:hover {
+                scale: 1.005;
+                
+            }
 
             @include breakpoint($nb-bp) {
                 width: 76.6rem;
@@ -431,7 +462,6 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 3.2rem;
-                border-bottom: 3px solid #000000;
                 justify-content: flex-end;
                 padding-right: 2rem;
 
@@ -464,6 +494,12 @@ main {
                     }
                 }
                 
+            }
+
+            .main-solutions__linkUnderline {
+                height: 3px;
+                background: #000000;
+                width: 100%;
             }
 
             span {
@@ -541,8 +577,11 @@ main {
 
 
         .main-services__tabContainer {
-            border-bottom: 2px solid #000000;
+            
 
+            @include breakpoint($jb-bp) {
+                border-bottom: 2px solid #000000;
+            }
 
             .main-services__btn {
                 cursor: pointer;
@@ -647,6 +686,16 @@ main {
 
             @include breakpoint($sm-bp) {
                 border-bottom: unset;
+            }
+        }
+
+        .main-services__borderLine {
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+
+            @include breakpoint($jb-bp) {
+                display: none;
             }
         }
     }
@@ -1307,25 +1356,14 @@ main {
 
         .main-gallery__tabsContainer {
             display: flex;
-            border-bottom: 3px solid #000000;
+            flex-direction: column;
+            gap: 2rem;
             width: 58.6%;
             // gap: 25.8rem;
-            gap: 11.6rem;
+            
             padding-bottom: 2rem;
 
-
-
-            @include breakpoint($nb-bp) {
-                gap: 6.8rem;
-            }
-
-            @include breakpoint($cos-bp) {
-                gap: 1.8rem;
-            }
-
-            @include breakpoint($xl-bp) {
-                gap: 0rem;
-            }
+            
 
             // @include breakpoint($lg-bp) {
             //     gap: 6.7rem;
@@ -1337,6 +1375,7 @@ main {
                 justify-content: space-between;
                 padding-left: 1.8rem;
                 padding-right: 1.8rem;
+                border-bottom: 3px solid #000000;
             }
 
             @include breakpoint($sm-bp) {
@@ -1385,6 +1424,29 @@ main {
 
 
 
+        }
+
+        .main-gallery__tabsContainer_borderLine {
+            height: 3px;
+            background: #000000;
+        }
+
+        .main-gallery__tabsHelperForBorder {
+            display: flex;
+
+            gap: 11.6rem;
+
+            @include breakpoint($nb-bp) {
+                gap: 6.8rem;
+            }
+
+            @include breakpoint($cos-bp) {
+                gap: 1.8rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                gap: 0rem;
+            }
         }
 
     }
