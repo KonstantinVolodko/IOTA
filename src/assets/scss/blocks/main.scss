@@ -418,6 +418,10 @@ main {
             display: flex;
             flex-direction: column;
 
+            .main-solutions__subtitleText {
+                padding-left: 0.35rem;
+            }
+
 
             @include breakpoint($cos-bp) {
                 margin-bottom: 14.2rem;
@@ -570,8 +574,9 @@ main {
     gap: 2rem;
     align-items: center;
     position: absolute;
-    bottom: 8rem;
+    bottom: 24%;
     font-size: 2rem;
+    padding-left: 0.35rem;
 
     .main-solutions__designSubtitle {
         font-weight: 600;
@@ -579,10 +584,20 @@ main {
     }
 
     .main-solutions__designArrow {
+        transform-origin: left;
+        transition: all 0.2s;
         svg {
             width: 3rem;
             height: 1.1rem;
         }
+    }
+}
+
+.main-solutions__design:hover {
+    .main-solutions__designArrow {
+        transform-origin: left;
+        transition: all 0.2s;
+        transform: scale(1.3, 1);
     }
 }
 
@@ -1604,7 +1619,7 @@ main {
     // font-family: 'Manrope';
     // text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
     // text-shadow: 0 0 0.9px #333, 0 0 0.9px #333;
-    -webkit-text-stroke: 0.2rem black;
+    -webkit-text-stroke: 0.15rem black;
     transition: all 0.2s linear;
 }
 

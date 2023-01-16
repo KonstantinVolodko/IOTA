@@ -545,12 +545,25 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+
   let solutionImgSwiper = new Swiper('.main-solutions__imgContainer', {
     loop: true,
+    speed: 800,
     autoplay: {
-      delay: 3000,
+      delay: 5000,
     },
   })
+
+  solutionImgSwiper.autoplay.stop()
+
+  // let slideSwipe = setInterval(() => solutionImgSwiper.slideNext(), 2000);
+
+
+
+
+  
+
+  
 
   let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
 
@@ -741,7 +754,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl5 = gsap.timeline();
 
-  tl5.from('.main-solutions__content', { opacity: 0 })
+  tl5.from('.main-solutions__content h2', { opacity: 0 })
 
 
 
@@ -756,19 +769,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // markers: true
   })
 
-  const tl15 = gsap.timeline()
 
-  tl15.from('.main-solutions__content h2', { y: 80 })
+  // const tl15 = gsap.timeline()
 
-  ScrollTrigger.create({
-    animation: tl15,
-    trigger: '.main-solutions__content',
-    start: 'top 90%',
-    end: "top 80%",
-    events: "onEnter onLeave onEnterBack onLeaveBack",
-    toggleActions: "play play reverse reverse",
-    // scrub: true,
-  })
+  // tl15.from('.main-solutions__content h2', { y: 80 })
+
+  // ScrollTrigger.create({
+  //   animation: tl15,
+  //   trigger: '.main-solutions__content',
+  //   start: 'top 90%',
+  //   end: "top 80%",
+  //   events: "onEnter onLeave onEnterBack onLeaveBack",
+  //   toggleActions: "play play reverse reverse",
+  //   // scrub: true,
+  // })
 
   // const tl6 = gsap.timeline();
 
@@ -785,7 +799,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tl7.from('.main-services__borderLine', { width: 0, duration: 1.5, })
 
-  tl7.fromTo(".main-services__btn", {opacity: 0}, {opacity: 1})
+  tl7.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
     animation: tl7,
@@ -796,7 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl17 = gsap.timeline();
 
-  tl17.fromTo(".main-services__btn", {opacity: 0}, {opacity: 1, delay: 0.5})
+  tl17.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1, delay: 0.5 })
 
   ScrollTrigger.create({
     animation: tl17,
@@ -859,7 +873,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl18 = gsap.timeline()
 
-  tl18.fromTo('.main-result__content h2', {opacity: 0, y: 80 }, {opacity: 1, y: 0})
+  tl18.fromTo('.main-result__content h2', { opacity: 0, y: 80 }, { opacity: 1, y: 0 })
 
   ScrollTrigger.create({
     animation: tl18,
@@ -874,7 +888,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl19 = gsap.timeline()
 
-  tl19.fromTo('.main-result__stepsSwiper', {opacity: 0}, {opacity: 1})
+  tl19.fromTo('.main-result__stepsSwiper', { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
     animation: tl19,
@@ -888,7 +902,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl20 = gsap.timeline()
 
-  tl20.fromTo('.main-firstStep__subtitle', {opacity: 0, y: 80, duration: 1 }, {opacity: 1, y: 0, duration: 1})
+  tl20.fromTo('.main-firstStep__subtitle', { opacity: 0, y: 80, duration: 1 }, { opacity: 1, y: 0, duration: 1 })
 
   ScrollTrigger.create({
     animation: tl20,
@@ -940,16 +954,16 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: '.main-solutions',
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
     },
     events: "onEnter onLeave onEnterBack onLeaveBack",
@@ -964,19 +978,19 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-services",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainCreate.innerHTML
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainCreate.innerHTML
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainCreate.innerHTML
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainCreate.innerHTML
     },
@@ -990,19 +1004,19 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-result",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainServices.innerHTML
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainServices.innerHTML
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainServices.innerHTML
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainServices.innerHTML
     },
@@ -1017,16 +1031,16 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-firstStep",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
     },
     events: "onEnter onLeave onEnterBack onLeaveBack",
@@ -1040,19 +1054,19 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-gallery",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = firstStep.innerHTML
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = firstStep.innerHTML
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = firstStep.innerHTML
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = firstStep.innerHTML
     },
@@ -1066,19 +1080,19 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-contact",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainGallery.innerHTML
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainGallery.innerHTML
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainGallery.innerHTML
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainGallery.innerHTML
     },
@@ -1093,24 +1107,24 @@ document.addEventListener("DOMContentLoaded", () => {
     endTrigger: ".main-contact__btnContainer",
     start: 'top 70%',
     end: "top 70%",
-    onEnter: function(){
+    onEnter: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainInContact.innerHTML
     },
-    onLeave: function(){
+    onLeave: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainInContact.innerHTML
     },
-    onEnterBack: function(){
+    onEnterBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainInContact.innerHTML
     },
-    onLeaveBack: function(){
+    onLeaveBack: function () {
       leftBlockContainer.innerHTML = "";
       leftBlockContainer.innerHTML = mainInContact.innerHTML
     },
     events: "onEnter onLeave onEnterBack onLeaveBack",
-    toggleActions: "play restart restart restart",
+    toggleActions: "play none none none",
   })
 
 
@@ -1151,18 +1165,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let kkk = document.querySelector('.main-solutions__content');
   let bbb = kkk.offsetHeight;
-  let xxx = (bbb * 0.4);
-  let zzz = (bbb * 0.15)
-  let lll = (bbb * 0.8)
-  console.log(xxx)
+  let xxx = (bbb * 0.35);
+  let zzz = (bbb * 0.2);
+  let lll = (bbb * 1.29);
 
   tl22.fromTo('.main-solutions__content h2', { y: 0 }, { y: xxx })
 
-    ScrollTrigger.create({
+  ScrollTrigger.create({
     animation: tl22,
     trigger: '.main-solutions__content',
     // endTrigger: ".main-contact__btnContainer",
-    start: '-=20%',
+    start: '-=42%',
     end: `+=${lll + 'px'}`,
     scrub: true,
 
@@ -1174,15 +1187,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tl23.fromTo('.main-solutions__subtitleText', { y: 0 }, { y: zzz })
 
-    ScrollTrigger.create({
+  
+
+  ScrollTrigger.create({
     animation: tl23,
     trigger: '.main-solutions__content',
-    start: `+=${bbb * 0.2 + "px"}`,
-    end: `+=${bbb * 0.65 + 'px'}`,
+    start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
+    end: `+=${bbb * 1 + 'px'}`,
+    scrub: true,
+  })
+
+  const tl24 = gsap.timeline()
+  tl24.fromTo('.main-solutions__design', { y: 0 }, { y: zzz })
+
+  ScrollTrigger.create({
+    animation: tl24,
+    trigger: '.main-solutions__content',
+    start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
+    end: `+=${bbb * 1 + 'px'}`,
     scrub: true,
   })
 
 
 
+
+  const tl25 = gsap.timeline();
+
+  let count = 0
+
+  ScrollTrigger.create({
+    animation: tl25,
+    trigger: '.main-solutions__content',
+    start: 'top 40%',
+    end: 'top 20%',
+    onEnter: function () {
+      count += 1
+      if (count <= 1) {
+        solutionImgSwiper.slideNext()
+        solutionImgSwiper.autoplay.start()
+      }
+    },
+    // scrub: true,
+    events: "onEnter onLeave onEnterBack onLeaveBack",
+    toggleActions: "play play reverse reverse",
+  })
 
 })
