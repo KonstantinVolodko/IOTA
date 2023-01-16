@@ -80,7 +80,7 @@ main {
                 position: absolute;
                 left: -16%;
                 top: 3.5%;
-                z-index: 111111;
+                z-index: 11;
 
                 @include breakpoint($cos-bp) {
                     left: -16%;
@@ -287,7 +287,7 @@ main {
             writing-mode: vertical-rl;
 
             font-style: normal;
-            font-weight: 500;
+            font-weight: 300;
             font-size: 2.4rem;
             line-height: 100.1%;
             color: #000000;
@@ -349,7 +349,11 @@ main {
 
 
 .main-solutions {
+    overflow: hidden;
+    position: relative;
+
     .main-solutions__content {
+        
         overflow: hidden;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -411,7 +415,9 @@ main {
             line-height: 137.1%;
             color: #000000;
             width: 65.1%;
-            margin-bottom: 32.66rem;
+            display: flex;
+            flex-direction: column;
+
 
             @include breakpoint($cos-bp) {
                 margin-bottom: 14.2rem;
@@ -431,6 +437,8 @@ main {
                 font-size: 2.1rem;
                 line-height: 137.1%;
             }
+
+            
         }
 
         .main-solutions__imgContainer {
@@ -439,14 +447,10 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding-bottom: 4rem;
             width: 78.6rem;
             cursor: pointer;
             transition: all 0.2s linear;
-            &:hover {
-                scale: 1.005;
-                
-            }
+            height: 96.5rem;
 
             @include breakpoint($nb-bp) {
                 width: 76.6rem;
@@ -561,6 +565,27 @@ main {
     }
 }
 
+.main-solutions__design {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: absolute;
+    bottom: 8rem;
+    font-size: 2rem;
+
+    .main-solutions__designSubtitle {
+        font-weight: 600;
+        color: #000000;
+    }
+
+    .main-solutions__designArrow {
+        svg {
+            width: 3rem;
+            height: 1.1rem;
+        }
+    }
+}
+
 .main-services_position {
     margin-top: 22.6rem;
     display: flex;
@@ -605,6 +630,7 @@ main {
             }
 
             .main-services__btn {
+                font-family: 'Manrope';
                 cursor: pointer;
                 width: 100%;
                 text-align: left;
@@ -621,6 +647,7 @@ main {
                 padding-top: 3rem;
                 padding-bottom: 3rem;
                 padding-left: unset;
+                transition: all 0.2s;
 
                 @include breakpoint($cos-bp) {
                     width: 100%;
@@ -633,10 +660,14 @@ main {
                     padding-bottom: 2rem;
                 }
 
+                a {
+                    color: #000000;
+                }
+
             }
 
             .main-services__btn:hover {
-                font-weight: 700;
+                padding-left: 0.7rem;
             }
 
 
@@ -743,18 +774,25 @@ main {
             transition: all linear 0.3s;
 
             svg {
-                display: none;
+                opacity: 0;
                 width: 4.5rem;
                 height: 1.8rem;
+                transition: all linear 0.3s;
+                transform-origin: left;
             }
         }
 
         a:hover {
-            font-weight: 700;
+            // font-weight: 700;
+            // text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+            padding-left: 0.7rem;
             transition: all linear 0.3s;
 
             svg {
-                display: block;
+                opacity: 1;
+                transition: all linear 0.3s;
+                transform-origin: left;
+                transform: scale(1.15, 1);
             }
         }
 
@@ -866,7 +904,7 @@ main {
 .gallery-thumbs .swiper-slide-active {
     color: #f7f7f7;
     -webkit-text-stroke: 0.1rem black;
-    font-family: Noto Sans;
+    font-family: 'M PLUS 1p';
 
     .swiper-slide-container__helper {
         border-bottom: 4px solid #000000;
@@ -903,10 +941,12 @@ main {
 
 .main-result {
 
+    overflow: hidden;
+
     .main-result__content {
         display: flex;
         justify-content: space-between;
-        overflow-x: hidden;
+        // overflow-x: hidden;
 
         @include breakpoint($jb-bp) {
             flex-direction: column;
@@ -1188,6 +1228,7 @@ main {
                         gap: 3rem;
                         padding-right: 3rem;
                         align-items: center;
+                        transition: all 0.2s linear;
 
                         @include breakpoint($xl-bp) {
                             padding-right: 1rem;
@@ -1216,6 +1257,18 @@ main {
                         svg {
                             width: 2rem;
                             height: 3.4rem;
+                            transition: all 0.2s linear;
+                            transform-origin: top;
+                        }
+                    }
+
+                    .main-firstStep__accrordeonBtn:hover {
+                        padding-bottom: 2rem;
+                        transition: all 0.2s linear;
+                        svg {
+                            transform-origin: top;
+                            transform: scale(1, 1.2);
+                            transition: all 0.2s linear;
                         }
                     }
 
@@ -1229,7 +1282,7 @@ main {
                         overflow: hidden;
                         transition: max-height 0.2s ease-out;
                         width: 78%;
-                        margin-top: 2rem;
+                        // margin-top: 2rem;
 
                         @include breakpoint($xl-bp) {
                             width: 95%;
@@ -1547,7 +1600,11 @@ main {
 }
 
 .activeTab {
-    font-weight: 700 !important;
+    // font-weight: 700 !important;
+    // font-family: 'Manrope';
+    // text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+    // text-shadow: 0 0 0.9px #333, 0 0 0.9px #333;
+    -webkit-text-stroke: 0.2rem black;
     transition: all 0.2s linear;
 }
 
@@ -1784,7 +1841,7 @@ textarea {
 }
 
 .deleteHover:hover {
-    font-weight: 300 !important;
+    padding-left: 0rem !important;
 }
 
 // main::-webkit-scrollbar-thumb {
