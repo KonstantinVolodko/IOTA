@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (let i = 0; i < accrordeonBtn.length; i++) {
     accrordeonBtn[i].addEventListener("click", function () {
-      // this.classList.toggle("activeTab");
+      this.classList.toggle("paddingActiveTab");
       let panel2 = this.nextElementSibling;
       if (panel2.style.maxHeight) {
         panel2.style.maxHeight = null;
@@ -546,24 +546,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  let solutionImgSwiper = new Swiper('.main-solutions__imgContainer', {
-    loop: true,
-    speed: 800,
-    autoplay: {
-      delay: 5000,
-    },
-  })
-
-  solutionImgSwiper.autoplay.stop()
-
-  // let slideSwipe = setInterval(() => solutionImgSwiper.slideNext(), 2000);
 
 
 
 
-  
 
-  
+
+
+
+
 
   let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
 
@@ -630,98 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let mainInContact = document.querySelector('#inContact')
 
 
-  // const myObserver = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = ""
-  //   }
-  // })
-
-  // const myEl = document.querySelector('.main-createEmotions');
-
-  // myObserver.observe(myEl);
-
-
-
-  // const myObserver1 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = mainCreate.innerHTML
-  //   }
-  // })
-
-  // const myEl1 = document.querySelector('.main-solutions__content');
-
-  // myObserver1.observe(myEl1);
-
-  // const myObserver2 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-
-  //     leftBlockContainer.innerHTML = mainServices.innerHTML
-  //   }
-  // })
-
-  // const myEl2 = document.querySelector('.main-services__content');
-
-  // myObserver2.observe(myEl2);
-
-
-  // const myObserver3 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = "";
-  //   }
-  // })
-
-  // const myEl3 = document.querySelector('.main-result__content');
-
-  // myObserver3.observe(myEl3);
-
-
-
-  // const myObserver4 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = firstStep.innerHTML;
-  //   }
-  // })
-
-  // const myEl4 = document.querySelector('.main-firstStep__content');
-
-  // myObserver4.observe(myEl4);
-
-
-
-  // const myObserver5 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = mainGallery.innerHTML;
-  //   }
-  // })
-
-  // const myEl5 = document.querySelector('.main-gallery__content');
-
-  // myObserver5.observe(myEl5);
-
-
-  // const myObserver6 = new IntersectionObserver(elements => {
-  //   if (elements[0].intersectionRatio !== 0) {
-  //     const tl = gsap.timeline();
-  //     tl.from('.leftBlockContainer__text', { opacity: 0, y: 100 })
-  //     leftBlockContainer.innerHTML = mainInContact.innerHTML;
-  //   }
-  // })
-
-  // const myEl6 = document.querySelector('.main-contact_position');
-
-  // myObserver6.observe(myEl6);
+  
 
 
   const tl2 = gsap.timeline();
@@ -835,17 +735,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl12 = gsap.timeline();
 
-  tl12.from('.main-firstStep__content', { opacity: 0 })
+  tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50}, {opacity: 1, x: 0, delay: 0.3, duration: 0.7})
+  
 
   ScrollTrigger.create({
     animation: tl12,
     trigger: '.main-firstStep__content',
     start: 'top 80%',
     end: "top 30%",
-    scrub: true,
+    markers: true,
   })
 
+  const tl28 = gsap.timeline();
 
+  tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 1, })
+
+  ScrollTrigger.create({
+    animation: tl28,
+    trigger: '.main-firstStep__content',
+    start: 'top 80%',
+    end: "top 30%",
+    markers: true,
+  })
   const tl13 = gsap.timeline();
 
   tl13.from('.main-gallery__tabsContainer_borderLine', { width: 0, duration: 1.5 })
@@ -902,7 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl20 = gsap.timeline()
 
-  tl20.fromTo('.main-firstStep__subtitle', { opacity: 0, y: 80, duration: 1 }, { opacity: 1, y: 0, duration: 1 })
+  tl20.fromTo('.main-firstStep__subtitle', { opacity: 0, duration: 1 }, { opacity: 1, duration: 1 })
 
   ScrollTrigger.create({
     animation: tl20,
@@ -1187,7 +1098,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tl23.fromTo('.main-solutions__subtitleText', { y: 0 }, { y: zzz })
 
-  
+
 
   ScrollTrigger.create({
     animation: tl23,
@@ -1208,8 +1119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrub: true,
   })
 
-
-
+  
 
   const tl25 = gsap.timeline();
 
@@ -1223,13 +1133,39 @@ document.addEventListener("DOMContentLoaded", () => {
     onEnter: function () {
       count += 1
       if (count <= 1) {
-        solutionImgSwiper.slideNext()
-        solutionImgSwiper.autoplay.start()
+        setTimeout(() => {
+
+          let solutionImgSwiper = new Swiper('.main-solutions__imgContainer', {
+            loop: true,
+            speed: 1100,
+            allowTouchMove: false,
+            effect: "creative",
+            creativeEffect: {
+              prev: {
+                translate: ["-5%", 0, -1],
+              },
+              next: {
+                translate: ["100%", 0, 0],
+              },
+            },
+            autoplay: {
+              delay: 6000,
+            },
+          })
+        
+          solutionImgSwiper.autoplay.stop()
+
+          solutionImgSwiper.slideNext()
+          solutionImgSwiper.autoplay.start()
+        }, 3000)
+
       }
     },
-    // scrub: true,
     events: "onEnter onLeave onEnterBack onLeaveBack",
     toggleActions: "play play reverse reverse",
+    // markers: true,
   })
+
+
 
 })

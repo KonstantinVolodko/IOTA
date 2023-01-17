@@ -6,6 +6,12 @@
 </head>
 
 <body>
+    <!-- <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+      </div> -->
     {{> sprite }}
 
     <div class="page">
@@ -27,11 +33,22 @@
     </div>
 
     <!-- JS -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        // window.onload = function () {
+        //   document.body.classList.add('loaded_hiding');
+        //   window.setTimeout(function () {
+        //     document.body.classList.add('loaded');
+        //     document.body.classList.remove('loaded_hiding');
+        //   }, 500);
+        // }
+    </script>
+
 </body>
 
 </html>

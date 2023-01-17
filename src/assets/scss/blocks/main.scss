@@ -1,6 +1,6 @@
 main {
     padding-left: 17.4%;
-    
+
 
     @include breakpoint($cos-bp) {
         padding-left: 15%;
@@ -218,7 +218,7 @@ main {
 
     .leftBlockContainer__imgContainer {
         padding-top: 4rem;
-        
+
         width: 100%;
         padding-left: 8rem;
         padding-bottom: 4rem;
@@ -237,7 +237,7 @@ main {
             padding-top: 1.5rem;
             padding-bottom: unset;
         }
-        
+
         @include breakpoint($sm-bp) {
             padding-top: 2rem;
             padding-left: 1.5rem;
@@ -353,7 +353,7 @@ main {
     position: relative;
 
     .main-solutions__content {
-        
+
         overflow: hidden;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -442,7 +442,7 @@ main {
                 line-height: 137.1%;
             }
 
-            
+
         }
 
         .main-solutions__imgContainer {
@@ -455,6 +455,7 @@ main {
             cursor: pointer;
             transition: all 0.2s linear;
             height: 96.5rem;
+
 
             @include breakpoint($nb-bp) {
                 width: 76.6rem;
@@ -522,7 +523,7 @@ main {
                         display: none;
                     }
                 }
-                
+
             }
 
             .main-solutions__linkUnderline {
@@ -586,6 +587,7 @@ main {
     .main-solutions__designArrow {
         transform-origin: left;
         transition: all 0.2s;
+
         svg {
             width: 3rem;
             height: 1.1rem;
@@ -638,7 +640,7 @@ main {
 
 
         .main-services__tabContainer {
-            
+
 
             @include breakpoint($jb-bp) {
                 border-bottom: 2px solid #000000;
@@ -663,7 +665,6 @@ main {
                 padding-bottom: 3rem;
                 padding-left: unset;
                 transition: all 0.2s;
-                letter-spacing: 0.1rem;
 
                 @include breakpoint($cos-bp) {
                     width: 100%;
@@ -1137,6 +1138,8 @@ main {
                 width: 55rem;
                 top: 50%;
                 right: -7%;
+                transform-origin: right;
+                transform: scale(0, 1);
 
                 @include breakpoint($nb-bp) {
                     right: -31%;
@@ -1281,6 +1284,7 @@ main {
                     .main-firstStep__accrordeonBtn:hover {
                         padding-bottom: 2rem;
                         transition: all 0.2s linear;
+
                         svg {
                             transform-origin: top;
                             transform: scale(1, 1.2);
@@ -1387,7 +1391,7 @@ main {
                     width: 100%;
                     padding-right: 1.8rem;
                     padding-left: 1.8rem;
-                
+
                 }
 
                 img {
@@ -1456,10 +1460,10 @@ main {
             gap: 2rem;
             width: 58.6%;
             // gap: 25.8rem;
-            
+
             padding-bottom: 2rem;
 
-            
+
 
             // @include breakpoint($lg-bp) {
             //     gap: 6.7rem;
@@ -1860,11 +1864,83 @@ textarea {
     padding-left: 0rem !important;
 }
 
-// main::-webkit-scrollbar-thumb {
-//     -webkit-box-shadow: inset 0 0 6px rgba(198, 21, 21, 1); 
-//     background: rgba(198, 21, 21, 1);
-// }
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
 
-// body::-webkit-scrollbar {
-//     width: 0;
-// }
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+.paddingActiveTab {
+    padding-bottom: 2rem !important;
+
+    svg {
+        transform-origin: top;
+        transform: scale(1, 1.2);
+        transition: all 0.2s linear;
+    }
+}
+
