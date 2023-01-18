@@ -21,6 +21,7 @@
 .aboutCompany {
     padding-bottom: 30rem;
 
+
     @include breakpoint($sm-bp) {
         padding-bottom: 14rem;
     }

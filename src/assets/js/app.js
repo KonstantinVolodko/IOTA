@@ -603,10 +603,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   let textArea = document.querySelectorAll('.textArea')
+  let leftBlockArea = document.querySelector('.main-createEmotions__helper2')
 
   textArea.forEach(e => {
-    e.addEventListener("focusin", () => e.classList.add('areaHeight'));
-    e.addEventListener("focusout", () => e.classList.remove('areaHeight'));
+    e.addEventListener("focusin", () => {
+      e.classList.add('areaHeight')
+      leftBlockArea.classList.add('leftBlockAreaActive')
+    });
+    e.addEventListener("focusout", () => {
+      e.classList.remove('areaHeight')
+      leftBlockArea.classList.remove('leftBlockAreaActive')
+    });
   })
 
   let leftBlockContainer = document.querySelector('.leftBlockContainer__text');
@@ -621,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let mainInContact = document.querySelector('#inContact')
 
 
-  
+
 
 
   const tl2 = gsap.timeline();
@@ -735,27 +742,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl12 = gsap.timeline();
 
-  tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50}, {opacity: 1, x: 0, delay: 0.3, duration: 0.7})
-  
+  tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50 }, { opacity: 1, x: 0, delay: 0.2, duration: 0.5 })
+
 
   ScrollTrigger.create({
     animation: tl12,
     trigger: '.main-firstStep__content',
     start: 'top 80%',
     end: "top 30%",
-    markers: true,
   })
 
   const tl28 = gsap.timeline();
 
-  tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 1, })
+  tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 0.6, })
 
   ScrollTrigger.create({
     animation: tl28,
     trigger: '.main-firstStep__content',
     start: 'top 80%',
     end: "top 30%",
-    markers: true,
   })
   const tl13 = gsap.timeline();
 
@@ -771,20 +776,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl14 = gsap.timeline();
 
-  tl14.from('.main-contact__content', { opacity: 0 })
+  tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
     animation: tl14,
     trigger: '.main-contact__content',
-    start: 'top 90%',
-    end: "top 70%",
-    scrub: true,
+    start: 'top 70%',
+    end: "top 60%",
+    events: "onEnter onLeave onEnterBack onLeaveBack",
+    toggleActions: "play play reverse reverse",
   })
 
 
   const tl18 = gsap.timeline()
 
-  tl18.fromTo('.main-result__content h2', { opacity: 0, y: 80 }, { opacity: 1, y: 0 })
+  tl18.fromTo('.main-result__content h2', { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
     animation: tl18,
@@ -797,29 +803,42 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-  const tl19 = gsap.timeline()
+  // const tl19 = gsap.timeline()
 
-  tl19.fromTo('.main-result__stepsSwiper', { opacity: 0 }, { opacity: 1 })
+  // tl19.fromTo('.main-result__stepsSwiper', { opacity: 0 }, { opacity: 1 })
+
+  // ScrollTrigger.create({
+  //   animation: tl19,
+  //   trigger: '.main-result__subtitle',
+  //   start: 'top 70%',
+  //   end: "top 60%",
+  //   events: "onEnter onLeave onEnterBack onLeaveBack",
+  //   toggleActions: "play play reverse reverse",
+  // })
+
+
+  const tl20 = gsap.timeline()
+
+  tl20.fromTo('.main-firstStep__subtitle', { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
-    animation: tl19,
-    trigger: '.main-result__subtitle',
+    animation: tl20,
+    trigger: '.main-firstStep__subtitle',
     start: 'top 70%',
     end: "top 60%",
     events: "onEnter onLeave onEnterBack onLeaveBack",
     toggleActions: "play play reverse reverse",
   })
 
+  const tl30 = gsap.timeline()
 
-  const tl20 = gsap.timeline()
-
-  tl20.fromTo('.main-firstStep__subtitle', { opacity: 0, duration: 1 }, { opacity: 1, duration: 1 })
+  tl30.fromTo('.main-firstStep__accordeonContainer', { opacity: 0 }, { opacity: 1 })
 
   ScrollTrigger.create({
-    animation: tl20,
+    animation: tl30,
     trigger: '.main-firstStep__subtitle',
-    start: 'top 90%',
-    end: "top 70%",
+    start: 'top 70%',
+    end: "top 60%",
     events: "onEnter onLeave onEnterBack onLeaveBack",
     toggleActions: "play play reverse reverse",
   })
@@ -1119,7 +1138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrub: true,
   })
 
-  
+
 
   const tl25 = gsap.timeline();
 
@@ -1152,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", () => {
               delay: 6000,
             },
           })
-        
+
           solutionImgSwiper.autoplay.stop()
 
           solutionImgSwiper.slideNext()
@@ -1165,6 +1184,81 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleActions: "play play reverse reverse",
     // markers: true,
   })
+
+
+
+  let contactHeight = document.querySelector('.main-contact').offsetHeight;
+  let mainHeight = document.querySelector('main').offsetHeight;
+
+
+
+
+  // ScrollTrigger.create({
+  //   animation: tl29,
+  //   trigger: '.main-contact',
+  //   endTrigger: '.main-contact__content button',
+  //   onEnter: function() {
+  //     tl29.fromTo('.leftBlockContainer',{position: 'fixed', top: `${window.innerHeight * 0.2}`}, { position: 'absolute', top: `${mainHeight - contactHeight * 2 + 'px'}`, duration: 0})
+  //   },
+  //   onLeave: function() {
+  //     tl29.to('.leftBlockContainer', { position: 'fixed', top: "20%", duration: 0})
+  //   },
+  //   onEnterBack: function() {
+  //     tl29.to('.leftBlockContainer', { position: 'fixed', top: "20%", duration: 0})
+  //   },
+  //   onLeaveBack: function() {
+  //     tl29.to('.leftBlockContainer', { position: 'fixed', top: "20%", duration: 0})
+  //   },
+  //   start: 'top 70%',
+  //   end: "top 20%",
+  //   markers: true,
+  // })
+
+
+  // const tl29 = gsap.timeline()
+  // tl29.fromTo('.leftBlockContainer', { position: 'fixed' }, { position: 'fixed' })
+
+  // ScrollTrigger.create({
+  //   animation: tl29,
+  //   trigger: 'main',
+  //   start: "+=0px",
+  //   end: `+=${mainHeight - contactHeight * 2 + 'px'}`,
+  //   scrub: true,
+  //   markers: true,
+  // })
+
+
+
+
+  // const tl29 = gsap.timeline()
+  // gsap.to('.leftBlockContainer', {
+  //   y: mainHeight,
+  //   scrollTrigger: {
+  //     trigger: 'main',
+  //     start: `top 0%`,
+  //     end: `bottom 0%`,
+  //     scrub: true,
+  //     markers: true,
+  //   }
+  // })
+
+  // ScrollTrigger.create({
+  //   animation: tl29,
+  //   trigger: 'main',
+  //   endTrigger: 'footer',
+  //   start: `top 50%`,
+  //   end: `top 50%`,
+  //   scrub: true,
+  //   markers: true,
+  // })
+
+
+
+
+
+
+
+
 
 
 

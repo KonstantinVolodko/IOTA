@@ -1,19 +1,40 @@
-main {
-    padding-left: 17.4%;
+// main {
+//     padding-left: 17.4%;
 
+
+//     @include breakpoint($cos-bp) {
+//         padding-left: 15%;
+//     }
+
+//     @include breakpoint($jb-bp) {
+//         padding-left: unset;
+//     }
+// }
+
+main {
+    display: flex;
+}
+
+
+.main-createEmotions__helper2 {
+    width: 17.4%;
+    margin-bottom: 20rem;
+    transition: all 0.2s linear;
 
     @include breakpoint($cos-bp) {
-        padding-left: 15%;
-    }
-
-    @include breakpoint($jb-bp) {
-        padding-left: unset;
+        width: 15%;
     }
 }
 
 
+
 .main {
     padding-bottom: 20rem;
+    width: 82.6%;
+
+    @include breakpoint($cos-bp) {
+        width: 85%;
+    }
 
     @include breakpoint($sm-bp) {
         padding-bottom: 13rem;
@@ -196,12 +217,13 @@ main {
 
 
 .leftBlockContainer {
-    position: fixed;
+    // position: fixed;
+    position: sticky;
     left: 0;
     top: 25%;
     display: flex;
     flex-direction: column;
-    width: 12%;
+    width: 70%;
 
     @include breakpoint($jb-bp) {
         position: unset;
@@ -624,6 +646,7 @@ main {
 }
 
 .main-services {
+    overflow: hidden;
 
 
     .main-services__content {
@@ -935,7 +958,7 @@ main {
 
 
 .main-result_position {
-    margin-top: 33.5rem;
+    margin-top: 18.5rem;
     padding-left: 3.6rem;
 
     @include breakpoint($nb-bp) {
@@ -958,7 +981,7 @@ main {
 
 .main-result {
 
-    overflow: hidden;
+    // overflow: hidden;
 
     .main-result__content {
         display: flex;
@@ -993,8 +1016,11 @@ main {
 
         }
 
-
-
+        .main-result__h2Container {
+            width: 32%;
+            margin-bottom: 30rem;
+        }
+        
 
         h2 {
 
@@ -1003,7 +1029,9 @@ main {
             font-size: 9.6rem;
             line-height: 100.1%;
             color: #000000;
-            width: 32%;
+            width: 100%;
+            position: sticky;
+            top: 22%;
 
             @include breakpoint($cos-bp) {
                 width: 45%;
@@ -1030,7 +1058,7 @@ main {
         }
 
         .main-result__stepsSwiper {
-            margin-top: 22.5rem;
+            margin-top: 37.5rem;
             margin-right: 29.7%;
 
             @include breakpoint($nb-bp) {
@@ -1423,6 +1451,7 @@ main {
 }
 
 .main-gallery {
+    overflow: hidden;
 
     .main-gallery__tabBlockContainer {
         display: flex;
@@ -1838,6 +1867,11 @@ main {
     // overflow-y: scroll !important;
 }
 
+.leftBlockAreaActive {
+margin-bottom: 36rem;
+transition: all 0.2s linear;
+}
+
 textarea::-webkit-scrollbar {
     width: 10px;
 }
@@ -1943,4 +1977,3 @@ textarea {
         transition: all 0.2s linear;
     }
 }
-
