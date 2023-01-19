@@ -677,31 +677,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-  // const tl15 = gsap.timeline()
-
-  // tl15.from('.main-solutions__content h2', { y: 80 })
-
-  // ScrollTrigger.create({
-  //   animation: tl15,
-  //   trigger: '.main-solutions__content',
-  //   start: 'top 90%',
-  //   end: "top 80%",
-  //   events: "onEnter onLeave onEnterBack onLeaveBack",
-  //   toggleActions: "play play reverse reverse",
-  //   // scrub: true,
-  // })
-
-  // const tl6 = gsap.timeline();
-
-  // tl6.from('.main-solutions__linkUnderline', { width: 0, duration: 1.5, })
-
-  // ScrollTrigger.create({
-  //   animation: tl6,
-  //   trigger: '.main-solutions__watchPortfolioContainer',
-  //   start: 'top 80%',
-  //   end: "top 60%",
-  // })
-
   const tl7 = gsap.timeline();
 
   tl7.from('.main-services__borderLine', { width: 0, duration: 1.5, })
@@ -726,18 +701,6 @@ document.addEventListener("DOMContentLoaded", () => {
     end: "top 30%",
   })
 
-
-  // const tl11 = gsap.timeline();
-
-  // tl11.from('.main-result__content h2', { opacity: 0, x: 100, duration: 0.6 })
-  // tl11.from('.main-result__stepsSwiper', { opacity: 0, x: -100, duration: 0.6 })
-
-  // ScrollTrigger.create({
-  //   animation: tl11,
-  //   trigger: '.main-result__content',
-  //   start: 'top 80%',
-  //   end: "top 60%",
-  // })
 
 
   const tl12 = gsap.timeline();
@@ -843,36 +806,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleActions: "play play reverse reverse",
   })
 
-  // const tl21 = gsap.timeline()
-
-  // tl21.fromTo('.main-solutions__content h2', {y: 0}, {y: '100%'})
-
-  // ScrollTrigger.create({
-  //   animation: tl21,
-  //   trigger: '.main-solutions__imgContainer',
-  //   start: 'top 40%',
-  //   end: "top -30%",
-  //   // events: "onEnter onLeave onEnterBack onLeaveBack",
-  //   // toggleActions: "play play reverse reverse",
-  //   scrub: true,
-  // })
-
-  // const tl22 = gsap.timeline()
-
-  // tl22.fromTo('.main-solutions__subtitle', {y: 0}, {y: '40%'})
-
-  // ScrollTrigger.create({
-  //   animation: tl22,
-  //   trigger: '.main-solutions__subtitleText',
-  //   // start: 'top 90%',
-  //   // end: "top 20%",
-  //   start: 'top 80%',
-  //   end: "top 20%",
-  //   // events: "onEnter onLeave onEnterBack onLeaveBack",
-  //   // toggleActions: "play play reverse reverse",
-  //   scrub: true,
-  //   markers: true,
-  // })
 
   const tl21 = gsap.timeline()
 
@@ -1108,7 +1041,6 @@ document.addEventListener("DOMContentLoaded", () => {
     start: '-=42%',
     end: `+=${lll + 'px'}`,
     scrub: true,
-
   })
 
 
@@ -1254,11 +1186,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+  let resultContentHeight = document.querySelector('.main-result__content').offsetHeight
+  let resultTextHeight = document.querySelector('.main-result__content h2').offsetHeight
+  let resultRightBlockHeight = document.querySelector('.main-result__stepsSwiper').offsetHeight
+  let resultSubtitle = document.querySelector('.main-result__subtitle').offsetHeight
+
+  // const tl31 = gsap.timeline({
+  //   pause: true,
+  //   scrollTrigger: {
+  //     trigger: '.main-result__content',
+  //     start: `-=${resultContentHeight * 0.5 + "px"}`,
+  //     end: `+=${resultContentHeight * 0.5 + "px"}`,
+  //     scrub: true,
+  //     markers: true,
+  //   }
+  // })
+
+  // tl31.fromTo('.main-result__h2Container h2',{y: 0}, { y: (resultContentHeight - resultRightBlockHeight - resultTextHeight + resultSubtitle + 'px') })
 
 
 
 
 
+  // const tl32 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.main-result__content',
+  //     start: `-=${0 + "px"}`,
+  //     end: `+=${resultContentHeight * 0.8 + "px"}`,
+  //     scrub: true,
+  //     markers: true,
+  //   }
+  // })
+
+  // tl32.fromTo('.main-result__h2Container h2', { y: resultContentHeight - resultRightBlockHeight - resultTextHeight + resultSubtitle + 'px' }, { y: (resultContentHeight - resultTextHeight + "px") })
+
+
+  const tl31 = gsap.timeline({
+    pause: true,
+    scrollTrigger: {
+      trigger: '.main-result__content',
+      // start: `-=${resultContentHeight * 0.2 + "px"}`,
+      // end: `+=${resultContentHeight * 1.5 + "px"}`,
+      start: 'top 19.5%',
+      end: 'top -120%',
+      scrub: true,
+      // markers: true,
+    }
+  })
+
+  tl31.fromTo('.main-result__h2Container h2',{y: 0}, { y: (resultContentHeight - resultTextHeight + 'px') })
 
 
 
