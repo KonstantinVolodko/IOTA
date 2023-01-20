@@ -1190,6 +1190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let resultTextHeight = document.querySelector('.main-result__content h2').offsetHeight
   let resultRightBlockHeight = document.querySelector('.main-result__stepsSwiper').offsetHeight
   let resultSubtitle = document.querySelector('.main-result__subtitle').offsetHeight
+  let swiperTextHeight = document.querySelector('.main-result__swiperText').offsetHeight
 
   // const tl31 = gsap.timeline({
   //   pause: true,
@@ -1227,14 +1228,14 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: '.main-result__content',
       // start: `-=${resultContentHeight * 0.2 + "px"}`,
       // end: `+=${resultContentHeight * 1.5 + "px"}`,
-      start: 'top 19.5%',
-      end: 'top -120%',
+      start: 'top 35%',
+      end: 'top -95%',
       scrub: true,
       // markers: true,
     }
   })
 
-  tl31.fromTo('.main-result__h2Container h2',{y: 0}, { y: (resultContentHeight - resultTextHeight + 'px') })
+  tl31.fromTo('.main-result__h2Container h2',{y: 0}, { y: (resultContentHeight - resultTextHeight - swiperTextHeight + 'px') })
 
 
 
