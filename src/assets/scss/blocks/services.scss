@@ -12,7 +12,12 @@
     }
 }
 
+#servicesLeftBlockText {
+    display: none;
+}
+
 .services {
+    width: 82.6%;
     padding-bottom: 21rem;
 
     @include breakpoint($sm-bp) {
@@ -497,19 +502,27 @@
     }
 
     .swiper-wrapper {
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
 
         @include breakpoint($sm-bp) {
             flex-direction: unset;
         }
 
-        @media (min-width: 500px) {
-            .swiper-slide {
-                flex-shrink: unset;
-                width: unset;
-                height: unset;
-            }
+        // @media (min-width: 500px) {
+        //     .swiper-slide {
+        //         flex-shrink: unset;
+        //         width: unset;
+        //         height: unset;
+        //     }
+        // }
+
+        .swiper-slide {
+            cursor: grab;
+        }
+
+        .swiper-slide:active {
+            cursor: grabbing;
         }
 
     }
