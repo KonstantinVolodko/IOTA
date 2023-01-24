@@ -884,6 +884,22 @@ main {
     }
 }
 
+.main-result__numbersContainer {
+    display: flex;
+    gap: 6rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    .main-result__number {
+        font-family: 'M PLUS 1p';
+        font-weight: 700;
+        font-size: 4.8rem;
+        line-height: 120.6%;
+        color: #000000;
+    }
+}
+
 .swiper-slide-containerSec {
     .main-result__swiperTitle {
 
@@ -941,12 +957,13 @@ main {
     height: 60%;
 }
 
-.gallery-thumbs .swiper-slide-active {
-    color: #f7f7f7;
+.main-result__numberActive {
+    color: #f7f7f7 !important;
     -webkit-text-stroke: 0.1rem black;
     font-family: 'M PLUS 1p';
+    transition: all 0.2s linear;
 
-    .swiper-slide-container__helper {
+    .main-result__numberBorder {
         border-bottom: 4px solid #000000;
     }
 
@@ -1367,8 +1384,8 @@ main {
                     margin-top: 22.2%;
                     margin-bottom: 2.4rem;
 
-                    @include breakpoint($xxl-bp) {
-                        margin-top: 22%;
+                    @include breakpoint($fk-bp) {
+                        margin-top: 18.2%;
                     }
 
                     @include breakpoint($xbl-bp) {
@@ -1377,6 +1394,10 @@ main {
 
                     @include breakpoint($xbl-bp) {
                         margin-top: 21.9%;
+                    }
+
+                    @include breakpoint($mai-bp) {
+                        margin-top: 16.7%;
                     }
 
                     @include breakpoint($cos-bp) {
@@ -1875,7 +1896,7 @@ main {
 }
 
 .leftBlockAreaActive {
-margin-bottom: 36rem;
+margin-bottom: 36rem !important;
 transition: all 0.2s linear;
 }
 

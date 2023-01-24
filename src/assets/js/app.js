@@ -63,9 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // let swiperSlidesSec = document.querySelectorAll('.swiper-slide-containerSec')
+  // swiperSlidesSec.forEach((el, id) => {
+  //   el.setAttribute('data-tab', id)
+  // })
 
-
-
+  let swiperSlideSec = document.querySelectorAll('.gallery-top .swiper-slide')
+  swiperSlideSec.forEach((e, id) => {
+    e.setAttribute('data-swiper-tab', id)
+  })
 
   let galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
@@ -73,21 +79,62 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: '.swiperButtonNext',
       prevEl: '.swiperButtonPrev',
     },
-    loop: true,
     loopedSlides: 4,
     watchOverflow: true,
+    allowTouchMove: false,
   });
-  let galleryThumbs = new Swiper('.gallery-thumbs', {
-    // spaceBetween: 60,
-    // centeredSlides: true,
-    slidesPerView: 4,
-    touchRatio: 0.2,
-    slideToClickedSlide: true,
-    loop: true,
-    loopedSlides: 4,
-  });
-  galleryTop.controller.control = galleryThumbs;
-  galleryThumbs.controller.control = galleryTop;
+
+  if (mainPage) {
+    let swiperButtonNext = document.querySelector('.swiperButtonNext')
+    let swiperButtonPrev = document.querySelector('.swiperButtonPrev')
+    let swiperCount = 0
+
+    let mainResultNumber = document.querySelectorAll('.main-result__number')
+    mainResultNumber.forEach((e, id) => {
+      e.setAttribute('id', id)
+      e.addEventListener('click', elem => {
+        mainResultNumber.forEach(elements => {
+          elements.classList.remove('main-result__numberActive')
+        })
+        e.classList.add('main-result__numberActive')
+        
+        galleryTop.slideTo(e.getAttribute('id'))
+      })
+
+    })
+
+
+    swiperButtonNext.addEventListener('click', e => {
+      if (swiperCount === 3) {
+        swiperCount = 0
+        mainResultNumber[0].click()
+      }else if (swiperCount < 3 && swiperCount >= 0) {
+        swiperCount += 1
+        mainResultNumber[swiperCount].click()
+      }
+    })
+
+    swiperButtonPrev.addEventListener('click', e => {
+      if (swiperCount === 0) {
+        swiperCount = 3
+        mainResultNumber[3].click()
+      } else if (swiperCount > 0 && swiperCount <= 3) {
+        swiperCount -= 1
+        mainResultNumber[swiperCount].click()
+      }
+    })
+
+
+
+
+    mainResultNumber[0].click()
+  }
+
+
+
+
+
+
 
 
 
@@ -586,27 +633,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // if (window.matchMedia("(max-width: 500px)").matches) {
-    let servicesStepSwiper = new Swiper(".services-steps__swiper", {
-      slidesPerView: 1,
-      navigation: {
-        nextEl: ".services-steps__arrowRight",
-        prevEl: ".services-steps__arrowLeft",
-      },
+  let servicesStepSwiper = new Swiper(".services-steps__swiper", {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".services-steps__arrowRight",
+      prevEl: ".services-steps__arrowLeft",
+    },
 
-    });
+  });
   // }
 
   let textArea = document.querySelectorAll('.textArea')
-  let leftBlockArea = document.querySelector('.main-createEmotions__helper2')
+  let leftBlockArea = document.querySelectorAll('.main-createEmotions__helper2')
 
   textArea.forEach(e => {
     e.addEventListener("focusin", () => {
       e.classList.add('areaHeight')
-      leftBlockArea.classList.add('leftBlockAreaActive')
+      // leftBlockArea.classList.add('leftBlockAreaActive')
+      leftBlockArea.forEach(elem => {
+        elem.classList.add('leftBlockAreaActive')
+      })
     });
     e.addEventListener("focusout", () => {
       e.classList.remove('areaHeight')
-      leftBlockArea.classList.remove('leftBlockAreaActive')
+      // leftBlockArea.classList.remove('leftBlockAreaActive')
+      leftBlockArea.forEach(elem => {
+        elem.classList.remove('leftBlockAreaActive')
+      })
     });
   })
 
@@ -632,6 +685,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tl10.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
   tl10.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
+
+  const tl21 = gsap.timeline()
+
+  tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
 
   if (mainPage) {
 
@@ -791,9 +848,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  const tl21 = gsap.timeline()
 
-  tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
 
   if (mainPage) {
     ScrollTrigger.create({
@@ -1180,7 +1235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".organizationOfSpace-text",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -1198,6 +1253,28 @@ document.addEventListener("DOMContentLoaded", () => {
       onLeaveBack: function () {
         leftBlockContainer.innerHTML = "";
         leftBlockContainer.innerHTML = organizationInContactLeftText.innerHTML
+      },
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play restart restart restart",
+    })
+
+    ScrollTrigger.create({
+      animation: tl21,
+      trigger: '.organizationOfSpace-text',
+      endTrigger: ".footer",
+      start: 'top 70%',
+      end: "top 70%",
+      onEnter: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeave: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onEnterBack: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeaveBack: function () {
+        leftBlockContainer.innerHTML = "";
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play restart restart restart",
@@ -1238,7 +1315,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".organizationOfSpace-text",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -1256,6 +1333,28 @@ document.addEventListener("DOMContentLoaded", () => {
       onLeaveBack: function () {
         leftBlockContainer.innerHTML = "";
         leftBlockContainer.innerHTML = designInContact.innerHTML
+      },
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play restart restart restart",
+    })
+
+    ScrollTrigger.create({
+      animation: tl21,
+      trigger: '.organizationOfSpace-text',
+      endTrigger: ".footer",
+      start: 'top 70%',
+      end: "top 70%",
+      onEnter: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeave: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onEnterBack: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeaveBack: function () {
+        leftBlockContainer.innerHTML = "";
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play restart restart restart",
@@ -1297,7 +1396,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".organizationOfSpace-text",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -1315,6 +1414,28 @@ document.addEventListener("DOMContentLoaded", () => {
       onLeaveBack: function () {
         leftBlockContainer.innerHTML = "";
         leftBlockContainer.innerHTML = autorInContact.innerHTML
+      },
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play restart restart restart",
+    })
+
+    ScrollTrigger.create({
+      animation: tl21,
+      trigger: '.organizationOfSpace-text',
+      endTrigger: ".footer",
+      start: 'top 70%',
+      end: "top 70%",
+      onEnter: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeave: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onEnterBack: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeaveBack: function () {
+        leftBlockContainer.innerHTML = "";
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play restart restart restart",
@@ -1355,7 +1476,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".organizationOfSpace-text",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -1373,6 +1494,28 @@ document.addEventListener("DOMContentLoaded", () => {
       onLeaveBack: function () {
         leftBlockContainer.innerHTML = "";
         leftBlockContainer.innerHTML = realizationInContact.innerHTML
+      },
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play restart restart restart",
+    })
+
+    ScrollTrigger.create({
+      animation: tl21,
+      trigger: '.organizationOfSpace-text',
+      endTrigger: ".footer",
+      start: 'top 70%',
+      end: "top 70%",
+      onEnter: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeave: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onEnterBack: function () {
+        leftBlockContainer.innerHTML = "";
+      },
+      onLeaveBack: function () {
+        leftBlockContainer.innerHTML = "";
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play restart restart restart",
@@ -1720,7 +1863,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (secondPage) {
     const tl41 = gsap.timeline()
 
-    tl41.to('.secondPage-idea__underLine', { transform: 'scale(1, 1)', duration: 1.5})
+    tl41.to('.secondPage-idea__underLine', { transform: 'scale(1, 1)', duration: 1.5 })
 
     ScrollTrigger.create({
       animation: tl41,
@@ -1735,7 +1878,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tl42 = gsap.timeline();
 
       tl42.from(e, { opacity: 0 })
-  
+
       ScrollTrigger.create({
         animation: tl42,
         trigger: e,
@@ -1747,7 +1890,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    
+
   }
 
   let mainContactContent = document.querySelectorAll('.main-contact__content')
@@ -1756,7 +1899,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl14 = gsap.timeline();
 
     tl14.fromTo(e, { opacity: 0 }, { opacity: 1 })
-  
+
     ScrollTrigger.create({
       animation: tl14,
       trigger: e,
@@ -1767,11 +1910,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  
+
   if (servicesPage) {
     const tl43 = gsap.timeline()
 
-    tl43.from('.services-header h2', {opacity: 0, delay: 1})
+    tl43.from('.services-header h2', { opacity: 0, delay: 1 })
 
     ScrollTrigger.create({
       animation: tl43,
@@ -1782,7 +1925,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tl44 = gsap.timeline()
 
-    tl44.from('.services-particular h2', {opacity: 0})
+    tl44.from('.services-particular h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl44,
@@ -1794,7 +1937,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tl45 = gsap.timeline()
-    tl45.from('.services-steps h2', {opacity: 0})
+    tl45.from('.services-steps h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl45,
@@ -1808,10 +1951,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (organizationOfSpacePage) {
     const tl46 = gsap.timeline()
-    tl46.from('.organizationOfSpace-organization h2', {opacity: 0, delay: 1})
+    tl46.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 1 })
 
     const tl47 = gsap.timeline()
-    tl47.from('.organizationOfSpace-whyContainer__textContainer h2', {opacity: 0})
+    tl47.from('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl47,
@@ -1823,7 +1966,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tl48 = gsap.timeline()
-    tl48.from('.organizationOfSpace-include__text h2', {opacity: 0})
+    tl48.from('.organizationOfSpace-include__text h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl48,
@@ -1837,10 +1980,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (designPage) {
     const tl49 = gsap.timeline()
-    tl49.from('.design-header h2', {opacity: 0, delay: 1})
+    tl49.from('.design-header h2', { opacity: 0, delay: 1 })
 
     const tl50 = gsap.timeline()
-    tl50.from('.organizationOfSpace-include__text h2', {opacity: 0})
+    tl50.from('.organizationOfSpace-include__text h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl50,
@@ -1854,10 +1997,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (autorPage) {
     const tl51 = gsap.timeline()
-    tl51.from('.autor-header h2', {opacity: 0, delay: 1})
+    tl51.from('.autor-header h2', { opacity: 0, delay: 1 })
 
     const tl52 = gsap.timeline()
-    tl52.from('.autor-services__title', {opacity: 0})
+    tl52.from('.autor-services__title', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl52,
@@ -1869,7 +2012,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tl53 = gsap.timeline()
-    tl53.from('.autor-why h2', {opacity: 0})
+    tl53.from('.autor-why h2', { opacity: 0 })
 
     ScrollTrigger.create({
       animation: tl53,
@@ -1881,7 +2024,87 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  
+  if (realizationPage) {
+    const tl54 = gsap.timeline()
+    tl54.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 1 })
+
+    const tl55 = gsap.timeline()
+    tl55.from('.organizationOfSpace-whyContainer__title', { opacity: 0 })
+
+    ScrollTrigger.create({
+      animation: tl55,
+      trigger: '.organizationOfSpace-whyContainer__title',
+      start: 'top 90%',
+      end: "top 60%",
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play play reverse reverse",
+    })
+
+    const tl56 = gsap.timeline()
+    tl56.from('.organizationOfSpace-include__text', { opacity: 0 })
+
+    ScrollTrigger.create({
+      animation: tl56,
+      trigger: '.organizationOfSpace-include__text',
+      start: 'top 90%',
+      end: "top 60%",
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play play reverse reverse",
+    })
+  }
+
+  if (pricesPage) {
+    const tl57 = gsap.timeline()
+    tl57.from('.prices-main__title', { opacity: 0, delay: 1 })
+
+    const tl58 = gsap.timeline()
+    let textTitle = document.querySelectorAll('.prices-main__textTitle')
+    tl58.from(textTitle[0], { opacity: 0, delay: 1.5 })
+
+    const tl59 = gsap.timeline()
+
+    tl59.from(textTitle[1], { opacity: 0 })
+
+    ScrollTrigger.create({
+      animation: tl59,
+      trigger: textTitle[1],
+      start: 'top 90%',
+      end: "top 60%",
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play play reverse reverse",
+    })
+
+    const tl60 = gsap.timeline()
+
+    tl60.from(textTitle[2], { opacity: 0 })
+
+    ScrollTrigger.create({
+      animation: tl60,
+      trigger: textTitle[2],
+      start: 'top 90%',
+      end: "top 60%",
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play play reverse reverse",
+    })
+
+
+
+  }
+
+  if (blogPage) {
+    const tl61 = gsap.timeline()
+
+    tl61.from('.blog-content h2', { opacity: 0, delay: 1 })
+
+  }
+
+  if (articlePage) {
+    const tl62 = gsap.timeline()
+
+    tl62.from('.article-content h2', { opacity: 0, delay: 1 })
+  }
+
+
 
 
 
