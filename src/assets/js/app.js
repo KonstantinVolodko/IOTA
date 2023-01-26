@@ -1,4 +1,9 @@
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
+
+
 
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды
@@ -27,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Поддержка тачпада
     touchpadSupport: true,
   })
+
+
+
+
+
+
+
 
   let mainPage = document.querySelector('.main')
   let scrollWidth = (window.innerWidth - document.body.clientWidth + 'px')
@@ -74,6 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   let galleryTop = new Swiper('.gallery-top', {
+    // virtualTranslate: true,
+    rewind: true,
     spaceBetween: 10,
     navigation: {
       nextEl: '.swiperButtonNext',
@@ -97,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
           elements.classList.remove('main-result__numberActive')
         })
         e.classList.add('main-result__numberActive')
-        
+
         galleryTop.slideTo(e.getAttribute('id'))
       })
 
@@ -108,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (swiperCount === 3) {
         swiperCount = 0
         mainResultNumber[0].click()
-      }else if (swiperCount < 3 && swiperCount >= 0) {
+      } else if (swiperCount < 3 && swiperCount >= 0) {
         swiperCount += 1
         mainResultNumber[swiperCount].click()
       }
@@ -345,7 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let realizationSlides = document.querySelectorAll('.secondPage-realization__swiper .swiper-slide')
   let realizationPagination = document.querySelectorAll('.secondPage-realizationSwiper-pagination .swiper-pagination-bullet')
   let realizationArrows = document.querySelectorAll('.secondPage-realization__arrowsContainer svg')
-  console.log(realizationArrows)
 
 
   realizationSlides.forEach(el => {
@@ -1765,28 +1778,56 @@ document.addEventListener("DOMContentLoaded", () => {
         if (count <= 1) {
           setTimeout(() => {
 
-            let solutionImgSwiper = new Swiper('.main-solutions__imgContainer', {
+            let interleaveOffset = -0.5;
+
+            let mainSolutionImgSwiper = new Swiper(".swiper-container2", {
               loop: true,
-              speed: 1100,
+              speed: 1000,
+              watchSlidesProgress: true,
               allowTouchMove: false,
-              effect: "creative",
-              creativeEffect: {
-                prev: {
-                  translate: ["-5%", 0, -1],
+              // autoplay: {
+              //   delay: 6000,
+              // },
+              on: {
+                progress: function (mainSolutionImgSwiper, progress) {
+                  for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+                    let slide = mainSolutionImgSwiper.slides[i];
+                    let translate, innerTranslate;
+                    progress = slide.progress;
+
+                    if (progress > 0) {
+                      translate = progress * mainSolutionImgSwiper.width;
+                      innerTranslate = translate * interleaveOffset;
+                    } else {
+                      innerTranslate = Math.abs(progress * mainSolutionImgSwiper.width) * interleaveOffset;
+                      translate = 0;
+                    }
+
+                    slide.querySelector("img").style.transform = `translate3d(${translate}px,0,0)`;
+
+                    slide.querySelector(".slide-inner").style.transform = `translate3d(${innerTranslate}px,0,0)`;
+                  }
                 },
-                next: {
-                  translate: ["100%", 0, 0],
+
+                touchStart: function (mainSolutionImgSwiper) {
+                  for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+                    mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = "";
+                  }
+                },
+
+                setTransition: function (mainSolutionImgSwiper, speed) {
+                  for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+                    mainSolutionImgSwiper.slides[i].querySelector(".slide-inner").style.transition = `${speed}ms`;
+                    mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = `${speed}ms`;
+                  }
                 },
               },
-              autoplay: {
-                delay: 6000,
-              },
-            })
+            });
 
-            solutionImgSwiper.autoplay.stop()
+            // mainSolutionImgSwiper.autoplay.stop()
 
-            solutionImgSwiper.slideNext()
-            solutionImgSwiper.autoplay.start()
+            // mainSolutionImgSwiper.slideNext()
+            // mainSolutionImgSwiper.autoplay.start()
           }, 3000)
 
         }
@@ -2112,4 +2153,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+  let lll = document.querySelector('.main-createEmotions').clientHeight
+  let nnn = document.querySelector('.main-solutions').clientHeight
+  
+  let baba = (nnn * 0.8) + lll
+  
+  window.scrollTo(0, baba)
+
 })
+
+

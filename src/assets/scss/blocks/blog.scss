@@ -28,6 +28,67 @@
 }
 
 .blog-content {
+
+
+
+    .blog-content__pagination {
+        display: flex;
+        gap: 2rem;
+        margin-top: 10rem;
+
+        li {
+            cursor: pointer;
+
+            .blog-content__paginationNumber {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2rem;
+                line-height: 140%;
+                color: #828282;
+            }
+
+            svg {
+                display: flex;
+                align-items: center;
+                width: 6rem;
+                height: 2rem;
+                transform-origin: left;
+                transform: scale(1, 1);
+                transition: all 0.2s;
+            }
+
+            svg:hover {
+                transform: scale(1.1, 1);
+                transition: all 0.2s;
+            }
+        }
+
+        .blog-content__arrowContainer {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+
+    }
+
+    .blog-content__paginationActive {
+
+        .blog-content__paginationNumber {
+            -webkit-text-stroke: 0.1rem black;
+            color: #000000;
+            text-align: center;
+        }
+
+        .blog-content__paginationBorder {
+            width: 1.6rem;
+            height: 1px;
+            background: #000000;
+        }
+
+    }
+
+
     h2 {
         font-weight: 500;
         font-size: 6.4rem;
