@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // let swiperSlidesSec = document.querySelectorAll('.swiper-slide-containerSec')
-  // swiperSlidesSec.forEach((el, id) => {
-  //   el.setAttribute('data-tab', id)
-  // })
+  let swiperSlidesSec = document.querySelectorAll('.swiper-slide-containerSec')
+  swiperSlidesSec.forEach((el, id) => {
+    el.setAttribute('data-tab', id)
+  })
 
   let swiperSlideSec = document.querySelectorAll('.gallery-top .swiper-slide')
   swiperSlideSec.forEach((e, id) => {
@@ -801,18 +801,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    // const tl14 = gsap.timeline();
+    const tl14 = gsap.timeline();
 
-    // tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
+    tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
 
-    // ScrollTrigger.create({
-    //   animation: tl14,
-    //   trigger: '.main-contact__content',
-    //   start: 'top 70%',
-    //   end: "top 60%",
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "play play reverse reverse",
-    // })
+    ScrollTrigger.create({
+      animation: tl14,
+      trigger: '.main-contact__content',
+      start: 'top 70%',
+      end: "top 60%",
+      events: "onEnter onLeave onEnterBack onLeaveBack",
+      toggleActions: "play play reverse reverse",
+    })
 
 
     const tl18 = gsap.timeline()
@@ -1824,10 +1824,10 @@ document.addEventListener("DOMContentLoaded", () => {
               },
             });
 
-            // mainSolutionImgSwiper.autoplay.stop()
+            mainSolutionImgSwiper.autoplay.stop()
 
-            // mainSolutionImgSwiper.slideNext()
-            // mainSolutionImgSwiper.autoplay.start()
+            mainSolutionImgSwiper.slideNext()
+            mainSolutionImgSwiper.autoplay.start()
           }, 3000)
 
         }
@@ -1883,21 +1883,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl40 = gsap.timeline()
     tl40.fromTo('.portfolio-content_position h2', { opacity: 0 }, { opacity: 1, delay: 1 })
 
-    // const tl41 = gsap.timeline()
+    const tl41 = gsap.timeline()
 
-    // let portfolioContentTitle = document.querySelectorAll('.portfolio-content__title')
+    let portfolioContentTitle = document.querySelectorAll('.portfolio-content__title')
 
-    // portfolioContentTitle.forEach(el => {
-    //   tl41.fromTo(el, {opacity: 0}, {opacity: 1})
+    portfolioContentTitle.forEach(el => {
+      tl41.fromTo(el, {opacity: 0}, {opacity: 1})
 
-    //   ScrollTrigger.create({
-    //     animation: tl41,
-    //     trigger: el,
-    //     start: 'top 30%',
-    //     end: "top 0%",
-    //     markers: true
-    //   })
-    // })
+      ScrollTrigger.create({
+        animation: tl41,
+        trigger: el,
+        start: 'top 30%',
+        end: "top 0%",
+        markers: true
+      })
+    })
 
   }
 
@@ -2160,13 +2160,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let lll = document.querySelector('.main-createEmotions').clientHeight
-  let nnn = document.querySelector('.main-solutions').clientHeight
-  
-  let baba = (nnn * 0.8) + lll
-  
-  window.scrollTo(0, baba)
+
 
 })
 
 
+// let lll = document.querySelector('.main-createEmotions').clientHeight
+// let nnn = document.querySelector('.main-solutions').clientHeight
+
+// let baba = (nnn / 7) + lll
+
+// window.scrollTo({
+//   top: baba,
+//   behavior: "smooth"
+// });
