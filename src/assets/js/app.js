@@ -28,6 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
 // document.location.reload();
 
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const images = new Array();
+
+//   function preloadImages(...images) {
+//       images.forEach((image, i) => {
+//           image = new Image();
+//           image.src = preloadImages.arguments[i];
+//       });
+//   };
+
+//   // Предварительная загрузка нужных картинок
+//   preloadImages(
+//       "{./assets/images/main/mainSwiperImg1}.webp",
+//       "{./assets/images/main/mainSwiperImg2}.webp"
+//   );
+// });
+
+
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды
     animationTime: 800,
@@ -1952,7 +1970,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let mainSolutionImgSwiper = new Swiper(".swiper-container2", {
               loop: true,
-              preloadImages: true,
               speed: 1000,
               watchSlidesProgress: true,
               allowTouchMove: false,
