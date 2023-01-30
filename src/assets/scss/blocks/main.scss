@@ -1379,6 +1379,7 @@ main {
                         transition: max-height 0.2s ease-out;
                         width: 78%;
                         // margin-top: 2rem;
+                        height: 22rem;
 
                         @include breakpoint($xl-bp) {
                             width: 95%;

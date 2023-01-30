@@ -3,6 +3,29 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+//   function apnut_tolko_1_raz() {
+//     if (!window.location.hash) {
+//         window.location = window.location + '#reload';
+//         window.location.reload();
+//     }
+// }
+// setTimeout(apnut_tolko_1_raz(), 1000);
+
+// (function()
+// {
+//   if( window.localStorage )
+//   {
+//     if( !localStorage.getItem('firstLoad') )
+//     {
+//       localStorage['firstLoad'] = true;
+//       window.location.reload();
+//     }  
+//     else
+//       localStorage.removeItem('firstLoad');
+//   }
+// })();
+
+// document.location.reload();
 
 
   SmoothScroll({
@@ -181,46 +204,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
 
-  class Drop {
-    constructor(wrapper) {
-      this.wrapper = document.querySelector(wrapper);
-      this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
-      this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
-      this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
-      this.isOpen = false;
-      this.init();
-    }
-
-    init() {
-      this.wrapper.style.height = this.container.offsetHeight + 'px';
-      this.maxHeight = this.content.offsetHeight + "px";
-      this.btn.addEventListener("click", this.handleClick.bind(this));
-      // this.close()
-      console.log(this)
-    }
-
-
-    handleClick() {
-      if (this.isOpen) {
-        this.close();
-      } else {
-        this.open();
+  if (mainPage) {
+    class Drop {
+      constructor(wrapper) {
+        this.wrapper = document.querySelector(wrapper);
+        this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
+        this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
+        this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
+        this.isOpen = false;
+        this.init();
       }
-      this.isOpen = !this.isOpen;
+  
+      init() {
+        this.wrapper.style.height = this.container.offsetHeight + 'px';
+        this.maxHeight = this.content.offsetHeight + "px";
+        this.btn.addEventListener("click", this.handleClick.bind(this));
+        this.close()
+      }
+  
+  
+      handleClick() {
+        if (this.isOpen) {
+          this.close();
+        } else {
+          this.open();
+        }
+        this.isOpen = !this.isOpen;
+      }
+  
+      open() {
+        this.content.style.maxHeight = this.maxHeight;
+        this.btn.classList.add('paddingActiveTab')
+      }
+      close() {
+        this.content.style.maxHeight = 0;
+        this.btn.classList.remove('paddingActiveTab')
+      }
     }
-
-    open() {
-      this.content.style.maxHeight = this.maxHeight;
-      this.btn.classList.add('paddingActiveTab')
-    }
-    close() {
-      this.content.style.maxHeight = 0;
-      this.btn.classList.remove('paddingActiveTab')
-    }
+  
+  
+    setTimeout(new Drop('.testContainer'), 2000);
+    
   }
-
-
-  new Drop('.testContainer')
 
 
 
@@ -229,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swiperFunction = function () {
     let swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
+      grabCursor: true,
       spaceBetween: 80,
       loop: true,
       navigation: {
@@ -654,6 +680,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   let secondPageSwiper = new Swiper(".secondPageSwiper", {
+    grabCursor: true,
     navigation: {
       nextEl: ".secondPage__arrowRight",
       prevEl: ".secondPage__arrowLeft",
@@ -782,9 +809,6 @@ document.addEventListener("DOMContentLoaded", () => {
   tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
 
   if (mainPage) {
-
-
-
     const tl2 = gsap.timeline();
 
     tl2.from('.main-createEmotions__imgContainer img', { opacity: 0, y: -300, duration: 1.8, delay: 2.4 })
@@ -940,9 +964,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
   if (mainPage) {
-    tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
+    
 
     ScrollTrigger.create({
       animation: tl21,
@@ -1100,7 +1123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".footer-content__yar",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -1120,7 +1143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         leftBlockContainer.innerHTML = mainInContact.innerHTML
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play none none none",
+      toggleActions: "play restart restart restart",
     })
 
 
@@ -1179,7 +1202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         leftBlockContainer.innerHTML = partfolioText.innerHTML
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play restart restart restart",
+      toggleActions: "play restart none restart",
     })
   }
 
@@ -1929,6 +1952,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let mainSolutionImgSwiper = new Swiper(".swiper-container2", {
               loop: true,
+              preloadImages: true,
               speed: 1000,
               watchSlidesProgress: true,
               allowTouchMove: false,
