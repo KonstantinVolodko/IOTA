@@ -1058,7 +1058,7 @@ document.addEventListener("DOMContentLoaded", () => {
         leftBlockContainer.innerHTML = mainServices.innerHTML
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play restart restart restart",
+      toggleActions: "play reverse reverse reverse",
     })
 
 
@@ -1165,31 +1165,31 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    ScrollTrigger.create({
-      animation: tl21,
-      trigger: '.main-services',
-      endTrigger: ".main-result",
-      start: 'top 70%',
-      end: "top 70%",
-      onEnter: function () {
-        leftBlockContainer.innerHTML = "";
-        leftBlockContainer.innerHTML = mainServices.innerHTML
-      },
-      onLeave: function () {
-        leftBlockContainer.innerHTML = "";
-        leftBlockContainer.innerHTML = mainServices.innerHTML
-      },
-      onEnterBack: function () {
-        leftBlockContainer.innerHTML = "";
-        leftBlockContainer.innerHTML = mainServices.innerHTML
-      },
-      onLeaveBack: function () {
-        leftBlockContainer.innerHTML = "";
-        leftBlockContainer.innerHTML = mainServices.innerHTML
-      },
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play restart restart restart",
-    })
+    // ScrollTrigger.create({
+    //   animation: tl21,
+    //   trigger: '.main-services',
+    //   endTrigger: ".main-result",
+    //   start: 'top 70%',
+    //   end: "top 70%",
+    //   onEnter: function () {
+    //     leftBlockContainer.innerHTML = "";
+    //     leftBlockContainer.innerHTML = mainServices.innerHTML
+    //   },
+    //   onLeave: function () {
+    //     leftBlockContainer.innerHTML = "";
+    //     leftBlockContainer.innerHTML = mainServices.innerHTML
+    //   },
+    //   onEnterBack: function () {
+    //     leftBlockContainer.innerHTML = "";
+    //     leftBlockContainer.innerHTML = mainServices.innerHTML
+    //   },
+    //   onLeaveBack: function () {
+    //     leftBlockContainer.innerHTML = "";
+    //     leftBlockContainer.innerHTML = mainServices.innerHTML
+    //   },
+    //   events: "onEnter onLeave onEnterBack onLeaveBack",
+    //   toggleActions: "play restart restart restart",
+    // })
   }
 
   let portfolioPage = document.querySelector('.portfolio')
