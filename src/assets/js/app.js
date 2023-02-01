@@ -3,48 +3,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-//   function apnut_tolko_1_raz() {
-//     if (!window.location.hash) {
-//         window.location = window.location + '#reload';
-//         window.location.reload();
-//     }
-// }
-// setTimeout(apnut_tolko_1_raz(), 1000);
-
-// (function()
-// {
-//   if( window.localStorage )
-//   {
-//     if( !localStorage.getItem('firstLoad') )
-//     {
-//       localStorage['firstLoad'] = true;
-//       window.location.reload();
-//     }  
-//     else
-//       localStorage.removeItem('firstLoad');
-//   }
-// })();
-
-// document.location.reload();
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const images = new Array();
-
-//   function preloadImages(...images) {
-//       images.forEach((image, i) => {
-//           image = new Image();
-//           image.src = preloadImages.arguments[i];
-//       });
-//   };
-
-//   // Предварительная загрузка нужных картинок
-//   preloadImages(
-//       "{./assets/images/main/mainSwiperImg1}.webp",
-//       "{./assets/images/main/mainSwiperImg2}.webp"
-//   );
-// });
-
 
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды
@@ -97,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.add("activeTab");
       const tl16 = gsap.timeline();
 
-      tl16.from('.main-services__desctopHelper', { opacity: 0, duration: 1.5 })
+      tl16.fromTo('.main-services__desctopHelper', { opacity: 0 }, {opacity: 1, duration: 1.5})
 
       acc.forEach(element => {
         element.classList.remove('deleteHover')
@@ -232,15 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
         this.isOpen = false;
         this.init();
       }
-  
+
       init() {
         this.wrapper.style.height = this.container.offsetHeight + 'px';
         this.maxHeight = this.content.offsetHeight + "px";
         this.btn.addEventListener("click", this.handleClick.bind(this));
         this.close()
       }
-  
-  
+
+
       handleClick() {
         if (this.isOpen) {
           this.close();
@@ -249,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         this.isOpen = !this.isOpen;
       }
-  
+
       open() {
         this.content.style.maxHeight = this.maxHeight;
         this.btn.classList.add('paddingActiveTab')
@@ -259,10 +217,10 @@ document.addEventListener("DOMContentLoaded", () => {
         this.btn.classList.remove('paddingActiveTab')
       }
     }
-  
-  
+
+
     setTimeout(new Drop('.testContainer'), 2000);
-    
+
   }
 
 
@@ -348,45 +306,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (window.matchMedia("(min-width: 850px)").matches) {
 
-    tabsFirstLvlTitle.forEach(e => {
-      e.addEventListener('click', el => {
-        menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
-        tabsFirstLvlTitle.forEach(elem => {
-          elem.classList.remove('header-menu__tabsFirstLvlTitle_hover')
-        })
+    menuTabsHelper.innerHTML = tabsFirstLvlTitle[1].nextElementSibling.innerHTML
 
-        e.classList.add('header-menu__tabsFirstLvlTitle_hover')
+    // tabsFirstLvlTitle.forEach(e => {
+    //   e.addEventListener('click', el => {
+    //     menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
+    //     tabsFirstLvlTitle.forEach(elem => {
+    //       elem.classList.remove('header-menu__tabsFirstLvlTitle_hover')
+    //     })
 
-        let headerAccBtn = document.querySelectorAll(".header-menu__accordionBtn");
+    //     e.classList.add('header-menu__tabsFirstLvlTitle_hover')
 
-        for (let i = 0; i < headerAccBtn.length; i++) {
-          headerAccBtn[i].addEventListener("click", function () {
+    //     let headerAccBtn = document.querySelectorAll(".header-menu__accordionBtn");
 
-            headerAccBtn.forEach(element => {
-              element.classList.remove('header-menu__accordionBtn_hover')
-            })
+    //     for (let i = 0; i < headerAccBtn.length; i++) {
+    //       headerAccBtn[i].addEventListener("click", function () {
 
-            this.classList.add('header-menu__accordionBtn_hover')
+    //         headerAccBtn.forEach(element => {
+    //           element.classList.remove('header-menu__accordionBtn_hover')
+    //         })
 
-            var panel = this.nextElementSibling;
+    //         this.classList.add('header-menu__accordionBtn_hover')
 
-            headerAccBtn.forEach(e => {
-              e.nextElementSibling.style.maxHeight = null;
-            })
+    //         let panel = this.nextElementSibling;
 
-            if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-            } else {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-          });
-        }
-      })
-    })
+    //         headerAccBtn.forEach(e => {
+    //           e.nextElementSibling.style.maxHeight = null;
+    //         })
 
-    if (tabsFirstLvlTitle.length != 0) {
-      tabsFirstLvlTitle[0].click()
-    }
+    //         if (panel.style.maxHeight) {
+    //           panel.style.maxHeight = null;
+    //         } else {
+    //           panel.style.maxHeight = panel.scrollHeight + "px";
+    //         }
+    //       });
+    //     }
+    //   })
+    // })
+
+    // if (tabsFirstLvlTitle.length != 0) {
+    //   tabsFirstLvlTitle[0].click()
+    // }
   }
 
   if (window.matchMedia("(max-width: 850px)").matches) {
@@ -626,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ffs.forEach(e => {
     //   e.addEventListener('click', showDropdown);
     // })
-    
+
     node.addEventListener('click', onNodeClick);
     return instance;
   };
@@ -697,17 +657,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let secondPageSwiper = new Swiper(".secondPageSwiper", {
-    grabCursor: true,
-    navigation: {
-      nextEl: ".secondPage__arrowRight",
-      prevEl: ".secondPage__arrowLeft",
-    },
+  // let secondPageSwiper = new Swiper(".secondPageSwiper", {
+  //   grabCursor: true,
+  //   navigation: {
+  //     nextEl: ".secondPage__arrowRight",
+  //     prevEl: ".secondPage__arrowLeft",
+  //   },
 
-    pagination: {
-      el: ".secondPageSwiper-pagination",
-    },
-  });
+  //   pagination: {
+  //     el: ".secondPageSwiper-pagination",
+  //   },
+  // });
 
 
 
@@ -814,13 +774,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl71 = gsap.timeline();
 
-  tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2})
+  tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
 
 
   const tl72 = gsap.timeline();
 
-  tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1})
-  tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1,})
+  tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
+  tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
 
   const tl21 = gsap.timeline()
 
@@ -911,7 +871,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     const tl13 = gsap.timeline();
 
-    tl13.from('.main-gallery__tabsContainer_borderLine', { width: 0, duration: 1.5 })
+    tl13.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
 
     ScrollTrigger.create({
       animation: tl13,
@@ -923,7 +883,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tl14 = gsap.timeline();
 
-    tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 0.5 })
+    tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl14,
@@ -983,7 +943,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (mainPage) {
-    
+
 
     ScrollTrigger.create({
       animation: tl21,
@@ -1205,7 +1165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       onEnter: function () {
         leftBlockContainer.innerHTML = "";
         leftBlockContainer.innerHTML = partfolioText.innerHTML,
-        tl81.fromTo('.leftBlockContainer__textContainer', { opacity: 0, y: 100 }, { opacity: 1, y: 0, delay: 2.5 })
+          tl81.fromTo('.leftBlockContainer__textContainer', { opacity: 0, y: 100 }, { opacity: 1, y: 0, delay: 2.5 })
       },
       onLeave: function () {
         leftBlockContainer.innerHTML = "";
@@ -1255,7 +1215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       animation: tl21,
       trigger: '.main-contact',
-      endTrigger: ".main-contact__btnContainer",
+      endTrigger: ".footer-content__yar",
       start: 'top 70%',
       end: "top 70%",
       onEnter: function () {
@@ -2057,34 +2017,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (portfolioPage) {
     const tl35 = gsap.timeline();
 
-    tl35.from('.main-gallery__tabsContainer_borderLine', { width: 0, duration: 1.5 })
+    tl35.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
 
-    ScrollTrigger.create({
-      animation: tl35,
-      trigger: '.main-gallery__tabsContainer',
-      start: 'top 80%',
-      end: "top 30%",
-    })
+    // ScrollTrigger.create({
+    //   animation: tl35,
+    //   trigger: '.main-gallery__tabsContainer',
+    //   start: 'top 80%',
+    //   end: "top 30%",
+    // })
   }
 
   if (portfolioPage) {
-    const tl40 = gsap.timeline()
-    tl40.fromTo('.portfolio-content_position h2', { opacity: 0 }, { opacity: 1, delay: 0.5 })
+    // const tl40 = gsap.timeline()
+    // tl40.fromTo('.portfolio-content_position h2', { opacity: 0 }, { opacity: 1, delay: 0.5 })
 
-    const tl41 = gsap.timeline()
-
+    // const tl41 = gsap.timeline()
+    // tl41.fromTo('.portfolio-content__title', { opacity: 0 }, { opacity: 1, delay: 0.5 })
     let portfolioContentTitle = document.querySelectorAll('.portfolio-content__title')
+    
+    // portfolioContentTitle.forEach(el => {
 
-    portfolioContentTitle.forEach(el => {
-      tl41.fromTo(el, {opacity: 0}, {opacity: 1})
 
-      ScrollTrigger.create({
-        animation: tl41,
-        trigger: el,
-        start: 'top 30%',
-        end: "top 0%",
-      })
-    })
+    //   ScrollTrigger.create({
+    //     animation: tl41,
+    //     trigger: el,
+    //     start: 'top 30%',
+    //     end: "top 0%",
+    //   })
+    // })
 
   }
 
@@ -2140,9 +2100,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (servicesPage) {
-    const tl43 = gsap.timeline()
+    // const tl43 = gsap.timeline()
 
-    tl43.from('.services-header h2', { opacity: 0, delay: 0.5 })
+    // tl43.from('.services-header h2', { opacity: 0, delay: 0.5 })
 
     ScrollTrigger.create({
       animation: tl43,
@@ -2178,63 +2138,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (organizationOfSpacePage) {
-    const tl46 = gsap.timeline()
-    tl46.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
+    // const tl46 = gsap.timeline()
+    // tl46.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
 
     const tl47 = gsap.timeline()
-    tl47.from('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 })
+    tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl47,
       trigger: '.organizationOfSpace-whyContainer__textContainer',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
     })
 
     const tl48 = gsap.timeline()
-    tl48.from('.organizationOfSpace-include__text h2', { opacity: 0 })
+    tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl48,
       trigger: '.organizationOfSpace-include__text',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
     })
   }
 
   if (designPage) {
-    const tl49 = gsap.timeline()
-    tl49.from('.design-header h2', { opacity: 0, delay: 1 })
+    // const tl49 = gsap.timeline()
+    // tl49.from('.design-header h2', { opacity: 0, delay: 1 })
 
     const tl50 = gsap.timeline()
-    tl50.from('.organizationOfSpace-include__text h2', { opacity: 0 })
+    tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl50,
       trigger: '.organizationOfSpace-include__text',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
     })
   }
 
   if (autorPage) {
-    const tl51 = gsap.timeline()
-    tl51.from('.autor-header h2', { opacity: 0, delay: 0.5 })
+    // const tl51 = gsap.timeline()
+    // tl51.from('.autor-header h2', { opacity: 0, delay: 0.5 })
 
     const tl52 = gsap.timeline()
-    tl52.from('.autor-services__title', { opacity: 0 })
+    tl52.fromTo('.autor-services__title', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl52,
       trigger: '.autor-services__title',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
     })
@@ -2253,84 +2213,195 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (realizationPage) {
-    const tl54 = gsap.timeline()
-    tl54.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
+    // const tl54 = gsap.timeline()
+    // tl54.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
 
     const tl55 = gsap.timeline()
-    tl55.from('.organizationOfSpace-whyContainer__title', { opacity: 0 })
+    tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl55,
       trigger: '.organizationOfSpace-whyContainer__title',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
+      // markers: true,
     })
 
     const tl56 = gsap.timeline()
-    tl56.from('.organizationOfSpace-include__text', { opacity: 0 })
+    tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, {opacity: 1})
 
     ScrollTrigger.create({
       animation: tl56,
       trigger: '.organizationOfSpace-include__text',
       start: 'top 90%',
-      end: "top 60%",
+      end: "top 70%",
+      // markers: true,
       events: "onEnter onLeave onEnterBack onLeaveBack",
       toggleActions: "play play reverse reverse",
     })
   }
 
   if (pricesPage) {
-    const tl57 = gsap.timeline()
-    tl57.from('.prices-main__title', { opacity: 0, delay: 0.5 })
+    // const tl57 = gsap.timeline()
+    // tl57.from('.prices-main__title', { opacity: 0, delay: 0.5 })
 
-    const tl58 = gsap.timeline()
-    let textTitle = document.querySelectorAll('.prices-main__textTitle')
-    tl58.from(textTitle[0], { opacity: 0, delay: 1.5 })
+    // const tl58 = gsap.timeline()
+    // tl58.from(textTitle[0], { opacity: 0, delay: 1.5 })
 
-    const tl59 = gsap.timeline()
+    // let textTitle = document.querySelectorAll('.prices-main__textTitle')
 
-    tl59.from(textTitle[1], { opacity: 0 })
+    // const tl59 = gsap.timeline()
 
-    ScrollTrigger.create({
-      animation: tl59,
-      trigger: textTitle[1],
-      start: 'top 90%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    // tl59.from(textTitle[1], { opacity: 0 })
 
-    const tl60 = gsap.timeline()
+    // ScrollTrigger.create({
+    //   animation: tl59,
+    //   trigger: textTitle[1],
+    //   start: 'top 90%',
+    //   end: "top 60%",
+    //   events: "onEnter onLeave onEnterBack onLeaveBack",
+    //   toggleActions: "play play reverse reverse",
+    // })
 
-    tl60.from(textTitle[2], { opacity: 0 })
+    // const tl60 = gsap.timeline()
 
-    ScrollTrigger.create({
-      animation: tl60,
-      trigger: textTitle[2],
-      start: 'top 90%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    // tl60.from(textTitle[2], { opacity: 0 })
+
+    // ScrollTrigger.create({
+    //   animation: tl60,
+    //   trigger: textTitle[2],
+    //   start: 'top 90%',
+    //   end: "top 60%",
+    //   events: "onEnter onLeave onEnterBack onLeaveBack",
+    //   toggleActions: "play play reverse reverse",
+    // })
 
 
 
   }
 
   if (blogPage) {
-    const tl61 = gsap.timeline()
+    // const tl61 = gsap.timeline()
 
-    tl61.from('.blog-content h2', { opacity: 0, delay: 0.5 })
+    // tl61.from('.blog-content h2', { opacity: 0, delay: 0.5 })
 
   }
 
   if (articlePage) {
-    const tl62 = gsap.timeline()
+    // const tl62 = gsap.timeline()
 
-    tl62.from('.article-content h2', { opacity: 0, delay: 0.5 })
+    // tl62.from('.article-content h2', { opacity: 0, delay: 0.5 })
   }
+
+
+  if (secondPage) {
+    
+    let interleaveOffset2 = -0.5;
+
+    let secondPageSwiper = new Swiper(".secondPageSwiper", {
+      grabCursor: true,
+      navigation: {
+        nextEl: ".secondPage__arrowRight",
+        prevEl: ".secondPage__arrowLeft",
+      },
+
+      pagination: {
+        el: ".secondPageSwiper-pagination",
+      },
+      slidesPerView: 1,
+      speed: 1000,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      mousewheelControl: true,
+      on: {
+        progress: function (secondPageSwiper, progress) {
+          for (let i = 0; i < secondPageSwiper.slides.length; i++) {
+            let slide = secondPageSwiper.slides[i];
+            let translate, innerTranslate;
+            progress = slide.progress;
+
+            if (progress > 0) {
+              translate = progress * secondPageSwiper.width;
+              innerTranslate = translate * interleaveOffset2;
+            } else {
+              innerTranslate = Math.abs(progress * secondPageSwiper.width) * interleaveOffset2;
+              translate = 0;
+            }
+
+            slide.querySelector("img").style.transform = `translate3d(${translate}px,0,0)`;
+
+            slide.querySelector(".slide-inner").style.transform = `translate3d(${innerTranslate}px,0,0)`;
+          }
+        },
+
+        touchStart: function (secondPageSwiper) {
+          for (let i = 0; i < secondPageSwiper.slides.length; i++) {
+            secondPageSwiper.slides[i].querySelector("img").style.transition = "";
+          }
+        },
+
+        setTransition: function (secondPageSwiper, speed) {
+          for (let i = 0; i < secondPageSwiper.slides.length; i++) {
+            secondPageSwiper.slides[i].querySelector(".slide-inner").style.transition = `${speed}ms`;
+            secondPageSwiper.slides[i].querySelector("img").style.transition = `${speed}ms`;
+          }
+        },
+      },
+    });
+
+
+
+
+  }
+
+
+  // let interleaveOffset = -0.5;
+
+  //           let mainSolutionImgSwiper = new Swiper(".swiper-container2", {
+  //             loop: true,
+  //             speed: 1000,
+  //             watchSlidesProgress: true,
+  //             allowTouchMove: false,
+  //             // autoplay: {
+  //             //   delay: 6000,
+  //             // },
+  //             on: {
+  //               progress: function (mainSolutionImgSwiper, progress) {
+  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+  //                   let slide = mainSolutionImgSwiper.slides[i];
+  //                   let translate, innerTranslate;
+  //                   progress = slide.progress;
+
+  //                   if (progress > 0) {
+  //                     translate = progress * mainSolutionImgSwiper.width;
+  //                     innerTranslate = translate * interleaveOffset;
+  //                   } else {
+  //                     innerTranslate = Math.abs(progress * mainSolutionImgSwiper.width) * interleaveOffset;
+  //                     translate = 0;
+  //                   }
+
+  //                   slide.querySelector("img").style.transform = `translate3d(${translate}px,0,0)`;
+
+  //                   slide.querySelector(".slide-inner").style.transform = `translate3d(${innerTranslate}px,0,0)`;
+  //                 }
+  //               },
+
+  //               touchStart: function (mainSolutionImgSwiper) {
+  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+  //                   mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = "";
+  //                 }
+  //               },
+
+  //               setTransition: function (mainSolutionImgSwiper, speed) {
+  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
+  //                   mainSolutionImgSwiper.slides[i].querySelector(".slide-inner").style.transition = `${speed}ms`;
+  //                   mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = `${speed}ms`;
+  //                 }
+  //               },
+  //             },
+  //           });
 
 
 })

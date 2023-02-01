@@ -106,7 +106,7 @@
     height: 100%;
     width: 100%;
     z-index: 111;
-    background: #ffffff;
+    background: #f7f7f7;
     padding-left: 8rem;
     padding-right: 7.4rem;
     padding-top: 3.7rem;
@@ -240,7 +240,7 @@
             }
 
             .header-menu__tabsFirstLvlContainer {
-                h2 {
+                h2, a {
                     font-style: normal;
                     font-weight: 300;
                     font-size: 4.8rem;
@@ -250,6 +250,7 @@
                     cursor: pointer;
                     transition: all linear 0.1s;
                     width: 33rem;
+                    text-decoration: none;
 
                     @include breakpoint($jb-bp) {
                         text-align: center;
@@ -324,7 +325,9 @@
                         }
 
                         a:hover {
-                            font-weight: 700;
+                            // font-weight: 700;
+                            // -webkit-text-stroke: 0.05rem#000000;
+                            text-shadow: -0.1px 0px 0 black, 0px 0.1px 0 black, 0.1px 0px 0 black, 0px -0.1px 0 black;
                         }
                     }
                 }
@@ -369,7 +372,16 @@
         padding-top: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
+
+        .header-menu__linkTitle {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 3.3rem;
+            text-transform: uppercase;
+            color: #000000;
+        }
 
 
         .header-menu__accordionBtn {
@@ -401,7 +413,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            padding-top: 1rem;
+            padding-top: 4rem;
 
             a {
                 font-style: normal;
@@ -412,9 +424,23 @@
             }
 
             a:hover {
-                font-weight: 700;
+                // font-weight: 700;
+                // -webkit-text-stroke: 0.1rem#000000;
+                text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
             }
         }
+    }
+
+    .header-menu__blockFirst {
+        width: 40rem;
+        position: relative;
+    }
+
+    .header-menu__blockUnic {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .header-menu__block_gridHelper {
@@ -422,8 +448,8 @@
     }
 
     .header-menu__accordionContent {
-        max-height: 0;
-        overflow: hidden;
+        // max-height: 0;
+        // overflow: hidden;
         transition: max-height 0.2s ease-out;
     }
 }
@@ -434,12 +460,16 @@
 }
 
 .header-menu__tabsFirstLvlTitle_hover {
-    font-weight: 700 !important;
+    // font-weight: 700 !important;
+    // -webkit-text-stroke: 0.1rem#000000;
+    text-shadow: -1px 0px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black;
     color: #000000 !important;
     transition: all linear 0.1s;
 }
 
 
 .header-menu__accordionBtn_hover {
-    font-weight: 700 !important;
+    // font-weight: 700 !important;
+    // -webkit-text-stroke: 0.1rem#000000;
+    text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
 }

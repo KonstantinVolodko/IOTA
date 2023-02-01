@@ -896,8 +896,10 @@ main {
     margin-top: 5rem;
     margin-bottom: 2rem;
 
-    div {
+    button {
         cursor: pointer;
+        background: none;
+        border: none;
     }
 
     svg {
@@ -981,7 +983,8 @@ main {
 
 .main-result__numberActive {
     color: #f7f7f7 !important;
-    -webkit-text-stroke: 0.1rem black;
+    -webkit-text-stroke: 1px #000000;
+    // text-shadow: -1px 0px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black;
     font-family: 'M PLUS 1p';
     transition: all 0.2s linear;
 
@@ -1616,6 +1619,8 @@ main {
         .main-gallery__tabsContainer_borderLine {
             height: 3px;
             background: #000000;
+            transform: scale(0, 1);
+            transform-origin: right;
 
             @include breakpoint($jb-bp) {
                 display: none;
@@ -1711,7 +1716,8 @@ main {
     // font-family: 'Manrope';
     // text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
     // text-shadow: 0 0 0.9px #333, 0 0 0.9px #333;
-    -webkit-text-stroke: 0.1rem black;
+    // -webkit-text-stroke: 0.1rem black;
+    text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
     transition: all 0.2s linear;
 }
 
