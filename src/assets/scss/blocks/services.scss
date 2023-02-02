@@ -111,38 +111,45 @@
 
             .services-header__sectionBlock {
                 display: flex;
-                justify-content: space-between;
-                width: 96.3%;
+                gap: 2rem;
 
-                @include breakpoint($xl-bp) {
-                    justify-content: unset;
-                    gap: 2rem;
-                }
-
-                @include breakpoint($sm-bp) {
-                    margin-top: 2rem;
-                }
-
-
-
-                .select__toggle {
-                    background: none;
-                    border: none;
-                    font-weight: 300;
-                    font-size: 2.4rem;
-                    line-height: 100.1%;
-                    color: #000000;
-                    padding: 0;
-
-                    @include breakpoint($sm-bp) {
-                        font-size: 2.1rem;
-                    }
-                }
-
-                .select__options {
-                    width: 100%;
-                }
+                
             }
+
+            // .services-header__sectionBlock {
+            //     display: flex;
+            //     justify-content: space-between;
+            //     width: 96.3%;
+
+            //     @include breakpoint($xl-bp) {
+            //         justify-content: unset;
+            //         gap: 2rem;
+            //     }
+
+            //     @include breakpoint($sm-bp) {
+            //         margin-top: 2rem;
+            //     }
+
+
+
+            //     .select__toggle {
+            //         background: none;
+            //         border: none;
+            //         font-weight: 300;
+            //         font-size: 2.4rem;
+            //         line-height: 100.1%;
+            //         color: #000000;
+            //         padding: 0;
+
+            //         @include breakpoint($sm-bp) {
+            //             font-size: 2.1rem;
+            //         }
+            //     }
+
+            //     .select__options {
+            //         width: 100%;
+            //     }
+            // }
         }
     }
 
@@ -161,60 +168,109 @@
     }
 }
 
-.select select {
-    display: none;
-}
-
-.select {
-    position: relative;
-    
-}
-
-.select__toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.select--active {
-    z-index: 1;
-}
-
-.select--active~.select {
-    z-index: 0;
-}
-
-.select__options {
-    position: absolute;
-    top: 100%;
-    display: flex;
-    flex-direction: column;
-    visibility: hidden;
-    background: #f7f7f7;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.select--active .select__options {
-    visibility: visible;
-}
-
-.select__option--active {
-    font-weight: bold;
-}
-
-.select__option {
-    background: none;
-    border: none;
-    font-weight: 300;
+.dropbtn, .dropbtn2 {
     font-size: 2.4rem;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+  }
+  
+  
+  .dropdown, .dropdown2 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content, .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    z-index: 1;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .dropdown-content a, .dropdown-content2 a {
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    font-size: 1.8rem;
     line-height: 100.1%;
     color: #000000;
+    padding-left: 0.1rem;
+  }
+  
+  .dropdown a:hover, .dropdown2 a:hover {
+    text-shadow: 0.2px 0px 0 black, 0px 0.2px 0 black, 0.2px 0px 0 black, 0px 0.2px 0 black;
+  }
+  
+  .show {display: flex;}
+  .show2 {display: flex;}
 
-    @include breakpoint($sm-bp) {
-        font-size: 1.6rem;
-    }
-}
+// .select select {
+//     display: none;
+// }
+
+// .select {
+//     position: relative;
+    
+// }
+
+// .select__toggle {
+//     display: flex;
+//     align-items: center;
+//     gap: 0.6rem;
+// }
+
+// .select--active {
+//     z-index: 1;
+// }
+
+// .select--active~.select {
+//     z-index: 0;
+// }
+
+// .select__options {
+//     position: absolute;
+//     top: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     visibility: hidden;
+//     background: #f7f7f7;
+//     gap: 1.5rem;
+//     margin-top: 1.5rem;
+//     display: flex;
+//     align-items: flex-start;
+// }
+
+// .select--active .select__options {
+//     visibility: visible;
+// }
+
+// .select__option--active {
+//     font-weight: bold;
+// }
+
+// .select__option {
+//     background: none;
+//     border: none;
+//     font-weight: 300;
+//     font-size: 1.8rem;
+//     line-height: 100.1%;
+//     color: #000000;
+//     padding: 0rem;
+
+//     @include breakpoint($sm-bp) {
+//         font-size: 1.6rem;
+//     }
+// }
+
+// .select__option:hover {
+//     text-shadow: 0.2px 0px 0 black, 0px 0.2px 0 black, 0.2px 0px 0 black, 0px 0.2px 0 black;
+// }
 
 .services-particular_position {
     margin-top: 16rem;
@@ -390,6 +446,24 @@
         }
     }
 
+    .services-steps__navigationDesc {
+        margin-top: 11.2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 1rem;
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        svg {
+            width: 4rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+    }
+
     .services-steps__navigation {
         display: none;
         gap: 2.5rem;
@@ -417,8 +491,12 @@
             flex-direction: column-reverse;
         }
 
-        .services-steps__swiper {
+        .services-steps__swiperHelper {
             width: 58.6%;
+        }
+
+        .services-steps__swiper {
+            width: 100%;
 
             @include breakpoint($sm-bp) {
                 width: 100%;
@@ -451,7 +529,7 @@
         }
 
         .swiper-slide {
-            margin-top: 13.2rem;
+
 
             @include breakpoint($sm-bp) {
                 margin-top: unset;
@@ -484,6 +562,7 @@
                 border-bottom: 3px solid #000000;
                 margin-top: 3rem;
                 margin-bottom: 3rem;
+                width: 99.9%;
 
                 @include breakpoint($sm-bp) {
                     margin-top: 2rem;
@@ -612,6 +691,10 @@
             }
         }
     }
+}
+
+.select__option--active {
+    display: none;
 }
 
 .services-contact_position {

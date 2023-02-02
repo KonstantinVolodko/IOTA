@@ -50,7 +50,7 @@
                     ПОСМОТРЕТЬ ПОРТФОЛИО
                 </a>
 
-                <div class="services-header__sectionBlock">
+                <!-- <div class="services-header__sectionBlock">
                     <select data-custom-select-class="select">
                         <option value="КОЛИЧЕСТВО КОМНАТ">КОЛИЧЕСТВО КОМНАТ</option>
                         <option value="ОДНОКОМНАТНЫЕ">ОДНОКОМНАТНЫЕ</option>
@@ -64,7 +64,35 @@
                         <option value="СТАЛИНКИ">СТАЛИНКИ</option>
                         <option value="ХРУЩЕВКИ">ХРУЩЕВКИ</option>
                     </select>
+                </div> -->
+
+                <div class="services-header__sectionBlock">
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            КОЛИЧЕСТВО КОМНАТ
+                            <span><img src="./assets/images/services/arrowDown.svg"></span>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="#">ОДНОКОМНАТНЫЕ</a>
+                          <a href="#">ДВУХКОМНАТНЫЕ</a>
+                          <a href="#">ТРЕХКОМНАТНЫЕ</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown2">
+                        <button class="dropbtn2">
+                            ФОРМАТ
+                            <span><img src="./assets/images/services/arrowDown.svg"></span>
+                        </button>
+                        <div class="dropdown-content2">
+                          <a href="#">СТУДИИ</a>
+                          <a href="#">НОВОСТРОЙКИ</a>
+                          <a href="#">СТАЛИНКИ</a>
+                          <a href="#">ХРУЩЕВКИ</a>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -127,7 +155,7 @@
     <section class="services-steps services-steps_position">
         <h2>Разработка проекта включает в себя 7 этапов:</h2>
 
-        <div class="services-steps__navigation">
+        <!-- <div class="services-steps__navigation">
             <svg class="services-steps__arrowLeft">
                 <use href="#littleArrowLeft"></use>
             </svg>
@@ -135,124 +163,142 @@
             <svg class="services-steps__arrowRight">
                 <use href="#littleArrowRight"></use>
             </svg>
-        </div>
+        </div> -->
 
         <div class="services-steps__contentContainer">
             <div class="services-steps__imgContainer">
                 <img src="./assets/images/services/servicesImg4.jpg" alt="#">
             </div>
 
-            <div class="swiper services-steps__swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide services-steps__firstSlide">
-                        <div class="services-steps__number">
-                            01
+            <div class="services-steps__swiperHelper">
+                <div class="services-steps__navigationDesc">
+                    <button>
+                        <svg class="services-steps__arrowLeft">
+                            <use href="#littleArrowLeft"></use>
+                        </svg>
+                    </button>
+        
+                    <button>
+                        <svg class="services-steps__arrowRight">
+                            <use href="#littleArrowRight"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="swiper services-steps__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                01
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Отправная точка — техзадание
+                                <br>
+                                На этом этапе рождается<br>концепция будущего дизайна.
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-
-                        <div class="services-steps__title">
-                            Отправная точка — техзадание
-                            <br>
-                            На этом этапе рождается<br>концепция будущего дизайна.
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                02
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Создается план обмера помещения.
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                03
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Разработка планировочных решений.
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            02
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                04
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Создание концепт-проекта и подбор материалов.
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-
-                        <div class="services-steps__title">
-                            Создается план обмера помещения.
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                05
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Создание 3D-модели дизайн-проекта.
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                06
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Разработка технической документации (чертежи, планы, технологии отделки).
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            03
-                        </div>
-
-                        <div class="services-steps__title">
-                            Разработка планировочных решений.
-                        </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            04
-                        </div>
-
-                        <div class="services-steps__title">
-                            Создание концепт-проекта и подбор материалов.
-                        </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            05
-                        </div>
-
-                        <div class="services-steps__title">
-                            Создание 3D-модели дизайн-проекта.
-                        </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            06
-                        </div>
-
-                        <div class="services-steps__title">
-                            Разработка технической документации (чертежи, планы, технологии отделки).
-                        </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="services-steps__number">
-                            07
-                        </div>
-
-                        <div class="services-steps__title">
-                            Создается ведомость отделки (материалы с указанием артикулов и количества).
-                        </div>
-
-                        <div class="services-steps__line"></div>
-
-                        <div class="services-steps__subtitle">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <div class="swiper-slide">
+                            <div class="services-steps__number">
+                                07
+                            </div>
+    
+                            <div class="services-steps__title">
+                                Создается ведомость отделки (материалы с указанием артикулов и количества).
+                            </div>
+    
+                            <div class="services-steps__line"></div>
+    
+                            <div class="services-steps__subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            
         </div>
 
         <div class="services-steps__result">

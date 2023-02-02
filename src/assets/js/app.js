@@ -450,165 +450,164 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  const findElements = (object) => {
-    const instance = object;
-    const { node, select } = instance;
-    instance.toggle = node.children[0];
-    instance.holder = node.children[1];
-    instance.isActive = false;
-    instance.options = select.options;
-    instance.active = select.selectedIndex >= 0 ? select.selectedIndex : 0;
-    return instance;
-  };
+//   const findElements = (object) => {
+//     const instance = object;
+//     const { node, select } = instance;
+//     instance.toggle = node.children[0];
+//     instance.holder = node.children[1];
+//     instance.isActive = false;
+//     instance.options = select.options;
+//     instance.active = select.selectedIndex >= 0 ? select.selectedIndex : 0;
+//     return instance;
+//   };
 
-  const isOption = (target, { className }) => target.classList.contains(`${className}__option`);
+//   const isOption = (target, { className }) => target.classList.contains(`${className}__option`);
 
-  const shouldDropdown = (target, { className }) => target.classList.contains(`${className}__option`);
+//   const shouldDropdown = (target, { className }) => target.classList.contains(`${className}__option`);
 
-  const createBaseHTML = (value, className) => (`
-	<div class="${className}">
-		<button class="${className}__toggle" type="button">${value} <span><img src="./assets/images/services/arrowDown.svg"></span></button>
-		<div class="${className}__options"></div>
-    
-	</div>
-`);
+//   const createBaseHTML = (value, className) => (`
+// 	<div class="${className}">
+// 		<button class="${className}__toggle" type="button">${value} <span><img src="./assets/images/services/arrowDown.svg"></span></button>
+// 		<div class="${className}__options"></div>
+// 	</div>
+// `);
 
-  const insertBase = (select, className) => {
-    const selectedIndex = select.selectedIndex >= 0 ? select.selectedIndex : 0;
-    const value = select.options[selectedIndex].textContent;
-    const html = createBaseHTML(value, className);
-    select.insertAdjacentHTML('afterend', html);
-  };
+//   const insertBase = (select, className) => {
+//     const selectedIndex = select.selectedIndex >= 0 ? select.selectedIndex : 0;
+//     const value = select.options[selectedIndex].textContent;
+//     const html = createBaseHTML(value, className);
+//     select.insertAdjacentHTML('afterend', html);
+//   };
 
-  const renderOption = (html, option, index, active, className) => {
-    const activeClassName = index === active ? `${className}__option--active` : '';
-    return `
-    ${html}
-		<button class="${className}__option ${activeClassName}" type="button" data-index="${index}">${option.textContent}</button>
-  `;
-  };
+//   const renderOption = (html, option, index, active, className) => {
+//     const activeClassName = index === active ? `${className}__option--active` : '';
+//     return `
+//     ${html}
+// 		<button class="${className}__option ${activeClassName}" type="button" data-index="${index}">${option.textContent}</button>
+//   `;
+//   };
 
-  const renderOptions = (options, active, className) => {
-    return [...options].reduce((acc, option, index) => renderOption(acc, option, index, active, className), '');
-  };
+//   const renderOptions = (options, active, className) => {
+//     return [...options].reduce((acc, option, index) => renderOption(acc, option, index, active, className), '');
+//   };
 
-  const pickOption = (object) => {
-    const instance = object;
-    const { select, active, customOptions, className } = instance;
-    select.selectedIndex = active;
-    instance.optionActive.classList.remove(`${className}__option--active`);
-    instance.optionActive = customOptions[active];
-    instance.optionActive.classList.add(`${className}__option--active`);
-    instance.toggle.textContent = instance.optionActive.textContent;
-  };
+//   const pickOption = (object) => {
+//     const instance = object;
+//     const { select, active, customOptions, className } = instance;
+//     select.selectedIndex = active;
+//     instance.optionActive.classList.remove(`${className}__option--active`);
+//     instance.optionActive = customOptions[active];
+//     instance.optionActive.classList.add(`${className}__option--active`);
+//     instance.toggle.textContent = instance.optionActive.textContent;
+//   };
 
-  const onOptionsClick = (event, object) => {
-    event.preventDefault();
-    const instance = object;
-    const { select, hideDropdown } = instance;
-    const { target } = event;
-    if (isOption(target, instance)) {
-      instance.active = target.dataset.index;
-      pickOption(instance);
-    }
-    if (shouldDropdown(target, instance)) {
-      hideDropdown();
-    }
-  };
+//   const onOptionsClick = (event, object) => {
+//     event.preventDefault();
+//     const instance = object;
+//     const { select, hideDropdown } = instance;
+//     const { target } = event;
+//     if (isOption(target, instance)) {
+//       instance.active = target.dataset.index;
+//       pickOption(instance);
+//     }
+//     if (shouldDropdown(target, instance)) {
+//       hideDropdown();
+//     }
+//   };
 
-  const initOptionsEvents = (instance) => {
-    instance.holder.addEventListener('click', event => onOptionsClick(event, instance));
+//   const initOptionsEvents = (instance) => {
+//     instance.holder.addEventListener('click', event => onOptionsClick(event, instance));
 
-  };
+//   };
 
-  const render = (object) => {
-    const instance = object;
-    const { holder, options, className, active } = instance;
-    const html = renderOptions(options, active, className);
-    holder.insertAdjacentHTML('afterbegin', html);
-    instance.customOptions = [...holder.children];
-    instance.optionActive = instance.customOptions[active];
-    initOptionsEvents(instance);
-  };
+//   const render = (object) => {
+//     const instance = object;
+//     const { holder, options, className, active } = instance;
+//     const html = renderOptions(options, active, className);
+//     holder.insertAdjacentHTML('afterbegin', html);
+//     instance.customOptions = [...holder.children];
+//     instance.optionActive = instance.customOptions[active];
+//     initOptionsEvents(instance);
+//   };
 
-  const hideSelect = ({ node, select }) => node.appendChild(select);
+//   const hideSelect = ({ node, select }) => node.appendChild(select);
 
-  const wrapSelect = (object) => {
-    const instance = object;
-    const { select, className } = instance;
-    return new Promise((resolve) => {
-      requestIdleCallback(() => {
-        insertBase(select, className);
-        instance.node = select.nextElementSibling;
-        hideSelect(instance);
-        resolve(instance);
-      });
-    });
-  };
+//   const wrapSelect = (object) => {
+//     const instance = object;
+//     const { select, className } = instance;
+//     return new Promise((resolve) => {
+//       requestIdleCallback(() => {
+//         insertBase(select, className);
+//         instance.node = select.nextElementSibling;
+//         hideSelect(instance);
+//         resolve(instance);
+//       });
+//     });
+//   };
 
-  const unsubscribeDocument = ({ hideDropdown }) => document.removeEventListener('click', hideDropdown);
-  const subscribeDocument = ({ hideDropdown }) => document.addEventListener('click', hideDropdown);
+//   const unsubscribeDocument = ({ hideDropdown }) => document.removeEventListener('click', hideDropdown);
+//   const subscribeDocument = ({ hideDropdown }) => document.addEventListener('click', hideDropdown);
 
-  const hideOptions = (object) => {
-    const instance = object;
-    const { node, className } = instance;
-    instance.isActive = false;
-    node.classList.remove(`${className}--active`);
-    unsubscribeDocument(instance);
-  };
+//   const hideOptions = (object) => {
+//     const instance = object;
+//     const { node, className } = instance;
+//     instance.isActive = false;
+//     node.classList.remove(`${className}--active`);
+//     unsubscribeDocument(instance);
+//   };
 
-  const showOptions = (object) => {
-    const instance = object;
-    const { node, className } = instance;
-    instance.isActive = true;
-    node.classList.add(`${className}--active`);
-    subscribeDocument(instance);
-  };
+//   const showOptions = (object) => {
+//     const instance = object;
+//     const { node, className } = instance;
+//     instance.isActive = true;
+//     node.classList.add(`${className}--active`);
+//     subscribeDocument(instance);
+//   };
 
-  const toggleOptions = (instance) => {
-    if (instance.isActive) hideOptions(instance);
-    else showOptions(instance);
-  };
+//   const toggleOptions = (instance) => {
+//     if (instance.isActive) hideOptions(instance);
+//     else showOptions(instance);
+//   };
 
-  const onNodeClick = event => event.stopPropagation();
+//   const onNodeClick = event => event.stopPropagation();
 
-  const initEvents = (object) => {
-    const instance = object;
-    const { node, toggle } = instance;
-    const showDropdown = () => { showOptions(instance); };
-    const hideDropdown = () => { hideOptions(instance); };
-    const toggleDropdown = () => { toggleOptions(instance); };
-    instance.showDropdown = showDropdown;
-    instance.hideDropdown = hideDropdown;
-    instance.toggleDropdown = toggleDropdown;
-    toggle.addEventListener('click', toggleDropdown);
-    // let ffs = document.querySelectorAll('.selectArrowDown')
-    // ffs.forEach(e => {
-    //   e.addEventListener('click', showDropdown);
-    // })
+//   const initEvents = (object) => {
+//     const instance = object;
+//     const { node, toggle } = instance;
+//     const showDropdown = () => { showOptions(instance); };
+//     const hideDropdown = () => { hideOptions(instance); };
+//     const toggleDropdown = () => { toggleOptions(instance); };
+//     instance.showDropdown = showDropdown;
+//     instance.hideDropdown = hideDropdown;
+//     instance.toggleDropdown = toggleDropdown;
+//     toggle.addEventListener('click', toggleDropdown);
+//     // let ffs = document.querySelectorAll('.selectArrowDown')
+//     // ffs.forEach(e => {
+//     //   e.addEventListener('click', showDropdown);
+//     // })
 
-    node.addEventListener('click', onNodeClick);
-    return instance;
-  };
+//     node.addEventListener('click', onNodeClick);
+//     return instance;
+//   };
 
-  const constructor = (select) => {
-    const instance = {
-      select,
-      className: select.dataset.customSelectClass,
-    };
+//   const constructor = (select) => {
+//     const instance = {
+//       select,
+//       className: select.dataset.customSelectClass,
+//     };
 
-    const init = () => {
-      wrapSelect(instance)
-        .then(findElements)
-        .then(initEvents)
-        .then(render);
-    };
+//     const init = () => {
+//       wrapSelect(instance)
+//         .then(findElements)
+//         .then(initEvents)
+//         .then(render);
+//     };
 
-    init();
-  };
+//     init();
+//   };
 
-  const selects = document.querySelectorAll('[data-custom-select-class]');
-  selects.forEach(constructor);
+//   const selects = document.querySelectorAll('[data-custom-select-class]');
+//   selects.forEach(constructor);
 
   let organizationOfSpaceSwiper = new Swiper(".organizationOfSpace-include__swiper", {
     slidesPerView: 1.2,
@@ -718,7 +717,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // if (window.matchMedia("(max-width: 500px)").matches) {
   let servicesStepSwiper = new Swiper(".services-steps__swiper", {
     slidesPerView: 1,
-    mousewheel: true,
     loop: true,
     navigation: {
       nextEl: ".services-steps__arrowRight",
@@ -2099,43 +2097,43 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-  if (servicesPage) {
-    // const tl43 = gsap.timeline()
+  // if (servicesPage) {
+  //   const tl43 = gsap.timeline()
 
-    // tl43.from('.services-header h2', { opacity: 0, delay: 0.5 })
+  //   tl43.from('.services-header h2', { opacity: 0, delay: 0.5 })
 
-    ScrollTrigger.create({
-      animation: tl43,
-      trigger: '.services-header',
-      start: 'top 70%',
-      end: "top 30%",
-    })
+  //   ScrollTrigger.create({
+  //     animation: tl43,
+  //     trigger: '.services-header',
+  //     start: 'top 70%',
+  //     end: "top 30%",
+  //   })
 
-    const tl44 = gsap.timeline()
+  //   const tl44 = gsap.timeline()
 
-    tl44.from('.services-particular h2', { opacity: 0 })
+  //   tl44.from('.services-particular h2', { opacity: 0 })
 
-    ScrollTrigger.create({
-      animation: tl44,
-      trigger: '.services-particular',
-      start: 'top 90%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+  //   ScrollTrigger.create({
+  //     animation: tl44,
+  //     trigger: '.services-particular',
+  //     start: 'top 90%',
+  //     end: "top 60%",
+  //     events: "onEnter onLeave onEnterBack onLeaveBack",
+  //     toggleActions: "play play reverse reverse",
+  //   })
 
-    const tl45 = gsap.timeline()
-    tl45.from('.services-steps h2', { opacity: 0 })
+  //   const tl45 = gsap.timeline()
+  //   tl45.from('.services-steps h2', { opacity: 0 })
 
-    ScrollTrigger.create({
-      animation: tl45,
-      trigger: '.services-steps',
-      start: 'top 90%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-  }
+  //   ScrollTrigger.create({
+  //     animation: tl45,
+  //     trigger: '.services-steps',
+  //     start: 'top 90%',
+  //     end: "top 60%",
+  //     events: "onEnter onLeave onEnterBack onLeaveBack",
+  //     toggleActions: "play play reverse reverse",
+  //   })
+  // }
 
   if (organizationOfSpacePage) {
     // const tl46 = gsap.timeline()
@@ -2403,5 +2401,90 @@ document.addEventListener("DOMContentLoaded", () => {
   //             },
   //           });
 
+
+  // function myFunction() {
+  //   document.querySelectorAll(".dropdown-content").forEach(e => {
+  //     e.classList.toggle("show");
+  //   })
+  // }
+  
+  // Close the dropdown if the user clicks outside of it
+  
+
+  // function myFunction() {
+  //   document.querySelectorAll(".dropbtn").forEach(e => {
+      
+  //   })
+  // }
+  
+  // Close the dropdown if the user clicks outside of it
+  
+
+  // let dropbtn = document.querySelectorAll('.dropbtn').forEach(el => {
+  //   window.onclick = function(event) {
+  //     if (!event.target.matches('.dropbtn')) {
+  //       console.log(event.target.matches('.dropbtn'), 'hellp')
+  //       let dropdowns = document.querySelectorAll(".dropdown-content");
+  //       let i;
+  //       for (i = 0; i < dropdowns.length; i++) {
+  //         let openDropdown = dropdowns[i];
+  //         if (openDropdown.classList.contains('show')) {
+  //           openDropdown.classList.remove('show');
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   el.addEventListener('click', elem => {
+  //     el.classList.toggle("show");
+  //   })
+  // })
+
+
+  function myFunction() {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  let bbs = document.querySelector('.dropbtn').addEventListener('click', e => {
+    myFunction()
+  })
+
+  function myFunction2() {
+    document.querySelector(".dropdown-content2").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn2')) {
+      var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+      var i;
+      for (i = 0; i < dropdowns2.length; i++) {
+        var openDropdown2 = dropdowns[i];
+        if (openDropdown2.classList.contains('show2')) {
+          openDropdown2.classList.remove('show2');
+        }
+      }
+    }
+  }
+
+  let bbs2 = document.querySelector('.dropbtn2').addEventListener('click', e => {
+    myFunction2()
+  })
+
+  
 
 })
