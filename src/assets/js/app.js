@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.add("activeTab");
       const tl16 = gsap.timeline();
 
-      tl16.fromTo('.main-services__desctopHelper', { opacity: 0 }, {opacity: 1, duration: 1.5})
+      tl16.fromTo('.main-services__desctopHelper', { opacity: 0 }, { opacity: 1, duration: 1.5 })
 
       acc.forEach(element => {
         element.classList.remove('deleteHover')
@@ -142,42 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mainResultNumber[0].click()
   }
-
-
-
-
-
-
-
-
-
-
-  // let accrordeonBtn = document.querySelectorAll(".main-firstStep__accrordeonBtn");
-
-  // let firstStepAccorderonContainer = document.querySelector('.main-firstStep__accordeonContainer')
-  // let firstStepAccorderonContainerHeight = firstStepAccorderonContainer.offsetHeight
-  // console.log(firstStepAccorderonContainerHeight)
-
-  // let smsmms = document.querySelector('.main-firstStep__accordeonContent')
-  // let testContainer = document.querySelector('.testContainer')
-
-  // testContainer.style.height = firstStepAccorderonContainerHeight + 20 + 2 + 'px';
-
-  // smsmms.style.maxHeight = 0
-
-  // for (let i = 0; i < accrordeonBtn.length; i++) {
-  //   accrordeonBtn[i].addEventListener("click", function () {
-  //     this.classList.toggle("paddingActiveTab");
-  //     let panel2 = this.nextElementSibling;
-  //     if (panel2.classList.contains('123')) {
-  //       panel2.style.maxHeight = 0;
-  //       panel2.classList.remove('123')
-  //     } else {
-  //       panel2.style.maxHeight = panel2.scrollHeight + "px";
-  //       panel2.classList.add('123')
-  //     }
-  //   });
-  // }
 
 
   if (mainPage) {
@@ -307,46 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.matchMedia("(min-width: 850px)").matches) {
 
     menuTabsHelper.innerHTML = tabsFirstLvlTitle[1].nextElementSibling.innerHTML
-
-    // tabsFirstLvlTitle.forEach(e => {
-    //   e.addEventListener('click', el => {
-    //     menuTabsHelper.innerHTML = e.nextElementSibling.innerHTML
-    //     tabsFirstLvlTitle.forEach(elem => {
-    //       elem.classList.remove('header-menu__tabsFirstLvlTitle_hover')
-    //     })
-
-    //     e.classList.add('header-menu__tabsFirstLvlTitle_hover')
-
-    //     let headerAccBtn = document.querySelectorAll(".header-menu__accordionBtn");
-
-    //     for (let i = 0; i < headerAccBtn.length; i++) {
-    //       headerAccBtn[i].addEventListener("click", function () {
-
-    //         headerAccBtn.forEach(element => {
-    //           element.classList.remove('header-menu__accordionBtn_hover')
-    //         })
-
-    //         this.classList.add('header-menu__accordionBtn_hover')
-
-    //         let panel = this.nextElementSibling;
-
-    //         headerAccBtn.forEach(e => {
-    //           e.nextElementSibling.style.maxHeight = null;
-    //         })
-
-    //         if (panel.style.maxHeight) {
-    //           panel.style.maxHeight = null;
-    //         } else {
-    //           panel.style.maxHeight = panel.scrollHeight + "px";
-    //         }
-    //       });
-    //     }
-    //   })
-    // })
-
-    // if (tabsFirstLvlTitle.length != 0) {
-    //   tabsFirstLvlTitle[0].click()
-    // }
   }
 
   if (window.matchMedia("(max-width: 850px)").matches) {
@@ -448,167 +372,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-
-
-//   const findElements = (object) => {
-//     const instance = object;
-//     const { node, select } = instance;
-//     instance.toggle = node.children[0];
-//     instance.holder = node.children[1];
-//     instance.isActive = false;
-//     instance.options = select.options;
-//     instance.active = select.selectedIndex >= 0 ? select.selectedIndex : 0;
-//     return instance;
-//   };
-
-//   const isOption = (target, { className }) => target.classList.contains(`${className}__option`);
-
-//   const shouldDropdown = (target, { className }) => target.classList.contains(`${className}__option`);
-
-//   const createBaseHTML = (value, className) => (`
-// 	<div class="${className}">
-// 		<button class="${className}__toggle" type="button">${value} <span><img src="./assets/images/services/arrowDown.svg"></span></button>
-// 		<div class="${className}__options"></div>
-// 	</div>
-// `);
-
-//   const insertBase = (select, className) => {
-//     const selectedIndex = select.selectedIndex >= 0 ? select.selectedIndex : 0;
-//     const value = select.options[selectedIndex].textContent;
-//     const html = createBaseHTML(value, className);
-//     select.insertAdjacentHTML('afterend', html);
-//   };
-
-//   const renderOption = (html, option, index, active, className) => {
-//     const activeClassName = index === active ? `${className}__option--active` : '';
-//     return `
-//     ${html}
-// 		<button class="${className}__option ${activeClassName}" type="button" data-index="${index}">${option.textContent}</button>
-//   `;
-//   };
-
-//   const renderOptions = (options, active, className) => {
-//     return [...options].reduce((acc, option, index) => renderOption(acc, option, index, active, className), '');
-//   };
-
-//   const pickOption = (object) => {
-//     const instance = object;
-//     const { select, active, customOptions, className } = instance;
-//     select.selectedIndex = active;
-//     instance.optionActive.classList.remove(`${className}__option--active`);
-//     instance.optionActive = customOptions[active];
-//     instance.optionActive.classList.add(`${className}__option--active`);
-//     instance.toggle.textContent = instance.optionActive.textContent;
-//   };
-
-//   const onOptionsClick = (event, object) => {
-//     event.preventDefault();
-//     const instance = object;
-//     const { select, hideDropdown } = instance;
-//     const { target } = event;
-//     if (isOption(target, instance)) {
-//       instance.active = target.dataset.index;
-//       pickOption(instance);
-//     }
-//     if (shouldDropdown(target, instance)) {
-//       hideDropdown();
-//     }
-//   };
-
-//   const initOptionsEvents = (instance) => {
-//     instance.holder.addEventListener('click', event => onOptionsClick(event, instance));
-
-//   };
-
-//   const render = (object) => {
-//     const instance = object;
-//     const { holder, options, className, active } = instance;
-//     const html = renderOptions(options, active, className);
-//     holder.insertAdjacentHTML('afterbegin', html);
-//     instance.customOptions = [...holder.children];
-//     instance.optionActive = instance.customOptions[active];
-//     initOptionsEvents(instance);
-//   };
-
-//   const hideSelect = ({ node, select }) => node.appendChild(select);
-
-//   const wrapSelect = (object) => {
-//     const instance = object;
-//     const { select, className } = instance;
-//     return new Promise((resolve) => {
-//       requestIdleCallback(() => {
-//         insertBase(select, className);
-//         instance.node = select.nextElementSibling;
-//         hideSelect(instance);
-//         resolve(instance);
-//       });
-//     });
-//   };
-
-//   const unsubscribeDocument = ({ hideDropdown }) => document.removeEventListener('click', hideDropdown);
-//   const subscribeDocument = ({ hideDropdown }) => document.addEventListener('click', hideDropdown);
-
-//   const hideOptions = (object) => {
-//     const instance = object;
-//     const { node, className } = instance;
-//     instance.isActive = false;
-//     node.classList.remove(`${className}--active`);
-//     unsubscribeDocument(instance);
-//   };
-
-//   const showOptions = (object) => {
-//     const instance = object;
-//     const { node, className } = instance;
-//     instance.isActive = true;
-//     node.classList.add(`${className}--active`);
-//     subscribeDocument(instance);
-//   };
-
-//   const toggleOptions = (instance) => {
-//     if (instance.isActive) hideOptions(instance);
-//     else showOptions(instance);
-//   };
-
-//   const onNodeClick = event => event.stopPropagation();
-
-//   const initEvents = (object) => {
-//     const instance = object;
-//     const { node, toggle } = instance;
-//     const showDropdown = () => { showOptions(instance); };
-//     const hideDropdown = () => { hideOptions(instance); };
-//     const toggleDropdown = () => { toggleOptions(instance); };
-//     instance.showDropdown = showDropdown;
-//     instance.hideDropdown = hideDropdown;
-//     instance.toggleDropdown = toggleDropdown;
-//     toggle.addEventListener('click', toggleDropdown);
-//     // let ffs = document.querySelectorAll('.selectArrowDown')
-//     // ffs.forEach(e => {
-//     //   e.addEventListener('click', showDropdown);
-//     // })
-
-//     node.addEventListener('click', onNodeClick);
-//     return instance;
-//   };
-
-//   const constructor = (select) => {
-//     const instance = {
-//       select,
-//       className: select.dataset.customSelectClass,
-//     };
-
-//     const init = () => {
-//       wrapSelect(instance)
-//         .then(findElements)
-//         .then(initEvents)
-//         .then(render);
-//     };
-
-//     init();
-//   };
-
-//   const selects = document.querySelectorAll('[data-custom-select-class]');
-//   selects.forEach(constructor);
-
   let organizationOfSpaceSwiper = new Swiper(".organizationOfSpace-include__swiper", {
     slidesPerView: 1.2,
     loop: true,
@@ -652,31 +415,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
-
-
-
-  // let secondPageSwiper = new Swiper(".secondPageSwiper", {
-  //   grabCursor: true,
-  //   navigation: {
-  //     nextEl: ".secondPage__arrowRight",
-  //     prevEl: ".secondPage__arrowLeft",
-  //   },
-
-  //   pagination: {
-  //     el: ".secondPageSwiper-pagination",
-  //   },
-  // });
-
-
-
-
-
-
-
-
-
-
 
 
   let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
@@ -1122,32 +860,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play restart restart restart",
     })
 
-
-    // ScrollTrigger.create({
-    //   animation: tl21,
-    //   trigger: '.main-services',
-    //   endTrigger: ".main-result",
-    //   start: 'top 70%',
-    //   end: "top 70%",
-    //   onEnter: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //     leftBlockContainer.innerHTML = mainServices.innerHTML
-    //   },
-    //   onLeave: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //     leftBlockContainer.innerHTML = mainServices.innerHTML
-    //   },
-    //   onEnterBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //     leftBlockContainer.innerHTML = mainServices.innerHTML
-    //   },
-    //   onLeaveBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //     leftBlockContainer.innerHTML = mainServices.innerHTML
-    //   },
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "play restart restart restart",
-    // })
   }
 
   let portfolioPage = document.querySelector('.portfolio')
@@ -1408,27 +1120,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart restart restart restart",
     })
 
-    // ScrollTrigger.create({
-    //   animation: tl21,
-    //   trigger: '.organizationOfSpace-text',
-    //   endTrigger: ".footer",
-    //   start: 'top 70%',
-    //   end: "top 70%",
-    //   onEnter: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeave: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onEnterBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeaveBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "play restart restart restart",
-    // })
   }
 
   let designPage = document.querySelector('.design')
@@ -1489,27 +1180,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart restart restart restart",
     })
 
-    // ScrollTrigger.create({
-    //   animation: tl21,
-    //   trigger: '.organizationOfSpace-text',
-    //   endTrigger: ".footer",
-    //   start: 'top 70%',
-    //   end: "top 70%",
-    //   onEnter: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeave: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onEnterBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeaveBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "restart restart restart restart",
-    // })
 
   }
 
@@ -1571,27 +1241,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart restart restart restart",
     })
 
-    // ScrollTrigger.create({
-    //   animation: tl21,
-    //   trigger: '.organizationOfSpace-text',
-    //   endTrigger: ".footer",
-    //   start: 'top 70%',
-    //   end: "top 70%",
-    //   onEnter: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeave: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onEnterBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeaveBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "restart restart restart restart",
-    // })
   }
 
   let realizationPage = document.querySelector('.realization')
@@ -1652,27 +1301,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart restart restart restart",
     })
 
-    // ScrollTrigger.create({
-    //   animation: tl21,
-    //   trigger: '.organizationOfSpace-text',
-    //   endTrigger: ".footer",
-    //   start: 'top 70%',
-    //   end: "top 70%",
-    //   onEnter: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeave: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onEnterBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   onLeaveBack: function () {
-    //     leftBlockContainer.innerHTML = "";
-    //   },
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "restart restart restart restart",
-    // })
   }
 
   let pricesPage = document.querySelector('.prices')
@@ -2017,34 +1645,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl35.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
 
-    // ScrollTrigger.create({
-    //   animation: tl35,
-    //   trigger: '.main-gallery__tabsContainer',
-    //   start: 'top 80%',
-    //   end: "top 30%",
-    // })
   }
 
-  if (portfolioPage) {
-    // const tl40 = gsap.timeline()
-    // tl40.fromTo('.portfolio-content_position h2', { opacity: 0 }, { opacity: 1, delay: 0.5 })
 
-    // const tl41 = gsap.timeline()
-    // tl41.fromTo('.portfolio-content__title', { opacity: 0 }, { opacity: 1, delay: 0.5 })
-    let portfolioContentTitle = document.querySelectorAll('.portfolio-content__title')
-    
-    // portfolioContentTitle.forEach(el => {
-
-
-    //   ScrollTrigger.create({
-    //     animation: tl41,
-    //     trigger: el,
-    //     start: 'top 30%',
-    //     end: "top 0%",
-    //   })
-    // })
-
-  }
 
   if (secondPage) {
     const tl41 = gsap.timeline()
@@ -2097,50 +1700,10 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-  // if (servicesPage) {
-  //   const tl43 = gsap.timeline()
-
-  //   tl43.from('.services-header h2', { opacity: 0, delay: 0.5 })
-
-  //   ScrollTrigger.create({
-  //     animation: tl43,
-  //     trigger: '.services-header',
-  //     start: 'top 70%',
-  //     end: "top 30%",
-  //   })
-
-  //   const tl44 = gsap.timeline()
-
-  //   tl44.from('.services-particular h2', { opacity: 0 })
-
-  //   ScrollTrigger.create({
-  //     animation: tl44,
-  //     trigger: '.services-particular',
-  //     start: 'top 90%',
-  //     end: "top 60%",
-  //     events: "onEnter onLeave onEnterBack onLeaveBack",
-  //     toggleActions: "play play reverse reverse",
-  //   })
-
-  //   const tl45 = gsap.timeline()
-  //   tl45.from('.services-steps h2', { opacity: 0 })
-
-  //   ScrollTrigger.create({
-  //     animation: tl45,
-  //     trigger: '.services-steps',
-  //     start: 'top 90%',
-  //     end: "top 60%",
-  //     events: "onEnter onLeave onEnterBack onLeaveBack",
-  //     toggleActions: "play play reverse reverse",
-  //   })
-  // }
-
   if (organizationOfSpacePage) {
-    // const tl46 = gsap.timeline()
-    // tl46.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
 
     const tl47 = gsap.timeline()
-    tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, {opacity: 1})
+    tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl47,
@@ -2152,7 +1715,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tl48 = gsap.timeline()
-    tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, {opacity: 1})
+    tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl48,
@@ -2165,11 +1728,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (designPage) {
-    // const tl49 = gsap.timeline()
-    // tl49.from('.design-header h2', { opacity: 0, delay: 1 })
 
     const tl50 = gsap.timeline()
-    tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, {opacity: 1})
+    tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl50,
@@ -2182,11 +1743,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (autorPage) {
-    // const tl51 = gsap.timeline()
-    // tl51.from('.autor-header h2', { opacity: 0, delay: 0.5 })
 
     const tl52 = gsap.timeline()
-    tl52.fromTo('.autor-services__title', { opacity: 0 }, {opacity: 1})
+    tl52.fromTo('.autor-services__title', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl52,
@@ -2211,11 +1770,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (realizationPage) {
-    // const tl54 = gsap.timeline()
-    // tl54.from('.organizationOfSpace-organization h2', { opacity: 0, delay: 0.5 })
 
     const tl55 = gsap.timeline()
-    tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, {opacity: 1})
+    tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl55,
@@ -2228,7 +1785,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tl56 = gsap.timeline()
-    tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, {opacity: 1})
+    tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, { opacity: 1 })
 
     ScrollTrigger.create({
       animation: tl56,
@@ -2241,61 +1798,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  if (pricesPage) {
-    // const tl57 = gsap.timeline()
-    // tl57.from('.prices-main__title', { opacity: 0, delay: 0.5 })
-
-    // const tl58 = gsap.timeline()
-    // tl58.from(textTitle[0], { opacity: 0, delay: 1.5 })
-
-    // let textTitle = document.querySelectorAll('.prices-main__textTitle')
-
-    // const tl59 = gsap.timeline()
-
-    // tl59.from(textTitle[1], { opacity: 0 })
-
-    // ScrollTrigger.create({
-    //   animation: tl59,
-    //   trigger: textTitle[1],
-    //   start: 'top 90%',
-    //   end: "top 60%",
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "play play reverse reverse",
-    // })
-
-    // const tl60 = gsap.timeline()
-
-    // tl60.from(textTitle[2], { opacity: 0 })
-
-    // ScrollTrigger.create({
-    //   animation: tl60,
-    //   trigger: textTitle[2],
-    //   start: 'top 90%',
-    //   end: "top 60%",
-    //   events: "onEnter onLeave onEnterBack onLeaveBack",
-    //   toggleActions: "play play reverse reverse",
-    // })
-
-
-
-  }
-
-  if (blogPage) {
-    // const tl61 = gsap.timeline()
-
-    // tl61.from('.blog-content h2', { opacity: 0, delay: 0.5 })
-
-  }
-
-  if (articlePage) {
-    // const tl62 = gsap.timeline()
-
-    // tl62.from('.article-content h2', { opacity: 0, delay: 0.5 })
-  }
-
 
   if (secondPage) {
-    
+
     let interleaveOffset2 = -0.5;
 
     let secondPageSwiper = new Swiper(".secondPageSwiper", {
@@ -2348,143 +1853,29 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
-
-
-
-
   }
 
 
-  // let interleaveOffset = -0.5;
-
-  //           let mainSolutionImgSwiper = new Swiper(".swiper-container2", {
-  //             loop: true,
-  //             speed: 1000,
-  //             watchSlidesProgress: true,
-  //             allowTouchMove: false,
-  //             // autoplay: {
-  //             //   delay: 6000,
-  //             // },
-  //             on: {
-  //               progress: function (mainSolutionImgSwiper, progress) {
-  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
-  //                   let slide = mainSolutionImgSwiper.slides[i];
-  //                   let translate, innerTranslate;
-  //                   progress = slide.progress;
-
-  //                   if (progress > 0) {
-  //                     translate = progress * mainSolutionImgSwiper.width;
-  //                     innerTranslate = translate * interleaveOffset;
-  //                   } else {
-  //                     innerTranslate = Math.abs(progress * mainSolutionImgSwiper.width) * interleaveOffset;
-  //                     translate = 0;
-  //                   }
-
-  //                   slide.querySelector("img").style.transform = `translate3d(${translate}px,0,0)`;
-
-  //                   slide.querySelector(".slide-inner").style.transform = `translate3d(${innerTranslate}px,0,0)`;
-  //                 }
-  //               },
-
-  //               touchStart: function (mainSolutionImgSwiper) {
-  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
-  //                   mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = "";
-  //                 }
-  //               },
-
-  //               setTransition: function (mainSolutionImgSwiper, speed) {
-  //                 for (let i = 0; i < mainSolutionImgSwiper.slides.length; i++) {
-  //                   mainSolutionImgSwiper.slides[i].querySelector(".slide-inner").style.transition = `${speed}ms`;
-  //                   mainSolutionImgSwiper.slides[i].querySelector("img").style.transition = `${speed}ms`;
-  //                 }
-  //               },
-  //             },
-  //           });
-
-
-  // function myFunction() {
-  //   document.querySelectorAll(".dropdown-content").forEach(e => {
-  //     e.classList.toggle("show");
-  //   })
-  // }
-  
-  // Close the dropdown if the user clicks outside of it
-  
-
-  // function myFunction() {
-  //   document.querySelectorAll(".dropbtn").forEach(e => {
-      
-  //   })
-  // }
-  
-  // Close the dropdown if the user clicks outside of it
-  
-
-  // let dropbtn = document.querySelectorAll('.dropbtn').forEach(el => {
-  //   window.onclick = function(event) {
-  //     if (!event.target.matches('.dropbtn')) {
-  //       console.log(event.target.matches('.dropbtn'), 'hellp')
-  //       let dropdowns = document.querySelectorAll(".dropdown-content");
-  //       let i;
-  //       for (i = 0; i < dropdowns.length; i++) {
-  //         let openDropdown = dropdowns[i];
-  //         if (openDropdown.classList.contains('show')) {
-  //           openDropdown.classList.remove('show');
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   el.addEventListener('click', elem => {
-  //     el.classList.toggle("show");
-  //   })
-  // })
-
-
-  function myFunction() {
-    document.querySelector(".dropdown-content").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+  if (servicesPage) {
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
         }
       }
     }
+
+    let dropBtns = document.querySelectorAll('.dropbtn').forEach((el, id) => {
+      el.addEventListener('click', e => {
+        document.querySelectorAll(".dropdown-content")[id].classList.toggle("show");
+      })
+    })
   }
 
-  let bbs = document.querySelector('.dropbtn').addEventListener('click', e => {
-    myFunction()
-  })
-
-  function myFunction2() {
-    document.querySelector(".dropdown-content2").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn2')) {
-      var dropdowns2 = document.getElementsByClassName("dropdown-content2");
-      var i;
-      for (i = 0; i < dropdowns2.length; i++) {
-        var openDropdown2 = dropdowns[i];
-        if (openDropdown2.classList.contains('show2')) {
-          openDropdown2.classList.remove('show2');
-        }
-      }
-    }
-  }
-
-  let bbs2 = document.querySelector('.dropbtn2').addEventListener('click', e => {
-    myFunction2()
-  })
-
-  
 
 })
