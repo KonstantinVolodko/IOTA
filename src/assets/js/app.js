@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    setTimeout(new Drop('.testContainer'), 2000);
+    // setTimeout(new Drop('.testContainer'), 2000);
 
   }
 
@@ -497,30 +497,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let partfolioText = document.querySelector('#portfolioLeftContainer')
 
+
   const tl8 = gsap.timeline();
 
-  tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
+  if (mainPage) {
+    tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
+  }
 
 
   const tl10 = gsap.timeline();
 
-  tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
-  tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
+  if (mainPage) {
+    tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
+    tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
+  }
 
 
-  const tl71 = gsap.timeline();
+  if (mainPage === false) {
+    const tl71 = gsap.timeline();
 
-  tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
+    tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
+  }
+
 
 
   const tl72 = gsap.timeline();
 
-  tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
-  tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
+  if (mainPage === null) {
+    tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
+    tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
+  }
 
   const tl21 = gsap.timeline()
 
   tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
+
+
+
 
   if (mainPage) {
     const tl2 = gsap.timeline();
@@ -1650,16 +1663,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (secondPage) {
-    const tl41 = gsap.timeline()
 
-    tl41.to('.secondPage-idea__underLine', { transform: 'scale(1, 1)', duration: 1.5 })
+    if (window.matchMedia("(min-width: 850px)").matches) {
+      const tl41 = gsap.timeline()
 
-    ScrollTrigger.create({
-      animation: tl41,
-      trigger: '.secondPage-idea__aboutBlock',
-      start: 'top 70%',
-      end: "top 30%",
-    })
+      tl41.to('.secondPage-idea__underLine', { transform: 'scale(1, 1)', duration: 1.5 })
+
+      ScrollTrigger.create({
+        animation: tl41,
+        trigger: '.secondPage-idea__aboutBlock',
+        start: 'top 70%',
+        end: "top 30%",
+      })
+    }
+
+
+
 
     let secondPageIdeaTitle = document.querySelectorAll('.secondPage-idea__title')
 

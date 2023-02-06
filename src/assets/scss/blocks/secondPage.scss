@@ -6,6 +6,12 @@
     z-index: 11;
     flex-wrap: wrap;
     padding-left: 3.6rem;
+    position: relative;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 9.8rem;
+        padding-left: 2.2rem;
+    }
 
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
@@ -38,8 +44,12 @@
 }
 
 .secondPage {
-    padding-bottom: 25.3rem;
+    padding-bottom: 21.2rem;
     width: 82.6%;
+
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
 
     @include breakpoint($sm-bp) {
         padding-bottom: 13rem;
@@ -54,6 +64,7 @@
 
     @include breakpoint($xl-bp) {
         padding-left: 1.5rem;
+        margin-left: unset;
     }
 
     @include breakpoint($sm-bp) {
@@ -380,6 +391,8 @@
         transform-origin: right;
         transform: scale(0, 1);
 
+        
+
         @include breakpoint($cos-bp) {
             top: 31%;
         }
@@ -387,14 +400,21 @@
         @include breakpoint($jb-bp) {
             transform: rotate(90deg);
             width: 48%;
-            top: 50%;
-            left: 14%;
+            top: 104%;
+            left: -10%;
         }
+
+        @include breakpoint($sr-bp) {
+            width: 57%;
+            top: 104%;
+            left: -15%;
+        }
+        
 
         @include breakpoint($sm-bp) {
             width: 53%;
-            top: 50%;
-            left: 11%;
+            top: 102%;
+            left: -14%;
         }
     }
 }
@@ -688,6 +708,10 @@
     margin-right: 26.3rem;
     margin-top: 25.4rem;
 
+    @include breakpoint($xl-bp) {
+        margin-top: 5rem;
+    }
+
     @include breakpoint($jb-bp) {
         margin-right: unset;
         margin-top: 4.1rem;
@@ -862,6 +886,18 @@
         .swiper-slide {
             overflow: hidden;
             height: 89rem;
+
+            @include breakpoint($xl-bp) {
+                height: 59rem;
+            }
+
+            @include breakpoint($sr-bp) {
+                height: 40rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                height: 30rem;
+            }
           }
     
         .slide-inner {
