@@ -1519,53 +1519,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (mainPage) {
-    const tl22 = gsap.timeline()
 
-    let kkk = document.querySelector('.main-solutions__content');
+    if (window.matchMedia("(min-width: 920px)").matches) {
+      const tl22 = gsap.timeline()
 
-    let bbb = kkk.offsetHeight;
-    let xxx = (bbb * 0.35);
-    let zzz = (bbb * 0.2);
-    let lll = (bbb * 1.29);
-
-    tl22.fromTo('.main-solutions__content h2', { y: 0 }, { y: xxx })
-
-    ScrollTrigger.create({
-      animation: tl22,
-      trigger: '.main-solutions__content',
-      // endTrigger: ".main-contact__btnContainer",
-      start: '-=42%',
-      end: `+=${lll + 'px'}`,
-      scrub: true,
-    })
-
-
-    const tl23 = gsap.timeline()
-
-
-    tl23.fromTo('.main-solutions__subtitleText', { y: 0 }, { y: zzz })
-
-
-
-    ScrollTrigger.create({
-      animation: tl23,
-      trigger: '.main-solutions__content',
-      start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
-      end: `+=${bbb * 1 + 'px'}`,
-      scrub: true,
-    })
-
-    const tl24 = gsap.timeline()
-    tl24.fromTo('.main-solutions__design', { y: 0 }, { y: zzz })
-
-    ScrollTrigger.create({
-      animation: tl24,
-      trigger: '.main-solutions__content',
-      start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
-      end: `+=${bbb * 1 + 'px'}`,
-      scrub: true,
-    })
-
+      let kkk = document.querySelector('.main-solutions__content');
+  
+      let bbb = kkk.offsetHeight;
+      let xxx = (bbb * 0.35);
+      let zzz = (bbb * 0.2);
+      let lll = (bbb * 1.29);
+  
+      tl22.fromTo('.main-solutions__content h2', { y: 0 }, { y: xxx })
+  
+      ScrollTrigger.create({
+        animation: tl22,
+        trigger: '.main-solutions__content',
+        // endTrigger: ".main-contact__btnContainer",
+        start: '-=42%',
+        end: `+=${lll + 'px'}`,
+        scrub: true,
+      })
+  
+  
+      const tl23 = gsap.timeline()
+  
+  
+      tl23.fromTo('.main-solutions__subtitleText', { y: 0 }, { y: zzz })
+  
+  
+  
+      ScrollTrigger.create({
+        animation: tl23,
+        trigger: '.main-solutions__content',
+        start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
+        end: `+=${bbb * 1 + 'px'}`,
+        scrub: true,
+      })
+  
+      const tl24 = gsap.timeline()
+      tl24.fromTo('.main-solutions__design', { y: 0 }, { y: zzz })
+  
+      ScrollTrigger.create({
+        animation: tl24,
+        trigger: '.main-solutions__content',
+        start: `+=${bbb - bbb - (bbb * 0.1141) + "px"}`,
+        end: `+=${bbb * 1 + 'px'}`,
+        scrub: true,
+      })
+    }
 
 
     const tl25 = gsap.timeline();
@@ -1655,18 +1657,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let swiperTextHeight = document.querySelector('.main-result__swiperText').offsetHeight
 
 
-    const tl31 = gsap.timeline({
-      pause: true,
-      scrollTrigger: {
-        trigger: '.main-result__content',
-        start: 'top 35%',
-        end: 'top -95%',
-        scrub: true,
-      }
-    })
+    if (window.matchMedia("(min-width: 850px)").matches) {
+      const tl31 = gsap.timeline({
+        pause: true,
+        scrollTrigger: {
+          trigger: '.main-result__content',
+          start: 'top 35%',
+          end: 'top -95%',
+          scrub: true,
+        }
+      })
+  
+      tl31.fromTo('.main-result__h2Container h2', { y: 0 }, { y: (resultContentHeight - resultTextHeight - swiperTextHeight + 'px') })
+  
+    }
 
-    tl31.fromTo('.main-result__h2Container h2', { y: 0 }, { y: (resultContentHeight - resultTextHeight - swiperTextHeight + 'px') })
-
+    
   }
 
 
