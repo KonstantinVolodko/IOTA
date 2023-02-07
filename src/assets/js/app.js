@@ -145,45 +145,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (mainPage) {
-    // class Drop {
-    //   constructor(wrapper) {
-    //     this.wrapper = document.querySelector(wrapper);
-    //     this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
-    //     this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
-    //     this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
-    //     this.isOpen = false;
-    //     this.init();
-    //   }
+    class Drop {
+      constructor(wrapper) {
+        this.wrapper = document.querySelector(wrapper);
+        this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
+        this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
+        this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
+        this.isOpen = false;
+        this.init();
+      }
 
-    //   init() {
-    //     this.wrapper.style.height = this.container.offsetHeight + 'px';
-    //     this.maxHeight = this.content.offsetHeight + "px";
-    //     this.btn.addEventListener("click", this.handleClick.bind(this));
-    //     this.close()
-    //   }
-
-
-    //   handleClick() {
-    //     if (this.isOpen) {
-    //       this.close();
-    //     } else {
-    //       this.open();
-    //     }
-    //     this.isOpen = !this.isOpen;
-    //   }
-
-    //   open() {
-    //     this.content.style.maxHeight = this.maxHeight;
-    //     this.btn.classList.add('paddingActiveTab')
-    //   }
-    //   close() {
-    //     this.content.style.maxHeight = 0;
-    //     this.btn.classList.remove('paddingActiveTab')
-    //   }
-    // }
+      init() {
+        this.wrapper.style.height = this.container.offsetHeight + 'px';
+        this.maxHeight = this.content.offsetHeight + "px";
+        this.btn.addEventListener("click", this.handleClick.bind(this));
+        this.close()
+      }
 
 
-    // // setTimeout(new Drop('.testContainer'), 2000);
+      handleClick() {
+        if (this.isOpen) {
+          this.close();
+        } else {
+          this.open();
+        }
+        this.isOpen = !this.isOpen;
+      }
+
+      open() {
+        this.content.style.maxHeight = this.maxHeight;
+        this.btn.classList.add('paddingActiveTab')
+      }
+      close() {
+        this.content.style.maxHeight = 0;
+        this.btn.classList.remove('paddingActiveTab')
+      }
+    }
+
+
+    setTimeout(new Drop('.testContainer'), 2000);
 
   }
 
