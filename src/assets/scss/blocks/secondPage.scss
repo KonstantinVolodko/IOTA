@@ -7,10 +7,12 @@
     flex-wrap: wrap;
     padding-left: 3.6rem;
     position: relative;
+    width: 50%;
 
     @include breakpoint($xl-bp) {
         margin-top: 9.8rem;
         padding-left: 2.2rem;
+        width: 75%;
     }
 
     @include breakpoint($jb-bp) {
@@ -19,6 +21,7 @@
 
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
+        width: 100%;
     }
 
     li {

@@ -14,6 +14,10 @@
     padding-bottom: 17.6rem;
     width: 82.6%;
 
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
+
     @include breakpoint($sm-bp) {
         padding-bottom: 10rem;
     }
@@ -45,6 +49,8 @@
 
 
 .realization__padding {
+
+
     @include breakpoint($lg-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -53,7 +59,7 @@
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        margin-top: 4.4rem;
+        margin-top: 9rem;
     }
 }
 
@@ -67,6 +73,7 @@
         grid-template-columns: repeat(1, 1fr);
         padding-left: unset;
         margin-left: unset;
+        padding-left: 2.2rem;
     }
 
     @include breakpoint($jb-bp) {
@@ -84,6 +91,10 @@
     display: flex;
     justify-content: center;
     margin-left: -2.9rem;
+
+    @include breakpoint($sm-bp) {
+        margin-left: 0rem;
+    }
 }
 
 .realization-text_position {
@@ -245,6 +256,12 @@
     margin-left: 6.4rem !important;
 }
 
+.realization-linkContainer {
+    @include breakpoint($xl-bp) {
+        padding-left: 2.2rem;
+    }
+}
+
 
 .realization-linkContainer__link {
     top: -2.7rem;
@@ -254,13 +271,28 @@
         right: 20%;
     }
 
-
-
     @include breakpoint($cos-bp) {
-        right: 16%;
+        right: 14.4%;
     }
+
+    
 
     @include breakpoint($xl-bp) {
+        width: 27%;
         margin-left: unset;
     }
+
+    @include breakpoint($lg-bp) {
+        width: 30%;
+    }
+
+    @include breakpoint($jb-bp) {
+        width: 32%;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 56% !important;
+    }
+
+
 }

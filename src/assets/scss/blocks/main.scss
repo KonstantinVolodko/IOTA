@@ -44,6 +44,7 @@ main {
 
     @include breakpoint($xl-bp) {
         width: 100%;
+        padding-left: 2.2rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -84,7 +85,7 @@ main {
         }
 
         @include breakpoint($xl-bp) {
-            padding-right: 1rem;
+            padding-right: 0rem;
         }
 
         @include breakpoint($jb-bp) {
@@ -1272,6 +1273,7 @@ main {
 
                 @include breakpoint($xl-bp) {
                     right: -15%;
+                    display: none;
                 }
 
                 @include breakpoint($lg-bp) {

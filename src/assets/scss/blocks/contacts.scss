@@ -7,6 +7,10 @@
         padding-right: 4.6rem;
     }
 
+    @include breakpoint($xl-bp) {
+        padding-left: 2.2rem;
+    }
+
     @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -20,29 +24,44 @@
     }
 }
 
+.contacts-contact {
+    @include breakpoint($xl-bp) {
+        display: flex;
+    }
+}
+
 #contactsInContact {
     display: none;
 }
 
 .contacts-separator__mobile {
     margin-left: 1.5rem;
+
+    @include breakpoint($jb-bp) {
+        margin-left: 0rem;
+    }
 }
 
 .contacts {
     padding-bottom: 20rem;
     width: 82.6%;
 
+    @include breakpoint($xl-bp) {
+        width: 100%;
+    }
+
     @include breakpoint($sm-bp) {
         padding-bottom: 10rem;
     }
 }
+
 
 .contacts__helper {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 
     @include breakpoint($sm-bp) {
-        margin-top: 4rem;
+        margin-top: 9rem;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
@@ -119,7 +138,20 @@
                         width: 30%;
                     }
 
+                    @include breakpoint($xl-bp) {
+                        width: 26%;
+                    }
+
+                    @include breakpoint($jb-bp) {
+                        width: 30.5%;
+                    }
+
+                    @include breakpoint($sr-bp) {
+                        width: 37.5%;
+                    }
+
                     @include breakpoint($sm-bp) {
+                        width: 69.5%;
                         font-size: 2.7rem;
                     }
                 }
@@ -131,6 +163,30 @@
 
             a {
                 width: 66%;
+
+                @include breakpoint($nb-bp) {
+                    width: 22.7%;
+                }
+
+                @include breakpoint($cos-bp) {
+                    width: 29.7%;
+                }
+
+                @include breakpoint($xl-bp) {
+                    width: 19.7%;
+                }
+
+                @include breakpoint($jb-bp) {
+                    width: 23.7%;
+                }
+
+                @include breakpoint($sr-bp) {
+                    width: 28.7%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 54%;
+                }
             }
         }
     }
@@ -145,6 +201,11 @@
 
 .contacts-content__map {
     position: relative;
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 
     iframe {
         width: 100%;

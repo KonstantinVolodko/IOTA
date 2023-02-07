@@ -145,45 +145,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (mainPage) {
-    class Drop {
-      constructor(wrapper) {
-        this.wrapper = document.querySelector(wrapper);
-        this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
-        this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
-        this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
-        this.isOpen = false;
-        this.init();
-      }
+    // class Drop {
+    //   constructor(wrapper) {
+    //     this.wrapper = document.querySelector(wrapper);
+    //     this.container = this.wrapper.querySelector(".main-firstStep__accordeonContainer");
+    //     this.content = this.wrapper.querySelector(".main-firstStep__accordeonContent");
+    //     this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
+    //     this.isOpen = false;
+    //     this.init();
+    //   }
 
-      init() {
-        this.wrapper.style.height = this.container.offsetHeight + 'px';
-        this.maxHeight = this.content.offsetHeight + "px";
-        this.btn.addEventListener("click", this.handleClick.bind(this));
-        this.close()
-      }
-
-
-      handleClick() {
-        if (this.isOpen) {
-          this.close();
-        } else {
-          this.open();
-        }
-        this.isOpen = !this.isOpen;
-      }
-
-      open() {
-        this.content.style.maxHeight = this.maxHeight;
-        this.btn.classList.add('paddingActiveTab')
-      }
-      close() {
-        this.content.style.maxHeight = 0;
-        this.btn.classList.remove('paddingActiveTab')
-      }
-    }
+    //   init() {
+    //     this.wrapper.style.height = this.container.offsetHeight + 'px';
+    //     this.maxHeight = this.content.offsetHeight + "px";
+    //     this.btn.addEventListener("click", this.handleClick.bind(this));
+    //     this.close()
+    //   }
 
 
-    // setTimeout(new Drop('.testContainer'), 2000);
+    //   handleClick() {
+    //     if (this.isOpen) {
+    //       this.close();
+    //     } else {
+    //       this.open();
+    //     }
+    //     this.isOpen = !this.isOpen;
+    //   }
+
+    //   open() {
+    //     this.content.style.maxHeight = this.maxHeight;
+    //     this.btn.classList.add('paddingActiveTab')
+    //   }
+    //   close() {
+    //     this.content.style.maxHeight = 0;
+    //     this.btn.classList.remove('paddingActiveTab')
+    //   }
+    // }
+
+
+    // // setTimeout(new Drop('.testContainer'), 2000);
 
   }
 
@@ -497,26 +497,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let partfolioText = document.querySelector('#portfolioLeftContainer')
 
-
+  
   const tl8 = gsap.timeline();
 
   if (mainPage) {
-    tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
+    }
+    
   }
 
 
   const tl10 = gsap.timeline();
 
   if (mainPage) {
-    tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
-    tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
+      tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
+    }
+    
   }
 
 
   if (mainPage === false) {
     const tl71 = gsap.timeline();
-
-    tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
+    }
+    
   }
 
 
@@ -524,175 +532,184 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl72 = gsap.timeline();
 
   if (mainPage === null) {
-    tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
-    tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
+      tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
+    }
+    
   }
 
   const tl21 = gsap.timeline()
 
-  tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
+  }
+
+
 
 
 
 
   if (mainPage) {
-    const tl2 = gsap.timeline();
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl2 = gsap.timeline();
 
-    tl2.from('.main-createEmotions__imgContainer img', { opacity: 0, y: -300, duration: 1.8, delay: 2.4 })
-
-    const tl3 = gsap.timeline();
-
-    tl3.from('.main-createEmotions__subtitle', { opacity: 0, duration: 1.3, delay: 1.3 })
-
-    const tl4 = gsap.timeline();
-
-    tl4.from('.main-createEmotions__title', { opacity: 0, duration: 1.3, delay: 0.7 })
-
-
-
-
-
-
-    const tl5 = gsap.timeline();
-
-    tl5.from('.main-solutions__content h2', { opacity: 0 })
-
-
-
-    ScrollTrigger.create({
-      animation: tl5,
-      trigger: '.main-solutions__content',
-      start: 'top 90%',
-      end: "top 80%",
-      // scrub: true,
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-
-
-    const tl7 = gsap.timeline();
-
-    tl7.from('.main-services__borderLine', { width: 0, duration: 1.5, })
-
-    tl7.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl7,
-      trigger: '.main-services__tabContainer',
-      start: 'top 60%',
-      end: "top 30%",
-    })
-
-    const tl17 = gsap.timeline();
-
-    tl17.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1, delay: 0.5 })
-
-    ScrollTrigger.create({
-      animation: tl17,
-      trigger: '.main-services__tabContainer',
-      start: 'top 60%',
-      end: "top 30%",
-    })
-
-
-
-    const tl12 = gsap.timeline();
-
-    tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50 }, { opacity: 1, x: 0, delay: 0.2, duration: 0.5 })
-
-
-    ScrollTrigger.create({
-      animation: tl12,
-      trigger: '.main-firstStep__content',
-      start: 'top 80%',
-      end: "top 30%",
-    })
-
-    const tl28 = gsap.timeline();
-
-    tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 0.6, })
-
-    ScrollTrigger.create({
-      animation: tl28,
-      trigger: '.main-firstStep__content',
-      start: 'top 80%',
-      end: "top 30%",
-    })
-    const tl13 = gsap.timeline();
-
-    tl13.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
-
-    ScrollTrigger.create({
-      animation: tl13,
-      trigger: '.main-gallery__content',
-      start: 'top 80%',
-      end: "top 30%",
-    })
-
-
-    const tl14 = gsap.timeline();
-
-    tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl14,
-      trigger: '.main-contact__content',
-      start: 'top 70%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-
-
-    const tl18 = gsap.timeline()
-
-    tl18.fromTo('.main-result__content h2', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl18,
-      trigger: '.main-result__content',
-      start: 'top 90%',
-      end: "top 80%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-      // scrub: true,
-    })
-
-
-
-
-    const tl20 = gsap.timeline()
-
-    tl20.fromTo('.main-firstStep__subtitle', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl20,
-      trigger: '.main-firstStep__subtitle',
-      start: 'top 70%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-
-    const tl30 = gsap.timeline()
-
-    tl30.fromTo('.main-firstStep__accordeonContainer', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl30,
-      trigger: '.main-firstStep__subtitle',
-      start: 'top 70%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+      tl2.from('.main-createEmotions__imgContainer img', { opacity: 0, y: -300, duration: 1.8, delay: 2.4 })
+  
+      const tl3 = gsap.timeline();
+  
+      tl3.from('.main-createEmotions__subtitle', { opacity: 0, duration: 1.3, delay: 1.3 })
+  
+      const tl4 = gsap.timeline();
+  
+      tl4.from('.main-createEmotions__title', { opacity: 0, duration: 1.3, delay: 0.7 })
+  
+  
+  
+  
+      
+  
+      const tl5 = gsap.timeline();
+  
+      tl5.from('.main-solutions__content h2', { opacity: 0 })
+  
+      
+  
+      ScrollTrigger.create({
+        animation: tl5,
+        trigger: '.main-solutions__content',
+        start: 'top 90%',
+        end: "top 80%",
+        // scrub: true,
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+  
+  
+      const tl7 = gsap.timeline();
+  
+      tl7.from('.main-services__borderLine', { width: 0, duration: 1.5, })
+  
+      tl7.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl7,
+        trigger: '.main-services__tabContainer',
+        start: 'top 60%',
+        end: "top 30%",
+      })
+  
+      const tl17 = gsap.timeline();
+  
+      tl17.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1, delay: 0.5 })
+  
+      ScrollTrigger.create({
+        animation: tl17,
+        trigger: '.main-services__tabContainer',
+        start: 'top 60%',
+        end: "top 30%",
+      })
+  
+  
+  
+      const tl12 = gsap.timeline();
+  
+      tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50 }, { opacity: 1, x: 0, delay: 0.2, duration: 0.5 })
+  
+  
+      ScrollTrigger.create({
+        animation: tl12,
+        trigger: '.main-firstStep__content',
+        start: 'top 80%',
+        end: "top 30%",
+      })
+  
+      const tl28 = gsap.timeline();
+  
+      tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 0.6, })
+  
+      ScrollTrigger.create({
+        animation: tl28,
+        trigger: '.main-firstStep__content',
+        start: 'top 80%',
+        end: "top 30%",
+      })
+      const tl13 = gsap.timeline();
+  
+      tl13.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
+  
+      ScrollTrigger.create({
+        animation: tl13,
+        trigger: '.main-gallery__content',
+        start: 'top 80%',
+        end: "top 30%",
+      })
+  
+  
+      const tl14 = gsap.timeline();
+  
+      tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl14,
+        trigger: '.main-contact__content',
+        start: 'top 70%',
+        end: "top 60%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+  
+  
+      const tl18 = gsap.timeline()
+  
+      tl18.fromTo('.main-result__content h2', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl18,
+        trigger: '.main-result__content',
+        start: 'top 90%',
+        end: "top 80%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+        // scrub: true,
+      })
+  
+  
+  
+  
+      const tl20 = gsap.timeline()
+  
+      tl20.fromTo('.main-firstStep__subtitle', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl20,
+        trigger: '.main-firstStep__subtitle',
+        start: 'top 70%',
+        end: "top 60%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+  
+      const tl30 = gsap.timeline()
+  
+      tl30.fromTo('.main-firstStep__accordeonContainer', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl30,
+        trigger: '.main-firstStep__subtitle',
+        start: 'top 70%',
+        end: "top 60%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+    }
+    
 
   }
 
 
 
   if (mainPage) {
-
 
     ScrollTrigger.create({
       animation: tl21,
@@ -1654,9 +1671,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (portfolioPage) {
-    const tl35 = gsap.timeline();
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl35 = gsap.timeline();
 
-    tl35.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
+      tl35.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
+    }
+
 
   }
 
@@ -1682,139 +1702,161 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let secondPageIdeaTitle = document.querySelectorAll('.secondPage-idea__title')
 
-    secondPageIdeaTitle.forEach(e => {
-      const tl42 = gsap.timeline();
-
-      tl42.from(e, { opacity: 0 })
-
-      ScrollTrigger.create({
-        animation: tl42,
-        trigger: e,
-        start: 'top 90%',
-        end: "top 80%",
-        // scrub: true,
-        events: "onEnter onLeave onEnterBack onLeaveBack",
-        toggleActions: "play play reverse reverse",
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      secondPageIdeaTitle.forEach(e => {
+        const tl42 = gsap.timeline();
+  
+        tl42.from(e, { opacity: 0 })
+  
+        ScrollTrigger.create({
+          animation: tl42,
+          trigger: e,
+          start: 'top 90%',
+          end: "top 80%",
+          // scrub: true,
+          events: "onEnter onLeave onEnterBack onLeaveBack",
+          toggleActions: "play play reverse reverse",
+        })
       })
-    })
+    }
+
+    
 
 
   }
 
   let mainContactContent = document.querySelectorAll('.main-contact__content')
 
-  mainContactContent.forEach(e => {
-    const tl14 = gsap.timeline();
-
-    tl14.fromTo(e, { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl14,
-      trigger: e,
-      start: 'top 70%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    mainContactContent.forEach(e => {
+      const tl14 = gsap.timeline();
+  
+      tl14.fromTo(e, { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl14,
+        trigger: e,
+        start: 'top 70%',
+        end: "top 60%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
     })
-  })
+  }
+
+  
 
 
   if (organizationOfSpacePage) {
 
-    const tl47 = gsap.timeline()
-    tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, { opacity: 1 })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl47 = gsap.timeline()
+      tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl47,
+        trigger: '.organizationOfSpace-whyContainer__textContainer',
+        start: 'top 90%',
+        end: "top 70%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+  
+      const tl48 = gsap.timeline()
+      tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl48,
+        trigger: '.organizationOfSpace-include__text',
+        start: 'top 90%',
+        end: "top 70%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+    }
 
-    ScrollTrigger.create({
-      animation: tl47,
-      trigger: '.organizationOfSpace-whyContainer__textContainer',
-      start: 'top 90%',
-      end: "top 70%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-
-    const tl48 = gsap.timeline()
-    tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl48,
-      trigger: '.organizationOfSpace-include__text',
-      start: 'top 90%',
-      end: "top 70%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    
   }
 
   if (designPage) {
 
-    const tl50 = gsap.timeline()
-    tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl50 = gsap.timeline()
+      tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl50,
+        trigger: '.organizationOfSpace-include__text',
+        start: 'top 90%',
+        end: "top 70%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+    }
 
-    ScrollTrigger.create({
-      animation: tl50,
-      trigger: '.organizationOfSpace-include__text',
-      start: 'top 90%',
-      end: "top 70%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    
   }
 
   if (autorPage) {
 
-    const tl52 = gsap.timeline()
-    tl52.fromTo('.autor-services__title', { opacity: 0 }, { opacity: 1 })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl52 = gsap.timeline()
+      tl52.fromTo('.autor-services__title', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl52,
+        trigger: '.autor-services__title',
+        start: 'top 90%',
+        end: "top 70%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+  
+      const tl53 = gsap.timeline()
+      tl53.from('.autor-why h2', { opacity: 0 })
+  
+      ScrollTrigger.create({
+        animation: tl53,
+        trigger: '.autor-why',
+        start: 'top 90%',
+        end: "top 60%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+    }
 
-    ScrollTrigger.create({
-      animation: tl52,
-      trigger: '.autor-services__title',
-      start: 'top 90%',
-      end: "top 70%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
-
-    const tl53 = gsap.timeline()
-    tl53.from('.autor-why h2', { opacity: 0 })
-
-    ScrollTrigger.create({
-      animation: tl53,
-      trigger: '.autor-why',
-      start: 'top 90%',
-      end: "top 60%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    
   }
 
   if (realizationPage) {
-
-    const tl55 = gsap.timeline()
-    tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl55,
-      trigger: '.organizationOfSpace-whyContainer__title',
-      start: 'top 90%',
-      end: "top 70%",
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-      // markers: true,
-    })
-
-    const tl56 = gsap.timeline()
-    tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, { opacity: 1 })
-
-    ScrollTrigger.create({
-      animation: tl56,
-      trigger: '.organizationOfSpace-include__text',
-      start: 'top 90%',
-      end: "top 70%",
-      // markers: true,
-      events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play play reverse reverse",
-    })
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const tl55 = gsap.timeline()
+      tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl55,
+        trigger: '.organizationOfSpace-whyContainer__title',
+        start: 'top 90%',
+        end: "top 70%",
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+        // markers: true,
+      })
+  
+      const tl56 = gsap.timeline()
+      tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, { opacity: 1 })
+  
+      ScrollTrigger.create({
+        animation: tl56,
+        trigger: '.organizationOfSpace-include__text',
+        start: 'top 90%',
+        end: "top 70%",
+        // markers: true,
+        events: "onEnter onLeave onEnterBack onLeaveBack",
+        toggleActions: "play play reverse reverse",
+      })
+    }
+    
   }
 
 
@@ -1894,6 +1936,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".dropdown-content")[id].classList.toggle("show");
       })
     })
+
+    
   }
 
 
