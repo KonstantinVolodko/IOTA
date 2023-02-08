@@ -501,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl8 = gsap.timeline();
 
   if (mainPage) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
     }
     
@@ -511,7 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl10 = gsap.timeline();
 
   if (mainPage) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
       tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
     }
@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mainPage === false) {
     const tl71 = gsap.timeline();
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
     }
     
@@ -532,7 +532,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl72 = gsap.timeline();
 
   if (mainPage === null) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
       tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
     }
@@ -541,7 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tl21 = gsap.timeline()
 
-  if (window.matchMedia("(min-width: 1024px)").matches) {
+  if (window.matchMedia("(min-width: 1025px)").matches) {
     tl21.fromTo('.leftBlockContainer__text', { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
   }
 
@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (mainPage) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl2 = gsap.timeline();
 
       tl2.from('.main-createEmotions__imgContainer img', { opacity: 0, y: -300, duration: 1.8, delay: 2.4 })
@@ -1677,7 +1677,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (portfolioPage) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl35 = gsap.timeline();
 
       tl35.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
@@ -1708,7 +1708,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let secondPageIdeaTitle = document.querySelectorAll('.secondPage-idea__title')
 
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       secondPageIdeaTitle.forEach(e => {
         const tl42 = gsap.timeline();
   
@@ -1733,7 +1733,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let mainContactContent = document.querySelectorAll('.main-contact__content')
 
-  if (window.matchMedia("(min-width: 1024px)").matches) {
+  if (window.matchMedia("(min-width: 1025px)").matches) {
     mainContactContent.forEach(e => {
       const tl14 = gsap.timeline();
   
@@ -1755,7 +1755,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (organizationOfSpacePage) {
 
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl47 = gsap.timeline()
       tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, { opacity: 1 })
   
@@ -1786,7 +1786,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (designPage) {
 
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl50 = gsap.timeline()
       tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
   
@@ -1805,7 +1805,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (autorPage) {
 
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl52 = gsap.timeline()
       tl52.fromTo('.autor-services__title', { opacity: 0 }, { opacity: 1 })
   
@@ -1835,7 +1835,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (realizationPage) {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
       const tl55 = gsap.timeline()
       tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, { opacity: 1 })
   
@@ -1948,3 +1948,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 })
+
+let innerWidth = window.innerWidth
+
+// console.log(innerWidth)
+
+window.addEventListener('resize', function(event) {
+  if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
+    location.reload()
+  }
+}, true);

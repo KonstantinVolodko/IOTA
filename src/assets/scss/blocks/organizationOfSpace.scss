@@ -433,7 +433,7 @@
     }
 
     @include breakpoint($sm-bp) {
-        width: 55%;
+        width: 55% !important;
     }
 }
 

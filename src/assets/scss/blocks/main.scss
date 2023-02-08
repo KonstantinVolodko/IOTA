@@ -278,7 +278,7 @@ main {
         }
 
         @include breakpoint($cos-bp) {
-            padding-left: 3rem;
+            padding-left: 1rem;
         }
 
         @include breakpoint($xl-bp) {
@@ -1881,6 +1881,7 @@ main {
                 border-bottom: 2px solid #000000;
                 outline: none;
                 margin-bottom: 2.7rem;
+                border-radius: unset;
 
                 font-style: normal;
                 font-weight: 400;

@@ -27,6 +27,10 @@
         color: #000000;
         margin-bottom: 14rem;
 
+        @include breakpoint($xl-bp) {
+            width: 36%;
+        }
+
         @include breakpoint($lg-bp) {
             margin-bottom: 0rem;
         }
