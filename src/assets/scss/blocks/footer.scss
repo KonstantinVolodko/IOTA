@@ -33,6 +33,7 @@
 
         @include breakpoint($lg-bp) {
             margin-bottom: 0rem;
+            width: 47%;
         }
 
         @include breakpoint($jb-bp) {
@@ -42,6 +43,7 @@
         @include breakpoint($sm-bp) {
             font-size: 2.1rem;
             line-height: 100.1%;
+            width: 100%;
         }
     }
 
@@ -63,13 +65,13 @@
         margin-left: 34.4rem;
 
 
-        @include breakpoint($nb-bp) {
-            margin-left: 24.4rem;
-        }
+        // @include breakpoint($nb-bp) {
+        //     margin-left: 24.4rem;
+        // }
 
-        @include breakpoint($cos-bp) {
-            margin-left: 11.4rem;
-        }
+        // @include breakpoint($cos-bp) {
+        //     margin-left: 11.4rem;
+        // }
 
         @include breakpoint($xl-bp) {
             margin-left: 0.8rem;
@@ -108,7 +110,7 @@
 
             svg {
                 width: 4.5rem;
-                height: 4.5rem;            
+                height: 4.5rem;
             }
 
             img {
@@ -123,6 +125,10 @@
             line-height: 136.6%;
             text-decoration-line: underline;
             color: #000000;
+
+            @include breakpoint($cos-bp) {
+                font-size: 1.6rem;
+            }
 
             @include breakpoint($sm-bp) {
                 font-size: 1.7rem;
@@ -154,6 +160,7 @@
     margin-left: auto;
     font-size: 2rem !important;
     margin-bottom: 14.4rem;
+
     @include breakpoint($jb-bp) {
         display: none;
     }
