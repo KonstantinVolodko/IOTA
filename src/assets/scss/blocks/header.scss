@@ -11,6 +11,7 @@
     padding-right: 8.625rem;
     position: relative;
     z-index: 11;
+    height: max-content;
 
     @include breakpoint($xl-bp) {
         padding-right: 1.625rem;
@@ -27,7 +28,8 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 3.7rem;
-    height: 2.5rem;
+    // height: 2.5rem;
+    height: max-content;
     overflow: hidden;
     cursor: pointer;
 
@@ -44,7 +46,7 @@
     }
 
     div {
-        border-top: 4px solid #000000;
+        border-top: 0.4rem solid #000000;
     }
 
     div:first-child {
@@ -314,6 +316,7 @@
                         gap: 1.5rem;
                         @include breakpoint($xl-bp) {
                             max-height: max-content;
+
                         }
 
                         a {
@@ -326,7 +329,7 @@
                             @include breakpoint($xl-bp) {
                                 font-style: normal;
                                 font-weight: 400;
-                                font-size: 2rem;
+                                font-size: 2.2rem;
                                 line-height: 120.6%;
                                 color: #000000;
                             }
@@ -491,7 +494,7 @@
 .header-menu__tabsFirstLvlTitle_hover {
     // font-weight: 700 !important;
     // -webkit-text-stroke: 0.1rem#000000;
-    text-shadow: -1px 0px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black;
+    text-shadow: -0.1rem 0px 0 black, 0px 0.1rem 0 black, 0.1rem 0px 0 black, 0px -0.1rem 0 black;
     color: #000000 !important;
     transition: all linear 0.1s;
 }
@@ -501,21 +504,21 @@
 }
 
 
-.header-menu__accordionBtn_hover {
-    // font-weight: 700 !important;
-    // -webkit-text-stroke: 0.1rem#000000;
-    text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
-    @include breakpoint($xl-bp) {
-        // text-shadow: unset;
-        padding-bottom: 5rem !important;
-        font-size: 2.7rem !important;
-        font-style: normal !important;
-        font-weight: 500 !important;
-        line-height: 5.2rem !important;
-        text-transform: uppercase !important;
-        color: #000000 !important;
-    }
-}
+// .header-menu__accordionBtn_hover {
+//     // font-weight: 700 !important;
+//     // -webkit-text-stroke: 0.1rem#000000;
+//     text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
+//     @include breakpoint($xl-bp) {
+//         // text-shadow: unset;
+//         padding-bottom: 5rem !important;
+//         font-size: 2.7rem !important;
+//         font-style: normal !important;
+//         font-weight: 500 !important;
+//         line-height: 5.2rem !important;
+//         text-transform: uppercase !important;
+//         color: #000000 !important;
+//     }
+// }
 
 
 // .header-menu__blockUnic {

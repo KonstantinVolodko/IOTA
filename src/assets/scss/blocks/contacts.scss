@@ -83,7 +83,7 @@
         gap: 3rem;
         margin-top: 5rem;
 
-        @include breakpoint($nb-bp) {
+        @include breakpoint($xl-bp) {
             width: 100%;
         }
 
@@ -135,7 +135,7 @@
                     width: 85%;
 
                     @include breakpoint($nb-bp) {
-                        width: 30%;
+                        width: 73%;
                     }
 
                     @include breakpoint($xl-bp) {
@@ -165,12 +165,12 @@
                 width: 66%;
 
                 @include breakpoint($nb-bp) {
-                    width: 22.7%;
+                    width: 55.7%;
                 }
 
-                @include breakpoint($cos-bp) {
-                    width: 29.7%;
-                }
+                // @include breakpoint($cos-bp) {
+                //     width: 29.7%;
+                // }
 
                 @include breakpoint($xl-bp) {
                     width: 19.7%;

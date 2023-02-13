@@ -75,9 +75,9 @@
         margin-top: 10.3rem;
         padding-left: 2.9rem;
 
-        @include breakpoint($cos-bp) {
-            font-size: 4.4rem;
-        }
+        // @include breakpoint($cos-bp) {
+        //     font-size: 4.4rem;
+        // }
 
         @include breakpoint($xl-bp) {
             width: 68%;
@@ -101,6 +101,8 @@
         margin-top: 4rem;
         padding-left: 3.7rem;
 
+
+
         @include breakpoint($xl-bp) {
             justify-content: unset;
             margin-top: 2.6rem;
@@ -118,6 +120,14 @@
         line-height: 130.6%;
         color: #000000;
         width: 57%;
+
+        @include breakpoint($cos-bp) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.8rem;
+        }
 
         @include breakpoint($jb-bp) {
             width: 100%;
@@ -176,7 +186,7 @@
         grid-template-columns: 1.04fr 0.83fr;
         margin-top: 18rem;
 
-        @include breakpoint($cos-bp) {
+        @include breakpoint($xl-bp) {
             display: block;
         }
 
@@ -188,9 +198,9 @@
             width: 100%;
             grid-area: 1 / 2 / 3 / 3;
 
-            @include breakpoint($cos-bp) {
-                width: 45%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 45%;
+            // }
 
             @include breakpoint($sm-bp) {
                 width: 100%;
@@ -213,7 +223,7 @@
             margin-bottom: 16.9rem;
             // grid-area: 1 / 1 / 2 / 2;
 
-            @include breakpoint($cos-bp) {
+            @include breakpoint($xl-bp) {
                 margin-bottom: 2rem;
             }
 
@@ -267,6 +277,14 @@
                     font-size: 1.8rem;
                     line-height: 137.1%;
                     color: #000000;
+
+                    @include breakpoint($cos-bp) {
+                        font-size: 2.2rem;
+                    }
+
+                    @include breakpoint($xl-bp) {
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }
@@ -299,7 +317,7 @@
     justify-content: space-between;
     gap: 7.8rem;
 
-    @include breakpoint($cos-bp) {
+    @include breakpoint($xl-bp) {
         flex-direction: column;
     }
 
@@ -336,7 +354,7 @@
         flex-direction: column;
         margin-top: 14rem;
 
-        @include breakpoint($cos-bp) {
+        @include breakpoint($xl-bp) {
             margin-top: unset;
         }
 
@@ -373,12 +391,14 @@
             width: 24%;
 
             @include breakpoint($nb-bp) {
-                width: 29%;
+                width: 25%;
             }
 
-            @include breakpoint($cos-bp) {
-                width: 24.1%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 24.1%;
+            // }
+
+            
 
             @include breakpoint($xl-bp) {
                 width: 25.6%;

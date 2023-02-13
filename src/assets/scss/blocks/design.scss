@@ -79,6 +79,14 @@
         margin-top: -1.6rem;
         width: 86%;
 
+        @include breakpoint($cos-bp) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.8rem;
+        }
+
         @include breakpoint($sr-bp) {
             margin-top: 0rem;
         }
@@ -165,9 +173,9 @@
 .organizationOfSpace-include__swiperBlock_design {
     margin-top: 10.5rem !important;
 
-    @include breakpoint($cos-bp) {
-        margin-top: 0rem !important;
-    }
+    // @include breakpoint($cos-bp) {
+    //     margin-top: 0rem !important;
+    // }
     
     @include breakpoint($sm-bp) {
         margin-top: 6rem !important;

@@ -1,8 +1,7 @@
-
 .portfolio {
     width: 82.6%;
     margin-bottom: 25.7rem;
-    
+
 
     @include breakpoint($xl-bp) {
         width: 100%;
@@ -46,7 +45,7 @@
         @include breakpoint($jb-bp) {
             padding-left: 1.8rem;
         }
-        
+
         @include breakpoint($sm-bp) {
             padding-left: 1.5rem;
             font-size: 4.3rem;
@@ -56,7 +55,7 @@
 
     }
 
-    
+
 
     .portfolio-content__contentBlock {
         display: flex;
@@ -68,7 +67,7 @@
 
         @include breakpoint($jb-bp) {
             padding-right: unset;
-          }
+        }
 
         @include breakpoint($lb-bp) {
             flex-direction: column;
@@ -96,9 +95,9 @@
 
             margin-top: 6.5rem;
 
-            @include breakpoint($cos-bp) {
-                margin-top: 0rem;
-            }
+            // @include breakpoint($cos-bp) {
+            //     margin-top: 0rem;
+            // }
 
             @include breakpoint($xl-bp) {
                 width: 80%;
@@ -149,6 +148,10 @@
                 width: 76%;
                 margin-bottom: 10rem;
 
+                @include breakpoint($cos-bp) {
+                    font-size: 2.1rem;
+                }
+
                 @include breakpoint($xl-bp) {
                     width: 85%;
                     margin-bottom: 0rem;
@@ -190,9 +193,9 @@
         .portfolio-content__title {
             margin-top: 2.7rem;
 
-            @include breakpoint($cos-bp) {
-                margin-top: 0rem;
-            }
+            // @include breakpoint($cos-bp) {
+            //     margin-top: 0rem;
+            // }
 
             @include breakpoint($sm-bp) {
                 margin-top: unset;
@@ -220,14 +223,14 @@
 
     @include breakpoint($jb-bp) {
         padding-left: unset;
-      }
+    }
 
     @include breakpoint($sm-bp) {
         margin-top: 9rem;
-        
+
     }
 
-    
+
 }
 
 .portfolio-content_gap {
@@ -242,7 +245,7 @@
         gap: 4rem;
     }
 
-    
+
 }
 
 .main-gallery__tabContent {

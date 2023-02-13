@@ -42,18 +42,19 @@
         margin-top: 6rem;
 
 
-        @include breakpoint($nb-bp) {
-            margin-right: 6.5rem;
+        // @include breakpoint($nb-bp) {
+        //     margin-right: 6.5rem;
 
-        }
+        // }
 
-        @include breakpoint($cos-bp) {
-            margin-right: 2.5rem;
-        }
+        // @include breakpoint($cos-bp) {
+        //     margin-right: 2.5rem;
+        // }
 
         @include breakpoint($xl-bp) {
             flex-direction: column;
             gap: 1rem;
+            margin-right: 0rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -64,9 +65,9 @@
         .services-header__imgContainer {
             width: 59.7%;
 
-            @include breakpoint($cos-bp) {
-                width: 54.7%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 54.7%;
+            // }
 
             @include breakpoint($xl-bp) {
                 width: 100%;
@@ -84,14 +85,14 @@
             justify-content: space-between;
             align-items: baseline;
 
-            @include breakpoint($nb-bp) {
-                width: 35.4%;
-                gap: 2rem;
-            }
+            // @include breakpoint($nb-bp) {
+            //     width: 35.4%;
+            //     gap: 2rem;
+            // }
 
-            @include breakpoint($cos-bp) {
-                width: 42%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 42%;
+            // }
 
             @include breakpoint($xl-bp) {
                 width: 100%;
@@ -219,6 +220,14 @@
     line-height: 100.1%;
     color: #000000;
     padding-left: 0.1rem;
+
+    @include breakpoint($cos-bp) {
+        font-size: 2.2rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        font-size: 1.8rem;
+    }
   }
   
   .dropdown a:hover, .dropdown2 a:hover {
@@ -350,6 +359,14 @@
         line-height: 137.1%;
         color: #000000;
 
+        @include breakpoint($cos-bp) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.8rem;
+        }
+
         @include breakpoint($sm-bp) {
             font-size: 1.9rem;
         }
@@ -407,9 +424,13 @@
             margin-right: 18.2rem;
             width: 40.2%;
 
-            @include breakpoint($cos-bp) {
-                margin-right: 2.5rem;
-                width: 50%;
+            // @include breakpoint($cos-bp) {
+            //     margin-right: 2.5rem;
+            //     width: 50%;
+            // }
+
+            @include breakpoint($xl-bp) {
+                margin-right: unset;
             }
 
             @include breakpoint($sr-bp) {
@@ -440,9 +461,15 @@
         color: #000000;
         width: 41.4%;
 
-        @include breakpoint($sr-bp) {
+        @include breakpoint($cos-bp) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.6rem;
             width: 100%;
         }
+
 
         @include breakpoint($sm-bp) {
             width: 100%;
@@ -509,9 +536,9 @@
         gap: 1rem;
 
 
-        @include breakpoint($cos-bp) {
-            margin-top: 0rem;
-        }
+        // @include breakpoint($cos-bp) {
+        //     margin-top: 0rem;
+        // }
 
         button {
             background: none;
@@ -561,9 +588,9 @@
         .services-steps__swiperHelper {
             width: 58.6%;
 
-            @include breakpoint($cos-bp) {
-                width: 56.6%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 56.6%;
+            // }
 
             @include breakpoint($xl-bp) {
                 width: 50.6%;
@@ -589,9 +616,9 @@
         .services-steps__imgContainer {
             width: 31.71%;
 
-            @include breakpoint($cos-bp) {
-                width: 40.71%;
-            }
+            // @include breakpoint($cos-bp) {
+            //     width: 40.71%;
+            // }
 
             @include breakpoint($xl-bp) {
                 width: 45.71%;
@@ -673,6 +700,14 @@
                 color: #000000;
                 width: 62%;
 
+                @include breakpoint($cos-bp) {
+                    font-size: 2.2rem;
+                }
+        
+                @include breakpoint($xl-bp) {
+                    font-size: 1.8rem;
+                }
+
                 @include breakpoint($xl-bp) {
                     width: 75%;
                 }
@@ -714,9 +749,9 @@
         margin-top: 18rem;
         margin-right: 26.2rem;
 
-        @include breakpoint($nb-bp) {
-            margin-right: 20.2rem;
-        }
+        // @include breakpoint($nb-bp) {
+        //     margin-right: 20.2rem;
+        // }
 
         @include breakpoint($xl-bp) {
             margin-right: 2.5rem;
@@ -776,6 +811,14 @@
                     color: #000000;
                     width: 92%;
 
+                    @include breakpoint($cos-bp) {
+                        font-size: 2.4rem;
+                    }
+            
+                    @include breakpoint($xl-bp) {
+                        font-size: 2rem;
+                    }
+
                     @include breakpoint($sm-bp) {
                         font-size: 2.4rem;
                     }
@@ -787,6 +830,14 @@
                     line-height: 137.1%;
                     color: #000000;
                     width: 95%;
+
+                    @include breakpoint($cos-bp) {
+                        font-size: 2.2rem;
+                    }
+            
+                    @include breakpoint($xl-bp) {
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }

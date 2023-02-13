@@ -78,6 +78,14 @@
             margin-top: 11.2rem;
             width: 55.73%;
 
+            @include breakpoint($cos-bp) {
+                font-size: 2.2rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                font-size: 1.8rem;
+            }
+
             @include breakpoint($jb-bp) {
                 width: 100%;
             }

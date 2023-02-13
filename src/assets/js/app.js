@@ -71,8 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
+
+      // if (window.matchMedia("(max-width: 850px)").matches) {
+      //   acc.click()
+      // }
     });
   }
+
+  
 
   let swiperSlidesSec = document.querySelectorAll('.swiper-slide-containerSec')
   swiperSlidesSec.forEach((el, id) => {
@@ -143,6 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     mainResultNumber[0].click()
   }
 
+  
+
+
 
   if (mainPage) {
     class Drop {
@@ -153,6 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
         this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
         this.isOpen = false;
         this.init();
+
+        if (window.matchMedia("(max-width: 850px)").matches) {
+          this.btn.click()
+        }
       }
 
       init() {
@@ -184,6 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     setTimeout(new Drop('.testContainer'), 2000);
+
+      
 
   }
 
@@ -1520,7 +1535,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mainPage) {
 
-    if (window.matchMedia("(min-width: 920px)").matches) {
+    if (window.matchMedia("(min-width: 1023px)").matches) {
       const tl22 = gsap.timeline()
 
       let kkk = document.querySelector('.main-solutions__content');

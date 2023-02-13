@@ -2,7 +2,7 @@
     margin-top: 10.3rem;
     padding-left: 3.6rem;
 
-    @include breakpoint($cos-bp) {
+    @include breakpoint($xl-bp) {
         flex-direction: column;
         padding-left: 0rem;
     }
@@ -73,16 +73,17 @@
             justify-content: space-between;
             align-items: center;
 
-            @include breakpoint($nb-bp) {
-                padding-right: 5.5rem;
-            }
+            // @include breakpoint($nb-bp) {
+            //     padding-right: 5.5rem;
+            // }
 
-            @include breakpoint($cos-bp) {
-                padding-right: 2.5rem;
-            }
+            // @include breakpoint($cos-bp) {
+            //     padding-right: 2.5rem;
+            // }
 
             @include breakpoint($xl-bp) {
                 align-items: unset;
+                padding-right: 0rem;
             }
 
             @include breakpoint($jb-bp) {
@@ -145,6 +146,14 @@
                     letter-spacing: 0.03em;
                     color: #000000;
                     margin-bottom: 7.3rem;
+
+                    @include breakpoint($cos-bp) {
+                        font-size: 2rem;
+                    }
+
+                    @include breakpoint($xl-bp) {
+                        font-size: 1.6rem;
+                    }
 
                     @include breakpoint($sm-bp) {
                         font-size: 1.9rem;
