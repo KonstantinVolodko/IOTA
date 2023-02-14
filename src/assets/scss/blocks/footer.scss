@@ -1,6 +1,6 @@
 .footer-content {
     display: flex;
-    border-top: 3px solid #000000;
+    border-top: 0.3rem solid #000000;
     padding: 6.3rem 6.5rem 4.2rem 8rem;
     align-items: center;
     background: #f7f7f7;
@@ -28,17 +28,18 @@
         margin-bottom: 14rem;
 
         @include breakpoint($xl-bp) {
-            width: 36%;
-        }
-
-        @include breakpoint($lg-bp) {
             margin-bottom: 0rem;
-            width: 47%;
+            width: 54%;
         }
 
-        @include breakpoint($jb-bp) {
-            text-align: center;
-        }
+        // @include breakpoint($lg-bp) {
+            
+        //     width: 47%;
+        // }
+
+        // @include breakpoint($jb-bp) {
+        //     text-align: center;
+        // }
 
         @include breakpoint($sm-bp) {
             font-size: 2.1rem;
@@ -54,7 +55,7 @@
         line-height: 100.1%;
         text-transform: uppercase;
         color: #000000;
-        border-bottom: 1px solid #000000;
+        border-bottom: 0.1rem solid #000000;
     }
 
     .footer-content__contactsContainer {
@@ -93,7 +94,7 @@
                 line-height: 100%;
                 text-transform: uppercase;
                 color: #000000;
-                border-bottom: 1px solid #000000;
+                border-bottom: 0.1rem solid #000000;
 
 
 
@@ -142,7 +143,7 @@
         font-size: 1.4rem;
         line-height: 100.6%;
         color: #000000;
-        border-bottom: 1px solid #000000;
+        border-bottom: 0.1rem solid #000000;
     }
 }
 

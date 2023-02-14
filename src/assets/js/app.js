@@ -47,11 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-      acc.forEach(e => {
-        e.classList.remove("activeTab")
 
-        e.nextElementSibling.style.maxHeight = null;
-      })
+      if (window.matchMedia("(min-width: 1023px)").matches) {
+        acc.forEach(e => {
+          e.classList.remove("activeTab")
+  
+          // e.nextElementSibling.style.maxHeight = null;
+        })
+      }
+
+      
       this.classList.add("activeTab");
       const tl16 = gsap.timeline();
 
@@ -162,17 +167,21 @@ document.addEventListener("DOMContentLoaded", () => {
         this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
         this.isOpen = false;
         this.init();
-
-        if (window.matchMedia("(max-width: 850px)").matches) {
-          this.btn.click()
-        }
+        
+        
       }
 
       init() {
         this.wrapper.style.height = this.container.offsetHeight + 'px';
         this.maxHeight = this.content.offsetHeight + "px";
-        this.btn.addEventListener("click", this.handleClick.bind(this));
+        if (window.matchMedia("(min-width: 1023px)").matches) {
+          this.btn.addEventListener("click", this.handleClick.bind(this));
+        }
+        
         this.close()
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+          this.open()
+        }
       }
 
 
@@ -799,7 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
         leftBlockContainer.innerHTML = mainServices.innerHTML
       },
       events: "onEnter onLeave onEnterBack onLeaveBack",
-      toggleActions: "play reverse reverse reverse",
+      toggleActions: "play restart restart restart",
     })
 
 
@@ -1964,11 +1973,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-let innerWidth = window.innerWidth
+// let innerWidth = window.innerWidth
 
 
-window.addEventListener('resize', function(event) {
-  if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
-    location.reload()
-  }
-}, true);
+// window.addEventListener('resize', function(event) {
+//   if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
+//     location.reload()
+//   }
+// }, true);

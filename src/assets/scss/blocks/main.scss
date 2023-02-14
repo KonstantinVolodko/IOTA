@@ -138,7 +138,8 @@ main {
 
             @include breakpoint($jb-bp) {
                 margin-left: unset;
-                width: 42%;
+                // width: 42%;
+                width: 56%;
             }
 
             @include breakpoint($sm-bp) {
@@ -675,7 +676,12 @@ main {
     position: absolute;
     bottom: 24%;
     font-size: 2rem;
-    padding-left: 0.35rem;
+    // padding-left: 0.35rem;
+
+    @include breakpoint($xl-bp) {
+        padding-left: 0rem;
+    }
+    
 
     @include breakpoint($lg-bp) {
         position: unset;
@@ -697,6 +703,8 @@ main {
         svg {
             width: 3rem;
             height: 1.1rem;
+            transform-origin: left;
+            transform: scale(1.4);
         }
     }
 }
@@ -1013,6 +1021,16 @@ main {
 }
 
 .swiper-slide-containerSec {
+
+
+    @include breakpoint($xl-bp) {
+        width: 64%;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 87%;
+    }
+
     .main-result__swiperTitle {
 
         font-style: normal;
@@ -1402,7 +1420,8 @@ main {
                 }
 
                 @include breakpoint($sm-bp) {
-                    padding-left: 1.5rem;
+                    padding-left: 1.8rem;
+                    padding-right: 1.8rem;
                 }
 
                 .main-firstStep__text {
@@ -1413,6 +1432,9 @@ main {
                     line-height: 137.1%;
                     color: #000000;
                     width: 71%;
+
+                    
+                    
 
                     @include breakpoint($cos-bp) {
                         font-size: 2.2rem;
@@ -1473,14 +1495,20 @@ main {
                             line-height: 133.1%;
                             align-items: center;
                             padding-left: 0rem;
+                            padding-right: 0rem;
+                            letter-spacing: -0.5px;
                         }
 
                         span {
-                            width: 89%;
+                            width: 88%;
 
-                            @include breakpoint($sm-bp) {
-                                width: 85%;
+                            @include breakpoint($xl-bp) {
+                                width: 100%;
                             }
+
+                            // @include breakpoint($sm-bp) {
+                            //     width: 85%;
+                            // }
                         }
 
                         svg {
@@ -1488,6 +1516,10 @@ main {
                             height: 3.4rem;
                             transition: all 0.2s linear;
                             transform-origin: top;
+
+                            @include breakpoint($xl-bp) {
+                                display: none;
+                            }
                         }
                     }
 
@@ -1495,7 +1527,7 @@ main {
                         padding-bottom: 2rem;
                         transition: all 0.2s linear;
 
-                        @include breakpoint($xl-bp) {
+                        @include breakpoint($cos-bp) {
                             padding-bottom: 0rem;
                         }
 
@@ -1525,12 +1557,12 @@ main {
 
                         @include breakpoint($cos_bp) {
                             font-size: 2.2rem;
-                            width: 100%;
-                            height: 27rem;
+                            width: 83%;
+                            height: 26.5rem;
                         }
 
                         @include breakpoint($xl-bp) {
-                            width: 95%;
+                            width: 100%;
                             height: 30rem;
                         }
 
@@ -1551,6 +1583,7 @@ main {
                             padding-top: 2rem;
                             padding-left: 0rem;
                             height: 28rem;
+                            width: 100%;
                         }
                     }
                 }
@@ -1620,6 +1653,10 @@ main {
                     // padding-bottom: 2rem;
                     padding-top: 2rem;
                     padding-bottom: 2rem;
+
+                    @include breakpoint($xl-bp) {
+                        border-bottom: unset;
+                    }
                 }
             }
 
@@ -1659,11 +1696,16 @@ main {
 
     @include breakpoint($xl-bp) {
         padding-left: 0rem;
+        margin-top: 6rem;
     }
 
-    @include breakpoint($lg-bp) {
-        margin-top: 15rem;
-    }
+    // @include breakpoint($lg-bp) {
+    //     margin-top: 15rem;
+    // }
+
+    // @include breakpoint($jb-bp) {
+        
+    // }
 
     @include breakpoint($sm-bp) {
         padding-left: 1.8rem;
@@ -1889,7 +1931,8 @@ main {
     // text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
     // text-shadow: 0 0 0.9px #333, 0 0 0.9px #333;
     // -webkit-text-stroke: 0.1rem black;
-    text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
+    // text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
+    -webkit-text-stroke: 0.1rem #000000;
     transition: all 0.2s linear;
 }
 
@@ -2078,6 +2121,7 @@ main {
                 font-family: 'Manrope';
                 width: 100%;
                 height: 100%;
+                border: none;
                 border-radius: 50%;
                 background: #1E1E1E;
                 padding: 0rem;
