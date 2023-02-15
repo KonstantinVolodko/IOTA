@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let swiperButtonPrev = document.querySelector('.swiperButtonPrev')
     let swiperCount = 0
 
-    let mainResultNumber = document.querySelectorAll('.main-result__number')
+    let mainResultNumber = document.querySelectorAll('.main-result__numbersContainer li')
     mainResultNumber.forEach((e, id) => {
       e.setAttribute('id', id)
       e.addEventListener('click', elem => {
@@ -1714,7 +1714,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (secondPage) {
 
-    if (window.matchMedia("(min-width: 850px)").matches) {
+    if (window.matchMedia("(min-width: 1023px)").matches) {
       const tl41 = gsap.timeline()
 
       tl41.to('.secondPage-idea__underLine', { transform: 'scale(1, 1)', duration: 1.5 })
@@ -1973,11 +1973,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-// let innerWidth = window.innerWidth
+let innerWidth = window.innerWidth
 
 
-// window.addEventListener('resize', function(event) {
-//   if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
-//     location.reload()
-//   }
-// }, true);
+window.addEventListener('resize', function(event) {
+  if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
+    location.reload()
+  }
+}, true);

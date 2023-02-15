@@ -42,6 +42,10 @@
         color: #000000;
         text-transform: uppercase;
 
+        @include breakpoint($xl-bp) {
+            font-size: 7.4rem;
+        }
+
         @include breakpoint($jb-bp) {
             padding-left: 1.8rem;
         }
@@ -63,6 +67,7 @@
 
         @include breakpoint($xl-bp) {
             padding-right: 0rem;
+            gap: 2rem;
         }
 
         @include breakpoint($jb-bp) {
@@ -101,6 +106,10 @@
 
             @include breakpoint($xl-bp) {
                 width: 80%;
+                margin-top: unset;
+                display: grid;
+                align-items: flex-start;
+                grid-template-rows: 1fr 1fr;
             }
 
             @include breakpoint($lb-bp) {
@@ -127,7 +136,7 @@
                 width: 76%;
 
                 @include breakpoint($xl-bp) {
-                    width: 85%;
+                    width: 100%;
                 }
 
                 @include breakpoint($lb-bp) {
@@ -153,7 +162,7 @@
                 }
 
                 @include breakpoint($xl-bp) {
-                    width: 85%;
+                    width: 100%;
                     margin-bottom: 0rem;
                 }
 
@@ -177,6 +186,7 @@
 
         @include breakpoint($xl-bp) {
             padding-right: 0rem;
+            gap: 2rem;
         }
 
         .portfolio-content__textContainer {
@@ -193,9 +203,9 @@
         .portfolio-content__title {
             margin-top: 2.7rem;
 
-            // @include breakpoint($cos-bp) {
-            //     margin-top: 0rem;
-            // }
+            @include breakpoint($xl-bp) {
+                margin-top: unset;
+            }
 
             @include breakpoint($sm-bp) {
                 margin-top: unset;
@@ -219,6 +229,7 @@
 
     @include breakpoint($xl-bp) {
         padding-left: 0rem;
+        margin-top: 16rem;
     }
 
     @include breakpoint($jb-bp) {
@@ -238,6 +249,11 @@
     flex-direction: column;
     gap: 9rem;
     margin-top: 8rem !important;
+
+
+    @include breakpoint($xl-bp) {
+        padding-left: 1.8rem;
+    }
 
     @include breakpoint($sm-bp) {
         margin-top: 0rem !important;
@@ -264,7 +280,7 @@
     margin-top: 16.4rem;
 
     @include breakpoint($xl-bp) {
-        margin-top: 4rem;
+        margin-top: 8rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -280,5 +296,12 @@
         @include breakpoint($sm-bp) {
             margin-left: 1.5rem;
         }
+    }
+}
+
+.portfolio__paginationPosition {
+
+    @include breakpoint($xl-bp) {
+        margin-left: 1.8rem;
     }
 }

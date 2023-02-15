@@ -252,7 +252,7 @@
             grid-area: 1 / 2 / 3 / 3;
 
             @include breakpoint($jb-bp) {
-                width: 60%;
+                width: 100%;
             }
 
             @include breakpoint($sm-bp) {
@@ -278,6 +278,7 @@
         @include breakpoint($xl-bp) {
             padding-left: 2.2rem;
             padding-right: 2rem;
+            margin-top: 2rem;
         }
 
         @include breakpoint($jb-bp) {
@@ -536,11 +537,20 @@
 
 .secondPage-realize__numberBlock {
 
+    @include breakpoint($xl-bp) {
+        padding-right: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-right: unset;
+    }
+
     .secondPage-realization__imgContainer {
         width: 100%;
         margin-top: 9.8rem;
 
-        @include breakpoint($sm-bp) {
+
+        @include breakpoint($xl-bp) {
             margin-top: 2rem;
         }
 
@@ -563,6 +573,7 @@
 
         @include breakpoint($xl-bp) {
             font-size: 1.8rem;
+            margin-top: 2rem;
         }
 
         @include breakpoint($jb-bp) {
@@ -616,6 +627,7 @@
 
     @include breakpoint($xl-bp) {
         justify-content: unset;
+        margin-bottom: 2rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -628,6 +640,17 @@
     // }
 }
 
+#secondPageContacts {
+    
+    @include breakpoint($xl-bp) {
+        padding-left: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+    }
+}
+
 .secondPage-life__contentBlock {
     margin-top: 8.5rem;
     display: flex;
@@ -635,9 +658,10 @@
     gap: 15.2rem;
     align-items: center;
 
-    // @include breakpoint($cos-bp) {
-    //     gap: 6.2rem;
-    // }
+    @include breakpoint($xl-bp) {
+        padding-right: 2rem;
+        gap: 2rem;
+    }
 
     @include breakpoint($jb-bp) {
         flex-direction: column-reverse;
@@ -646,6 +670,7 @@
     @include breakpoint($sm-bp) {
         margin-top: 2rem;
         gap: 2rem;
+        padding-right: unset;
     }
 
     .secondPage-life__imgContainer {
@@ -697,6 +722,7 @@
 
     @include breakpoint($xl-bp) {
         margin-right: 2rem;
+        margin-top: 2rem;
     }
 
     @include breakpoint($jb-bp) {
@@ -836,6 +862,10 @@
 
 .secondPage-swiperBlock__position {
     margin-top: 14.3rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 4.5rem;
+    }
 
     @include breakpoint($sm-bp) {
         margin-top: 4rem;

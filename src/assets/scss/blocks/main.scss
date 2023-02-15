@@ -258,6 +258,7 @@ main {
 
     @include breakpoint($xl-bp) {
         width: 100%;
+        top: 20rem;
     }
 
     @include breakpoint($jb-bp) {
@@ -1011,12 +1012,19 @@ main {
 
 
 
-    .main-result__number {
-        font-family: 'M PLUS 1p';
-        font-weight: 700;
-        font-size: 4.8rem;
-        line-height: 120.6%;
-        color: #000000;
+    li {
+        
+
+        button {
+            background: none;
+            border: none;
+            font-family: 'M PLUS 1p';
+            font-weight: 700;
+            font-size: 4.8rem;
+            line-height: 120.6%;
+            color: #000000;
+            padding: 0;
+        }
     }
 }
 
@@ -1092,11 +1100,14 @@ main {
 }
 
 .main-result__numberActive {
-    color: #f7f7f7 !important;
-    -webkit-text-stroke: 1px #000000;
-    // text-shadow: -1px 0px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black;
-    font-family: 'M PLUS 1p';
-    transition: all 0.2s linear;
+    button {
+        color: #f7f7f7 !important;
+        -webkit-text-stroke: 0.1rem #000000;
+        // text-shadow: -1px 0px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black;
+        font-family: 'M PLUS 1p';
+        transition: all 0.2s linear;
+    }
+    
 
     .main-result__numberBorder {
         border-bottom: 0.3rem solid #000000;
