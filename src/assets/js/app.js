@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.matchMedia("(min-width: 1023px)").matches) {
         acc.forEach(e => {
           e.classList.remove("activeTab")
-  
+
           // e.nextElementSibling.style.maxHeight = null;
         })
       }
 
-      
+
       this.classList.add("activeTab");
       const tl16 = gsap.timeline();
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+
 
   let swiperSlidesSec = document.querySelectorAll('.swiper-slide-containerSec')
   swiperSlidesSec.forEach((el, id) => {
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mainResultNumber[0].click()
   }
 
-  
+
 
 
 
@@ -167,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
         this.btn = this.wrapper.querySelector(".main-firstStep__accrordeonBtn");
         this.isOpen = false;
         this.init();
-        
-        
+
+
       }
 
       init() {
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.matchMedia("(min-width: 1023px)").matches) {
           this.btn.addEventListener("click", this.handleClick.bind(this));
         }
-        
+
         this.close()
         if (window.matchMedia("(max-width: 1023px)").matches) {
           this.open()
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(new Drop('.testContainer'), 2000);
 
-      
+
 
   }
 
@@ -366,21 +366,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
   let realizationSlides = document.querySelectorAll('.secondPage-realization__swiper .swiper-slide')
   let realizationPagination = document.querySelectorAll('.secondPage-realizationSwiper-pagination .swiper-pagination-bullet')
-  let realizationArrows = document.querySelectorAll('.secondPage-realization__arrowsContainer svg')
-
+  let realizationArrows = document.querySelectorAll('.secondPage-realization__arrowsContainer button')
 
   realizationSlides.forEach(el => {
-    el.addEventListener('mousemove', e => {
-      realizationPagination.forEach(elem => {
-        elem.classList.remove('activeBlack')
+
+      el.addEventListener('mousemove', e => {
+        realizationPagination.forEach(elem => {
+          elem.classList.remove('activeBlack')
+        })
+        let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
+        while (black = black.previousElementSibling) {
+          black.classList.add('activeBlack');
+        }
       })
-      let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
-      while (black = black.previousElementSibling) {
-        black.classList.add('activeBlack');
-      }
-    })
+
   })
 
   realizationArrows.forEach(e => {
@@ -445,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let slides = document.querySelectorAll('.secondPageSwiper .swiper-slide')
 
-  let secondPageArrowContainer = document.querySelectorAll('.secondPage__arrowContainer svg')
+  let secondPageArrowContainer = document.querySelectorAll('.secondPage__arrowContainer button')
 
 
 
@@ -521,14 +523,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let partfolioText = document.querySelector('#portfolioLeftContainer')
 
-  
+
   const tl8 = gsap.timeline();
 
   if (mainPage) {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       tl8.from('.leftBlockContainer__imgContainerUnic', { opacity: 0, x: -200, duration: 1, delay: 3.4 })
     }
-    
+
   }
 
 
@@ -539,7 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tl10.to('.leftBlockContainer__horizontalBorderUnic', { transform: 'scale(1, 1)', duration: 1, delay: 2.4 })
       tl10.to('.leftBlock__verticalBorderUnic', { transform: 'scale(1, 1)', duration: 1, })
     }
-    
+
   }
 
 
@@ -548,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       tl71.from('.leftBlockContainer__imgContainer', { opacity: 0, x: -200, duration: 1, delay: 2 })
     }
-    
+
   }
 
 
@@ -560,7 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tl72.to('.leftBlockContainer__horizontalBorder', { transform: 'scale(1, 1)', duration: 1, delay: 1 })
       tl72.to('.leftBlock__verticalBorder', { transform: 'scale(1, 1)', duration: 1, })
     }
-    
+
   }
 
   const tl21 = gsap.timeline()
@@ -579,26 +581,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const tl2 = gsap.timeline();
 
       tl2.from('.main-createEmotions__imgContainer img', { opacity: 0, y: -300, duration: 1.8, delay: 2.4 })
-  
+
       const tl3 = gsap.timeline();
-  
+
       tl3.from('.main-createEmotions__subtitle', { opacity: 0, duration: 1.3, delay: 1.3 })
-  
+
       const tl4 = gsap.timeline();
-  
+
       tl4.from('.main-createEmotions__title', { opacity: 0, duration: 1.3, delay: 0.7 })
-  
-  
-  
-  
-      
-  
+
+
+
+
+
+
       const tl5 = gsap.timeline();
-  
+
       tl5.from('.main-solutions__content h2', { opacity: 0 })
-  
-      
-  
+
+
+
       ScrollTrigger.create({
         animation: tl5,
         trigger: '.main-solutions__content',
@@ -608,50 +610,50 @@ document.addEventListener("DOMContentLoaded", () => {
         events: "onEnter onLeave onEnterBack onLeaveBack",
         toggleActions: "play play reverse reverse",
       })
-  
-  
+
+
       const tl7 = gsap.timeline();
-  
+
       tl7.from('.main-services__borderLine', { width: 0, duration: 1.5, })
-  
+
       tl7.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl7,
         trigger: '.main-services__tabContainer',
         start: 'top 60%',
         end: "top 30%",
       })
-  
+
       const tl17 = gsap.timeline();
-  
+
       tl17.fromTo(".main-services__btn", { opacity: 0 }, { opacity: 1, delay: 0.5 })
-  
+
       ScrollTrigger.create({
         animation: tl17,
         trigger: '.main-services__tabContainer',
         start: 'top 60%',
         end: "top 30%",
       })
-  
-  
-  
+
+
+
       const tl12 = gsap.timeline();
-  
+
       tl12.fromTo('.main-firstStep__title h2', { opacity: 0, x: 50 }, { opacity: 1, x: 0, delay: 0.2, duration: 0.5 })
-  
-  
+
+
       ScrollTrigger.create({
         animation: tl12,
         trigger: '.main-firstStep__content',
         start: 'top 80%',
         end: "top 30%",
       })
-  
+
       const tl28 = gsap.timeline();
-  
+
       tl28.fromTo('.main-firstStep__blackLine', { transform: "scale(0, 1)", duration: 1, }, { transform: "scale(1, 1)", duration: 0.6, })
-  
+
       ScrollTrigger.create({
         animation: tl28,
         trigger: '.main-firstStep__content',
@@ -659,21 +661,21 @@ document.addEventListener("DOMContentLoaded", () => {
         end: "top 30%",
       })
       const tl13 = gsap.timeline();
-  
+
       tl13.to('.main-gallery__tabsContainer_borderLine', { transform: 'scale(1, 1)', duration: 1.5 })
-  
+
       ScrollTrigger.create({
         animation: tl13,
         trigger: '.main-gallery__content',
         start: 'top 80%',
         end: "top 30%",
       })
-  
-  
+
+
       const tl14 = gsap.timeline();
-  
+
       tl14.fromTo('.main-contact__content', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl14,
         trigger: '.main-contact__content',
@@ -682,12 +684,12 @@ document.addEventListener("DOMContentLoaded", () => {
         events: "onEnter onLeave onEnterBack onLeaveBack",
         toggleActions: "play play reverse reverse",
       })
-  
-  
+
+
       const tl18 = gsap.timeline()
-  
+
       tl18.fromTo('.main-result__content h2', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl18,
         trigger: '.main-result__content',
@@ -697,14 +699,14 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play play reverse reverse",
         // scrub: true,
       })
-  
-  
-  
-  
+
+
+
+
       const tl20 = gsap.timeline()
-  
+
       tl20.fromTo('.main-firstStep__subtitle', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl20,
         trigger: '.main-firstStep__subtitle',
@@ -713,11 +715,11 @@ document.addEventListener("DOMContentLoaded", () => {
         events: "onEnter onLeave onEnterBack onLeaveBack",
         toggleActions: "play play reverse reverse",
       })
-  
+
       const tl30 = gsap.timeline()
-  
+
       tl30.fromTo('.main-firstStep__accordeonContainer', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl30,
         trigger: '.main-firstStep__subtitle',
@@ -727,7 +729,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play play reverse reverse",
       })
     }
-    
+
 
   }
 
@@ -1548,14 +1550,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const tl22 = gsap.timeline()
 
       let kkk = document.querySelector('.main-solutions__content');
-  
+
       let bbb = kkk.offsetHeight;
       let xxx = (bbb * 0.35);
       let zzz = (bbb * 0.2);
       let lll = (bbb * 1.29);
-  
+
       tl22.fromTo('.main-solutions__content h2', { y: 0 }, { y: xxx })
-  
+
       ScrollTrigger.create({
         animation: tl22,
         trigger: '.main-solutions__content',
@@ -1564,15 +1566,15 @@ document.addEventListener("DOMContentLoaded", () => {
         end: `+=${lll + 'px'}`,
         scrub: true,
       })
-  
-  
+
+
       const tl23 = gsap.timeline()
-  
-  
+
+
       tl23.fromTo('.main-solutions__subtitleText', { y: 0 }, { y: zzz })
-  
-  
-  
+
+
+
       ScrollTrigger.create({
         animation: tl23,
         trigger: '.main-solutions__content',
@@ -1580,10 +1582,10 @@ document.addEventListener("DOMContentLoaded", () => {
         end: `+=${bbb * 1 + 'px'}`,
         scrub: true,
       })
-  
+
       const tl24 = gsap.timeline()
       tl24.fromTo('.main-solutions__design', { y: 0 }, { y: zzz })
-  
+
       ScrollTrigger.create({
         animation: tl24,
         trigger: '.main-solutions__content',
@@ -1691,12 +1693,12 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: true,
         }
       })
-  
+
       tl31.fromTo('.main-result__h2Container h2', { y: 0 }, { y: (resultContentHeight - resultTextHeight - swiperTextHeight + 'px') })
-  
+
     }
 
-    
+
   }
 
 
@@ -1735,9 +1737,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       secondPageIdeaTitle.forEach(e => {
         const tl42 = gsap.timeline();
-  
+
         tl42.from(e, { opacity: 0 })
-  
+
         ScrollTrigger.create({
           animation: tl42,
           trigger: e,
@@ -1750,7 +1752,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    
+
 
 
   }
@@ -1760,9 +1762,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.matchMedia("(min-width: 1024px)").matches) {
     mainContactContent.forEach(e => {
       const tl14 = gsap.timeline();
-  
+
       tl14.fromTo(e, { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl14,
         trigger: e,
@@ -1774,7 +1776,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  
+
 
 
   if (organizationOfSpacePage) {
@@ -1782,7 +1784,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       const tl47 = gsap.timeline()
       tl47.fromTo('.organizationOfSpace-whyContainer__textContainer h2', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl47,
         trigger: '.organizationOfSpace-whyContainer__textContainer',
@@ -1791,10 +1793,10 @@ document.addEventListener("DOMContentLoaded", () => {
         events: "onEnter onLeave onEnterBack onLeaveBack",
         toggleActions: "play play reverse reverse",
       })
-  
+
       const tl48 = gsap.timeline()
       tl48.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl48,
         trigger: '.organizationOfSpace-include__text',
@@ -1805,7 +1807,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    
+
   }
 
   if (designPage) {
@@ -1813,7 +1815,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       const tl50 = gsap.timeline()
       tl50.fromTo('.organizationOfSpace-include__text h2', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl50,
         trigger: '.organizationOfSpace-include__text',
@@ -1824,7 +1826,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    
+
   }
 
   if (autorPage) {
@@ -1832,7 +1834,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       const tl52 = gsap.timeline()
       tl52.fromTo('.autor-services__title', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl52,
         trigger: '.autor-services__title',
@@ -1841,10 +1843,10 @@ document.addEventListener("DOMContentLoaded", () => {
         events: "onEnter onLeave onEnterBack onLeaveBack",
         toggleActions: "play play reverse reverse",
       })
-  
+
       const tl53 = gsap.timeline()
       tl53.from('.autor-why h2', { opacity: 0 })
-  
+
       ScrollTrigger.create({
         animation: tl53,
         trigger: '.autor-why',
@@ -1855,14 +1857,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    
+
   }
 
   if (realizationPage) {
     if (window.matchMedia("(min-width: 1024px)").matches) {
       const tl55 = gsap.timeline()
       tl55.fromTo('.organizationOfSpace-whyContainer__title', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl55,
         trigger: '.organizationOfSpace-whyContainer__title',
@@ -1872,10 +1874,10 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play play reverse reverse",
         // markers: true,
       })
-  
+
       const tl56 = gsap.timeline()
       tl56.fromTo('.organizationOfSpace-include__text', { opacity: 0 }, { opacity: 1 })
-  
+
       ScrollTrigger.create({
         animation: tl56,
         trigger: '.organizationOfSpace-include__text',
@@ -1886,7 +1888,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play play reverse reverse",
       })
     }
-    
+
   }
 
 
@@ -1967,7 +1969,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    
+
   }
 
 
@@ -1976,7 +1978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let innerWidth = window.innerWidth
 
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('resize', function (event) {
   if (event.currentTarget.innerWidth < innerWidth * 0.90 || event.currentTarget.innerWidth > innerWidth * 1.10) {
     location.reload()
   }

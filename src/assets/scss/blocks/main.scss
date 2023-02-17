@@ -247,18 +247,18 @@ main {
 .leftBlockContainer {
     position: sticky;
     left: 0;
-    top: 25%;
+    top: 11.7rem;
     display: flex;
     flex-direction: column;
     width: 70%;
 
     // @include breakpoint($cos_bp) {
-    //     width: 80%;
+    //     top: 20rem;
     // }
 
     @include breakpoint($xl-bp) {
         width: 100%;
-        top: 20rem;
+        
     }
 
     @include breakpoint($jb-bp) {
@@ -384,6 +384,10 @@ main {
     }
 
 
+}
+
+.leftBlockContainer__unic {
+    top: 25%;
 }
 
 .main-solutions_position {
@@ -2179,9 +2183,13 @@ main {
     div {
         padding-left: 2rem;
         margin-bottom: 1rem;
-        @include breakpoint($jb-bp) {
-            padding-left: 0rem;
+
+        @include breakpoint($xl-bp) {
+            padding-left: 2.5rem;
         }
+        // @include breakpoint($jb-bp) {
+        //     padding-left: 0rem;
+        // }
 
         @include breakpoint($sm-bp) {
             padding-left: 1.5rem;

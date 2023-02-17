@@ -14,7 +14,7 @@
     @include breakpoint($xl-bp) {
         margin-top: 9.8rem;
         padding-left: 2.2rem;
-        width: 75%;
+        width: 80%;
     }
 
     @include breakpoint($jb-bp) {
@@ -33,7 +33,7 @@
         color: #000000;
 
         @include breakpoint($cos-bp) {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
         }
 
         a {
@@ -661,6 +661,7 @@
     @include breakpoint($xl-bp) {
         padding-right: 2rem;
         gap: 2rem;
+        margin-top: 2rem;
     }
 
     @include breakpoint($jb-bp) {
@@ -798,6 +799,12 @@
     display: flex;
     gap: 2.5rem;
 
+    button {
+        padding: 0;
+        background: none;
+        border: none;
+    }
+
     svg {
         width: 3.4rem;
         height: 2rem;
@@ -884,6 +891,12 @@
     .secondPage-realization__arrowsContainer {
         display: flex;
         gap: 2.5rem;
+
+        button {
+            padding: 0;
+            border: 0;
+            background: 0;
+        }
 
         svg {
             width: 3.4rem;
