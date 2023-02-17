@@ -46,7 +46,7 @@
         display: block;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        margin-top: 8rem;
+        margin-top: 10rem;
     }
 
     
@@ -154,7 +154,7 @@
     }
 
     @include breakpoint($jb-bp) {
-        margin-top: 10rem;
+        margin-top: 12rem;
         padding-left: 2.5rem;
     }
 
@@ -177,7 +177,7 @@
 }
 
 .design-include__textPosition {
-    width: 94% !important;
+    width: 92% !important;
 
     @include breakpoint($sm-bp) {
         h2 {
@@ -191,17 +191,21 @@
 .organizationOfSpace-include__swiperBlock_design {
     margin-top: 10.5rem !important;
 
-    // @include breakpoint($cos-bp) {
-    //     margin-top: 0rem !important;
-    // }
+    @include breakpoint($xl-bp) {
+        margin-top: 5.5rem !important;
+    }
     
     @include breakpoint($sm-bp) {
-        margin-top: 6rem !important;
+        margin-top: 3rem !important;
     }
 }
 
 #designInContact {
     margin-top: 20rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 15rem; 
+    }
 }
 
 .design-include__swiper {
@@ -245,12 +249,12 @@
     a {
         
 
-        @include breakpoint($jb-bp) {
-            width: 32%;
-        }
+        // @include breakpoint($jb-bp) {
+        //     width: 32%;
+        // }
 
         @include breakpoint($sm-bp) {
-            width: 70%;
+            // width: 70%;
             font-size: 1.7rem;
         }
     }
@@ -280,16 +284,16 @@
     left: 2.6%;
     right: unset;
 
-    @include breakpoint($xl-bp) {
-        width: 27.6%;
-    }
+    // @include breakpoint($xl-bp) {
+    //     width: 33% !important;
+    // }
 
-    @include breakpoint($lg-bp) {
-        width: 30.6%;
-      }
+    // @include breakpoint($lg-bp) {
+    //     width: 30.6%;
+    //   }
 
     @include breakpoint($sm-bp) {
-        width: 58% !important;
+        // width: 58% !important;
         font-size: 1.9rem !important;
     }
 }
@@ -313,7 +317,10 @@
     display: flex;
     margin-left: 28.6%;
 
+    width: 41.3%;
+
     @include breakpoint($xl-bp) {
+        width: 100%;
         margin-left: unset;
         margin-top: 8rem;
         padding-left: 2.5rem;
