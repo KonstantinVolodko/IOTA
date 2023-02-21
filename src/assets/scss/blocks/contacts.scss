@@ -3,18 +3,12 @@
     padding-right: 27.6rem;
     padding-left: 3.6rem;
 
-    @include breakpoint($nb-bp) {
-        padding-right: 4.6rem;
-    }
 
     @include breakpoint($xl-bp) {
         padding-left: 2.2rem;
-    }
-
-    @include breakpoint($jb-bp) {
+        margin-top: unset;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
-        margin-top: 4rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -27,6 +21,7 @@
 .contacts-contact {
     @include breakpoint($xl-bp) {
         display: flex;
+        margin-top: 4rem;
     }
 }
 
@@ -36,6 +31,10 @@
 
 .contacts-separator__mobile {
     margin-left: 1.5rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
 
     @include breakpoint($jb-bp) {
         margin-left: 0rem;
@@ -60,8 +59,11 @@
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
+
     @include breakpoint($sm-bp) {
-        margin-top: 9rem;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
@@ -85,6 +87,7 @@
 
         @include breakpoint($xl-bp) {
             width: 100%;
+            margin-top: 7rem;
         }
 
         @include breakpoint($sm-bp) {

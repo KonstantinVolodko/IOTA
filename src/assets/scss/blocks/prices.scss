@@ -5,6 +5,7 @@
     @include breakpoint($xl-bp) {
         flex-direction: column;
         padding-left: 0rem;
+        margin-top: 12.3rem;
     }
 
     @include breakpoint($xl-bp) {
@@ -16,7 +17,7 @@
     }
 
     @include breakpoint($sm-bp) {
-        margin-top: 9rem;
+        margin-top: 12rem;
     }
 }
 
@@ -68,7 +69,7 @@
 
             display: flex;
             padding-bottom: 8rem;
-            border-bottom: 3px solid #000000;
+            border-bottom: 0.3rem solid #000000;
             padding-right: 21.5rem;
             justify-content: space-between;
             align-items: center;
@@ -83,24 +84,29 @@
 
             @include breakpoint($xl-bp) {
                 align-items: unset;
-                padding-right: 0rem;
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
             }
 
-            @include breakpoint($jb-bp) {
-                padding-left: 2.5rem;
-            }
+            // @include breakpoint($jb-bp) {
+            //     padding-left: 2.5rem;
+            // }
             
             @include breakpoint($sm-bp) {
                 flex-direction: column;
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
-                padding-top: 3rem;
+                padding-top: 1rem;
                 padding-bottom: 6rem;
             }
 
 
             .prices-main__imgContainer {
                 width: 39.8%;
+
+                @include breakpoint($xl-bp) {
+                    width: 51.8%;
+                }
 
                 @include breakpoint($sm-bp) {
                     width: 100%;
@@ -116,6 +122,10 @@
 
                 @include breakpoint($jb-bp) {
                     width: 57%;
+                }
+
+                @include breakpoint($xl-bp) {
+                    padding-left: 2rem;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -175,8 +185,21 @@
         .prices-main__container:first-child {
             padding-top: 12rem;
 
+            @include breakpoint($xl-bp) {
+                padding-top: 0rem;
+            }
+
             @include breakpoint($sm-bp) {
-                padding-top: 3rem;
+                padding-top: 1rem;
+            }
+        }
+
+        .prices-main__container:nth-child(even) {
+            .prices-main__textContainer {
+                @include breakpoint($xl-bp) {
+                    padding-left: 0rem;
+                    padding-right: 2rem;
+                }
             }
         }
 
@@ -206,7 +229,7 @@
         .prices-main__textContainer__position {
 
             @include breakpoint($nb-bp) {
-                width: 55% !important;
+                width: 57% !important;
             }
 
             @include breakpoint($sm-bp) {
@@ -219,6 +242,11 @@
 }
 
 .prices-main__container_border {
+
+    @include breakpoint($xl-bp) {
+        border-bottom: unset !important;
+    }
+
     @include breakpoint($sm-bp) {
         border-bottom: unset !important;
         padding-bottom: 0rem !important;

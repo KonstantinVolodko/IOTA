@@ -20,6 +20,17 @@
     display: none;
 }
 
+#servicesInContact {
+    @include breakpoint($xl-bp) {
+        margin-top: 20rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 15rem;
+    }
+
+}
+
 .services {
     width: 82.6%;
     padding-bottom: 21.2rem;
@@ -410,7 +421,9 @@
         .services-particular__title {
             margin-bottom: 3rem;
 
-
+            @include breakpoint($xl-bp) {
+                margin-bottom: 0.5rem;
+            }
 
             @include breakpoint($sm-bp) {
                 margin-bottom: 1rem;
@@ -500,6 +513,7 @@
 
                 @include breakpoint($xl-bp) {
                     font-size: 3rem;
+                    margin-bottom: 0.5rem;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -679,7 +693,7 @@
             // }
 
             @include breakpoint($xl-bp) {
-                width: 50.6%;
+                width: 100%;
             }
 
             @include breakpoint($sr-bp) {
@@ -708,6 +722,7 @@
 
             @include breakpoint($xl-bp) {
                 width: 45.71%;
+                display: none;
             }
 
             @include breakpoint($sr-bp) {
@@ -718,6 +733,7 @@
             @include breakpoint($sm-bp) {
                 width: 100%;
                 padding-right: 0rem;
+                display: block;
             }
 
             img {
@@ -836,6 +852,7 @@
 
     }
 
+
     .services-steps__result {
         margin-top: 18rem;
         margin-right: 26.2rem;
@@ -846,6 +863,7 @@
 
         @include breakpoint($xl-bp) {
             margin-right: 2.5rem;
+            margin-top: 8rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -859,10 +877,40 @@
             line-height: 137.1%;
             color: #000000;
             margin-bottom: 8rem;
+            display: flex;
 
             @include breakpoint($sm-bp) {
                 margin-bottom: 6rem;
                 font-size: 3.3rem;
+            }
+
+            .services-steps__textContainer {
+                @include breakpoint($xl-bp) {
+                    width: 50%;
+                    padding-left: 2rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                    padding-left: 0rem;
+                }
+            }
+
+            .services-steps__resultImgContainer {
+                display: none;
+
+                @include breakpoint($xl-bp) {
+                    display: block;
+                    width: 50%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    display: none;
+                }
+
+                img {
+                    width: 100%;
+                }
             }
         }
 
@@ -871,7 +919,7 @@
             justify-content: space-between;
             align-items: baseline;
 
-            @include breakpoint($sm-bp) {
+            @include breakpoint($xl-bp) {
                 flex-direction: column-reverse;
                 gap: 2rem;
             }
@@ -895,7 +943,7 @@
                 flex-direction: column;
                 gap: 2rem;
 
-                @include breakpoint($sm-bp) {
+                @include breakpoint($xl-bp) {
                     width: 100%;
                 }
 
@@ -949,7 +997,9 @@
     margin-left: 35rem;
 
     @include breakpoint($xl-bp) {
-        margin-left: 10rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        margin-top: 8rem;
     }
 
     @include breakpoint($sr-bp) {
@@ -960,5 +1010,6 @@
     @include breakpoint($sm-bp) {
         margin-top: 4rem;
         margin-left: unset;
+        margin-right: 0;
     }
 }

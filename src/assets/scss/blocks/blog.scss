@@ -12,6 +12,12 @@
         padding-right: 2.5rem;
     }
 
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -20,6 +26,10 @@
 
 #blogLeftText {
     display: none;
+}
+
+#blogInContact {
+    margin-top: 20rem;
 }
 
 .blog {
@@ -94,11 +104,6 @@
 
 .blog-content {
 
-
-
-    
-
-
     h2 {
         font-weight: 500;
         font-size: 6.4rem;
@@ -112,7 +117,7 @@
     }
 
     .blog-content__container {
-        margin-top: 3.5rem;
+        margin-top: 1rem;
         padding-right: 8.2rem;
 
         @include breakpoint($xl-bp) {
@@ -137,11 +142,13 @@
             .blog-content__imgContainer {
                 width: 58.1%;
 
-                @include breakpoint($jb-bp) {
-                    width: 70%;
+                
+
+                @include breakpoint($xl-bp) {
+                    width: 100%;
                 }
 
-                @include breakpoint($sm-bp) {
+                @include breakpoint($xl-bp) {
                     width: 100%;
                 }
 
@@ -158,6 +165,10 @@
 
                 @include breakpoint($jb-bp) {
                     width: 100%;
+                }
+
+                @include breakpoint($xl-bp) {
+                    gap: 3rem;
                 }
 
                 .blog-content__date {
@@ -187,12 +198,11 @@
                     color: #000000;
                     width: 96%;
 
-                    
-
-                    @include breakpoint($sm-bp) {
+                    @include breakpoint($xl-bp) {
                         width: 100%;
-                        font-size: 2.7rem;
+                        font-size: 3.4rem;
                     }
+
                 }
 
                 .blog-content__subtitle {
@@ -212,24 +222,21 @@
             margin-top: 11rem;
             display: flex;
             column-gap: 11.2rem;
-            row-gap: 6.3rem;
+            row-gap: 9rem;
             flex-wrap: wrap;
 
-            @include breakpoint($nb-bp) {
-                column-gap: 9.2rem;
-            }
 
             @include breakpoint($xl-bp) {
-                column-gap: 5.2rem;
+                column-gap: 9rem;
             }
 
             @include breakpoint($jb-bp) {
                 flex-direction: column;
-                margin-top: 4rem;
+                margin-top: 9rem;
             }
 
             @include breakpoint($sm-bp) {
-                row-gap: 4rem;
+                row-gap: 9rem;
             }
 
             li {
@@ -258,9 +265,8 @@
                     .blog-content__imgContainer {
                         width: 100%;
     
-                        @include breakpoint($jb-bp) {
-                            width: 70%;
-                            margin: 0 auto;
+                        @include breakpoint($xl-bp) {
+                            width: 100%;
                         }
     
                         @include breakpoint($sm-bp) {
@@ -270,6 +276,12 @@
                         img {
                             width: 100%;
                         }
+                    }
+
+                    .blog-content__textContainer {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3rem;
                     }
     
                     .blog-content__date {
@@ -353,12 +365,11 @@
     // }
 
     @include breakpoint($xl-bp) {
-        margin-left: 10rem;
+        margin-top: 8rem;
+        margin-left: 2.5rem;
+        padding-right: 2.5rem;
     }
 
-    @include breakpoint($jb-bp) {
-        margin-left: 2.5rem;
-    }
 
     @include breakpoint($sm-bp) {
         margin-left: unset;

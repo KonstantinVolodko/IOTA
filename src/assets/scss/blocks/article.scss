@@ -75,8 +75,11 @@
             font-size: 1.8rem;
             line-height: 137.1%;
             color: #000000;
-            margin-top: 11.2rem;
+            margin-top: 7rem;
             width: 55.73%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
 
             @include breakpoint($cos-bp) {
                 font-size: 2.2rem;
@@ -84,6 +87,7 @@
 
             @include breakpoint($xl-bp) {
                 font-size: 1.8rem;
+                margin-top: 6rem;
             }
 
             @include breakpoint($jb-bp) {

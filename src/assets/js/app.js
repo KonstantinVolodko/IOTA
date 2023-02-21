@@ -351,6 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: 1.8,
     spaceBetween: 11,
     grabCursor: true,
+    longSwipes: false,
     navigation: {
       nextEl: ".secondPage-realization__arrowRight",
       prevEl: ".secondPage-realization__arrowLeft",
@@ -370,10 +371,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let realizationSlides = document.querySelectorAll('.secondPage-realization__swiper .swiper-slide')
   let realizationPagination = document.querySelectorAll('.secondPage-realizationSwiper-pagination .swiper-pagination-bullet')
   let realizationArrows = document.querySelectorAll('.secondPage-realization__arrowsContainer button')
+  
 
-  realizationSlides.forEach(el => {
-
-      el.addEventListener('mousemove', e => {
+        realizationSwiper2.on('slideChange', e => {
         realizationPagination.forEach(elem => {
           elem.classList.remove('activeBlack')
         })
@@ -381,21 +381,24 @@ document.addEventListener("DOMContentLoaded", () => {
         while (black = black.previousElementSibling) {
           black.classList.add('activeBlack');
         }
+
+        if (realizationPagination[realizationPagination.length - 2].classList.contains("swiper-pagination-bullet-active")) {
+          realizationPagination[realizationPagination.length - 2].classList.add('activeBlack')
+        }
       })
 
-  })
 
-  realizationArrows.forEach(e => {
-    e.addEventListener('click', elem => {
-      realizationPagination.forEach(elem => {
-        elem.classList.remove('activeBlack')
-      })
-      let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
-      while (black = black.previousElementSibling) {
-        black.classList.add('activeBlack');
-      }
-    })
-  })
+  // realizationArrows.forEach(e => {
+  //   e.addEventListener('click', elem => {
+  //     realizationPagination.forEach(elem => {
+  //       elem.classList.remove('activeBlack')
+  //     })
+  //     let black = document.querySelector('.secondPage-realization__swiper .swiper-pagination-bullet-active');
+  //     while (black = black.previousElementSibling) {
+  //       black.classList.add('activeBlack');
+  //     }
+  //   })
+  // })
 
 
   let organizationOfSpaceSwiper = new Swiper(".organizationOfSpace-include__swiper", {
@@ -443,39 +446,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
-
-  let slides = document.querySelectorAll('.secondPageSwiper .swiper-slide')
-
-  let secondPageArrowContainer = document.querySelectorAll('.secondPage__arrowContainer button')
+  
 
 
-
-
-
-  slides.forEach(el => {
-    el.addEventListener('mousemove', e => {
-      pagination.forEach(elem => {
-        elem.classList.remove('activeBlack')
-      })
-      let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
-      while (red = red.previousElementSibling) {
-        red.classList.add('activeBlack');
-      }
-    })
-  })
-
-  secondPageArrowContainer.forEach(e => {
-    e.addEventListener('click', elem => {
-      pagination.forEach(elem => {
-        elem.classList.remove('activeBlack')
-      })
-      let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
-      while (red = red.previousElementSibling) {
-        red.classList.add('activeBlack');
-      }
-    })
-  })
+  // secondPageArrowContainer.forEach(e => {
+  //   e.addEventListener('click', elem => {
+  //     pagination.forEach(elem => {
+  //       elem.classList.remove('activeBlack')
+  //     })
+  //     let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
+  //     while (red = red.previousElementSibling) {
+  //       red.classList.add('activeBlack');
+  //     }
+  //   })
+  // })
 
 
   // if (window.matchMedia("(max-width: 500px)").matches) {
@@ -1946,6 +1930,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
+
+    let pagination = document.querySelectorAll('.secondPage-swiperBlock .swiper-pagination-bullet')
+
+  let slides = document.querySelectorAll('.secondPageSwiper .swiper-slide')
+
+  let secondPageArrowContainer = document.querySelectorAll('.secondPage__arrowContainer button')
+
+
+
+
+
+
+  secondPageSwiper.on('slideChange', e => {
+      pagination.forEach(elem => {
+        elem.classList.remove('activeBlack')
+      })
+      let red = document.querySelector('.secondPage-swiperBlock .swiper-pagination-bullet-active');
+      while (red = red.previousElementSibling) {
+        red.classList.add('activeBlack');
+      }
+    })
   }
 
 

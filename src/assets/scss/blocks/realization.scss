@@ -42,7 +42,7 @@
 .realization-whyContainer__title {
     width: 71% !important;
 
-    @include breakpoint($sm-bp) {
+    @include breakpoint($xl-bp) {
         width: 100% !important;
     }
 }
@@ -59,7 +59,7 @@
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        margin-top: 9rem;
+        margin-top: 12rem;
     }
 }
 
@@ -92,10 +92,32 @@
     justify-content: center;
     margin-left: -2.9rem;
 
-    
+    @include breakpoint($xl-bp) {
+        margin-top: 8rem;
+        margin-left: 0rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 
     @include breakpoint($sr-bp) {
         margin-left: 0rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .main-contact__content {
+        width: 63%;
+        justify-content: unset;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+        form {
+            width: 82%;
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -241,10 +263,11 @@
 
     @include breakpoint($xl-bp) {
         flex-direction: column !important;
+        margin-top: 3rem !important;
     }
 
     @include breakpoint($sm-bp) {
-        margin-top: 3rem !important;
+        margin-top: 0rem !important;
         flex-direction: column-reverse !important;
     }
 }
@@ -256,6 +279,11 @@
 }
 
 .realization-include__swiperBlock {
+
+    @include breakpoint($xl-bp) {
+        margin-top: 5rem !important;
+    }
+
     @include breakpoint($sm-bp) {
         margin-top: 2rem !important;
     }
@@ -264,6 +292,18 @@
 .realization-include__imgContainer {
     width: 78.4% !important;
     margin-left: 6.4rem !important;
+
+    @include breakpoint($xl-bp) {
+        width: 100% !important;
+    margin-left: 0rem !important;
+    }
+}
+
+#realizationInContact {
+    @include breakpoint($xl-bp) {
+        margin-top: 20rem;
+    }
+
 }
 
 .realization-linkContainer {
@@ -276,6 +316,7 @@
 .realization-linkContainer__link {
     top: -2.7rem;
     right: 23.2%;
+    width: fit-content;
 
     // @include breakpoint($nb-bp) {
     //     right: 20%;
@@ -288,21 +329,21 @@
     
 
     @include breakpoint($xl-bp) {
-        width: 27%;
+        // width: 27%;
         margin-left: unset;
     }
 
-    @include breakpoint($lg-bp) {
-        width: 30%;
-    }
+    // @include breakpoint($lg-bp) {
+    //     width: 30%;
+    // }
 
-    @include breakpoint($jb-bp) {
-        width: 32%;
-    }
+    // @include breakpoint($jb-bp) {
+    //     width: 32%;
+    // }
 
-    @include breakpoint($sm-bp) {
-        width: 56% !important;
-    }
+    // @include breakpoint($sm-bp) {
+    //     width: 56% !important;
+    // }
 
 
 }

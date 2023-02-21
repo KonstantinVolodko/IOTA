@@ -6,14 +6,12 @@
     //     padding-left: 0rem;
     // }
 
-    @include breakpoint($xl-bp) {
-        padding-left: 2.2rem;
-    }
 
-    @include breakpoint($jb-bp) {
+
+    @include breakpoint($xl-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
-        margin-top: 9rem;
+        margin-top: 12rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -62,18 +60,13 @@
         }
 
         @include breakpoint($xl-bp) {
-            font-size: 1.8rem;
-        }
-
-        @include breakpoint($xl-bp) {
             display: flex;
             flex-direction: column;
             gap: 3rem;
+            font-size: 1.8rem;
+            margin-top: 1rem;
         }
 
-        @include breakpoint($jb-bp) {
-            margin-top: 3rem;
-        }
 
         @include breakpoint($sm-bp) {
             font-size: 1.9rem;
@@ -121,6 +114,12 @@
     }
 }
 
+#aboutCompanyInContact {
+    @include breakpoint($xl-bp) {
+        margin-top: 20rem;
+    }
+}
+
 .aboutCompany-contact_position {
     margin-top: 20rem;
     margin-left: 45rem;
@@ -135,16 +134,16 @@
     // }
 
     @include breakpoint($xl-bp) {
-        margin-left: 10rem;
+        margin-left: 2.5rem;
+        margin-top: 8rem;
+        padding-right: 2.5rem;
     }
 
-    @include breakpoint($jb-bp) {
-        margin-left: 2.5rem;
-    }
 
     @include breakpoint($sm-bp) {
         margin-left: unset;
         margin-top: 4rem;
+        padding-right: 1.5rem;
     }
 
 
