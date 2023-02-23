@@ -1877,7 +1877,7 @@ main {
     .main-gallery__helper {
         margin-top: 5.6rem;
 
-        @include breakpoint($jb-bp) {
+        @include breakpoint($xl-bp) {
             // padding-left: 1.8rem;
             padding-right: 1.8rem;
         }
@@ -1967,13 +1967,15 @@ main {
         margin-top: 10.3rem;
     }
 
-    @include breakpoint($jb-bp) {
+    @include breakpoint($xl-bp) {
         margin-right: unset;
         // padding: 0 1.8rem;
+        padding-right: 2.5rem;
     }
 
     @include breakpoint($sm-bp) {
         margin-top: 4rem;
+        padding-right: 1.5rem;
     }
 }
 

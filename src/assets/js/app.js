@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: '.main-gallery__buttonNext',
       },
       breakpoints: {
-        850: {
+        1023: {
           slidesPerView: 1.45,
           spaceBetween: -25,
         },
@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
     breakpoints: {
       500: {
         spaceBetween: 72,
+        longSwipes: false,
       }
     }
   });
@@ -1955,22 +1956,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (servicesPage) {
-    window.onclick = function (event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
+    // window.onclick = function (event) {
+    //   if (!event.target.matches('.dropbtn')) {
+    //     var dropdowns = document.getElementsByClassName("dropdown-content");
+    //     var i;
+    //     for (i = 0; i < dropdowns.length; i++) {
+    //       var openDropdown = dropdowns[i];
+    //       if (openDropdown.classList.contains('show')) {
+    //         openDropdown.classList.remove('show');
+    //       }
+    //     }
+    //   }
+    // }
 
     let dropBtns = document.querySelectorAll('.dropbtn').forEach((el, id) => {
       el.addEventListener('click', e => {
         document.querySelectorAll(".dropdown-content")[id].classList.toggle("show");
+        
       })
     })
 

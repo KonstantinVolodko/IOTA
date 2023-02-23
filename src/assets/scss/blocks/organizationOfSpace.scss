@@ -154,11 +154,15 @@
             line-height: 120.6%;
             text-transform: uppercase;
             color: #000000;
-            width: 42%;
+            width: 78%;
 
-            @include breakpoint($sr-bp) {
-                width: 60%;
+            @include breakpoint($xl-bp) {
+                width: 100%;
             }
+
+            // @include breakpoint($sr-bp) {
+            //     width: 60%;
+            // }
 
             @include breakpoint($sm-bp) {
                 width: 100%;
