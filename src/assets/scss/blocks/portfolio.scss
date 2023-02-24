@@ -7,6 +7,8 @@
         width: 100%;
         padding-left: 2.2rem;
         padding-right: 2.2rem;
+        margin-bottom: 15rem;
+
     }
 
     @include breakpoint($jb-bp) {
@@ -303,5 +305,9 @@
 
     @include breakpoint($xl-bp) {
         margin-left: 1.8rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2rem !important;
     }
 }

@@ -7,8 +7,8 @@
     @include breakpoint($xl-bp) {
         padding-left: 2.2rem;
         margin-top: unset;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -22,6 +22,13 @@
     @include breakpoint($xl-bp) {
         display: flex;
         margin-top: 4rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -88,6 +95,8 @@
         @include breakpoint($xl-bp) {
             width: 100%;
             margin-top: 7rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -198,12 +207,19 @@
 .contacts-content__map_position {
     margin-top: 10rem;
     filter: grayscale(100%);
+
+
 }
 
 
 
 .contacts-content__map {
     position: relative;
+
+    @include breakpoint($xl-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 
     @include breakpoint($sm-bp) {
         padding-left: 1.5rem;

@@ -90,13 +90,16 @@
     margin-top: 20rem;
     display: flex;
     justify-content: center;
-    margin-left: -2.9rem;
+    margin-left: 13.6%;
+    width: 79.3%;
 
     @include breakpoint($xl-bp) {
         margin-top: 8rem;
         margin-left: 0rem;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+        margin-left: unset;
+        width: unset;
     }
 
     @include breakpoint($sr-bp) {
@@ -218,20 +221,22 @@
 .realization-swiper__arrowsContainer {
     display: none;
     width: 12%;
+    margin-bottom: 2rem;
 
-    width: 12%;
-    position: absolute;
-    right: 0%;
-    top: 2%;
-    z-index: 11;
+    // width: 12%;
+    // position: absolute;
+    // right: 0%;
+    // top: 2%;
+    // z-index: 11;
 
-    @include breakpoint($jb-bp) {
+    @include breakpoint($xl-bp) {
         display: flex;
         gap: 2.5rem;
+        // top: -4%;
     }
 
     @include breakpoint($sm-bp) {
-        right: 9%;
+        // right: 9%;
     }
 
     svg {
@@ -273,6 +278,12 @@
 }
 
 .realization__subtitleHelp {
+    margin-left: 9.2rem;
+
+    @include breakpoint($xl-bp) {
+        margin-left: unset;
+    }
+
     @include breakpoint($sm-bp) {
         font-size: 3.2rem !important;
     }

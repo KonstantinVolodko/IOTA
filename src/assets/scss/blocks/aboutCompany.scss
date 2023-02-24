@@ -75,7 +75,7 @@
         span {
             font-weight: 700;
 
-            
+
         }
 
         .aboutCompany-content__textContainer {
@@ -151,6 +151,10 @@
 
 .aboutCompany-content__textContainer_helper {
     width: 71% !important;
+
+    @include breakpoint($nb-bp) {
+        width: 85% !important;
+    }
 
     @include breakpoint($jb-bp) {
         width: 100% !important;

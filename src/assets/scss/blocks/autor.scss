@@ -342,7 +342,7 @@
         color: #000000;
 
         @include breakpoint($nb-bp) {
-            width: 57%;
+            width: 40%;
         }
 
         @include breakpoint($xl-bp) {
@@ -449,6 +449,18 @@
 
 #autorInContact {
     margin-top: 20rem;
+}
+
+
+.autor-fixed__position {
+    display: flex;
+    margin-left: 28.6%;
+    width: 54.3%;
+
+    @include breakpoint($xl-bp) {
+        width: unset;
+        margin-left: unset;
+    }
 }
 
 .autor-contact_position {

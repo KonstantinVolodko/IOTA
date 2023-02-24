@@ -44,7 +44,7 @@ main {
 
     @include breakpoint($xl-bp) {
         width: 100%;
-        padding-left: 2.2rem;
+
     }
 
     @include breakpoint($sm-bp) {
@@ -733,9 +733,10 @@ main {
     //     padding-left: unset;
     // }
 
-    @include breakpoint($lg-bp) {
+    @include breakpoint($xl-bp) {
         margin-top: 6rem;
-        padding-left: 0rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
     }
 
     // @include breakpoint($jb-bp) {
@@ -744,6 +745,8 @@ main {
 
     @include breakpoint($sm-bp) {
         margin-top: 5.1rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 }
 
@@ -1418,11 +1421,20 @@ main {
             @include breakpoint($xl-bp) {
                 gap: 1rem;
                 padding-left: 0rem;
+                padding-right: 2.5rem;
+                padding-left: 2.5rem;
             }
 
             @include breakpoint($lg-bp) {
                 flex-flow: column-reverse;
                 gap: 2rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                flex-flow: column-reverse;
+                gap: 2rem;
+                padding-right: 0rem;
+                padding-left: 0rem;
             }
 
             .main-firstStep__textBlock {
@@ -1678,9 +1690,9 @@ main {
             .main-firstStep__imgContainer {
                 width: 61.2%;
 
-                @include breakpoint($lg-bp) {
-                    width: 50%;
-                    margin: 0 auto 0 25rem;
+                @include breakpoint($xl-bp) {
+                    width: 100%;
+                    // margin: 0 auto 0 25rem;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -1710,8 +1722,10 @@ main {
     // }
 
     @include breakpoint($xl-bp) {
-        padding-left: 0rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
         margin-top: 6rem;
+
     }
 
     // @include breakpoint($lg-bp) {
@@ -1723,8 +1737,9 @@ main {
     // }
 
     @include breakpoint($sm-bp) {
-        padding-left: 1.8rem;
         margin-top: 6rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -1879,7 +1894,7 @@ main {
 
         @include breakpoint($xl-bp) {
             // padding-left: 1.8rem;
-            padding-right: 1.8rem;
+            // padding-right: 1.8rem;
         }
 
 
@@ -1971,11 +1986,13 @@ main {
         margin-right: unset;
         // padding: 0 1.8rem;
         padding-right: 2.5rem;
+        padding-left: 2.5rem;
     }
 
     @include breakpoint($sm-bp) {
         margin-top: 4rem;
         padding-right: 1.5rem;
+        padding-left: 1.5rem;
     }
 }
 

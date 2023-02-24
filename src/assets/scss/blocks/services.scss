@@ -590,11 +590,8 @@
     padding-left: 3.6rem;
 
     @include breakpoint($xl-bp) {
-        padding-left: 2.2rem;
-    }
-
-    @include breakpoint($jb-bp) {
         padding-left: 2.5rem;
+        margin-top: 6rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -617,6 +614,8 @@
 
         @include breakpoint($xl-bp) {
             font-size: 4.4rem;
+            width: 97%;
+            margin-bottom: 3rem;
         }
 
         // @include breakpoint($sr-bp) {
@@ -816,15 +815,15 @@
                 @include breakpoint($xl-bp) {
                     font-size: 2.2rem;
                     font-weight: 700;
+                    width: 100%;
+                    padding-right: 2.5rem;
                 }
 
-                @include breakpoint($xl-bp) {
-                    width: 75%;
-                }
 
                 @include breakpoint($sm-bp) {
                     width: 100%;
                     font-size: 1.9rem;
+                    padding-right: 0rem;
                 }
             }
         }

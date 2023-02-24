@@ -597,9 +597,14 @@
 
         .swiper-slide {
             overflow: hidden;
+            
 
             img {
                 width: 97%;
+
+                @include breakpoint($xl-bp) {
+                    width: 100%;
+                }
             }
         }
 

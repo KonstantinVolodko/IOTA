@@ -33,10 +33,10 @@
     overflow: hidden;
     cursor: pointer;
 
-    @include breakpoint($jb-bp) {
-        gap: 1.2rem;
-        width: 6.7rem;
-        height: 4.5rem;
+    @include breakpoint($xl-bp) {
+        gap: 0.7rem;
+        width: 4.7rem;
+        height: 3.5rem;
     }
 
     @include breakpoint($sm-bp) {

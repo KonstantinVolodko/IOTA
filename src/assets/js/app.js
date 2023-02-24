@@ -362,6 +362,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     breakpoints: {
       500: {
+        spaceBetween: 50,
+        longSwipes: false,
+      },
+
+      1024: {
         spaceBetween: 72,
         longSwipes: false,
       }
@@ -1990,3 +1995,6 @@ window.addEventListener('resize', function (event) {
     location.reload()
   }
 }, true);
+
+
+

@@ -367,6 +367,10 @@
         //     margin-top: 4.9rem;
         //   }
 
+        @include breakpoint($xl-bp) {
+            margin-top: 4.9rem;
+        }
+
         @include breakpoint($sm-bp) {
             margin-top: 4rem;
         }
@@ -477,13 +481,16 @@
     margin-top: 19.5rem;
     display: flex;
     justify-content: center;
-    margin-right: 3.5rem;
+    margin-left: 28.6%;
+    width: 41.3%;
 
     @include breakpoint($xl-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
         margin-right: unset;
         margin-top: 8rem;
+        margin-left: unset;
+        width: unset;
     }
 
     @include breakpoint($sm-bp) {
