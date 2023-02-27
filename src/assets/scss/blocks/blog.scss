@@ -246,14 +246,6 @@
                     flex-direction: column;
                     gap: 1rem;
     
-                    // @include breakpoint($nb-bp) {
-                    //     width: 27.1%;
-                    // }
-    
-                    // @include breakpoint($cos-bp) {
-                    //     width: 26.1%;
-                    // }
-    
                     @include breakpoint($xl-bp) {
                         width: 28.1%;
                     }
@@ -355,14 +347,6 @@
     margin-top: 20.3rem;
     display: flex;
     margin-left: 44.4rem;
-
-    // @include breakpoint($nb-bp) {
-    //     margin-left: 27rem;
-    // }
-
-    // @include breakpoint($cos-bp) {
-    //     margin-left: 22rem;
-    // }
 
     @include breakpoint($xl-bp) {
         margin-top: 8rem;

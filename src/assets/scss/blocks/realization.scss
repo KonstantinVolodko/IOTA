@@ -34,13 +34,29 @@
 
 .realization-whyContainer__textContainer {
     gap: 0rem !important;
+    justify-content: unset !important;
+    h2 {
+        width: 23.5% !important;
+
+        @include breakpoint($xl-bp) {
+            width: 100% !important;
+        }
+    }
+
+    .realization__subtitleHelp {
+        width: 68% !important;
+
+        @include breakpoint($xl-bp) {
+            width: 100% !important;
+        }
+    }
     @include breakpoint($sm-bp) {
         gap: 4rem !important;
     }
 }
 
-.realization-whyContainer__title {
-    width: 71% !important;
+.realization-include__textHelper {
+    width: 87% !important;
 
     @include breakpoint($xl-bp) {
         width: 100% !important;
@@ -278,7 +294,7 @@
 }
 
 .realization__subtitleHelp {
-    margin-left: 9.2rem;
+    margin-left: 5.8rem;
 
     @include breakpoint($xl-bp) {
         margin-left: unset;

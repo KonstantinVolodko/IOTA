@@ -28,7 +28,6 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 3.7rem;
-    // height: 2.5rem;
     height: max-content;
     overflow: hidden;
     cursor: pointer;
@@ -198,7 +197,6 @@
     .header-menu__tabsContainer {
         display: flex;
         justify-content: space-between;
-        // gap: 12rem;
         margin-top: 7%;
 
         @include breakpoint($xl-bp) {
@@ -277,7 +275,7 @@
 
                     font-style: normal;
                     font-weight: 500;
-                    font-size: 2.7rem;
+                    font-size: 2.4rem;
                     line-height: 3.3rem;
                     text-transform: uppercase;
                     color: #000000;
@@ -293,7 +291,7 @@
                     gap: 2rem;
                     align-items: center;
                     text-align: center;
-                    // margin-bottom: 5rem;
+                    margin-bottom: 3rem;
 
 
 
@@ -302,7 +300,10 @@
                         flex-direction: column;
 
                         border-top: 0.3rem solid #000000;
-                        // padding-top: 2rem;
+
+                        @include breakpoint($xl-bp) {
+                            padding-top: 2rem;
+                        }
 
                         li:not(:first-child) {
                             padding-top: 2rem;
@@ -313,7 +314,7 @@
                         font-family: "Manrope";
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 2.7rem;
+                        font-size: 2.4rem;
                         line-height: 2.2rem;
                         text-transform: uppercase;
                         color: #000000;
@@ -324,9 +325,9 @@
                         padding-top: 2rem;
 
 
-                        @include breakpoint($sm-bp) {
-                            font-size: 2.14rem;
-                        }
+                        // @include breakpoint($sm-bp) {
+                        //     font-size: 2.14rem;
+                        // }
                     }
 
                     .header-menu__accordionContent {
@@ -362,27 +363,8 @@
                             }
                         }
 
-                        // a:hover {
-                        //     // font-weight: 700;
-                        //     // -webkit-text-stroke: 0.05rem #000000;
-                        //     text-shadow: -0.1px 0px 0 black, 0px 0.1px 0 black, 0.1px 0px 0 black, 0px -0.1px 0 black;
-                        // }
                     }
                 }
-
-
-
-                // @include breakpoint($jb-bp) {
-                //     max-height: 0;
-                //     overflow: hidden;
-                //     transition: max-height 0.2s ease-out;
-                //     // display: block;
-                // }
-
-
-
-
-
 
             }
 
@@ -409,13 +391,9 @@
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 8rem;
-    // column-gap: 10rem;
     width: 60%;
     margin-top: 5.3%;
 
-    @include breakpoint($nb-bp) {
-        // column-gap: 5rem;
-    }
 
     @include breakpoint($xl-bp) {
         display: none;
@@ -477,20 +455,13 @@
                 color: #000000;
             }
 
-            a:hover {
-                // font-weight: 700;
-                // -webkit-text-stroke: 0.1rem#000000;
-                // text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
-            }
-
-
-
         }
     }
 
     .header-menu__blockFirst {
         width: 40rem;
         position: relative;
+
     }
 
     .header-menu__blockUnic {
@@ -498,7 +469,8 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-
+        
+        
 
     }
 
@@ -507,8 +479,6 @@
     }
 
     .header-menu__accordionContent {
-        // max-height: 0;
-        // overflow: hidden;
         transition: max-height 0.2s ease-out;
 
 
@@ -521,33 +491,11 @@
 }
 
 .header-menu__tabsFirstLvlTitle_hover {
-    // font-weight: 700 !important;
     -webkit-text-stroke: 0.2rem #000000;
-    // text-shadow: -0.1rem 0px 0 black, 0px 0.1rem 0 black, 0.1rem 0px 0 black, 0px -0.1rem 0 black;
     color: #000000 !important;
     transition: all linear 0.1s;
 }
 
-.header-menu__tabsFirstLvlTitle {
-    // margin-bottom: 3rem !important;
-}
-
-
-// .header-menu__accordionBtn_hover {
-//     // font-weight: 700 !important;
-//     // -webkit-text-stroke: 0.1rem#000000;
-//     text-shadow: -0.5px 0px 0 black, 0px 0.5px 0 black, 0.5px 0px 0 black, 0px -0.5px 0 black;
-//     @include breakpoint($xl-bp) {
-//         // text-shadow: unset;
-//         padding-bottom: 5rem !important;
-//         font-size: 2.7rem !important;
-//         font-style: normal !important;
-//         font-weight: 500 !important;
-//         line-height: 5.2rem !important;
-//         text-transform: uppercase !important;
-//         color: #000000 !important;
-//     }
-// }
 
 
 .header-menu__linkTitle {

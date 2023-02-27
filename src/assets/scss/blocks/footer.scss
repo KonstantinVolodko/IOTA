@@ -32,14 +32,6 @@
             width: 54%;
         }
 
-        // @include breakpoint($lg-bp) {
-            
-        //     width: 47%;
-        // }
-
-        // @include breakpoint($jb-bp) {
-        //     text-align: center;
-        // }
 
         @include breakpoint($sm-bp) {
             font-size: 2.1rem;
@@ -65,14 +57,6 @@
         gap: 4rem;
         margin-left: 34.4rem;
 
-
-        // @include breakpoint($nb-bp) {
-        //     margin-left: 24.4rem;
-        // }
-
-        // @include breakpoint($cos-bp) {
-        //     margin-left: 11.4rem;
-        // }
 
         @include breakpoint($xl-bp) {
             margin-left: 0.8rem;

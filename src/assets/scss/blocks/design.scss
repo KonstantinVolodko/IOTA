@@ -247,14 +247,8 @@
     }
 
     a {
-        
-
-        // @include breakpoint($jb-bp) {
-        //     width: 32%;
-        // }
 
         @include breakpoint($sm-bp) {
-            // width: 70%;
             font-size: 1.7rem;
         }
     }
@@ -280,20 +274,12 @@
 }
 
 .design__helper {
-    top: -2.2rem;
+    top: -2.7rem;
     left: 2.6%;
     right: unset;
 
-    // @include breakpoint($xl-bp) {
-    //     width: 33% !important;
-    // }
-
-    // @include breakpoint($lg-bp) {
-    //     width: 30.6%;
-    //   }
 
     @include breakpoint($sm-bp) {
-        // width: 58% !important;
         font-size: 1.9rem !important;
     }
 }

@@ -2,57 +2,40 @@
 <html lang="ru">
 
 <head>
-    {{> head }}
+  {{> head }}
 </head>
 
 <body>
-    <div class="preloader">
-        <div class="preloader__row">
-          <div class="preloader__item"></div>
-          <div class="preloader__item"></div>
-        </div>
-      </div>
-    {{> sprite }}
+  {{> sprite }}
 
-    <div class="page">
-        
-        <!-- Header -->
+  <div class="page">
 
-        {{> header }}
+    <!-- Header -->
 
-        <!-- Main content -->
-        <main>
+    {{> header }}
 
-            {{> body }}
+    <!-- Main content -->
+    <main>
 
-        </main>
+      {{> body }}
 
-        <!-- Footer -->
-        {{> footer }}
+    </main>
 
-    </div>
+    <!-- Footer -->
+    {{> footer }}
 
-    <!-- JS -->
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script>
-        
-        window.onload = function () {
-          document.body.classList.add('loaded_hiding');
-          window.setTimeout(function () {
-            document.body.classList.add('loaded');
-            document.body.classList.remove('loaded_hiding');
-
-          }, 1000);
-        }
+  <!-- JS -->
 
 
-    </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+    integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/app.js"></script>
+  
 </body>
 
 </html>
