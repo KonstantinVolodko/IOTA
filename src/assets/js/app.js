@@ -218,19 +218,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let tabHeader = document.querySelectorAll('.main-gallery__tabHeader');
   let galleryHelper = document.querySelector('.main-gallery__helper');
 
-  tabHeader.forEach(e => {
-    e.addEventListener('click', el => {
-      galleryHelper.innerHTML = e.nextElementSibling.innerHTML
-      swiperFunction()
-      tabHeader.forEach(elem => {
-        elem.classList.remove('activeTab')
-      })
-      e.classList.add('activeTab')
-
+    tabHeader.forEach(e => {
+      e.addEventListener('click', el => {
+        galleryHelper.innerHTML = e.nextElementSibling.innerHTML
+        swiperFunction()
+        tabHeader.forEach(elem => {
+          elem.classList.remove('activeTab')
+        })
+        e.classList.add('activeTab')
+      });
     });
-  });
 
-  if (tabHeader.length != 0) {
+  if (tabHeader.length != 0 && mainPage !== null) {
     tabHeader[0].click()
   };
 

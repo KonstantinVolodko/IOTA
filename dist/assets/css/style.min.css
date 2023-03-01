@@ -4112,7 +4112,7 @@ textarea {
   transition: all 0.2s linear;
 }
 
-.portfolio-content h2 {
+.portfolio-content h2, .portfolio-content h1 {
   font-style: normal;
   font-weight: 500;
   font-size: 6.4rem;
@@ -4121,17 +4121,17 @@ textarea {
   text-transform: uppercase;
 }
 @media (max-width: 1023px) {
-  .portfolio-content h2 {
+  .portfolio-content h2, .portfolio-content h1 {
     font-size: 7.4rem;
   }
 }
 @media (max-width: 1022px) {
-  .portfolio-content h2 {
+  .portfolio-content h2, .portfolio-content h1 {
     padding-left: 1.8rem;
   }
 }
 @media (max-width: 500px) {
-  .portfolio-content h2 {
+  .portfolio-content h2, .portfolio-content h1 {
     padding-left: 1.5rem;
     font-size: 4.3rem;
     line-height: 100.1%;
@@ -4515,7 +4515,7 @@ textarea {
     padding-bottom: 2.3rem;
   }
 }
-.secondPage-title h2 {
+.secondPage-title h2, .secondPage-title h1 {
   font-weight: 700;
   font-size: 6.4rem;
   line-height: 100.1%;
@@ -4523,7 +4523,7 @@ textarea {
   width: 37%;
 }
 @media (max-width: 500px) {
-  .secondPage-title h2 {
+  .secondPage-title h2, .secondPage-title h1 {
     font-size: 3.2rem;
     width: 35%;
   }
@@ -4575,7 +4575,7 @@ textarea {
     padding-right: 3.5rem;
   }
 }
-.secondPage-idea .secondPage-idea__aboutClientsBlock h2 {
+.secondPage-idea .secondPage-idea__aboutClientsBlock h2, .secondPage-idea .secondPage-idea__aboutClientsBlock h1 {
   font-weight: 500;
   font-size: 2.4rem;
   line-height: 100.1%;
@@ -4583,12 +4583,12 @@ textarea {
   width: 40%;
 }
 @media (max-width: 1022px) {
-  .secondPage-idea .secondPage-idea__aboutClientsBlock h2 {
+  .secondPage-idea .secondPage-idea__aboutClientsBlock h2, .secondPage-idea .secondPage-idea__aboutClientsBlock h1 {
     width: 55%;
   }
 }
 @media (max-width: 500px) {
-  .secondPage-idea .secondPage-idea__aboutClientsBlock h2 {
+  .secondPage-idea .secondPage-idea__aboutClientsBlock h2, .secondPage-idea .secondPage-idea__aboutClientsBlock h1 {
     width: 100%;
     font-size: 2.1rem;
   }
@@ -5566,7 +5566,7 @@ textarea {
   display: flex;
   gap: 3rem;
 }
-.services-header h2 {
+.services-header h2, .services-header h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -5575,17 +5575,17 @@ textarea {
   width: 68%;
 }
 @media (max-width: 1023px) {
-  .services-header h2 {
+  .services-header h2, .services-header h1 {
     width: 100%;
   }
 }
 @media (max-width: 700px) {
-  .services-header h2 {
+  .services-header h2, .services-header h1 {
     width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .services-header h2 {
+  .services-header h2, .services-header h1 {
     width: 100%;
     font-size: 4.3rem;
   }
@@ -5678,7 +5678,7 @@ textarea {
   }
 }
 
-.services-particular h2 {
+.services-particular h2, .services-particular h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -5687,18 +5687,18 @@ textarea {
   margin-bottom: 8rem;
 }
 @media (max-width: 1023px) {
-  .services-particular h2 {
+  .services-particular h2, .services-particular h1 {
     font-size: 4.4rem;
     width: 100%;
   }
 }
 @media (max-width: 700px) {
-  .services-particular h2 {
+  .services-particular h2, .services-particular h1 {
     width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .services-particular h2 {
+  .services-particular h2, .services-particular h1 {
     width: 79%;
     margin-bottom: 3rem;
   }
@@ -5933,7 +5933,7 @@ textarea {
 .services-steps {
   position: relative;
 }
-.services-steps h2 {
+.services-steps h2, .services-steps h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -5942,14 +5942,14 @@ textarea {
   margin-bottom: 8rem;
 }
 @media (max-width: 1023px) {
-  .services-steps h2 {
+  .services-steps h2, .services-steps h1 {
     font-size: 4.4rem;
     width: 97%;
     margin-bottom: 3rem;
   }
 }
 @media (max-width: 500px) {
-  .services-steps h2 {
+  .services-steps h2, .services-steps h1 {
     width: 100%;
     font-size: 3.2rem;
     margin-bottom: 3rem;
@@ -6368,7 +6368,7 @@ textarea {
     padding-right: 1.5rem;
   }
 }
-.organizationOfSpace-organization h2 {
+.organizationOfSpace-organization h2, .organizationOfSpace-organization h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -6377,17 +6377,17 @@ textarea {
   padding-left: 3.6rem;
 }
 @media (max-width: 1023px) {
-  .organizationOfSpace-organization h2 {
+  .organizationOfSpace-organization h2, .organizationOfSpace-organization h1 {
     padding-left: 2.2rem;
   }
 }
 @media (max-width: 1023px) {
-  .organizationOfSpace-organization h2 {
+  .organizationOfSpace-organization h2, .organizationOfSpace-organization h1 {
     padding-left: unset;
   }
 }
 @media (max-width: 500px) {
-  .organizationOfSpace-organization h2 {
+  .organizationOfSpace-organization h2, .organizationOfSpace-organization h1 {
     font-size: 4.5rem;
   }
 }
@@ -6487,7 +6487,7 @@ textarea {
     gap: 2rem;
   }
 }
-.organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2 {
+.organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2, .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -6496,12 +6496,12 @@ textarea {
   width: 78%;
 }
 @media (max-width: 1023px) {
-  .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2 {
+  .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2, .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h1 {
     width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2 {
+  .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h2, .organizationOfSpace-whyContainer .organizationOfSpace-whyContainer__textContainer h1 {
     width: 100%;
     font-size: 4.5rem;
   }
@@ -6661,7 +6661,7 @@ textarea {
     width: 60%;
   }
 }
-.organizationOfSpace-include .organizationOfSpace-include__text h2 {
+.organizationOfSpace-include .organizationOfSpace-include__text h2, .organizationOfSpace-include .organizationOfSpace-include__text h1 {
   font-style: normal;
   font-weight: 500;
   font-size: 6.4rem;
@@ -6670,7 +6670,7 @@ textarea {
   color: #000000;
 }
 @media (max-width: 500px) {
-  .organizationOfSpace-include .organizationOfSpace-include__text h2 {
+  .organizationOfSpace-include .organizationOfSpace-include__text h2, .organizationOfSpace-include .organizationOfSpace-include__text h1 {
     font-size: 4.3rem;
   }
 }
@@ -6925,7 +6925,7 @@ textarea {
     margin-top: 10rem;
   }
 }
-.design-header h2 {
+.design-header h2, .design-header h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -6934,12 +6934,12 @@ textarea {
   margin-top: 10rem;
 }
 @media (max-width: 1023px) {
-  .design-header h2 {
+  .design-header h2, .design-header h1 {
     margin-top: 0rem;
   }
 }
 @media (max-width: 500px) {
-  .design-header h2 {
+  .design-header h2, .design-header h1 {
     font-size: 4.3rem;
     margin-top: 3rem;
   }
@@ -7304,7 +7304,7 @@ textarea {
 .autor-header .autor-header__imgContainer img {
   width: 100%;
 }
-.autor-header h2 {
+.autor-header h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -7315,7 +7315,7 @@ textarea {
   padding-left: 2.9rem;
 }
 @media (max-width: 1023px) {
-  .autor-header h2 {
+  .autor-header h1 {
     width: 68%;
     padding-left: 0;
     margin-top: 16rem;
@@ -7323,12 +7323,12 @@ textarea {
   }
 }
 @media (max-width: 1022px) {
-  .autor-header h2 {
+  .autor-header h1 {
     width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .autor-header h2 {
+  .autor-header h1 {
     margin-top: 9rem;
     font-size: 4.3rem;
   }
@@ -7768,11 +7768,11 @@ textarea {
   -ms-flex-pack: unset !important;
       justify-content: unset !important;
 }
-.realization-whyContainer__textContainer h2 {
+.realization-whyContainer__textContainer h2, .realization-whyContainer__textContainer h1 {
   width: 23.5% !important;
 }
 @media (max-width: 1023px) {
-  .realization-whyContainer__textContainer h2 {
+  .realization-whyContainer__textContainer h2, .realization-whyContainer__textContainer h1 {
     width: 100% !important;
   }
 }
@@ -8154,7 +8154,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
 }
-.prices-main h2 {
+.prices-main h2, .prices-main h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -8162,12 +8162,12 @@ textarea {
   color: #000000;
 }
 @media (max-width: 1022px) {
-  .prices-main h2 {
+  .prices-main h2, .prices-main h1 {
     padding-left: 2.5rem;
   }
 }
 @media (max-width: 500px) {
-  .prices-main h2 {
+  .prices-main h2, .prices-main h1 {
     padding-left: 1.5rem;
     font-size: 4.2rem;
   }
@@ -8492,7 +8492,7 @@ textarea {
   background: #000000;
 }
 
-.blog-content h2 {
+.blog-content h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -8500,7 +8500,7 @@ textarea {
   color: #000000;
 }
 @media (max-width: 500px) {
-  .blog-content h2 {
+  .blog-content h1 {
     font-size: 4.2rem;
   }
 }
@@ -8813,7 +8813,7 @@ textarea {
   display: none;
 }
 
-.article-content h2 {
+.article-content h1 {
   font-weight: 600;
   font-size: 6.4rem;
   line-height: 134.27%;
@@ -8823,12 +8823,12 @@ textarea {
   margin-bottom: 3rem;
 }
 @media (max-width: 1022px) {
-  .article-content h2 {
+  .article-content h1 {
     width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .article-content h2 {
+  .article-content h1 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-size: 4.2rem;
@@ -8930,7 +8930,7 @@ textarea {
   }
 }
 
-.aboutCompany-content h2 {
+.aboutCompany-content h1 {
   font-weight: 500;
   font-size: 6.4rem;
   line-height: 120.6%;
@@ -8938,7 +8938,7 @@ textarea {
   color: #000000;
 }
 @media (max-width: 500px) {
-  .aboutCompany-content h2 {
+  .aboutCompany-content h1 {
     font-size: 4.2rem;
   }
 }
@@ -9181,14 +9181,14 @@ textarea {
       flex-direction: column;
   gap: 2rem;
 }
-.contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h2 {
+.contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h2, .contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h1 {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 100.1%;
   color: #000000;
 }
 @media (max-width: 500px) {
-  .contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h2 {
+  .contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h2, .contacts-content__adressBlock .contacts-content__contactsContainer .contacts-content__helpBlock h1 {
     font-size: 3.2rem;
   }
 }

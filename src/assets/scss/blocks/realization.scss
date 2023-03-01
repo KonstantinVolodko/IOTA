@@ -35,7 +35,7 @@
 .realization-whyContainer__textContainer {
     gap: 0rem !important;
     justify-content: unset !important;
-    h2 {
+    h2, h1 {
         width: 23.5% !important;
 
         @include breakpoint($xl-bp) {
